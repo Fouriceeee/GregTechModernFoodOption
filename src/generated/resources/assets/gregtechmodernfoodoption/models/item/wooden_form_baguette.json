@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gregtechmodernfoodoption:item/bread/wooden_form_baguette"
+  }
+}
