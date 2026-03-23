@@ -160,119 +160,256 @@ public class GTMFOItems {
     static ItemEntry<Item> COFFEE_BEANS_ROASTED_SMALL   = item("coffee_beans_roasted_small",  "Small Roasted Coffee Beans",  "烘焙小粒咖啡豆","coffee/roasted_small");
 
     //container
-    static ItemEntry<Item> PAPER_BAG = item("bag","container/bag");
-    static ItemEntry<Item> PAPER_BAG_USED = item("bag_used","container/bag_used");
-    static ItemEntry<Item> CUP_EMPTY = item("cup_empty","container/cup_empty");
-    static ItemEntry<Item> CUP_UNFIRED = item("cup_unfired","container/cup_unfired");
-    static ItemEntry<Item> PAPER_CONE = item("paper_cone","container/paper_cone");
-    static ItemEntry<Item> PLASTIC_BOTTLE = item("plastic_bottle","container/plastic_bottle");
-    static ItemEntry<Item> PLATE = item("plate","container/plate");
-    static ItemEntry<Item> PLATE_DIRTY = item("plate_dirty","container/plate_dirty");
-    static ItemEntry<Item> PLATE_UNFIRED = item("plate_unfired","container/plate_unfired");
-    static ItemEntry<Item> CERAMIC_BOWL = item("ceramic_bowl","container/ceramic_bowl");
-    static ItemEntry<Item> CERAMIC_BOWL_DIRTY = item("ceramic_bowl_dirty","container/ceramic_bowl_dirty");
-    static ItemEntry<Item> CERAMIC_BOWL_UNFIRED = item("ceramic_bowl_unfired","container/ceramic_bowl_unfired");
-    static ItemEntry<Item> BAKING_TRAY = item("baking_tray","container/baking_tray");
-    static ItemEntry<Item> CAN = item("can","container/can");
+    static ItemEntry<Item> BAKING_TRAY           = item("baking_tray",          "Baking Tray",             "烤盘",        "container/baking_tray");
+    static ItemEntry<Item> CAN                   = item("can",                  "Can",                     "易拉罐",      "container/can");
+    static ItemEntry<Item> CERAMIC_BOWL          = item("ceramic_bowl",         "Ceramic Bowl",            "瓷碗",        "container/bowl");
+    static ItemEntry<Item> CERAMIC_BOWL_DIRTY    = item("ceramic_bowl_dirty",   "Dirty Bowl",              "脏碗",        "container/bowl_dirty");
+    static ItemEntry<Item> CERAMIC_BOWL_UNFIRED  = item("ceramic_bowl_unfired", "Unfired Bone China Bowl", "未烧制骨瓷碗","container/bowl_unfired");
+    static ItemEntry<Item> CERAMIC_PLATE         = item("ceramic_plate",        "Ceramic Plate",           "瓷盘",        "container/plate");
+    static ItemEntry<Item> CERAMIC_PLATE_DIRTY   = item("ceramic_plate_dirty",  "Dirty Plate",             "脏盘子",      "container/plate_dirty");
+    static ItemEntry<Item> CERAMIC_PLATE_UNFIRED = item("ceramic_plate_unfired","Unfired Bone China Plate","未烧制骨瓷盘","container/plate_unfired");
+    static ItemEntry<Item> CUP_EMPTY             = item("cup_empty",            "Empty Cup",               "空杯",        "container/cup_empty");
+    static ItemEntry<Item> CUP_UNFIRED           = item("cup_unfired",          "Unfired Cup",             "未烧制杯子",  "container/cup_unfired");
+    static ItemEntry<Item> PAPER_BAG             = item("paper_bag",            "Paper Bag",               "纸袋",        "container/bag");
+    static ItemEntry<Item> PAPER_BAG_USED        = item("paper_bag_used",       "Used Paper Bag",          "用过的纸袋",  "container/bag_used");
+    static ItemEntry<Item> PLASTIC_BOTTLE        = item("plastic_bottle",       "Plastic Bottle",          "塑料瓶",      "container/plastic_bottle");
 
     //corn
-    static ItemEntry<Item> FLAVORED_POPCORN_FLAKE = item("flavored_flake","corn/flavored_flake");
-    static ItemEntry<Item> CORN_COB = item("cob","corn/cob");
-    static ItemEntry<Item> DRIED_CORN_EAR = item("dried_ear","corn/dried_ear");
-    static ItemEntry<Item> CORN_EAR = item("corn_ear","corn/ear");
-    static ItemEntry<Item> CORN_KERNEL = item("corn_kernel","corn/kernel");
-    static ItemEntry<Item> CORN_KERNEL_ACCEPTABLE = item("corn_kernel_acceptable","corn/kernel_acceptable");
-
-    //dewarflask
-    static ItemEntry<Item> DEWAR_FLASK = item("dewar_flask","dewar_flask/new");
-    static ItemEntry<Item> USED_DEWAR_FLASK = item("used_dewar_flask","dewar_flask/used");
-    static ItemEntry<Item> LEACHED_DEWAR_FLASK_CASING = item("leached_dewar_flask_casing","dewar_flask/casing_leached");
-    static ItemEntry<Item> DEWAR_FLASK_CAP = item("dewar_flask_cap","dewar_flask/cap");
-    static ItemEntry<Item> DEWAR_FLASK_CASING = item("dewar_flask_casing","dewar_flask/casing");
-
-    static ItemEntry<Item> CORED_APPLE = item("cored_apple");
-
-    //sliceblade
-    static ItemEntry<Item> SLICER_BLADE_FLAT = item("slicer_blade_flat","slicer_blade/flat");
-    static ItemEntry<Item> SLICER_BLADE_STRIPES = item("slicer_blade_stripes","slicer_blade/stripes");
-    static ItemEntry<Item> SLICER_BLADE_OCTAGONAL = item("slicer_blade_octagonal","slicer_blade/octagonal");
-
-    //potato
-    static ItemEntry<Item> POTATO_PEELED = item("potato_peeled","potato/peeled");
-    static ItemEntry<Item> POTATO_STRIP = item("potato_strip","potato/strip");
-    static ItemEntry<Item> POTATO_STRIP_BLANCHED = item("potato_strip_blanched","potato/strip_blanched");
-    static ItemEntry<Item> POTATO_STRIP_FRIED = item("potato_strip_fried","potato/strip_fried");
-    static ItemEntry<Item> POTATO_SLICE = item("potato_slice","potato/slice");
-    static ItemEntry<Item> POTATO_SLICE_FRIED = item("potato_slice_fried","potato/slice_fried");
-    static ItemEntry<Item> POTATO_SLICE_BATCH_FRIED = item("potato_slice_batch_fried","potato/slice_batch_fried");
-    static ItemEntry<Item> POTATO_SLICE_OILY = item("potato_slice_oily","potato/slice_oily");
-    static ItemEntry<Item> POTATO_SLICE_HOT = item("potato_slice_hot","potato/slice_hot");
-    static ItemEntry<Item> POTATO_SLICE_REDUCED_FAT = item("potato_slice_reduced_fat","potato/slice_reduced_fat");
-    static ItemEntry<Item> FRENCH_FRIES = item("french_fries","potato/french_fries");
-    static ItemEntry<Item> CHIPS_BAG_PARTIALLY_FILLED = item("chips_bag_partially_filled","potato/chips_bag_partially_filled");
-    static ItemEntry<Item> CHIPS_SYALS = item("chips_syals","potato/chips_syals");
-    static ItemEntry<Item> CHIPS_BAG = item("chips_bag","potato/chips_bag");
-    static ItemEntry<Item> CHIPS_KETTLE = item("chips_kettle","potato/chips_kettle");
-    static ItemEntry<Item> CHIPS_NAQUADAH = item("chips_naquadah","potato/chips_naquadah");
-    static ItemEntry<Item> CHIPS_REDUCED_FAT = item("chips_reduced_fat","potato/chips_reduced_fat");
-    static ItemEntry<Item> CHIPS_VINEGAR = item("chips_vinegar","potato/chips_vinegar");
-    static ItemEntry<Item> POTATO_ON_A_STICK = item("potato_on_a_stick","potato/stick");
-
-    //structural_mesh
-    static ItemEntry<Item> CARROT_STRUCTURAL_MESH = item("carrot_structural_mesh","structural_mesh/carrot");
-    static ItemEntry<Item> APPLE_STRUCTURAL_MESH = item("apple_structural_mesh","structural_mesh/apple");
-
-    //pizza
-    static ItemEntry<Item> PIZZA_CHEESE = item("pizza_cheese","pizza/cheese");
-    static ItemEntry<Item> PIZZA_CHEESE_RAW = item("pizza_cheese_raw","pizza/cheese_raw");
-    static ItemEntry<Item> PIZZA_VEGGIE = item("pizza_veggie","pizza/veggie");
-    static ItemEntry<Item> PIZZA_VEGGIE_RAW = item("pizza_veggie_raw","pizza/veggie_raw");
-    static ItemEntry<Item> PIZZA_MINCE_MEAT = item("pizza_mince_meat","pizza/mince_meat");
-    static ItemEntry<Item> PIZZA_MINCE_MEAT_RAW = item("pizza_mince_meat_raw","pizza/mince_meat_raw");
-    static ItemEntry<Item> PIZZA_OLIVE_MUSHROOM = item("pizza_olive_mushroom","pizza/olive_mushroom");
-    static ItemEntry<Item> PIZZA_OLIVE_MUSHROOM_RAW = item("pizza_olive_mushroom_raw","pizza/olive_mushroom_raw");
-
-    static ItemEntry<Item> PIE_CRUST = item("pie_crust");
+    static ItemEntry<Item> FLAVORED_POPCORN_FLAKE = item("flavored_flake"        ,"Flavored Popcorn Flake","调味爆米花粒","corn/flavored_flake"   );
+    static ItemEntry<Item> CORN_COB               = item("corn_cob"              ,"Corn Cob"              ,"玉米芯"      ,"corn/cob"              );
+    static ItemEntry<Item> CORN_EAR               = item("corn_ear"              ,"Corn Ear"              ,"玉米穗"      ,"corn/ear"              );
+    static ItemEntry<Item> CORN_EAR_DRIED         = item("corn_ear_dried"        ,"Dried Corn Ear"        ,"烘干玉米穗"  ,"corn/ear_dried"        );
+    static ItemEntry<Item> CORN_KERNEL            = item("corn_kernel"           ,"Corn Kernel"           ,"玉米粒"      ,"corn/kernel"           );
+    static ItemEntry<Item> CORN_KERNEL_ACCEPTABLE = item("corn_kernel_acceptable","Acceptable Corn Kernel","合格级玉米粒","corn/kernel_acceptable");
 
     //crop
-    static ItemEntry<Item> ARTICHOKE = item("artichoke","crop/artichoke");
-    static ItemEntry<Item> BLACK_PEPPER = item("black_pepper","crop/black_pepper");
-    static ItemEntry<Item> CARROT_SLICE = item("carrot_slice","crop/carrot_slice");
-    //static ItemEntry<Item> COFFEE_CHERRY = item("coffee_cherry","crop/coffee");
-    static ItemEntry<Item> COTTON = item("cotton","crop/cotton");
-    static ItemEntry<Item> CUCUMBER = item("cucumber","crop/cucumber");
-    static ItemEntry<Item> CUCUMBER_SLICE = item("cucumber_slice","crop/cucumber_slice");
-    static ItemEntry<Item> EGGPLANT = item("eggplant","crop/eggplant");
-    static ItemEntry<Item> EGGPLANT_SLICE = item("eggplant_slice","crop/eggplant_slice");
-    static ItemEntry<Item> MUSHROOM_SLICE = item("mushroom_slice","crop/mushroom_slice");
-    static ItemEntry<Item> OLIVE = item("olive","crop/olive");
-    static ItemEntry<Item> OLIVE_SLICE = item("olive_slice","crop/olive_slice");
-    static ItemEntry<Item> ONION = item("onion","crop/onion");
-    static ItemEntry<Item> ONION_SLICE = item("onion","crop/onion_slice");
-    static ItemEntry<Item> PEA_POD = item("pea_pod","crop/pea_pod");
-    static ItemEntry<Item> RICE = item("rice","crop/rice");
-    static ItemEntry<Item> SOYBEAN = item("soybean","crop/soybean");
-    static ItemEntry<Item> TOMATO = item("tomato","crop/tomato");
-    static ItemEntry<Item> TOMATO_SLICE = item("tomato_slice","crop/tomato_slice");
+    static ItemEntry<Item> ARTICHOKE      = item("artichoke"     ,"Artichoke Heart"  ,"洋蓟心"  ,"crop/artichoke"     );
+    static ItemEntry<Item> BLACK_PEPPER   = item("black_pepper"  ,"Black Peppercorns","黑胡椒籽","crop/black_pepper"  );
+    static ItemEntry<Item> CARROT_SLICE   = item("carrot_slice"  ,"Carrot Slice"     ,"胡萝卜片","crop/carrot_slice"  );
+    //static ItemEntry<Item> COFFEE_CHERRY= item("coffee_cherry" ,"Coffee Cherry"    ,"咖啡果"  ,"crop/coffee"        );
+    static ItemEntry<Item> COTTON         = item("cotton"        ,"Cotton"           ,"棉花"    ,"crop/cotton"        );
+    static ItemEntry<Item> CUCUMBER       = item("cucumber"      ,"Cucumber"         ,"黄瓜"    ,"crop/cucumber"      );
+    static ItemEntry<Item> CUCUMBER_SLICE = item("cucumber_slice","Cucumber Slice"   ,"黄瓜片"  ,"crop/cucumber_slice");
+    static ItemEntry<Item> EGGPLANT       = item("eggplant"      ,"Eggplant"         ,"茄子"    ,"crop/eggplant"      );
+    static ItemEntry<Item> EGGPLANT_SLICE = item("eggplant_slice","Eggplant Slice"   ,"茄子片"  ,"crop/eggplant_slice");
+    static ItemEntry<Item> MUSHROOM_SLICE = item("mushroom_slice","Mushroom Slice"   ,"蘑菇片"  ,"crop/mushroom_slice");
+    static ItemEntry<Item> OLIVE          = item("olive"         ,"Olive"            ,"橄榄"    ,"crop/olive"         );
+    static ItemEntry<Item> OLIVE_SLICE    = item("olive_slice"   ,"Olive Slice"      ,"橄榄片"  ,"crop/olive_slice"   );
+    static ItemEntry<Item> ONION          = item("onion"         ,"Onion"            ,"洋葱"    ,"crop/onion"         );
+    static ItemEntry<Item> ONION_SLICE    = item("onion"         ,"Onion Slice"      ,"洋葱片"  ,"crop/onion_slice"   );
+    static ItemEntry<Item> PEA_POD        = item("pea_pod"       ,"Pea Pod"          ,"豌豆荚"  ,"crop/pea_pod"       );
+    static ItemEntry<Item> RICE           = item("rice"          ,"Rice"             ,"大米"    ,"crop/rice"          );
+    static ItemEntry<Item> SOYBEAN        = item("soybean"       ,"Soybean"          ,"大豆"    ,"crop/soybean"       );
+    static ItemEntry<Item> TOMATO         = item("tomato"        ,"Tomato"           ,"番茄"    ,"crop/tomato"        );
+    static ItemEntry<Item> TOMATO_SLICE   = item("tomato_slice"  ,"Tomato Slice"     ,"番茄片"  ,"crop/tomato_slice"  );
+
+    //dewar_flask
+    static ItemEntry<Item> DEWAR_FLASK                = item("dewar_flask"               ,"Dewar Flask"               ,"保温杯",          "dewar_flask/new");
+    static ItemEntry<Item> DEWAR_FLASK_USED           = item("dewar_flask_used"          ,"Used Dewar Flask"          ,"使用过的保温杯",  "dewar_flask/used");
+    static ItemEntry<Item> DEWAR_FLASK_CAP            = item("dewar_flask_cap"           ,"Dewar Flask Cap"           ,"保温杯盖",        "dewar_flask/cap");
+    static ItemEntry<Item> DEWAR_FLASK_CASING         = item("dewar_flask_casing"        ,"Dewar Flask Casing"        ,"保温杯身",        "dewar_flask/casing");
+    static ItemEntry<Item> DEWAR_FLASK_CASING_LEACHED = item("dewar_flask_casing_leached","Leached Dewar Flask Casing","使用过的保温杯身","dewar_flask/casing_leached");
+
+    //dough
+    static ItemEntry<Item> DOUGH                = item("dough"               ,"Dough"               ,"面团"        ,"dough/dough"         );
+    static ItemEntry<Item> DOUGH_FLAT           = item("flat_dough"          ,"Flat Dough"          ,"扁平面团"    ,"dough/flat"          );
+    static ItemEntry<Item> DOUGH_SUGARY         = item("sugary_dough"        ,"Sugary Dough"        ,"甜面团"      ,"dough/sugary"        );
+    static ItemEntry<Item> DOUGH_PASTA          = item("pasta_dough"         ,"Pasta Dough"         ,"意面面团"    ,"dough/pasta"         );
+    static ItemEntry<Item> DOUGH_EGG_PASTA      = item("egg_pasta_dough"     ,"Egg Pasta Dough"     ,"蛋液意面面团","dough/egg_pasta"     );
+    static ItemEntry<Item> DOUGH_PREMIXED_PASTA = item("premixed_pasta_dough","Premixed Pasta Dough","预拌意面面团","dough/premixed_pasta");
+
+    //fruit
+    static ItemEntry<Item> APRICOT       = item("apricot"      ,"Apricot"      ,"杏子"    ,"fruit/apricot"      );
+    static ItemEntry<Item> BANANA        = item("banana"       ,"Banana"       ,"香蕉"    ,"fruit/banana"       );
+    static ItemEntry<Item> BANANA_PEELED = item("banana_peeled","Peeled Banana","去皮香蕉","fruit/banana_peeled");
+    static ItemEntry<Item> COCONUT       = item("coconut"      ,"Coconut"      ,"椰子"    ,"fruit/coconut"      );
+    static ItemEntry<Item> GRAPES        = item("grapes"       ,"Grapes"       ,"葡萄"    ,"fruit/grapes"       );
+    static ItemEntry<Item> LEMON         = item("lemon"        ,"Lemon"        ,"柠檬"    ,"fruit/lemon"        );
+    static ItemEntry<Item> LIME          = item("lime"         ,"Lime"         ,"酸橙"    ,"fruit/lime"         );
+    static ItemEntry<Item> MANGO         = item("mango"        ,"Mango"        ,"芒果"    ,"fruit/mango"        );
+    static ItemEntry<Item> NUTMEG        = item("nutmeg"       ,"Nutmeg Seeds" ,"肉桂果"  ,"fruit/nutmeg"       );
+    static ItemEntry<Item> ORANGE        = item("orange"       ,"Orange"       ,"橙子"    ,"fruit/orange"       );
+    static ItemEntry<Item> WHITE_GRAPES  = item("white_grapes" ,"White Grapes" ,"白葡萄"  ,"fruit/white_grapes" );
+
+    //gorgonzola
+    static ItemEntry<Item> GORGONZOLA_WHEEL               = item("gorgonzola_wheel"              ,"Gorgonzola Wheel"              ,"戈贡佐拉奶酪轮"        ,"gorgonzola/wheel"           );
+    static ItemEntry<Item> GORGONZOLA_WHEEL_SALTED        = item("gorgonzola_wheel_salted"       ,"Salted Gorgonzola Wheel"       ,"加盐戈贡佐拉奶酪轮"    ,"gorgonzola/salted"          );
+    static ItemEntry<Item> GORGONZOLA_WHEEL_SLIGHTLY_AGED = item("gorgonzola_wheel_slightly_aged","Slightly Aged Gorgonzola Wheel","初步熟化戈贡佐拉奶酪轮","gorgonzola/slightly_aged"   );
+    static ItemEntry<Item> GORGONZOLA_WHEEL_PUNCTURED     = item("gorgonzola_wheel_punctured"    ,"Punctured Gorgonzola Wheel"    ,"扎孔戈贡佐拉奶酪轮"    ,"gorgonzola/punctured"       );
+    static ItemEntry<Item> GORGONZOLA_WHEEL_FULLY_CURED   = item("gorgonzola_wheel_fully_cured"  ,"Fully Cured Gorgonzola Wheel"  ,"硬化戈贡佐拉奶酪轮"    ,"gorgonzola/fully_cured"     );
+    static ItemEntry<Item> GORGONZOLA_TRIANGULAR_SLICE    = item("gorgonzola_triangular_slice"   ,"Gorgonzola Triangular Slice"   ,"戈贡佐拉奶酪三角"      ,"gorgonzola/triangular_slice");
+
+    //ice_cream
+    static ItemEntry<Item> ICE_CREAM           = item("ice_cream"          ,"Plain Ice Cream"      ,"原味冰淇淋"      ,"ice_cream/plain"    );
+    static ItemEntry<Item> ICE_CREAM_BACON     = item("ice_cream_bacon"    ,"Bacon Ice Cream"      ,"培根冰淇淋"      ,"ice_cream/bacon"    );
+    static ItemEntry<Item> ICE_CREAM_BANANA    = item("ice_cream_banana"   ,"Banana Ice Cream"     ,"香蕉冰淇淋"      ,"ice_cream/banana"   );
+    static ItemEntry<Item> ICE_CREAM_BEAR      = item("ice_cream_bear"     ,"Bear Ice Cream"       ,"熊先生冰淇淋"    ,"ice_cream/bear"     );
+    static ItemEntry<Item> ICE_CREAM_CHIP      = item("ice_cream_chip"     ,"Potato Chip Ice Cream","薯片冰淇淋"      ,"ice_cream/chip"     );
+    static ItemEntry<Item> ICE_CREAM_CHOCOLATE = item("ice_cream_chocolate","Chocolate Ice Cream"  ,"巧克力冰淇淋"    ,"ice_cream/chocolate");
+    static ItemEntry<Item> ICE_CREAM_CHORUS    = item("ice_cream_chorus"   ,"Chorus Ice Cream"     ,"Chorus Ice Cream","ice_cream/chorus"   );
+    static ItemEntry<Item> ICE_CREAM_CHUM      = item("ice_cream_chum"     ,"Chum Ice Cream"       ,"海霸冰淇淋"      ,"ice_cream/chum"     );
+    static ItemEntry<Item> ICE_CREAM_LEMON     = item("ice_cream_lemon"    ,"Lemon Ice Cream"      ,"柠檬冰淇淋"      ,"ice_cream/lemon"    );
+    static ItemEntry<Item> ICE_CREAM_MELON     = item("ice_cream_melon"    ,"Melon Ice Cream"      ,"西瓜冰淇淋"      ,"ice_cream/melon"    );
+    static ItemEntry<Item> ICE_CREAM_RAINBOW   = item("ice_cream_rainbow"  ,"Rainbow Ice Cream"    ,"彩虹冰淇淋"      ,"ice_cream/rainbow"  );
+    static ItemEntry<Item> ICE_CREAM_VANILLA   = item("ice_cream_vanilla"  ,"Vanilla Ice Cream"    ,"香草冰淇淋"      ,"ice_cream/vanilla"  );
+
+    //juice
+    static ItemEntry<Item> APPLE_JUICE  = item("apple_juice" ,"Apple Juice" ,"苹果汁","juice/apple" );
+    static ItemEntry<Item> ORANGE_JUICE = item("orange_juice","Orange Juice","橙汁"  ,"juice/orange");
+
+    //kebab
+    static ItemEntry<Item> SKEWER            = item("skewer"           ,"Skewer"           ,"铁签"            ,"kebab/skewer"     );
+    static ItemEntry<Item> KEBAB_BARG        = item("kebab_barg"       ,"Barg Kebab"       ,"伊朗叶子肉烤串"  ,"kebab/barg"       );
+    static ItemEntry<Item> KEBAB_BARG_RAW    = item("kebab_barg_raw"   ,"Raw Barg Kebab"   ,"生伊朗叶子肉烤串","kebab/barg_raw"   );
+    static ItemEntry<Item> KEBAB_CARROT      = item("kebab_carrot"     ,"Carrot Kebab"     ,"烤胡萝卜串"      ,"kebab/carrot"     );
+    static ItemEntry<Item> KEBAB_CARROT_RAW  = item("kebab_carrot_raw" ,"Raw Carrot Kebab" ,"生胡萝卜串"      ,"kebab/carrot_raw" );
+    static ItemEntry<Item> KEBAB_CHUM        = item("kebab_chum"       ,"Chum Kebab"       ,"烤海霸串"        ,"kebab/chum"       );
+    static ItemEntry<Item> KEBAB_CHUM_RAW    = item("kebab_chum_raw"   ,"Raw Chum Kebab"   ,"生海霸串"        ,"kebab/chum_raw"   );
+    static ItemEntry<Item> KEBAB_FAT         = item("kebab_fat"        ,"TailFat Kebab"    ,"烤肥尾串"        ,"kebab/fat"        );
+    static ItemEntry<Item> KEBAB_FAT_RAW     = item("kebab_fat_raw"    ,"Raw TailFat Kebab","生肥尾串"        ,"kebab/fat_raw"    );
+    static ItemEntry<Item> KEBAB_KUBIDEH     = item("kebab_kubideh"    ,"Kubideh Kebab"    ,"伊朗碎肉烤串"    ,"kebab/kubideh"    );
+    static ItemEntry<Item> KEBAB_KUBIDEH_RAW = item("kebab_kubideh_raw","Raw Kubideh Kebab","生伊朗碎肉烤串"  ,"kebab/kubideh_raw");
+    static ItemEntry<Item> KEBAB_MEAT        = item("kebab_meat"       ,"Meat Kebab"       ,"烤肉串"          ,"kebab/meat"       );
+    static ItemEntry<Item> KEBAB_MEAT_RAW    = item("kebab_meat_raw"   ,"Raw Meat Kebab"   ,"生肉串"          ,"kebab/meat_raw"   );
+    static ItemEntry<Item> KEBAB_ONION       = item("kebab_onion"      ,"Onion Kebab"      ,"烤洋葱串"        ,"kebab/onion"      );
+    static ItemEntry<Item> KEBAB_ONION_RAW   = item("kebab_onion_raw"  ,"Raw Onion Kebab"  ,"生洋葱串"        ,"kebab/onion_raw"  );
+    static ItemEntry<Item> KEBAB_TOMATO      = item("kebab_tomato"     ,"Tomato Kebab"     ,"烤番茄串"        ,"kebab/tomato"     );
+    static ItemEntry<Item> KEBAB_TOMATO_RAW  = item("kebab_tomato_raw" ,"Raw Tomato Kebab" ,"生番茄串"        ,"kebab/tomato_raw" );
+    static ItemEntry<Item> KEBAB_SOLTANI     = item("kebab_soltani"    ,"Kebab e Soltani!" ,"苏丹烤肉"        ,"kebab/soltani"    );
+
+    //parmigiano
+    static ItemEntry<Item> CHEESE_FORM            = item("cheese_form"           ,"Stainless Steel Cheese Form"                ,"不锈钢奶酪模具"                           ,"parmigiano/cheese_form");
+    static ItemEntry<Item> PARMIGIANO_BRINED      = item("parmigiano_brined"     ,"Brined Parmigiano-Reggiano in Cheese Form"  ,"装有盐渍帕马森-雷加诺奶酪的奶酪模具"      ,"parmigiano/brined"     );
+    static ItemEntry<Item> PARMIGIANO_BRINED_ROLL = item("parmigiano_brined_roll","Brined Parmigiano-Reggiano Roll"            ,"盐渍帕马森-雷加诺奶酪卷"                  ,"parmigiano/brined_roll");
+    static ItemEntry<Item> PARMIGIANO_AGED_ROLL   = item("parmigiano_aged_roll"  ,"Aged Parmigiano-Reggiano Roll"              ,"熟化帕马森-雷加诺奶酪卷"                  ,"parmigiano/aged_roll"  );
+    static ItemEntry<Item> PARMIGIANO_CURDLING    = item("parmigiano_curdling"   ,"Curdling Parmigiano-Reggiano in Cheese Form","装有半凝固帕马森-雷加诺奶酪乳液的奶酪模具","parmigiano/curdling"   );
+
+    //pasta
+    static ItemEntry<Item> DITALINI          = item("ditalini"         ,"Ditalini"         ,"意式手指面"    ,"pasta/ditalini"         );
+    static ItemEntry<Item> DITALINI_RAW      = item("ditalini_raw"     ,"Raw Ditalini"     ,"生意式手指面"  ,"pasta/raw/ditalini"     );
+    static ItemEntry<Item> DITALINI_DRIED    = item("ditalini_dried"   ,"Dried Ditalini"   ,"干意式手指面"  ,"pasta/dried/ditalini"   );
+    static ItemEntry<Item> RIGATONI          = item("rigatoni"         ,"Rigatoni"         ,"意式粗通心粉"  ,"pasta/rigatoni"         );
+    static ItemEntry<Item> RIGATONI_RAW      = item("rigatoni_raw"     ,"Raw Rigatoni"     ,"生意式粗通心粉","pasta/raw/rigatoni"     );
+    static ItemEntry<Item> RIGATONI_DRIED    = item("rigatoni_dried"   ,"Dried Rigatoni"   ,"干意式粗通心粉","pasta/dried/rigatoni"   );
+    static ItemEntry<Item> SPAGHETTI         = item("spaghetti"        ,"Spaghetti"        ,"意式直面"      ,"pasta/spaghetti"        );
+    static ItemEntry<Item> SPAGHETTI_RAW     = item("spaghetti_raw"    ,"Raw Spaghetti"    ,"生意式直面"    ,"pasta/raw/spaghetti"    );
+    static ItemEntry<Item> SPAGHETTI_DRIED   = item("spaghetti_dried"  ,"Dried Spaghetti"  ,"干意式直面"    ,"pasta/dried/spaghetti"  );
+    static ItemEntry<Item> TAGLIATELLE       = item("tagliatelle"      ,"Tagliatelle"      ,"意式干面"      ,"pasta/tagliatelle"      );
+    static ItemEntry<Item> TAGLIATELLE_RAW   = item("tagliatelle_raw"  ,"Raw Tagliatelle"  ,"生意式干面"    ,"pasta/raw/tagliatelle"  );
+    static ItemEntry<Item> TAGLIATELLE_DRIED = item("tagliatelle_dried","Dried Tagliatelle","干意式干面"    ,"pasta/dried/tagliatelle");
+    static ItemEntry<Item> TORTELLINI        = item("tortellini"       ,"Tortellini"       ,"意式馄饨"      ,"pasta/tortellini"       );
+    static ItemEntry<Item> LASAGNA_RAW               = item("lasagna_raw"              ,"Raw Lasagna"                              ,"生意式千层面"                      ,"pasta/raw/lasagna"              );
+    static ItemEntry<Item> LASAGNA_DRIED             = item("lasagna_dried"            ,"Dried Lasagna"                            ,"干意式千层面"                      ,"pasta/dried/lasagna"            );
+    static ItemEntry<Item> LASAGNA_CHUM              = item("lasagna_chum"             ,"Chum Lasagna"                             ,"海霸意式千层面"                    ,"pasta/lasagna/chum"             );
+    static ItemEntry<Item> LASAGNA_CHUM_RAW          = item("lasagna_chum_raw"         ,"Unbaked Chum Lasagna in Baking Tray"      ,"装有未烘烤海霸意式千层面的烤盘"    ,"pasta/lasagna/chum_raw"         );
+    static ItemEntry<Item> LASAGNA_CHUM_COOKED       = item("lasagna_chum_cooked"      ,"Baked Chum Lasagna in Baking Tray"        ,"装有海霸意式千层面的烤盘"          ,"pasta/lasagna/chum_cooked"      );
+    static ItemEntry<Item> LASAGNA_NAPOLETANA        = item("lasagna_napoletana"       ,"Lasagna Napoletana"                       ,"那不勒斯风味千层面"                ,"pasta/lasagna/napoletana"       );
+    static ItemEntry<Item> LASAGNA_NAPOLETANA_RAW    = item("lasagna_napoletana_raw"   ,"Unbaked Napoletana Lasagna in Baking Tray","装有未烘烤那不勒斯风味千层面的烤盘","pasta/lasagna/napoletana_raw"   );
+    static ItemEntry<Item> LASAGNA_NAPOLETANA_COOKED = item("lasagna_napoletana_cooked","Baked Napoletana Lasagna in Baking Tray"  ,"装有那不勒斯风味千层面的烤盘"      ,"pasta/lasagna/napoletana_cooked");
+    static ItemEntry<Item> LASAGNA_PESTO             = item("lasagna_pesto"            ,"Lasagna al pesto"                         ,"青酱千层面"                        ,"pasta/lasagna/pesto"            );
+    static ItemEntry<Item> LASAGNA_PESTO_RAW         = item("lasagna_pesto_raw"        ,"Unbaked Pesto Lasagna in Baking Tray"     ,"装有未烘烤青酱千层面的烤盘"        ,"pasta/lasagna/pesto_raw"        );
+    static ItemEntry<Item> LASAGNA_PESTO_COOKED      = item("lasagna_pesto_cooked"     ,"Baked Pesto Lasagna in Baking Tray"       ,"装有青酱千层面的烤盘"              ,"pasta/lasagna/pesto_cooked"     );
+
+    //pizza
+    static ItemEntry<Item> PIZZA_CHEESE         = item("pizza_cheese"        ,"Cheese Pizza"                ,"芝士披萨"      ,"pizza/cheese"        );
+    static ItemEntry<Item> PIZZA_CHEESE_RAW     = item("pizza_cheese_raw"    ,"Raw Cheese Pizza"            ,"生芝士披萨"    ,"pizza/cheese_raw"    );
+    static ItemEntry<Item> PIZZA_VEGGIE         = item("pizza_veggie"        ,"Olive and Mushroom Pizza"    ,"橄榄蘑菇披萨"  ,"pizza/veggie"        );
+    static ItemEntry<Item> PIZZA_VEGGIE_RAW     = item("pizza_veggie_raw"    ,"Raw Olive and Mushroom Pizza","生橄榄蘑菇披萨","pizza/veggie_raw"    );
+    static ItemEntry<Item> PIZZA_MINCE_MEAT     = item("pizza_mince_meat"    ,"Mince Meat Pizza"            ,"肉末披萨"      ,"pizza/mince_meat"    );
+    static ItemEntry<Item> PIZZA_MINCE_MEAT_RAW = item("pizza_mince_meat_raw","Raw Mince Meat Pizza"        ,"生肉末披萨"    ,"pizza/mince_meat_raw");
+
+    //potato
+    static ItemEntry<Item> POTATO_PEELED            = item("potato_peeled"           ,"Peeled Potato"            ,"去皮马铃薯"        ,"potato/peeled"           );
+    static ItemEntry<Item> POTATO_STRIP             = item("potato_strip"            ,"Potato Strip"             ,"马铃薯条"          ,"potato/strip"            );
+    static ItemEntry<Item> POTATO_STRIP_BLANCHED    = item("potato_strip_blanched"   ,"Blanched Potato Strip"    ,"过油马铃薯条"      ,"potato/strip_blanched"   );
+    static ItemEntry<Item> POTATO_STRIP_FRIED       = item("potato_strip_fried"      ,"Fried Potato Strip"       ,"炸马铃薯条"        ,"potato/strip_fried"      );
+    static ItemEntry<Item> POTATO_SLICE             = item("potato_slice"            ,"Potato Slice"             ,"马铃薯片"          ,"potato/slice"            );
+    static ItemEntry<Item> POTATO_SLICE_FRIED       = item("potato_slice_fried"      ,"Fried Potato Slice"       ,"炸马铃薯片"        ,"potato/slice_fried"      );
+    static ItemEntry<Item> POTATO_SLICE_BATCH_FRIED = item("potato_slice_batch_fried","Batch-Fried Potato Slice" ,"分批油炸的马铃薯片","potato/slice_batch_fried");
+    static ItemEntry<Item> POTATO_SLICE_OILY        = item("potato_slice_oily"       ,"Oily Potato Slice"        ,"油腻马铃薯片"      ,"potato/slice_oily"       );
+    static ItemEntry<Item> POTATO_SLICE_HOT         = item("potato_slice_hot"        ,"Hot Potato Slice"         ,"热马铃薯片"        ,"potato/slice_hot"        );
+    static ItemEntry<Item> POTATO_SLICE_REDUCED_FAT = item("potato_slice_reduced_fat","Reduced Fat Potato Chip"  ,"减脂薯片"          ,"potato/slice_reduced_fat");
+    static ItemEntry<Item> POTATO_ON_A_STICK        = item("potato_on_a_stick"       ,"Roasted Potato on a Stick","烤马铃薯棒"        ,"potato/stick"            );
+    static ItemEntry<Item> FRENCH_FRIES             = item("french_fries"            ,"Fish'n'Chips"             ,"炸鱼薯条"          ,"potato/french_fries"     );
+    static ItemEntry<Item> CHIPS_BAG_PARTIALLY_FILLED = item("chips_bag_partially_filled","Partially Filled Bag of Chips","未装满的薯片袋","potato/chips_bag_partially_filled");
+    static ItemEntry<Item> CHIPS_SYALS                = item("chips_syals"               ,"Syals"                        ,"事乐薯片"      ,"potato/chips_syals"               );
+    static ItemEntry<Item> CHIPS_BAG                  = item("chips_bag"                 ,"Bag O' Chips"                 ,"袋装薯片"      ,"potato/chips_bag"                 );
+    static ItemEntry<Item> CHIPS_KETTLE               = item("chips_kettle"              ,"Kettle Chips"                 ,"手作薯片"      ,"potato/chips_kettle"              );
+    static ItemEntry<Item> CHIPS_NAQUADAH             = item("chips_naquadah"            ,"Naquadah Chips"               ,"硅岩薯片"      ,"potato/chips_naquadah"            );
+    static ItemEntry<Item> CHIPS_REDUCED_FAT          = item("chips_reduced_fat"         ,"Bay Salmon Reduced Fat Chips" ,"湾鲑牌减脂薯片","potato/chips_reduced_fat"         );
+    static ItemEntry<Item> CHIPS_VINEGAR              = item("chips_vinegar"             ,"Vinegar Chips"                ,"醋味薯片"      ,"potato/chips_vinegar"             );
+
+    //sandwich
+    static ItemEntry<Item> SANDWICH_BACON        = item("sandwich_bacon"       ,"Bacon Sandwich"       ,"培根三明治"      ,"sandwich/bacon"       );
+    static ItemEntry<Item> SANDWICH_BACON_LARGE  = item("sandwich_bacon_large" ,"Large Bacon Sandwich" ,"大号培根三明治"  ,"sandwich/bacon_large" );
+    static ItemEntry<Item> SANDWICH_CHEESE       = item("sandwich_cheese"      ,"Cheese Sandwich"      ,"芝士三明治"      ,"sandwich/cheese"      );
+    static ItemEntry<Item> SANDWICH_CHEESE_LARGE = item("sandwich_cheese_large","Large Cheese Sandwich","大号芝士三明治"  ,"sandwich/cheese_large");
+    static ItemEntry<Item> SANDWICH_STEAK        = item("sandwich_steak"       ,"Steak Sandwich"       ,"牛肉三明治"      ,"sandwich/steak"       );
+    static ItemEntry<Item> SANDWICH_STEAK_LARGE  = item("sandwich_steak_large" ,"Large Steak Sandwich" ,"大号牛肉三明治"  ,"sandwich/steak_large" );
+    static ItemEntry<Item> SANDWICH_VEGGIE       = item("sandwich_veggie"      ,"Veggie Sandwich"      ,"蔬菜三明治"      ,"sandwich/veggie"      );
+    static ItemEntry<Item> SANDWICH_VEGGIE_LARGE = item("sandwich_veggie_large","Large Veggie Sandwich","大号蔬菜三明治"  ,"sandwich/veggie_large");
+    static ItemEntry<Item> SANDWICH_TOAST        = item("sandwich_toast"       ,"Toast Sandwich"       ,"吐司三明治"      ,"sandwich/toast"       );
+    static ItemEntry<Item> SANDWICH_VIBRANT      = item("sandwich_vibrant"     ,"Vibrant Sandwich"     ,"Vibrant Sandwich","sandwich/vibrant"     );
 
     //seed
-    static ItemEntry<Item> SEED_UNKNOWN = item("seed_unknown","seed/unknown");
-    static ItemEntry<Item> SEED_ARTICHOKE = item("seed_artichoke","seed/artichoke");
-    static ItemEntry<Item> SEED_BASIL = item("seed_basil","seed/basil");
-    static ItemEntry<Item> SEED_BEAN = item("seed_bean","seed/bean");
-    static ItemEntry<Item> SEED_COFFEE = item("seed_coffee","seed/coffee");
-    static ItemEntry<Item> SEED_COTTON = item("seed_cotton","seed/cotton");
-    static ItemEntry<Item> SEED_CUCUMBER = item("seed_cucumber","seed/cucumber");
-    static ItemEntry<Item> SEED_EGGPLANT = item("seed_eggplant","seed/eggplant");
-    static ItemEntry<Item> SEED_GARLIC = item("seed_garlic","seed/garlic");
-    static ItemEntry<Item> SEED_GRAPE = item("seed_grape","seed/grape");
-    static ItemEntry<Item> SEED_HORSERADISH = item("seed_horseradish","seed/horseradish");
-    static ItemEntry<Item> SEED_ONION = item("seed_onion","seed/onion");
-    static ItemEntry<Item> SEED_OREGANO = item("seed_oregano","seed/oregano");
-    static ItemEntry<Item> SEED_PEA = item("seed_pea","seed/pea");
-    static ItemEntry<Item> SEED_SOY = item("seed_soy","seed/soy");
-    static ItemEntry<Item> SEED_TOMATO = item("seed_tomato","seed/tomato");
-    static ItemEntry<Item> SEED_WHITE_GRAPE = item("seed_white_grape","seed/white_grape");
+    static ItemEntry<Item> SEED_UNKNOWN     = item("seed_unknown"    ,"Undetermined GTMFO Seeds","不明GTMFO种子","seed/unknown"    );
+    static ItemEntry<Item> SEED_ARTICHOKE   = item("seed_artichoke"  ,"Artichoke Seeds"         ,"洋蓟种子"     ,"seed/artichoke"  );
+    static ItemEntry<Item> SEED_BASIL       = item("seed_basil"      ,"Basil Seeds"             ,"罗勒种子"     ,"seed/basil"      );
+    static ItemEntry<Item> SEED_BEAN        = item("seed_bean"       ,"Beans"                   ,"菜豆"         ,"seed/bean"       );
+    static ItemEntry<Item> SEED_COFFEE      = item("seed_coffee"     ,"Coffee Seed"             ,"咖啡种子"     ,"seed/coffee"     );
+    static ItemEntry<Item> SEED_COTTON      = item("seed_cotton"     ,"Cotton Seeds"            ,"棉花种子"     ,"seed/cotton"     );
+    static ItemEntry<Item> SEED_CUCUMBER    = item("seed_cucumber"   ,"Cucumber Seeds"          ,"黄瓜种子"     ,"seed/cucumber"   );
+    static ItemEntry<Item> SEED_EGGPLANT    = item("seed_eggplant"   ,"Eggplant Seeds"          ,"茄子种子"     ,"seed/eggplant"   );
+    static ItemEntry<Item> SEED_GARLIC      = item("seed_garlic"     ,"Garlic Clove"            ,"大蒜瓣"       ,"seed/garlic"     );
+    static ItemEntry<Item> SEED_GRAPE       = item("seed_grape"      ,"Grape Seeds"             ,"葡萄种子"     ,"seed/grape"      );
+    static ItemEntry<Item> SEED_HORSERADISH = item("seed_horseradish","Horseradish Seeds"       ,"辣根种子"     ,"seed/horseradish");
+    static ItemEntry<Item> SEED_ONION       = item("seed_onion"      ,"Onion Seeds"             ,"洋葱种子"     ,"seed/onion"      );
+    static ItemEntry<Item> SEED_OREGANO     = item("seed_oregano"    ,"Oregano Seeds"           ,"牛至种子"     ,"seed/oregano"    );
+    static ItemEntry<Item> SEED_PEA         = item("seed_pea"        ,"Peas"                    ,"豌豆"         ,"seed/pea"        );
+    static ItemEntry<Item> SEED_SOY         = item("seed_soy"        ,"Soybean Seeds"           ,"大豆种子"     ,"seed/soy"        );
+    static ItemEntry<Item> SEED_TOMATO      = item("seed_tomato"     ,"Tomato Seeds"            ,"番茄种子"     ,"seed/tomato"     );
+    static ItemEntry<Item> SEED_WHITE_GRAPE = item("seed_white_grape","White Grape Seeds"       ,"白葡萄种子"   ,"seed/white_grape");
+
+    //shape
+    static ItemEntry<Item> SHAPE_PASTA_BLANK       = item("shape_pasta_blank"      ,"Blank Pasta Extruder Shape"      ,"空青铜模板"              ,"shape/pasta/blank"      );
+    static ItemEntry<Item> SHAPE_PASTA_DITALINI    = item("shape_pasta_ditalini"   ,"Ditalini Pasta Extruder Shape"   ,"青铜模头（意式手指面）"  ,"shape/pasta/ditalini"   );
+    static ItemEntry<Item> SHAPE_PASTA_LASAGNA     = item("shape_pasta_lasagna"    ,"Lasagna Pasta Extruder Shape"    ,"青铜模头（意式千层面）"  ,"shape/pasta/lasagna"    );
+    static ItemEntry<Item> SHAPE_PASTA_RIGATONI    = item("shape_pasta_rigatoni"   ,"Rigatoni Pasta Extruder Shape"   ,"青铜模头（意式粗通心粉）","shape/pasta/rigatoni"   );
+    static ItemEntry<Item> SHAPE_PASTA_SPAGHETTI   = item("shape_pasta_spaghetti"  ,"Spaghetti Pasta Extruder Shape"  ,"青铜模头（意式直面）"    ,"shape/pasta/spaghetti"  );
+    static ItemEntry<Item> SHAPE_PASTA_TAGLIATELLE = item("shape_pasta_tagliatelle","Tagliatelle Pasta Extruder Shape","青铜模头（意式干面）"    ,"shape/pasta/tagliatelle");
+
+    //slicer_blade
+    static ItemEntry<Item> SLICER_BLADE_FLAT      = item("slicer_blade_flat"     ,"Slicer Blade (Flat)"   ,"切片机刀片（切片）"  ,"slicer_blade/flat"     );
+    static ItemEntry<Item> SLICER_BLADE_STRIPES   = item("slicer_blade_stripes"  ,"Slicer Blade (Stripes)","切片机刀片（切条）"  ,"slicer_blade/stripes"  );
+    static ItemEntry<Item> SLICER_BLADE_OCTAGONAL = item("slicer_blade_octagonal","Slicer Blade (Eights)" ,"切片机刀片（八等分）","slicer_blade/octagonal");
+
+    //smore
+    static ItemEntry<Item> SMORE_ONE        = item("smore_one"       ,"S'more S'mingot"                          ,"巧克力棉花糖夹心饼干"        ,"smore/one"       );
+    static ItemEntry<Item> SMORE_TWO        = item("smore_two"       ,"MoreS'more DoubleS'mingot"                ,"双层巧克力棉花糖夹心饼干"    ,"smore/two"       );
+    static ItemEntry<Item> SMORE_FOUR       = item("smore_four"      ,"FourS'more QuadS'mingot"                  ,"四层巧克力棉花糖夹心饼干"    ,"smore/four"      );
+    static ItemEntry<Item> SMORE_EIGHT      = item("smore_eight"     ,"EightS'more OctoS'mingot"                 ,"八层巧克力棉花糖夹心饼干"    ,"smore/eight"     );
+    static ItemEntry<Item> SMORE_SIXTEEN    = item("smore_sixteen"   ,"SixteenS'more HexadecaS'mingot"           ,"十六层巧克力棉花糖夹心饼干"  ,"smore/sixteen"   );
+    static ItemEntry<Item> SMORE_THIRTY_TWO = item("smore_thirty_two","Half-stack-o'-S'more TriacontadyoS'mingot","三十二层巧克力棉花糖夹心饼干","smore/thirty_two");
+    static ItemEntry<Item> SMORE_SIXTY_FOUR = item("smore_sixty_four","Stack-o'-S'more HexecontatessaraS'mingot" ,"六十四层巧克力棉花糖夹心饼干","smore/sixty_four");
+    static ItemEntry<Item> SMOGUS       = item("smogus"      ,"S'mogus S'mingot"          ,"牛奶巧克力棉花糖夹心内鬼饼干"    ,"smore/gusone"      );
+    static ItemEntry<Item> SMOGUS_TWO   = item("smogus_two"  ,"MultiS'mogus GrandS'mingot","多重牛奶巧克力棉花糖夹心内鬼饼干","smore/gustwo"      );
+    static ItemEntry<Item> SMOGUS_FOUR  = item("smogus_four" ,"AllS'mogus OmniS'mingot"   ,"全能牛奶巧克力棉花糖夹心内鬼饼干","smore/gusfour"     );
+    static ItemEntry<Item> SMOGUS_HEART = item("smogus_heart","Heart of the S'mogus"      ,"夹心内鬼饼干之心"                ,"smore/smogus_heart");
+
+    //sorbet
+    static ItemEntry<Item> SORBET         = item("sorbet"        ,"Plain Sorbet"  ,"原味雪葩"      ,"sorbet/plain"  );
+    static ItemEntry<Item> SORBET_APPLE   = item("sorbet_apple"  ,"Apple Sorbet"  ,"苹果雪葩"      ,"sorbet/apple"  );
+    static ItemEntry<Item> SORBET_APRICOT = item("sorbet_apricot","Apricot Sorbet","杏子雪葩"      ,"sorbet/apricot");
+    static ItemEntry<Item> SORBET_CHORUS  = item("sorbet_chorus" ,"Chorus Sorbet" ,"Chorus Sorbet" ,"sorbet/chorus" );
+    static ItemEntry<Item> SORBET_GRAPE   = item("sorbet_grape"  ,"Grape Sorbet"  ,"葡萄雪葩"      ,"sorbet/grape"  );
+    static ItemEntry<Item> SORBET_LIME    = item("sorbet_lime"   ,"Lime Sorbet"   ,"酸柠雪葩"      ,"sorbet/lime"   );
+    static ItemEntry<Item> SORBET_VIBRANT = item("sorbet_vibrant","Vibrant Sorbet","Vibrant Sorbet","sorbet/vibrant");
+
+    //structural_mesh
+    static ItemEntry<Item> APPLE_STRUCTURAL_MESH  = item("apple_structural_mesh" ,"Apple Structural Mesh" ,"苹果纤维骨架"  ,"structural_mesh/apple" );
+    static ItemEntry<Item> CARROT_STRUCTURAL_MESH = item("carrot_structural_mesh","Carrot Structural Mesh","胡萝卜纤维骨架","structural_mesh/carrot");
+
+    static ItemEntry<Item> PIE_CRUST = item("pie_crust");
 
     static ItemEntry<Item> BEEF_SLICE = item("beef_slice");
     static ItemEntry<Item> MOLD_CHEDDAR_CURD = item("mold_cheddar_curd");
@@ -284,39 +421,11 @@ public class GTMFOItems {
 
     static ItemEntry<Item> UNCOOKED_BACON = item("bacon_uncooked");
 
-    //gorgonzola_wheel
-    static ItemEntry<Item> GORGONZOLA_WHEEL = item("gorgonzola_wheel","gorgonzola/wheel");
-    static ItemEntry<Item> GORGONZOLA_WHEEL_SALTED = item("gorgonzola_wheel_salted","gorgonzola/salted");
-    static ItemEntry<Item> GORGONZOLA_WHEEL_SLIGHTLY_AGED = item("gorgonzola_wheel_slightly_aged","gorgonzola/slightly_aged");
-    static ItemEntry<Item> GORGONZOLA_WHEEL_PUNCTURED = item("gorgonzola_wheel_punctured","gorgonzola/punctured");
-    static ItemEntry<Item> GORGONZOLA_WHEEL_FULLY_CURED = item("gorgonzola_wheel_fully_cured","gorgonzola/fully_cured");
-    static ItemEntry<Item> GORGONZOLA_TRIANGULAR_SLICE = item("gorgonzola_triangular_slice","gorgonzola/triangular_slice");
-
     static ItemEntry<Item> BANANA_PEEL = item("banana_peel");
     static ItemEntry<Item> SCRAP_MEAT = item("scrap_meat");
     static ItemEntry<Item> GELATIN = item("gelatin");
     static ItemEntry<Item> ROASTED_COCOA_BEANS = item("roasted_beans");
     static ItemEntry<Item> COCOA_NIBS = item("cocoa_nibs");
-
-    //kebab
-    static ItemEntry<Item> SKEWER = item("skewer","kebab/skewer");
-    static ItemEntry<Item> KEBAB_SOLTANI = item("kebab_soltani","kebab/soltani");
-    static ItemEntry<Item> KEBAB_BARG = item("kebab_barg","kebab/barg");
-    static ItemEntry<Item> KEBAB_BARG_COOKED = item("kebab_barg_cooked","kebab/barg_cooked");
-    static ItemEntry<Item> KEBAB_CARROT = item("kebab_carrot","kebab/carrot");
-    static ItemEntry<Item> KEBAB_CARROT_COOKED = item("kebab_carrot_cooked","kebab/carrot_cooked");
-    static ItemEntry<Item> KEBAB_CHUM = item("kebab_chum","kebab/chum");
-    static ItemEntry<Item> KEBAB_CHUM_COOKED = item("kebab_chum_cooked","kebab/chum_cooked");
-    static ItemEntry<Item> KEBAB_FAT = item("kebab_fat","kebab/fat");
-    static ItemEntry<Item> KEBAB_FAT_COOKED = item("kebab_fat_cooked","kebab/fat_cooked");
-    static ItemEntry<Item> KEBAB_KUBIDEH = item("kebab_kubideh","kebab/kubideh");
-    static ItemEntry<Item> KEBAB_KUBIDEH_COOKED = item("kebab_kubideh_cooked","kebab/kubideh_cooked");
-    static ItemEntry<Item> KEBAB_MEAT = item("kebab_meat","kebab/meat");
-    static ItemEntry<Item> KEBAB_MEAT_COOKED = item("kebab_meat_cooked","kebab/meat_cooked");
-    static ItemEntry<Item> KEBAB_ONION = item("kebab_onion","kebab/onion");
-    static ItemEntry<Item> KEBAB_ONION_COOKED = item("kebab_onion_cooked","kebab/onion_cooked");
-    static ItemEntry<Item> KEBAB_TOMATO = item("kebab_tomato","kebab/tomato");
-    static ItemEntry<Item> KEBAB_TOMATO_COOKED = item("kebab_tomato_cooked","kebab/tomato_cooked");
 
     static ItemEntry<Item> BEANS_WITH_SAUCE = item("beans_with_sauce");
     static ItemEntry<Item> UNCOOKED_SAUSAGE_ROLL = item("uncooked_sausage_roll");
@@ -325,50 +434,10 @@ public class GTMFOItems {
     static ItemEntry<Item> BASIL = item("basil");
     static ItemEntry<Item> OREGANO = item("oregano");
 
-
     static ItemEntry<Item> IV_BAG = item("iv_bag");
-
-    //dough
-    static ItemEntry<Item> DOUGH = item("dough","dough/dough");
-    static ItemEntry<Item> DOUGH_FLAT = item("flat_dough","dough/flat");
-    static ItemEntry<Item> DOUGH_SUGARY = item("sugary_dough","dough/sugary");
-    static ItemEntry<Item> DOUGH_PASTA = item("pasta_dough","dough/pasta");
-    static ItemEntry<Item> DOUGH_EGG_PASTA = item("egg_pasta_dough","dough/egg_pasta");
-    static ItemEntry<Item> DOUGH_PREMIXED_PASTA = item("premixed_pasta_dough","dough/premixed_pasta");
-
-    //pasta
-    static ItemEntry<Item> DITALINI = item("ditalini","pasta/ditalini");
-    static ItemEntry<Item> DITALINI_RAW = item("ditalini_raw","pasta/raw/ditalini");
-    static ItemEntry<Item> DITALINI_DRIED = item("ditalini_dried","pasta/dried/ditalini");
-    static ItemEntry<Item> RIGATONI = item("rigatoni","pasta/rigatoni");
-    static ItemEntry<Item> RIGATONI_RAW = item("rigatoni_raw","pasta/raw/rigatoni");
-    static ItemEntry<Item> RIGATONI_DRIED = item("rigatoni_dried","pasta/dried/rigatoni");
-    static ItemEntry<Item> SPAGHETTI = item("spaghetti","pasta/spaghetti");
-    static ItemEntry<Item> SPAGHETTI_RAW = item("spaghetti_raw","pasta/raw/spaghetti");
-    static ItemEntry<Item> SPAGHETTI_DRIED = item("spaghetti_dried","pasta/dried/spaghetti");
-    static ItemEntry<Item> TAGLIATELLE = item("tagliatelle","pasta/tagliatelle");
-    static ItemEntry<Item> TAGLIATELLE_RAW = item("tagliatelle_raw","pasta/raw/tagliatelle");
-    static ItemEntry<Item> TAGLIATELLE_DRIED = item("tagliatelle_dried","pasta/dried/tagliatelle");
-    static ItemEntry<Item> TORTELLINI = item("tortellini","pasta/tortellini");
-    static ItemEntry<Item> LASAGNA_CHUM = item("lasagna_chum","pasta/lasagna/chum");
-    static ItemEntry<Item> LASAGNA_CHUM_RAW = item("lasagna_chum_raw","pasta/lasagna/chum_raw");
-    static ItemEntry<Item> LASAGNA_CHUM_COOKED = item("lasagna_chum_cooked","pasta/lasagna/chum_cooked");
-    static ItemEntry<Item> LASAGNA_NAPOLETANA = item("lasagna_napoletana","pasta/lasagna/napoletana");
-    static ItemEntry<Item> LASAGNA_NAPOLETANA_RAW = item("lasagna_napoletana_raw","pasta/lasagna/napoletana_raw");
-    static ItemEntry<Item> LASAGNA_NAPOLETANA_COOKED = item("lasagna_napoletana_cooked","pasta/lasagna/napoletana_cooked");
-    static ItemEntry<Item> LASAGNA_PESTO = item("lasagna_pesto","pasta/lasagna/pesto");
-    static ItemEntry<Item> LASAGNA_PESTO_RAW = item("lasagna_pesto_raw","pasta/lasagna/pesto_raw");
-    static ItemEntry<Item> LASAGNA_PESTO_COOKED = item("lasagna_pesto_cooked","pasta/lasagna/pesto_cooked");
 
     static ItemEntry<Item> PORCHETTA = item("porchetta");
     static ItemEntry<Item> PORCHETTA_SLICE = item("porchetta_slice");
-
-    //parmigiano
-    static ItemEntry<Item> CHEESE_FORM = item("cheese_form","parmigiano/cheese_form");
-    static ItemEntry<Item> PARMIGIANO_BRINED = item("parmigiano_brined","parmigiano/brined");
-    static ItemEntry<Item> PARMIGIANO_BRINED_ROLL = item("parmigiano_brined_roll","parmigiano/brined_roll");
-    static ItemEntry<Item> PARMIGIANO_AGED_ROLL = item("parmigiano_aged_roll","parmigiano/aged_roll");
-    static ItemEntry<Item> PARMIGIANO_CURDLING = item("parmigiano_curdling","parmigiano/curdling");
 
     static ItemEntry<Item> SEASONED_PORK = item("seasoned_pork");
 
@@ -376,19 +445,6 @@ public class GTMFOItems {
     static ItemEntry<Item> PELMENI_SEASONED = item("pelmeni_seasoned");
     static ItemEntry<Item> PELMENI_UNCOOKED = item("pelmeni_uncooked");
     static ItemEntry<Item> PELMENI_SEASONED_UNCOOKED = item("pelmeni_seasoned_uncooked");
-
-    //fruit
-    static ItemEntry<Item> APRICOT = item("apricot","fruit/apricot");
-    static ItemEntry<Item> BANANA = item("banana","fruit/banana");
-    static ItemEntry<Item> BANANA_PEELED = item("banana_peeled","fruit/banana_peeled");
-    static ItemEntry<Item> COCONUT = item("coconut","fruit/coconut");
-    static ItemEntry<Item> GRAPES= item("grapes","fruit/grapes");
-    static ItemEntry<Item> LEMON = item("lemon","fruit/lemon");
-    static ItemEntry<Item> LIME = item("lime","fruit/lime");
-    static ItemEntry<Item> MANGO = item("mango","fruit/mango");
-    static ItemEntry<Item> NUTMEG = item("nutmeg","fruit/nutmeg");
-    static ItemEntry<Item> ORANGE= item("orange","fruit/orange");
-    static ItemEntry<Item> WHITE_GRAPES= item("white_grapes","fruit/white_grapes");
 
     static ItemEntry<Item> POPCORN_BAG = item("popcorn_bag");
     static ItemEntry<Item> MINERAL_WATER = item("mineral_water");
@@ -400,20 +456,6 @@ public class GTMFOItems {
     static ItemEntry<Item> TUNGSTENSTEEL_APPLE = item("tungstensteel_apple");
     static ItemEntry<Item> CAKE_BOTTOM = item("cake_bottom");
     static ItemEntry<Item> CAKE_BOTTOM_BAKED = item("cake_bottom_baked");
-
-    //sandwich
-    static ItemEntry<Item> SANDWICH_BACON = item("sandwich_bacon","sandwich/bacon");
-    static ItemEntry<Item> SANDWICH_BACON_LARGE = item("sandwich_bacon_large","sandwich/bacon_large");
-    static ItemEntry<Item> SANDWICH_CHEESE = item("sandwich_cheese","sandwich/cheese");
-    static ItemEntry<Item> SANDWICH_CHEESE_LARGE = item("sandwich_cheese_large","sandwich/cheese_large");
-    static ItemEntry<Item> SANDWICH_STEAK = item("sandwich_steak","sandwich/steak");
-    static ItemEntry<Item> SANDWICH_STEAK_LARGE = item("sandwich_steak_large","sandwich/steak_large");
-    static ItemEntry<Item> SANDWICH_TOAST = item("sandwich_toast","sandwich/toast");
-    static ItemEntry<Item> SANDWICH_VEGGIE = item("sandwich_veggie","sandwich/veggie");
-    static ItemEntry<Item> SANDWICH_VEGGIE_LARGE = item("sandwich_veggie_large","sandwich/veggie_large");
-    static ItemEntry<Item> SANDWICH_VIBRANT = item("sandwich_vibrant","sandwich/vibrant");
-
-
 
     static ItemEntry<Item> CHEDDAR_SLICE = item("cheddar_slice");
     static ItemEntry<Item> ROTTEN_FISH = item("rotten_fish");
@@ -428,40 +470,11 @@ public class GTMFOItems {
     static ItemEntry<Item> RABBIT_STEW_HOT = item("rabbit_stew_hot");
     static ItemEntry<Item> APPLE_SLICE = item("apple_slice");
 
-    //juice
-    static ItemEntry<Item> APPLE_JUICE = item("apple_juice","juice/apple");
-    static ItemEntry<Item> ORANGE_JUICE = item("orange_juice","juice/orange");
-
-    //ice_cream
-    static ItemEntry<Item> ICE_CREAM = item("ice_cream","ice_cream/plain");
-    static ItemEntry<Item> ICE_CREAM_BACON = item("ice_cream_bacon","ice_cream/bacon");
-    static ItemEntry<Item> ICE_CREAM_BANANA = item("ice_cream_banana","ice_cream/banana");
-    static ItemEntry<Item> ICE_CREAM_BEAR = item("ice_cream_bear","ice_cream/bear");
-    static ItemEntry<Item> ICE_CREAM_CHIP = item("ice_cream_chip","ice_cream/chip");
-    static ItemEntry<Item> ICE_CREAM_CHOCOLATE = item("ice_cream_chocolate","ice_cream/chocolate");
-    static ItemEntry<Item> ICE_CREAM_CHORUS = item("ice_cream_chorus","ice_cream/chorus");
-    static ItemEntry<Item> ICE_CREAM_CHUM = item("ice_cream_chum","ice_cream/chum");
-    static ItemEntry<Item> ICE_CREAM_LEMON = item("ice_cream_lemon","ice_cream/lemon");
-    static ItemEntry<Item> ICE_CREAM_MELON = item("ice_cream_melon","ice_cream/melon");
-    static ItemEntry<Item> ICE_CREAM_RAINBOW = item("ice_cream_rainbow","ice_cream/rainbow");
-    static ItemEntry<Item> ICE_CREAM_VANILLA = item("ice_cream_vanilla","ice_cream/vanilla");
-
     static ItemEntry<Item> CHOCOLATE = item("chocolate");
     static ItemEntry<Item> GRAHAM_CRACKER = item("graham_cracker");
     static ItemEntry<Item> MARSHMALLOW = item("marshmallow");
 
-    //smore
-    static ItemEntry<Item> SMORE_ONE = item("smore_one","smore/one");
-    static ItemEntry<Item> SMORE_TWO = item("smore_two","smore/two");
-    static ItemEntry<Item> SMORE_FOUR = item("smore_four","smore/four");
-    static ItemEntry<Item> SMORE_EIGHT = item("smore_eight","smore/eight");
-    static ItemEntry<Item> SMORE_SIXTEEN = item("smore_sixteen","smore/sixteen");
-    static ItemEntry<Item> SMORE_THIRTY_TWO = item("smore_thirty_two","smore/thirty_two");
-    static ItemEntry<Item> SMORE_SIXTY_FOUR = item("smore_sixty_four","smore/sixty_four");
-    static ItemEntry<Item> SMOGUS = item("smogus","smore/gusone");
-    static ItemEntry<Item> SMOGUS_TWO = item("smogus_two","smore/gustwo");
-    static ItemEntry<Item> SMOGUS_FOUR = item("smogus_four","smore/gusfour");
-    static ItemEntry<Item> SMOGUS_HEART = item("smogus_heart","smore/smogus_heart");
+
 
     //coffee
     static ItemEntry<Item> COFFEE = item("coffee","coffee/normal");
@@ -508,14 +521,7 @@ public class GTMFOItems {
     static ItemEntry<Item> BERRY_MEDLEY = item("berry_medley");
     static ItemEntry<Item> ANTAF = item("antaf");
 
-    //sorbet
-    static ItemEntry<Item> SORBET = item("sorbet","sorbet/plain");
-    static ItemEntry<Item> SORBET_APPLE = item("sorbet_apple","sorbet/apple");
-    static ItemEntry<Item> SORBET_APRICOT = item("sorbet_apricot","sorbet/apricot");
-    static ItemEntry<Item> SORBET_CHORUS = item("sorbet_chorus","sorbet/chorus");
-    static ItemEntry<Item> SORBET_GRAPE = item("sorbet_grape","sorbet/grape");
-    static ItemEntry<Item> SORBET_LIME = item("sorbet_lime","sorbet/lime");
-    static ItemEntry<Item> SORBET_VIBRANT = item("sorbet_vibrant","sorbet/vibrant");
+
 
     static ItemEntry<Item> FERMENTED_CHORUS = item("fermented_chorus");
     static ItemEntry<Item> FERMENTED_CHORUS_PIE = item("fermented_chorus_pie");
@@ -524,13 +530,7 @@ public class GTMFOItems {
 
     static ItemEntry<Item> SPRINKLER = item("sprinkler");
 
-    //shape
-    static ItemEntry<Item> PASTA_DIE_BLANK = item("pasta_die_blank","shape/pasta/blank");
-    static ItemEntry<Item> PASTA_DIE_DITALINI = item("pasta_die_ditalini","shape/pasta/ditalini");
-    static ItemEntry<Item> PASTA_DIE_LASAGNA = item("pasta_die_lasagna","shape/pasta/lasagna");
-    static ItemEntry<Item> PASTA_DIE_RIGATONI = item("pasta_die_rigatoni","shape/pasta/rigatoni");
-    static ItemEntry<Item> PASTA_DIE_SPAGHETTI = item("pasta_die_spaghetti","shape/pasta/spaghetti");
-    static ItemEntry<Item> PASTA_DIE_TAGLIATELLE = item("pasta_die_tagliatelle","shape/pasta/tagliatelle");
+
 
     //utility
     static ItemEntry<Item> KITCHEN_RECIPE = item("kitchen_recipe","utility/kitchen_recipe");
@@ -539,6 +539,9 @@ public class GTMFOItems {
 
     static ItemEntry<Item> BRICK_ADOBE = item("brick_adobe","brick_adobe");
     static ItemEntry<Item> BRICK_MUB = item("brick_mud","brick_mud");
+
+    static ItemEntry<Item> COFFEE_FILTER = item("coffee_filter","Coffee Filter","咖啡滤纸");
+    static ItemEntry<Item> CORED_APPLE = item("cored_apple");
 
 
     @NonFinal

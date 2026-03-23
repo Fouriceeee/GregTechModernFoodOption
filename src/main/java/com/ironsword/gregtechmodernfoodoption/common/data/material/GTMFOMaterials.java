@@ -8,6 +8,8 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @FieldDefaults(level = AccessLevel.PUBLIC, makeFinal = true)
 public class GTMFOMaterials {
 
@@ -54,6 +56,11 @@ public class GTMFOMaterials {
 
     private static TagPrefix[] without(TagPrefix tagPrefix){
         return TagPrefix.values().stream().filter(prefix->!prefix.equals(tagPrefix)).toArray(TagPrefix[]::new);
+    }
+
+    private static TagPrefix[] exclude(TagPrefix... tagPrefixes){
+        var prefixes = List.of(tagPrefixes);
+        return TagPrefix.values().stream().filter(prefix->!prefixes.contains(prefix)).toArray(TagPrefix[]::new);
     }
 
     public static void init(){

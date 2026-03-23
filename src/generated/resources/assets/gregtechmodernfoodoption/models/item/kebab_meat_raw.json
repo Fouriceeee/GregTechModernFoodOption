@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/container/bowl"
+    "layer0": "gregtechmodernfoodoption:item/kebab/meat_raw"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/container/ceramic_bowl_dirty"
+    "layer0": "gregtechmodernfoodoption:item/container/bowl_dirty"
   }
 }
