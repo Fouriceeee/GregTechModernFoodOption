@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/pasta_all_amogus"
+    "layer0": "gregtechmodernfoodoption:item/food_italian/pasta_all_amogus"
   }
 }

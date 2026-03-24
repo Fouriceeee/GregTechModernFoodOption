@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/mozzarella_slice"
+    "layer0": "gregtechmodernfoodoption:item/cheese/mozzarella_slice"
   }
 }

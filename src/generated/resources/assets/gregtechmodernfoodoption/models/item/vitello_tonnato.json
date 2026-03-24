@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/vitello_tonnato"
+    "layer0": "gregtechmodernfoodoption:item/food_italian/vitello_tonnato"
   }
 }

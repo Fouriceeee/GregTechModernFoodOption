@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/parmigiana"
+    "layer0": "gregtechmodernfoodoption:item/food_italian/parmigiana"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/pasta/raw/lasagna"
+    "layer0": "gregtechmodernfoodoption:item/pasta/lasagna_raw"
   }
 }

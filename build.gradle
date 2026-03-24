@@ -3,8 +3,8 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.spongepowered.mixin' version '0.7.+'
-    id 'io.freefair.lombok' version '8.10'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'io.freefair.lombok' version '8.14'
 }
 
 version = mod_version

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/etirps"
+    "layer0": "gregtechmodernfoodoption:item/drink/etirps"
   }
 }

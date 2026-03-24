@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/ricotta_piece"
+    "layer0": "gregtechmodernfoodoption:item/cheese/ricotta_piece"
   }
 }

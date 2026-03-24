@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/gorgonzola/salted"
+    "layer0": "gregtechmodernfoodoption:item/cheese/gorgonzola_wheel_salted"
   }
 }

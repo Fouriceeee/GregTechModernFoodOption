@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/parmigiano/aged_roll"
+    "layer0": "gregtechmodernfoodoption:item/cheese/parmigiano_aged_roll"
   }
 }

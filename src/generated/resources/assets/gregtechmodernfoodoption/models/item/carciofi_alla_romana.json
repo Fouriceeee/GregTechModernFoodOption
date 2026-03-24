@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/carciofi_alla_romana"
+    "layer0": "gregtechmodernfoodoption:item/food_italian/carciofi_alla_romana"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/spaghetti_all_assassina"
+    "layer0": "gregtechmodernfoodoption:item/food_italian/spaghetti_all_assassina"
   }
 }

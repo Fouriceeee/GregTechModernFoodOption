@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gregtechmodernfoodoption:block/machine/uev_microwave",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gregtechmodernfoodoption:block/machine/uev_microwave"
+    },
+    "facing=south": {
+      "model": "gregtechmodernfoodoption:block/machine/uev_microwave",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gregtechmodernfoodoption:block/machine/uev_microwave",
+      "y": 270
+    }
+  }
+}

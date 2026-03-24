@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/parmigiano/curdling"
+    "layer0": "gregtechmodernfoodoption:item/cheese/parmigiano_curdling"
   }
 }

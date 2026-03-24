@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/sparkling_water"
+    "layer0": "gregtechmodernfoodoption:item/drink/sparkling_water"
   }
 }

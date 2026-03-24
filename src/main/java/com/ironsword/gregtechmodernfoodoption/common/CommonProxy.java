@@ -1,15 +1,22 @@
 package com.ironsword.gregtechmodernfoodoption.common;
 
+import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
+import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption;
 import com.ironsword.gregtechmodernfoodoption.api.capability.forge.GTMFOCapability;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOCreativeModeTabs;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOItems;
+import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMachines;
+import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMultiMachines;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterialItems;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterials;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterialIconSets;
+import com.ironsword.gregtechmodernfoodoption.common.data.recipe.GTMFORecipeTypes;
 import com.ironsword.gregtechmodernfoodoption.common.registry.GTMFORegistries;
 import com.ironsword.gregtechmodernfoodoption.data.GTMFOProviderTypes;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -35,7 +42,19 @@ public class CommonProxy {
         GTMFOItems.init();
         GTMFOMaterialItems.init();
 
+        bus.addGenericListener(MachineDefinition.class,CommonProxy::registerMachines);
+        bus.addGenericListener(GTRecipeType.class,CommonProxy::registerRecipeTypes);
+
         GTMFORegistries.REGISTRATE.registerRegistrate();
+    }
+
+    public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event){
+        GTMFOMachines.init();
+        GTMFOMultiMachines.init();
+    }
+
+    public static void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event){
+        GTMFORecipeTypes.init();
     }
 
     @SubscribeEvent

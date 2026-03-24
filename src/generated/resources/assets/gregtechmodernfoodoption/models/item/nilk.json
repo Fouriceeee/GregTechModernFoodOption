@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/nilk"
+    "layer0": "gregtechmodernfoodoption:item/drink/nilk"
   }
 }

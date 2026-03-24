@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/pasta/dried/tagliatelle"
+    "layer0": "gregtechmodernfoodoption:item/pasta/tagliatelle_dried"
   }
 }

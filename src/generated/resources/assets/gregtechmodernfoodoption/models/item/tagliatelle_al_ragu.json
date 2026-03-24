@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/tagliatelle_al_ragu"
+    "layer0": "gregtechmodernfoodoption:item/food_italian/tagliatelle_al_ragu"
   }
 }
