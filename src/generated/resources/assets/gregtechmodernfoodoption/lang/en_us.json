@@ -1,4 +1,8 @@
 {
+  "block.gregtechmodernfoodoption.adobe_bricks": "Adobe Bricks",
+  "block.gregtechmodernfoodoption.bismuth_bronze_casing": "Food-Safe Bismuth Bronze Casing",
+  "block.gregtechmodernfoodoption.dark_porcelain_tile": "Dark Porcelain Tile",
+  "block.gregtechmodernfoodoption.electric_baking_oven": "Electric Baking Oven",
   "block.gregtechmodernfoodoption.ev_cuisine_assembler": "§5Advanced Cuisine Assembler III§r",
   "block.gregtechmodernfoodoption.ev_microwave": "§5Advanced Microwave III§r",
   "block.gregtechmodernfoodoption.ev_multicooker": "§5Advanced Multicooker III§r",
@@ -27,6 +31,9 @@
   "block.gregtechmodernfoodoption.opv_microwave": "§9§lLegendary Microwave §r",
   "block.gregtechmodernfoodoption.opv_multicooker": "§9§lLegendary Multicooker §r",
   "block.gregtechmodernfoodoption.opv_slicer": "§9§lLegendary Slicer §r",
+  "block.gregtechmodernfoodoption.porcelain_tile": "Porcelain Tile",
+  "block.gregtechmodernfoodoption.reinforced_adobe_bricks": "Reinforced Adobe Bricks",
+  "block.gregtechmodernfoodoption.steam_baking_oven": "Steam Baking Oven",
   "block.gregtechmodernfoodoption.uev_cuisine_assembler": "§aEpic Cuisine Assembler II§r",
   "block.gregtechmodernfoodoption.uev_microwave": "§aEpic Microwave II§r",
   "block.gregtechmodernfoodoption.uev_multicooker": "§aEpic Multicooker II§r",
@@ -406,5 +413,14 @@
   "item.gregtechmodernfoodoption.white_wine": "White Wine",
   "item.gregtechmodernfoodoption.wooden_form_baguette": "Baguette Wooden Form",
   "item.gregtechmodernfoodoption.wooden_form_bread": "Bread Wooden Form",
-  "item.gregtechmodernfoodoption.wooden_form_bun": "Bun Wooden Form"
+  "item.gregtechmodernfoodoption.wooden_form_bun": "Bun Wooden Form",
+  "material.gtceu.apple_extract": "Apple Juice",
+  "material.gtceu.cane_syrup": "Cane Syrup",
+  "material.gtceu.cane_syrup_unheated": "Unheated Cane Syrup",
+  "material.gtceu.chloroauric_acid": "Chloroauric Acid",
+  "material.gtceu.isopropyl_chloride": "Isopropyl Chloride",
+  "material.gtceu.lemon_extract": "Lemon Extract",
+  "material.gtceu.lime_extract": "Lime Extract",
+  "material.gtceu.orange_extract": "Orange Juice",
+  "material.gtceu.zest": "Zest"
 }

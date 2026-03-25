@@ -2,7 +2,10 @@ package com.ironsword.gregtechmodernfoodoption;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
+import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOBlocks;
+import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterials;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOTagPrefixes;
 import com.ironsword.gregtechmodernfoodoption.common.data.recipe.GTMFORecipes;
 import com.ironsword.gregtechmodernfoodoption.common.registry.GTMFORegistries;
@@ -20,6 +23,11 @@ public class GTMFOAddon implements IGTAddon {
     @Override
     public void initializeAddon() {
 
+    }
+
+    @Override
+    public void collectMaterialCasings(MaterialCasingCollectionEvent event) {
+        GTMFOBlocks.collectMaterialCasings(event);
     }
 
     @Override

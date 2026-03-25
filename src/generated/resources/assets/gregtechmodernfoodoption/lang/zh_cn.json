@@ -1,4 +1,9 @@
 {
+  "block.gregtechmodernfoodoption.adobe_bricks": "土坯砖块",
+  "block.gregtechmodernfoodoption.bismuth_bronze_casing": "食品级铋青铜机器方块",
+  "block.gregtechmodernfoodoption.dark_porcelain_tile": "暗色瓷砖",
+  "block.gregtechmodernfoodoption.porcelain_tile": "瓷砖",
+  "block.gregtechmodernfoodoption.reinforced_adobe_bricks": "加固土坯砖块",
   "item.gregtechmodernfoodoption.antaf": "Antaf™",
   "item.gregtechmodernfoodoption.apple_cored": "去核苹果",
   "item.gregtechmodernfoodoption.apple_hard_candy": "苹果硬糖",
@@ -351,5 +356,14 @@
   "item.gregtechmodernfoodoption.white_wine": "白葡萄酒",
   "item.gregtechmodernfoodoption.wooden_form_baguette": "木制法棍面包模具",
   "item.gregtechmodernfoodoption.wooden_form_bread": "木制面包模具",
-  "item.gregtechmodernfoodoption.wooden_form_bun": "木制圆面包模具"
+  "item.gregtechmodernfoodoption.wooden_form_bun": "木制圆面包模具",
+  "material.gtceu.apple_extract": "苹果汁",
+  "material.gtceu.cane_syrup": "甘蔗糖浆",
+  "material.gtceu.cane_syrup_unheated": "未加热甘蔗糖浆",
+  "material.gtceu.chloroauric_acid": "氯金酸",
+  "material.gtceu.isopropyl_chloride": "异丙基氯",
+  "material.gtceu.lemon_extract": "柠檬提取液",
+  "material.gtceu.lime_extract": "酸橙提取液",
+  "material.gtceu.orange_extract": "橙汁",
+  "material.gtceu.zest": "碎橙皮"
 }

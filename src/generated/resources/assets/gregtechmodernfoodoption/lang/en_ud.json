@@ -1,4 +1,8 @@
 {
+  "block.gregtechmodernfoodoption.adobe_bricks": "sʞɔıɹᗺ ǝqopⱯ",
+  "block.gregtechmodernfoodoption.bismuth_bronze_casing": "buısɐƆ ǝzuoɹᗺ ɥʇnɯsıᗺ ǝɟɐS-pooℲ",
+  "block.gregtechmodernfoodoption.dark_porcelain_tile": "ǝןı⟘ uıɐןǝɔɹoԀ ʞɹɐᗡ",
+  "block.gregtechmodernfoodoption.electric_baking_oven": "uǝʌO buıʞɐᗺ ɔıɹʇɔǝןƎ",
   "block.gregtechmodernfoodoption.ev_cuisine_assembler": "ɹ§III ɹǝןqɯǝssⱯ ǝuısınƆ pǝɔuɐʌpⱯϛ§",
   "block.gregtechmodernfoodoption.ev_microwave": "ɹ§III ǝʌɐʍoɹɔıW pǝɔuɐʌpⱯϛ§",
   "block.gregtechmodernfoodoption.ev_multicooker": "ɹ§III ɹǝʞooɔıʇןnW pǝɔuɐʌpⱯϛ§",
@@ -27,6 +31,9 @@
   "block.gregtechmodernfoodoption.opv_microwave": "ɹ§ ǝʌɐʍoɹɔıW ʎɹɐpuǝbǝꞀן§6§",
   "block.gregtechmodernfoodoption.opv_multicooker": "ɹ§ ɹǝʞooɔıʇןnW ʎɹɐpuǝbǝꞀן§6§",
   "block.gregtechmodernfoodoption.opv_slicer": "ɹ§ ɹǝɔıןS ʎɹɐpuǝbǝꞀן§6§",
+  "block.gregtechmodernfoodoption.porcelain_tile": "ǝןı⟘ uıɐןǝɔɹoԀ",
+  "block.gregtechmodernfoodoption.reinforced_adobe_bricks": "sʞɔıɹᗺ ǝqopⱯ pǝɔɹoɟuıǝᴚ",
+  "block.gregtechmodernfoodoption.steam_baking_oven": "uǝʌO buıʞɐᗺ ɯɐǝʇS",
   "block.gregtechmodernfoodoption.uev_cuisine_assembler": "ɹ§II ɹǝןqɯǝssⱯ ǝuısınƆ ɔıdƎɐ§",
   "block.gregtechmodernfoodoption.uev_microwave": "ɹ§II ǝʌɐʍoɹɔıW ɔıdƎɐ§",
   "block.gregtechmodernfoodoption.uev_multicooker": "ɹ§II ɹǝʞooɔıʇןnW ɔıdƎɐ§",
@@ -406,5 +413,14 @@
   "item.gregtechmodernfoodoption.white_wine": "ǝuıM ǝʇıɥM",
   "item.gregtechmodernfoodoption.wooden_form_baguette": "ɯɹoℲ uǝpooM ǝʇʇǝnbɐᗺ",
   "item.gregtechmodernfoodoption.wooden_form_bread": "ɯɹoℲ uǝpooM pɐǝɹᗺ",
-  "item.gregtechmodernfoodoption.wooden_form_bun": "ɯɹoℲ uǝpooM unᗺ"
+  "item.gregtechmodernfoodoption.wooden_form_bun": "ɯɹoℲ uǝpooM unᗺ",
+  "material.gtceu.apple_extract": "ǝɔınſ ǝןddⱯ",
+  "material.gtceu.cane_syrup": "dnɹʎS ǝuɐƆ",
+  "material.gtceu.cane_syrup_unheated": "dnɹʎS ǝuɐƆ pǝʇɐǝɥu∩",
+  "material.gtceu.chloroauric_acid": "pıɔⱯ ɔıɹnɐoɹoןɥƆ",
+  "material.gtceu.isopropyl_chloride": "ǝpıɹoןɥƆ ןʎdoɹdosI",
+  "material.gtceu.lemon_extract": "ʇɔɐɹʇxƎ uoɯǝꞀ",
+  "material.gtceu.lime_extract": "ʇɔɐɹʇxƎ ǝɯıꞀ",
+  "material.gtceu.orange_extract": "ǝɔınſ ǝbuɐɹO",
+  "material.gtceu.zest": "ʇsǝZ"
 }

@@ -1,66 +1,68 @@
 package com.ironsword.gregtechmodernfoodoption.common.data.material;
 
 import com.gregtechceu.gtceu.GTCEu;
+import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
+import com.gregtechceu.gtceu.common.data.materials.FirstDegreeMaterials;
+import com.mojang.datafixers.util.Pair;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@FieldDefaults(level = AccessLevel.PUBLIC, makeFinal = true)
 public class GTMFOMaterials {
 
-    static Material COFFEE_GROUNDS = new Material.Builder(GTCEu.id("coffee_grounds"))
-            .color(0x1a1612)
-            .iconSet(MaterialIconSet.DULL)
-            .dust()
-            .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES)
-            .ignoredTagPrefixes(without(TagPrefix.dust))
-            .buildAndRegister();
+    public static final Map<String, Pair<String,String>> LANG_MAP = new HashMap<>();
 
-    //coffee
-//    static Material COFFEE_ROASTED = coffee("coffee_roasted",0x1a1612);
-//    static Material COFFEE_GRADED = coffee("coffee_graded",0x635c55);
-//    static Material COFFEE_HULLED = coffee("coffee_hulled",0x7d4b16);
-//    static Material COFFEE_DRIED = coffee("coffee_dried",0x8c6842);
-//    static Material COFFEE_WET = coffee("coffee_wet",0x756452);
-//    static Material COFFEE_BASIC = coffeeUnsorted("coffee_basic",0x3b220d);
+//    static Material COFFEE_GROUNDS = new Material.Builder(GTCEu.id("coffee_grounds"))
+//            .color(0x1a1612)
+//            .iconSet(MaterialIconSet.DULL)
+//            .dust()
+//            .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES)
+//            .ignoredTagPrefixes(without(TagPrefix.dust))
+//            .buildAndRegister();
 
+//    static Material FAT = new Material.Builder(GTCEu.id("fat"))
+//            .color(0xFFF200)
+//            .iconSet(GTMFOMaterialIconSets.ORGANIC)
+//            .ingot()
+//            .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES)
+//            .ignoredTagPrefixes(without(TagPrefix.ingot))
+//            .buildAndRegister();
 
-    static Material FAT = new Material.Builder(GTCEu.id("fat"))
-            .color(0xFFF200)
-            .iconSet(GTMFOMaterialIconSets.ORGANIC)
-            .ingot()
-            .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES)
-            .ignoredTagPrefixes(without(TagPrefix.ingot))
-            .buildAndRegister();
-
-//    private static Material coffee(String id,int color){
-//        return new Material.Builder(GTCEu.id(id))
-//                .color(color)
-//                .iconSet(GTMFOMaterialIconSets.OLD)
-//                .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES,GTMFOMaterialFlags.COFFEE)
-//                .buildAndRegister();
-//    }
-//
-//    private static Material coffeeUnsorted(String id,int color){
-//        return new Material.Builder(GTCEu.id(id))
-//                .color(color)
-//                .iconSet(GTMFOMaterialIconSets.OLD)
-//                .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES,GTMFOMaterialFlags.COFFEE,GTMFOMaterialFlags.COFFEE_UNSORTED)
-//                .buildAndRegister();
-//    }
+    public static Material ZEST = simpleDust("zest",0xd8ff4a,"Zest", "碎橙皮");
 
     private static TagPrefix[] without(TagPrefix tagPrefix){
         return TagPrefix.values().stream().filter(prefix->!prefix.equals(tagPrefix)).toArray(TagPrefix[]::new);
     }
+//
+//    private static TagPrefix[] exclude(TagPrefix... tagPrefixes){
+//        var prefixes = List.of(tagPrefixes);
+//        return TagPrefix.values().stream().filter(prefix->!prefixes.contains(prefix)).toArray(TagPrefix[]::new);
+//    }
 
-    private static TagPrefix[] exclude(TagPrefix... tagPrefixes){
-        var prefixes = List.of(tagPrefixes);
-        return TagPrefix.values().stream().filter(prefix->!prefixes.contains(prefix)).toArray(TagPrefix[]::new);
+    static void addLang(String id,String enLang,String cnLang){
+        LANG_MAP.put("material.gtceu."+id,Pair.of(enLang,cnLang));
+    }
+
+//    static void add(String key,String enLang,String cnLang){
+//        LANG_MAP.put(key,Pair.of(enLang,cnLang));
+//    }
+
+    private static Material simpleDust(String id,int color,String enLang,String cnLang){
+        addLang(id,enLang,cnLang);
+        return new Material.Builder(GTCEu.id(id)).color(color).dust().iconSet(MaterialIconSet.DULL).flags(MaterialFlags.DISABLE_MATERIAL_RECIPES).ignoredTagPrefixes(TagPrefix.dustSmall,TagPrefix.dustTiny).buildAndRegister();
+    }
+
+    private static Material dust(String id,int color,String enLang,String cnLang){
+        addLang(id,enLang,cnLang);
+        return new Material.Builder(GTCEu.id(id)).color(color).dust().iconSet(MaterialIconSet.DULL).buildAndRegister();
     }
 
     public static void init(){
