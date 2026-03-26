@@ -1,0 +1,46 @@
+//food_italian
+BRUSCHETTA             = item("bruschetta"             ,"Bruschetta"             ,"意式烤面包片"      ,"food_italian/bruschetta"             );
+CAPONATA               = item("caponata"               ,"Caponata"               ,"意式酸甜茄子"      ,"food_italian/caponata"               );
+CARBONARA              = item("carbonara"              ,"Carbonara"              ,"培根蛋酱意面"      ,"food_italian/carbonara"              );
+FETTUCCINE_ALFREDO     = item("fettuccine_alfredo"     ,"Fettuccine Alfredo"     ,"阿尔弗雷多芝士宽面","food_italian/fettuccine_alfredo"     );
+CARCIOFI_ALLA_ROMANA   = item("carciofi_alla_romana"   ,"Carciofi alla Romana"   ,"罗马风味烤洋蓟"    ,"food_italian/carciofi_alla_romana"   );
+PARMIGIANA             = item("parmigiana"             ,"Parmigiana"             ,"意式焗烤千层茄子"  ,"food_italian/parmigiana"             );
+PASTA_E_FAGIOLI        = item("pasta_e_fagioli"        ,"Pasta e fagioli"        ,"意面豆汤"          ,"food_italian/pasta_e_fagioli"        );
+PASTA_ALLA_NORMA       = item("pasta_alla_norma"       ,"Pasta alla Norma"       ,"诺玛红酱茄子通心粉","food_italian/pasta_alla_norma"       );
+PASTA_AL_POMODORO      = item("pasta_al_pomodoro"      ,"Pasta al pomodoro"      ,"番茄意面"          ,"food_italian/pasta_al_pomodoro"      );
+PASTA_ALL_AMOGUS       = item("pasta_all_amogus"       ,"Pasta all'Amogus"       ,"内鬼意面"          ,"food_italian/pasta_all_amogus"       );
+POLENTA                = item("polenta"                ,"Polenta"                ,"意式玉米糊"        ,"food_italian/polenta"                );
+PORCHETTA              = item("porchetta"              ,"Porchetta"              ,"意式脆皮烤五花肉"  ,"food_italian/porchetta"              );
+PORCHETTA_SLICE        = item("porchetta_slice"        ,"Porchetta Slice"        ,"意式脆皮烤五花肉片","food_italian/porchetta_slice"        );
+RAFANATA               = item("rafanata"               ,"Rafanata"               ,"意式辣根蛋饼"      ,"food_italian/rafanata"               );
+RISOTTO                = item("risotto"                ,"Risotto"                ,"意式烩饭"          ,"food_italian/risotto"                );
+SPAGHETTI_ALLASSASSINA = item("spaghetti_all_assassina","Spaghetti all'assassina","刺客意面"          ,"food_italian/spaghetti_all_assassina");
+TAGLIATELLE_AL_RAGU    = item("tagliatelle_al_ragu"    ,"Tagliatelle al ragu"    ,"意式番茄肉酱面"    ,"food_italian/tagliatelle_al_ragu"    );
+TORTELLINI_IN_BRODO    = item("tortellini_in_brodo"    ,"Tortellini in brodo"    ,"意式肉汤馄饨"      ,"food_italian/tortellini_in_brodo"    );
+VITELLO_TONNATO        = item("vitello_tonnato"        ,"Vitello Tonnato"        ,"意式鱼香小牛肉"    ,"food_italian/vitello_tonnato"        );
+
+//pasta
+DITALINI          = item("ditalini"         ,"Ditalini"         ,"意式手指面"    ,"pasta/ditalini"         );
+DITALINI_RAW      = item("ditalini_raw"     ,"Raw Ditalini"     ,"生意式手指面"  ,"pasta/ditalini_raw"     );
+DITALINI_DRIED    = item("ditalini_dried"   ,"Dried Ditalini"   ,"干意式手指面"  ,"pasta/ditalini_dried"   );
+RIGATONI          = item("rigatoni"         ,"Rigatoni"         ,"意式粗通心粉"  ,"pasta/rigatoni"         );
+RIGATONI_RAW      = item("rigatoni_raw"     ,"Raw Rigatoni"     ,"生意式粗通心粉","pasta/rigatoni_raw"     );
+RIGATONI_DRIED    = item("rigatoni_dried"   ,"Dried Rigatoni"   ,"干意式粗通心粉","pasta/rigatoni_dried"   );
+SPAGHETTI         = item("spaghetti"        ,"Spaghetti"        ,"意式直面"      ,"pasta/spaghetti"        );
+SPAGHETTI_RAW     = item("spaghetti_raw"    ,"Raw Spaghetti"    ,"生意式直面"    ,"pasta/spaghetti_raw"    );
+SPAGHETTI_DRIED   = item("spaghetti_dried"  ,"Dried Spaghetti"  ,"干意式直面"    ,"pasta/spaghetti_dried"  );
+TAGLIATELLE       = item("tagliatelle"      ,"Tagliatelle"      ,"意式干面"      ,"pasta/tagliatelle"      );
+TAGLIATELLE_RAW   = item("tagliatelle_raw"  ,"Raw Tagliatelle"  ,"生意式干面"    ,"pasta/tagliatelle_raw"  );
+TAGLIATELLE_DRIED = item("tagliatelle_dried","Dried Tagliatelle","干意式干面"    ,"pasta/tagliatelle_dried");
+TORTELLINI        = item("tortellini"       ,"Tortellini"       ,"意式馄饨"      ,"pasta/tortellini"       );
+LASAGNA_RAW               = item("lasagna_raw"              ,"Raw Lasagna"                              ,"生意式千层面"                      ,"pasta/lasagna_raw"              );
+LASAGNA_DRIED             = item("lasagna_dried"            ,"Dried Lasagna"                            ,"干意式千层面"                      ,"pasta/lasagna_dried"            );
+LASAGNA_CHUM              = item("lasagna_chum"             ,"Chum Lasagna"                             ,"海霸意式千层面"                    ,"pasta/lasagna_chum"             );
+LASAGNA_CHUM_RAW          = item("lasagna_chum_raw"         ,"Unbaked Chum Lasagna in Baking Tray"      ,"装有未烘烤海霸意式千层面的烤盘"    ,"pasta/lasagna_chum_raw"         );
+LASAGNA_CHUM_COOKED       = item("lasagna_chum_cooked"      ,"Baked Chum Lasagna in Baking Tray"        ,"装有海霸意式千层面的烤盘"          ,"pasta/lasagna_chum_cooked"      );
+LASAGNA_NAPOLETANA        = item("lasagna_napoletana"       ,"Lasagna Napoletana"                       ,"那不勒斯风味千层面"                ,"pasta/lasagna_napoletana"       );
+LASAGNA_NAPOLETANA_RAW    = item("lasagna_napoletana_raw"   ,"Unbaked Napoletana Lasagna in Baking Tray","装有未烘烤那不勒斯风味千层面的烤盘","pasta/lasagna_napoletana_raw"   );
+LASAGNA_NAPOLETANA_COOKED = item("lasagna_napoletana_cooked","Baked Napoletana Lasagna in Baking Tray"  ,"装有那不勒斯风味千层面的烤盘"      ,"pasta/lasagna_napoletana_cooked");
+LASAGNA_PESTO             = item("lasagna_pesto"            ,"Lasagna al pesto"                         ,"青酱千层面"                        ,"pasta/lasagna_pesto"            );
+LASAGNA_PESTO_RAW         = item("lasagna_pesto_raw"        ,"Unbaked Pesto Lasagna in Baking Tray"     ,"装有未烘烤青酱千层面的烤盘"        ,"pasta/lasagna_pesto_raw"        );
+LASAGNA_PESTO_COOKED      = item("lasagna_pesto_cooked"     ,"Baked Pesto Lasagna in Baking Tray"       ,"装有青酱千层面的烤盘"              ,"pasta/lasagna_pesto_cooked"     );

@@ -34,9 +34,9 @@ public class GTMFOItems {
         return item -> item.attachComponents(components);
     }
 
-    private static ItemEntry<Item> item(String id){
-        return REGISTRATE.item(id,Item::new).defaultLang().defaultModel().register();
-    }
+//    private static ItemEntry<Item> item(String id){
+//        return REGISTRATE.item(id,Item::new).defaultLang().defaultModel().register();
+//    }
 
     private static ItemEntry<Item> item(String id,String path){
         return REGISTRATE.item(id,Item::new).defaultLang()
@@ -55,9 +55,20 @@ public class GTMFOItems {
                 .register();
     }
 
-    private static ItemEntry<Item> item(String id,  String enLang, String cnLang, String path){
+    private static ItemEntry<Item> item(String id, String enLang, String cnLang, String path){
         return REGISTRATE.item(id,Item::new)
                 .lang(enLang)
+                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
+                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .model((ctx,prov)->
+                        prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
+                .register();
+    }
+
+    private static ItemEntry<Item> foodItem(String id, String enLang, String cnLang, String path, FoodProperties foodProperties){
+        return REGISTRATE.item(id,Item::new)
+                .lang(enLang)
+                .properties(p->p.food(foodProperties))
                 .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
                         prov.add(ctx.get().getDescriptionId(),cnLang))
                 .model((ctx,prov)->
@@ -100,9 +111,10 @@ public class GTMFOItems {
     public static final ItemEntry<Item> BAGUETTE_PRESLICED   = item("baguette_presliced",  "Pre-Sliced Baguette", "切好的法棍面包",  "bread/baguette_presliced");
 
     //burger
+    public static final ItemEntry<Item> BURGER_BACON  = item("burger_bacon" ,"Bacon Burger" ,"培根汉堡","burger/bacon" );
     public static final ItemEntry<Item> BURGER_CHEESE = item("burger_cheese","Cheese Burger","芝士汉堡","burger/cheese");
-    public static final ItemEntry<Item> BURGER_CHUM   = item("burger_chum",  "Chum Burger",  "海霸堡",  "burger/chum");
-    public static final ItemEntry<Item> BURGER_MEAT   = item("burger_meat",  "Meat Burger",  "牛肉汉堡","burger/meat");
+    public static final ItemEntry<Item> BURGER_CHUM   = item("burger_chum"  ,"Chum Burger"  ,"海霸堡"  ,"burger/chum"  );
+    public static final ItemEntry<Item> BURGER_STEAK  = item("burger_steak" ,"Steak Burger" ,"牛肉汉堡","burger/steak" );
     public static final ItemEntry<Item> BURGER_VEGGIE = item("burger_veggie","Veggie Burger","蔬菜汉堡","burger/veggie");
 
     //caplet
@@ -218,6 +230,7 @@ public class GTMFOItems {
     //drink
     public static final ItemEntry<Item> ANTAF            = item("antaf"           ,"Antaf™"         ,"Antaf™"     ,"drink/antaf"           );
     public static final ItemEntry<Item> BEER             = item("beer"            ,"Beer"            ,"啤酒"        ,"drink/beer"            );
+    public static final ItemEntry<Item> COAC             = item("coac"            ,"Coac"            ,"乐可"        ,"drink/coac"            );
     public static final ItemEntry<Item> ETIRPS           = item("etirps"          ,"Etirps™"        ,"碧雪™"      ,"drink/etirps"          );
     public static final ItemEntry<Item> ETIRPS_CRANBERRY = item("etirps_cranberry","Etirps Cranberry","蔓越莓味碧雪","drink/etirps_cranberry");
     public static final ItemEntry<Item> JUICE_APPLE      = item("juice_apple"     ,"Apple Juice"     ,"苹果汁"      ,"drink/juice_apple"     );
@@ -226,6 +239,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> MINERAL_WATER    = item("mineral_water"   ,"Mineral Water"   ,"矿泉水"      ,"drink/mineral_water"   );
     public static final ItemEntry<Item> NILK             = item("nilk"            ,"Nilk"            ,"硅岩风味乳"  ,"drink/nilk"            );
     public static final ItemEntry<Item> RED_WINE         = item("red_wine"        ,"Red Wine"        ,"红葡萄酒"    ,"drink/red_wine"        );
+    public static final ItemEntry<Item> SEPIP            = item("sepip"           ,"Sepip"           ,"事百"        ,"drink/sepip"           );
     public static final ItemEntry<Item> SPARKLING_WATER  = item("sparkling_water" ,"Sparkling Water" ,"气泡水"      ,"drink/sparkling_water" );
     public static final ItemEntry<Item> VODKA            = item("vodka"           ,"Vodka"           ,"伏特加"      ,"drink/vodka"           );
     public static final ItemEntry<Item> WHITE_WINE       = item("white_wine"      ,"White Wine"      ,"白葡萄酒"    ,"drink/white_wine"      );
@@ -332,15 +346,19 @@ public class GTMFOItems {
     public static final ItemEntry<Item> LASAGNA_PESTO_COOKED      = item("lasagna_pesto_cooked"     ,"Baked Pesto Lasagna in Baking Tray"       ,"装有青酱千层面的烤盘"              ,"pasta/lasagna_pesto_cooked"     );
 
     //pizza
-    public static final ItemEntry<Item> PIZZA_CHEESE         = item("pizza_cheese"        ,"Cheese Pizza"                ,"芝士披萨"      ,"pizza/cheese"        );
-    public static final ItemEntry<Item> PIZZA_CHEESE_RAW     = item("pizza_cheese_raw"    ,"Raw Cheese Pizza"            ,"生芝士披萨"    ,"pizza/cheese_raw"    );
-    public static final ItemEntry<Item> PIZZA_VEGGIE         = item("pizza_veggie"        ,"Olive and Mushroom Pizza"    ,"橄榄蘑菇披萨"  ,"pizza/veggie"        );
-    public static final ItemEntry<Item> PIZZA_VEGGIE_RAW     = item("pizza_veggie_raw"    ,"Raw Olive and Mushroom Pizza","生橄榄蘑菇披萨","pizza/veggie_raw"    );
-    public static final ItemEntry<Item> PIZZA_MINCE_MEAT     = item("pizza_mince_meat"    ,"Mince Meat Pizza"            ,"肉末披萨"      ,"pizza/mince_meat"    );
-    public static final ItemEntry<Item> PIZZA_MINCE_MEAT_RAW = item("pizza_mince_meat_raw","Raw Mince Meat Pizza"        ,"生肉末披萨"    ,"pizza/mince_meat_raw");
+    public static final ItemEntry<Item> PIZZA_CHEESE         = item("pizza_cheese"        ,"Cheese Pizza"                  ,"芝士披萨"      ,"pizza/cheese"      );
+    public static final ItemEntry<Item> PIZZA_CHEESE_RAW     = item("pizza_cheese_raw"    ,"Raw Cheese Pizza"              ,"生芝士披萨"    ,"pizza/cheese_raw"  );
+    public static final ItemEntry<Item> PIZZA_CHEESE_SLICE   = item("pizza_cheese_slice"  ,"Cheese Pizza Slice"            ,"芝士披萨片"    ,"pizza/cheese_slice");
+    public static final ItemEntry<Item> PIZZA_VEGGIE         = item("pizza_veggie"        ,"Olive and Mushroom Pizza"      ,"橄榄蘑菇披萨"  ,"pizza/veggie"      );
+    public static final ItemEntry<Item> PIZZA_VEGGIE_RAW     = item("pizza_veggie_raw"    ,"Raw Olive and Mushroom Pizza"  ,"生橄榄蘑菇披萨","pizza/veggie_raw"  );
+    public static final ItemEntry<Item> PIZZA_VEGGIE_SLICE   = item("pizza_veggie_slice"  ,"Olive and Mushroom Pizza Slice","橄榄蘑菇披萨片","pizza/veggie_slice");
+    public static final ItemEntry<Item> PIZZA_MEAT           = item("pizza_meat"          ,"Mince Meat Pizza"              ,"肉末披萨"      ,"pizza/meat"        );
+    public static final ItemEntry<Item> PIZZA_MEAT_RAW       = item("pizza_meat_raw"      ,"Raw Mince Meat Pizza"          ,"生肉末披萨"    ,"pizza/meat_raw"    );
+    public static final ItemEntry<Item> PIZZA_MEAT_SLICE     = item("pizza_meat_slice"    ,"Mince Meat Pizza Slice"        ,"肉末披萨片"    ,"pizza/meat_slice"  );
 
     //potato
     public static final ItemEntry<Item> POTATO_PEELED            = item("potato_peeled"           ,"Peeled Potato"            ,"去皮马铃薯"        ,"potato/peeled"           );
+    public static final ItemEntry<Item> POTATO_MASHED            = item("potato_mashed"           ,"Mashed Potato"            ,"土豆泥"            ,"potato/mashed"           );
     public static final ItemEntry<Item> POTATO_STRIP             = item("potato_strip"            ,"Potato Strip"             ,"马铃薯条"          ,"potato/strip"            );
     public static final ItemEntry<Item> POTATO_STRIP_BLANCHED    = item("potato_strip_blanched"   ,"Blanched Potato Strip"    ,"过油马铃薯条"      ,"potato/strip_blanched"   );
     public static final ItemEntry<Item> POTATO_STRIP_FRIED       = item("potato_strip_fried"      ,"Fried Potato Strip"       ,"炸马铃薯条"        ,"potato/strip_fried"      );
@@ -350,6 +368,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> POTATO_SLICE_OILY        = item("potato_slice_oily"       ,"Oily Potato Slice"        ,"油腻马铃薯片"      ,"potato/slice_oily"       );
     public static final ItemEntry<Item> POTATO_SLICE_HOT         = item("potato_slice_hot"        ,"Hot Potato Slice"         ,"热马铃薯片"        ,"potato/slice_hot"        );
     public static final ItemEntry<Item> POTATO_SLICE_REDUCED_FAT = item("potato_slice_reduced_fat","Reduced Fat Potato Chip"  ,"减脂薯片"          ,"potato/slice_reduced_fat");
+    public static final ItemEntry<Item> POTATO_SLICE_NAQUADAH    = item("potato_slice_naquadah"   ,"Naquadah Potato Slice"    ,"硅岩油炸薯片"      ,"potato/slice_naquadah"   );
     public static final ItemEntry<Item> POTATO_ON_A_STICK        = item("potato_on_a_stick"       ,"Roasted Potato on a Stick","烤马铃薯棒"        ,"potato/stick"            );
     public static final ItemEntry<Item> FRENCH_FRIES             = item("french_fries"            ,"Fish'n'Chips"             ,"炸鱼薯条"          ,"potato/french_fries"     );
     public static final ItemEntry<Item> CHIPS_BAG_PARTIALLY_FILLED = item("chips_bag_partially_filled","Partially Filled Bag of Chips","未装满的薯片袋","potato/chips_bag_partially_filled");
@@ -471,11 +490,17 @@ public class GTMFOItems {
     public static final ItemEntry<Item> HOT_RABBIT_STEW   = item("hot_rabbit_stew"  ,"Hot Rabbit Stew"  ,"热兔肉煲");
     public static final ItemEntry<Item> IV_BAG = item("iv_bag","IV Bag","静脉注射(IV)袋");
     public static final ItemEntry<Item> MARSHMALLOW = item("marshmallow","Marshmallow","棉花软糖");
+    public static final ItemEntry<Item> MINCE_MEAT        = item("mince_meat"       ,"Mince Meat"       ,"肉末"  );
+    public static final ItemEntry<Item> MINCE_MEAT_COOKED = item("mince_meat_cooked","Cooked Mince Meat","熟肉末");
+    public static final ItemEntry<Item> MEAT_INGOT        = item("meat_ingot"       ,"Meat Ingot"       ,"肉锭"  );
+    public static final ItemEntry<Item> MEAT_INGOT_COOKED = item("meat_ingot_cooked","Cooked Meat Ingot","熟肉锭");
     public static final ItemEntry<Item> MUSHY_PEAS = item("mushy_peas","Mushy Peas","豌豆糊");
     public static final ItemEntry<Item> PIE_CRUST = item("pie_crust","Pie Crust","馅饼皮");
+    public static final ItemEntry<Item> RICE_COOKED = item("rice_cooked","Cooked Rice","熟米饭");
     public static final ItemEntry<Item> ROTTEN_FISH = item("rotten_fish","Rotten Fish","臭鱼");
     public static final ItemEntry<Item> ROTTEN_MEAT = item("rotten_meat","Rotten Meat","臭肉");
     public static final ItemEntry<Item> SAUSAGE          = item("sausage"         ,"Sausage"              ,"香肠"    );
+    public static final ItemEntry<Item> SAUSAGE_RAW      = item("sausage_raw"     ,"Raw Sausage"          ,"生香肠"  );
     public static final ItemEntry<Item> SAUSAGE_ROLL     = item("sausage_roll"    ,"Sausage Roll"         ,"香肠卷"  );
     public static final ItemEntry<Item> SAUSAGE_ROLL_RAW = item("sausage_roll_raw","Uncooked Sausage Roll","生香肠卷");
     public static final ItemEntry<Item> SCRAP_MEAT = item("scrap_meat","Scrap Meat","废肉");
