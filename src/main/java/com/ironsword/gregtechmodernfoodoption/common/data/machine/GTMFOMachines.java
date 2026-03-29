@@ -2,11 +2,16 @@ package com.ironsword.gregtechmodernfoodoption.common.data.machine;
 
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils;
+import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOCreativeModeTabs;
 import com.ironsword.gregtechmodernfoodoption.common.data.recipe.GTMFORecipeTypes;
 
 import static com.ironsword.gregtechmodernfoodoption.common.registry.GTMFORegistries.REGISTRATE;
 
 public class GTMFOMachines {
+
+    static {
+        REGISTRATE.creativeModeTab(()-> GTMFOCreativeModeTabs.MAIN_TAB);
+    }
 
     public static MachineDefinition[] SLICE = GTMachineUtils.registerSimpleMachines(REGISTRATE,"slicer", GTMFORecipeTypes.SLICER_RECIPES);
     public static MachineDefinition[] CUISINE_ASSEMBLER = GTMachineUtils.registerSimpleMachines(REGISTRATE,"cuisine_assembler",GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES);
