@@ -7,7 +7,6 @@ import com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption;
 import com.ironsword.gregtechmodernfoodoption.common.block.PizzaBlock;
 import com.ironsword.gregtechmodernfoodoption.data.GTMFOProviderTypes;
 import com.tterrag.registrate.util.entry.BlockEntry;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -51,9 +50,12 @@ public class GTMFOBlocks {
                 .register();
     }
 
-    private static BlockEntry<PizzaBlock> pizza(String id, Supplier<Item> slice, String topTexturePath, String layerTexturePath){
-        return REGISTRATE.block(id, properties -> new PizzaBlock(properties,slice))
+    private static BlockEntry<PizzaBlock> pizza(String id, String topTexturePath, String layerTexturePath, String itemTexture ,String enLang, String cnLang){
+        return REGISTRATE.block(id, PizzaBlock::new)
                 .initialProperties(()->Blocks.CAKE)
+                .lang(enLang)
+                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
+                        prov.add(ctx.get().getDescriptionId(),cnLang))
                 //.addLayer(()-> RenderType::cutout)
                 .blockstate((ctx,prov)->{
                     prov.getVariantBuilder(ctx.getEntry()).forAllStates((state)->{
@@ -67,9 +69,8 @@ public class GTMFOBlocks {
                         return ConfiguredModel.builder().modelFile(model).build();
                     });
                 })
-                .item().model((ctx,prov)->{
-                    prov.withExistingParent(ctx.getName(),GregTechModernFoodOption.id("block/"+id+"_slice4"));
-                }).build().register();
+                .item().model((ctx,prov)-> prov.generated(ctx::getEntry,prov.modLoc(itemTexture))).build()
+                .register();
     }
 
 
@@ -80,9 +81,9 @@ public class GTMFOBlocks {
 
     public static final BlockEntry<Block> BISMUTH_BRONZE_CASING = createCasingBlock("bismuth_bronze_casing","Food-Safe Bismuth Bronze Casing","食品级铋青铜机器方块");
 
-    public static final BlockEntry<PizzaBlock> PIZZA_CHEESE_BLOCK = pizza("pizza_cheese_block",GTMFOItems.PIZZA_CHEESE_SLICE,"block/pizza/top_2","block/pizza/cheese");
-    public static final BlockEntry<PizzaBlock> PIZZA_MINCE_MEAT_BLOCK = pizza("pizza_mince_meat_block",GTMFOItems.PIZZA_MEAT_SLICE,"block/pizza/top_1","block/pizza/mince_meat");
-    public static final BlockEntry<PizzaBlock> PIZZA_VEGGIE_BLOCK = pizza("pizza_veggie_block",GTMFOItems.PIZZA_VEGGIE_SLICE,"block/pizza/top_2","block/pizza/veggie");
+    public static final BlockEntry<PizzaBlock> PIZZA_CHEESE = pizza("pizza_cheese","block/pizza/top_2","block/pizza/cheese","item/pizza/cheese","Cheese Pizza"            ,"芝士披萨"    );
+    public static final BlockEntry<PizzaBlock> PIZZA_MEAT   = pizza("pizza_meat"  ,"block/pizza/top_1","block/pizza/meat"  ,"item/pizza/meat"  ,"Mince Meat Pizza"        ,"肉末披萨"    );
+    public static final BlockEntry<PizzaBlock> PIZZA_VEGGIE = pizza("pizza_veggie","block/pizza/top_2","block/pizza/veggie","item/pizza/veggie","Olive and Mushroom Pizza","橄榄蘑菇披萨");
 
     public static void collectMaterialCasings(MaterialCasingCollectionEvent event){
         event.add(GTMaterials.BismuthBronze,BISMUTH_BRONZE_CASING);

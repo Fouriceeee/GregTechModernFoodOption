@@ -4,8 +4,10 @@ import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+import com.ironsword.gregtechmodernfoodoption.GTMFOConfigHolder;
 import com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption;
 import com.ironsword.gregtechmodernfoodoption.api.capability.forge.GTMFOCapability;
+import com.ironsword.gregtechmodernfoodoption.common.data.Foods;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOBlocks;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOCreativeModeTabs;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOItems;
@@ -13,7 +15,6 @@ import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMachines;
 import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMultiMachines;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOFluids;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterials;
-import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterialIconSets;
 import com.ironsword.gregtechmodernfoodoption.common.data.recipe.GTMFORecipeTypes;
 import com.ironsword.gregtechmodernfoodoption.common.registry.GTMFORegistries;
 import com.ironsword.gregtechmodernfoodoption.data.GTMFODataGen;
@@ -38,10 +39,11 @@ public class CommonProxy {
 
         GTMFOProviderTypes.init();
 
-        GTMFOMaterialIconSets.init();
+        GTMFOConfigHolder.init();
 
         GTMFOCreativeModeTabs.init();
         GTMFOBlocks.init();
+        //Foods.init();
         GTMFOItems.init();
 
         GTMFODataGen.init();

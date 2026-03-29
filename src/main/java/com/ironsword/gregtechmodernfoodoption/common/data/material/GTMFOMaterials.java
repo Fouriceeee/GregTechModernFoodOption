@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.materials.FirstDegreeMaterials;
+import com.ironsword.gregtechmodernfoodoption.GTMFOUtils;
 import com.mojang.datafixers.util.Pair;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -28,15 +29,8 @@ public class GTMFOMaterials {
 //            .ignoredTagPrefixes(without(TagPrefix.dust))
 //            .buildAndRegister();
 
-//    static Material FAT = new Material.Builder(GTCEu.id("fat"))
-//            .color(0xFFF200)
-//            .iconSet(GTMFOMaterialIconSets.ORGANIC)
-//            .ingot()
-//            .flags(MaterialFlags.DISABLE_MATERIAL_RECIPES)
-//            .ignoredTagPrefixes(without(TagPrefix.ingot))
-//            .buildAndRegister();
-
     public static Material ZEST = simpleDust("zest",0xd8ff4a,"Zest", "碎橙皮");
+    public static Material SodiumCyanide = dust("sodium_cyanide", GTMFOUtils.averageRGB(2,0x6e6a5e,0x7c80ff),"Sodium Cyanide","氰化钠");
 
     private static TagPrefix[] without(TagPrefix tagPrefix){
         return TagPrefix.values().stream().filter(prefix->!prefix.equals(tagPrefix)).toArray(TagPrefix[]::new);

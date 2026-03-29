@@ -12,6 +12,7 @@ import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOBlocks;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOItems;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOFluids;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterials;
+import com.ironsword.gregtechmodernfoodoption.common.data.recipe.GTMFORecipeTypes;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -26,93 +27,95 @@ public class CoreChain {
         caneSyrupChain(provider);
         generalChemicals(provider);
         sliceBlades(provider);
+        liquidFoodExtracts(provider);
+        slicingRecipes(provider);
     }
 
     public static void zestChain(Consumer<FinishedRecipe> provider){
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("lemon")
-                .inputItems(GTMFOItems.LEMON.asStack())
-                .outputItems(TagPrefix.dust,GTMFOMaterials.ZEST)
-                .outputFluids(GTMFOFluids.LEMON_EXTRACT.getFluid(100))
-                .EUt(5)
-                .duration(100)
-                .save(provider);
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("lime")
-                .inputItems(GTMFOItems.LIME.asStack())
-                .outputItems(TagPrefix.dust,GTMFOMaterials.ZEST)
-                .outputFluids(GTMFOFluids.LIME_EXTRACT.getFluid(100))
-                .EUt(5)
-                .duration(100)
-                .save(provider);
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("orange")
-                .inputItems(GTMFOItems.ORANGE.asStack())
-                .outputItems(TagPrefix.dust,GTMFOMaterials.ZEST)
-                .outputFluids(GTMFOFluids.ORANGE_EXTRACT.getFluid(100))
-                .EUt(5)
-                .duration(100)
-                .save(provider);
-
-        VanillaRecipeHelper.addShapelessRecipe(
-                provider,
-                GregTechModernFoodOption.id("zest_from_lemon"),
-                ChemicalHelper.get(TagPrefix.dust,GTMFOMaterials.ZEST),
-                GTMFOItems.LEMON.asStack(),
-                GTMFOItems.LEMON.asStack(),
-                GTMFOItems.LEMON.asStack(),
-                GTMFOItems.LEMON.asStack());
-        VanillaRecipeHelper.addShapelessRecipe(
-                provider,
-                GregTechModernFoodOption.id("zest_from_lime"),
-                ChemicalHelper.get(TagPrefix.dust,GTMFOMaterials.ZEST),
-                GTMFOItems.LIME.asStack(),
-                GTMFOItems.LIME.asStack(),
-                GTMFOItems.LIME.asStack(),
-                GTMFOItems.LIME.asStack());
-        VanillaRecipeHelper.addShapelessRecipe(
-                provider,
-                GregTechModernFoodOption.id("zest_from_orange"),
-                ChemicalHelper.get(TagPrefix.dust,GTMFOMaterials.ZEST),
-                GTMFOItems.ORANGE.asStack(),
-                GTMFOItems.ORANGE.asStack(),
-                GTMFOItems.ORANGE.asStack(),
-                GTMFOItems.ORANGE.asStack());
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("lemon")
+//                .inputItems(GTMFOItems.LEMON.asStack())
+//                .outputItems(TagPrefix.dust,GTMFOMaterials.ZEST)
+//                .outputFluids(GTMFOFluids.LEMON_EXTRACT.getFluid(100))
+//                .EUt(5)
+//                .duration(100)
+//                .save(provider);
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("lime")
+//                .inputItems(GTMFOItems.LIME.asStack())
+//                .outputItems(TagPrefix.dust,GTMFOMaterials.ZEST)
+//                .outputFluids(GTMFOFluids.LIME_EXTRACT.getFluid(100))
+//                .EUt(5)
+//                .duration(100)
+//                .save(provider);
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("orange")
+//                .inputItems(GTMFOItems.ORANGE.asStack())
+//                .outputItems(TagPrefix.dust,GTMFOMaterials.ZEST)
+//                .outputFluids(GTMFOFluids.ORANGE_EXTRACT.getFluid(100))
+//                .EUt(5)
+//                .duration(100)
+//                .save(provider);
+//
+//        VanillaRecipeHelper.addShapelessRecipe(
+//                provider,
+//                GregTechModernFoodOption.id("zest_from_lemon"),
+//                ChemicalHelper.get(TagPrefix.dust,GTMFOMaterials.ZEST),
+//                GTMFOItems.LEMON.asStack(),
+//                GTMFOItems.LEMON.asStack(),
+//                GTMFOItems.LEMON.asStack(),
+//                GTMFOItems.LEMON.asStack());
+//        VanillaRecipeHelper.addShapelessRecipe(
+//                provider,
+//                GregTechModernFoodOption.id("zest_from_lime"),
+//                ChemicalHelper.get(TagPrefix.dust,GTMFOMaterials.ZEST),
+//                GTMFOItems.LIME.asStack(),
+//                GTMFOItems.LIME.asStack(),
+//                GTMFOItems.LIME.asStack(),
+//                GTMFOItems.LIME.asStack());
+//        VanillaRecipeHelper.addShapelessRecipe(
+//                provider,
+//                GregTechModernFoodOption.id("zest_from_orange"),
+//                ChemicalHelper.get(TagPrefix.dust,GTMFOMaterials.ZEST),
+//                GTMFOItems.ORANGE.asStack(),
+//                GTMFOItems.ORANGE.asStack(),
+//                GTMFOItems.ORANGE.asStack(),
+//                GTMFOItems.ORANGE.asStack());
     }
 
     public static void caneSyrupChain(Consumer<FinishedRecipe> provider){
-        GTRecipeTypes.MIXER_RECIPES.recipeBuilder("cane_syrup_unheated")
-                .inputItems(new ItemStack(Items.SUGAR,24))
-                .inputFluids(new FluidStack(Fluids.WATER,2000))
-                .circuitMeta(2)
-                .outputFluids(GTMFOFluids.CANE_SYRUP_UNHEATED.getFluid(2000))
-                .EUt(80)
-                .duration(260)
-                .save(provider);
-
-        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("cane_syrup")
-                .inputFluids(GTMFOFluids.CANE_SYRUP_UNHEATED.getFluid(1000))
-                .circuitMeta(2)
-                .outputFluids(GTMFOFluids.CANE_SYRUP.getFluid(1000))
-                .EUt(120)
-                .duration(80)
-                .save(provider);
+//        GTRecipeTypes.MIXER_RECIPES.recipeBuilder("cane_syrup_unheated")
+//                .inputItems(new ItemStack(Items.SUGAR,24))
+//                .inputFluids(new FluidStack(Fluids.WATER,2000))
+//                .circuitMeta(2)
+//                .outputFluids(GTMFOFluids.CANE_SYRUP_UNHEATED.getFluid(2000))
+//                .EUt(80)
+//                .duration(260)
+//                .save(provider);
+//
+//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("cane_syrup")
+//                .inputFluids(GTMFOFluids.CANE_SYRUP_UNHEATED.getFluid(1000))
+//                .circuitMeta(2)
+//                .outputFluids(GTMFOFluids.CANE_SYRUP.getFluid(1000))
+//                .EUt(120)
+//                .duration(80)
+//                .save(provider);
     }
 
     public static void generalChemicals(Consumer<FinishedRecipe> provider){
-        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("isopropyl_chloride")
-                .inputFluids(
-                        GTMaterials.HydrochloricAcid.getFluid(1000),
-                        GTMaterials.Propene.getFluid(1000))
-                .outputFluids(GTMFOFluids.ISOPROPYL_CHLORIDE.getFluid(1000))
-                .EUt(30)
-                .duration(200)
-                .save(provider);
-
-        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("chloroauric_acid")
-                .inputItems(ChemicalHelper.get(TagPrefix.dust,GTMaterials.Gold,2))
-                .inputFluids(GTMaterials.HydrochloricAcid.getFluid(8000))
-                .outputFluids(GTMFOFluids.CHLOROAURIC_ACID.getFluid(2000),GTMaterials.Hydrogen.getFluid(3000))
-                .EUt(480)
-                .duration(300)
-                .save(provider);
+//        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("isopropyl_chloride")
+//                .inputFluids(
+//                        GTMaterials.HydrochloricAcid.getFluid(1000),
+//                        GTMaterials.Propene.getFluid(1000))
+//                .outputFluids(GTMFOFluids.ISOPROPYL_CHLORIDE.getFluid(1000))
+//                .EUt(30)
+//                .duration(200)
+//                .save(provider);
+//
+//        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("chloroauric_acid")
+//                .inputItems(ChemicalHelper.get(TagPrefix.dust,GTMaterials.Gold,2))
+//                .inputFluids(GTMaterials.HydrochloricAcid.getFluid(8000))
+//                .outputFluids(GTMFOFluids.CHLOROAURIC_ACID.getFluid(2000),GTMaterials.Hydrogen.getFluid(3000))
+//                .EUt(480)
+//                .duration(300)
+//                .save(provider);
     }
 
     public static void sliceBlades(Consumer<FinishedRecipe> provider){
@@ -137,66 +140,145 @@ public class CoreChain {
     }
 
     public static void liquidFoodExtracts(Consumer<FinishedRecipe> provider){
-        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil")
-                .inputFluids(GTMaterials.SeedOil.getFluid(16))
-                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
-                .circuitMeta(1)
-                .EUt(12).duration(10).save(provider);
-
-        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil_hot_2")
-                .inputFluids(GTMaterials.SeedOil.getFluid(16))
-                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
-                .circuitMeta(2)
-                .EUt(60).duration(25).save(provider);
-
-        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil_hot_1")
-                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
-                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
-                .circuitMeta(1)
-                .EUt(18).duration(15).save(provider);
-
+//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil")
+//                .inputFluids(GTMaterials.SeedOil.getFluid(16))
+//                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
+//                .circuitMeta(1)
+//                .EUt(12).duration(10).save(provider);
+//
+//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil_hot_2")
+//                .inputFluids(GTMaterials.SeedOil.getFluid(16))
+//                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
+//                .circuitMeta(2)
+//                .EUt(60).duration(25).save(provider);
+//
+//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil_hot_1")
+//                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
+//                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
+//                .circuitMeta(1)
+//                .EUt(18).duration(15).save(provider);
+//
         GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("tomato_sauce")
                 .inputItems(GTMFOItems.TOMATO_SLICE.asStack())
                 .outputFluids(GTMFOFluids.TOMATO_SAUCE.getFluid(100))
                 .EUt(2).duration(10).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("olive_oil")
+//                .inputItems(GTMFOItems.OLIVE.asStack())
+//                .outputFluids(GTMFOFluids.OLIVE_OIL.getFluid(100))
+//                .EUt(27).duration(60).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("apple_extract")
+//                .inputItems(GTMFOItems.APPLE_SLICE.asStack())
+//                .outputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
+//                .EUt(2).duration(10).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("melon_extract")
+//                .inputItems(Items.MELON_SLICE.getDefaultInstance())
+//                .outputFluids(GTMFOFluids.MELON_EXTRACT.getFluid(100))
+//                .EUt(2).duration(10).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("cranberry_extract")
+//                .inputItems(GTMFOItems.CRANBERRY.asStack())
+//                .outputFluids(GTMFOFluids.CRANBERRY_EXTRACT.getFluid(25))
+//                .circuitMeta(1)
+//                .EUt(2).duration(10).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("grape_extract")
+//                .inputItems(GTMFOItems.GRAPES.asStack())
+//                .outputFluids(GTMFOFluids.GRAPE_EXTRACT.getFluid(25))
+//                .circuitMeta(1)
+//                .EUt(2).duration(10).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("grape_extract_2")
+//                .inputItems(GTMFOItems.WHITE_GRAPES.asStack())
+//                .outputFluids(GTMFOFluids.GRAPE_EXTRACT.getFluid(25))
+//                .circuitMeta(1)
+//                .EUt(2).duration(10).save(provider);
+//
+//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("apricot_extract")
+//                .inputItems(GTMFOItems.APRICOT.asStack())
+//                .outputFluids(GTMFOFluids.APRICOT_EXTRACT.getFluid(100))
+//                .circuitMeta(1)
+//                .EUt(8).duration(40).save(provider);
+//
+//        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("apple_extract")
+//                .inputItems(GTMFOItems.JUICE_APPLE.asStack())
+//                .outputItems(Items.GLASS_BOTTLE)
+//                .outputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
+//                .EUt(12).duration(30).save(provider);
+//
+//        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("apple_juice")
+//                .inputItems(Items.GLASS_BOTTLE)
+//                .inputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
+//                .outputItems(GTMFOItems.JUICE_APPLE.asStack())
+//                .EUt(12).duration(30).save(provider);
+//
+//        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("orange_extract")
+//                .inputItems(GTMFOItems.JUICE_ORANGE.asStack())
+//                .outputItems(Items.GLASS_BOTTLE)
+//                .outputFluids(GTMFOFluids.ORANGE_EXTRACT.getFluid(100))
+//                .EUt(12).duration(30).save(provider);
+//
+//        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("orange_juice")
+//                .inputItems(Items.GLASS_BOTTLE)
+//                .inputFluids(GTMFOFluids.ORANGE_EXTRACT.getFluid(100))
+//                .outputItems(GTMFOItems.JUICE_ORANGE.asStack())
+//                .EUt(12).duration(30).save(provider);
 
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("olive_oil")
-                .inputItems(GTMFOItems.OLIVE.asStack())
-                .outputFluids(GTMFOFluids.OLIVE_OIL.getFluid(100))
-                .EUt(27).duration(60).save(provider);
-
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("apple_extract")
-                .inputItems(GTMFOItems.APPLE_SLICE.asStack())
-                .outputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
-                .EUt(2).duration(10).save(provider);
-
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("melon_extract")
-                .inputItems(Items.MELON_SLICE.getDefaultInstance())
-                .outputFluids(GTMFOFluids.MELON_EXTRACT.getFluid(100))
-                .EUt(2).duration(10).save(provider);
-
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("cranberry_extract")
-                .inputItems(GTMFOItems.CRANBERRY.asStack())
-                .outputFluids(GTMFOFluids.CRANBERRY_EXTRACT.getFluid(25))
-                .circuitMeta(1)
-                .EUt(2).duration(10).save(provider);
-
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("grape_extract")
-                .inputItems(GTMFOItems.GRAPES.asStack())
-                .outputFluids(GTMFOFluids.GRAPE_EXTRACT.getFluid(25))
-                .circuitMeta(1)
-                .EUt(2).duration(10).save(provider);
-
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("grape_extract_2")
-                .inputItems(GTMFOItems.WHITE_GRAPES.asStack())
-                .outputFluids(GTMFOFluids.GRAPE_EXTRACT.getFluid(25))
-                .circuitMeta(1)
-                .EUt(2).duration(10).save(provider);
-
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("apricot_extract")
-                .inputItems(GTMFOItems.APRICOT.asStack())
-                .outputFluids(GTMFOFluids.APRICOT_EXTRACT.getFluid(100))
-                .circuitMeta(1)
-                .EUt(8).duration(40).save(provider);
+        //this is a temporary recipe
+//        GTRecipeTypes.DISTILLATION_RECIPES.recipeBuilder("apple_extract")
+//                .inputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(1000))
+//                .outputFluids(GTMaterials.Biomass.getFluid(200))
+//                .outputFluids(GTMaterials.AceticAcid.getFluid(10))
+//                .outputFluids(GTMaterials.Water.getFluid(1000))
+//                .outputFluids(GTMaterials.HydrogenCyanide.getFluid(10))
+//                .outputItems(TagPrefix.dust,GTMaterials.Sugar)
+//                .save(provider);
+//
+//        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder("sodium_cyanide")
+//                .inputFluids(GTMaterials.HydrogenCyanide.getFluid(1000))
+//                .inputItems(TagPrefix.dust,GTMaterials.SodiumHydroxide,3)
+//                .outputItems(TagPrefix.dust,GTMFOMaterials.SodiumCyanide,3)
+//                .outputFluids(GTMaterials.Water.getFluid(1000))
+//                .EUt(30).duration(80).save(provider);
     }
+
+    private static void slicingRecipes(Consumer<FinishedRecipe> provider){
+
+
+        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder("olive_slice")
+                .inputItems(GTMFOItems.OLIVE)
+                .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
+                .outputItems(GTMFOItems.OLIVE_SLICE,8)
+                .EUt(18).duration(30).save(provider);
+
+        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder("mushroom_slice")
+                .inputItems(Items.BROWN_MUSHROOM)
+                .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
+                .outputItems(GTMFOItems.MUSHROOM_SLICE,8)
+                .EUt(18).duration(30).save(provider);
+
+        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder("tomato_slice")
+                .inputItems(GTMFOItems.TOMATO)
+                .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
+                .outputItems(GTMFOItems.TOMATO_SLICE,8)
+                .EUt(18).duration(30).save(provider);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

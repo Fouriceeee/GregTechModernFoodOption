@@ -2,6 +2,7 @@ package com.ironsword.gregtechmodernfoodoption.api.item.component;
 
 import com.google.common.collect.Lists;
 import com.gregtechceu.gtceu.api.item.component.FoodStats;
+import com.ironsword.gregtechmodernfoodoption.GTMFOConfigHolder;
 import com.ironsword.gregtechmodernfoodoption.api.capability.NutrientsTracker;
 import com.ironsword.gregtechmodernfoodoption.api.capability.forge.GTMFOCapability;
 import com.mojang.datafixers.util.Pair;
@@ -52,11 +53,13 @@ public class GTMFOFoodStats extends FoodStats {
 
     @Override
     public ItemStack finishUsingItem(ItemStack food, Level level, LivingEntity livingEntity) {
-        Player player = livingEntity instanceof Player ? (Player) livingEntity : null;
-        if (player != null){
-            final NutrientsTracker tracker = GTMFOCapability.getNutrientsTracker(player);
-            if (tracker != null){
-                nutrients.forEach(tracker::gain);
+        if (GTMFOConfigHolder.INSTANCE.devConfigs.nutrientMode){
+            Player player = livingEntity instanceof Player ? (Player) livingEntity : null;
+            if (player != null){
+                final NutrientsTracker tracker = GTMFOCapability.getNutrientsTracker(player);
+                if (tracker != null){
+                    nutrients.forEach(tracker::gain);
+                }
             }
         }
         return super.finishUsingItem(food, level, livingEntity);
@@ -128,10 +131,6 @@ public class GTMFOFoodStats extends FoodStats {
         public Builder effect(Supplier<MobEffectInstance> effectInstance, float chance){
             this.effects.add(Pair.of(effectInstance,chance));
             return this;
-        }
-
-        public Builder effect(MobEffect mobEffect, int duration, float chance){
-            return this.effect(()->new MobEffectInstance(mobEffect,duration,0),chance);
         }
 
         public Builder effect(MobEffect mobEffect, int duration, int amplifier ,  float chance){

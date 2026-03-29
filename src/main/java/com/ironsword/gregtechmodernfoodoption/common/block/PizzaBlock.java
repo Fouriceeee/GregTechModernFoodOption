@@ -37,11 +37,8 @@ public class PizzaBlock extends Block {
             Block.box(0,0,0,16,2,16)
     };
 
-    public final Supplier<Item> sliceItem;
-
-    public PizzaBlock(Properties pProperties,Supplier<Item> supplier) {
+    public PizzaBlock(Properties pProperties) {
         super(pProperties);
-        sliceItem = supplier;
         this.registerDefaultState(this.stateDefinition.any().setValue(SLICES,MAX_SLICES));
     }
 
@@ -53,31 +50,13 @@ public class PizzaBlock extends Block {
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack itemStack = pPlayer.getItemInHand(pHand);
-        int slices = pState.getValue(SLICES);
         if (pLevel.isClientSide) {
-            if (itemStack.is(sliceItem.get())){
-                return InteractionResult.FAIL;
-            }
-
             if (eat(pLevel, pPos, pState, pPlayer).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
 
             if (itemStack.isEmpty()) {
                 return InteractionResult.CONSUME;
-            }
-        }
-
-        if (itemStack.is(sliceItem.get())){
-            if (slices < 4){
-                if (!pPlayer.getAbilities().instabuild){
-                    itemStack.shrink(1);
-                }
-                pLevel.setBlock(pPos, pState.setValue(SLICES, slices+1), 3);
-                pLevel.gameEvent(pPlayer, GameEvent.BLOCK_PLACE, pPos);
-                return InteractionResult.SUCCESS;
-            }else {
-                return InteractionResult.FAIL;
             }
         }
 
