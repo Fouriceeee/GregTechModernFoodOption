@@ -19,7 +19,7 @@ public class BlockLootHandler {
 //
 //    private static NonNullConsumer<RegistrateBlockLootTables> pizzaLootTable(PizzaBlock pizza, Item slice){
 //        return table -> {
-//            table.add(pizza,
+//            table.add(pizza,table.build
 //                    );
 //        };
 //    }

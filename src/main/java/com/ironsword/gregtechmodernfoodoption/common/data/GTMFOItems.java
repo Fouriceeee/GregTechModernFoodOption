@@ -432,16 +432,15 @@ public class GTMFOItems {
     public static final ItemEntry<Item> POTATO_SLICE_REDUCED_FAT = item("potato_slice_reduced_fat","Reduced Fat Potato Chip"  ,"减脂薯片"          ,"potato/slice_reduced_fat");
     public static final ItemEntry<Item> POTATO_SLICE_NAQUADAH    = item("potato_slice_naquadah"   ,"Naquadah Potato Slice"    ,"硅岩油炸薯片"      ,"potato/slice_naquadah"   );
     public static final ItemEntry<Item> POTATO_STICK             = item("potato_stick"            ,"Potato on a Stick"        ,"马铃薯棒"          ,"potato/stick"            );
-    public static final ItemEntry<Item> POTATO_STICK_ROASTED     = item("potato_stick_roasted"    ,"Roasted Potato on a Stick","烤马铃薯棒"        ,"potato/stick_roasted"    );
-    public static final ItemEntry<Item> FRENCH_FRIES             = item("french_fries"            ,"Fish'n'Chips"             ,"炸鱼薯条"          ,"potato/french_fries"     );
-
-    public static final ItemEntry<Item> CHIPS_BAG_PARTIALLY_FILLED = item("chips_bag_partially_filled","Partially Filled Bag of Chips","未装满的薯片袋","potato/chips_bag_partially_filled");
-    public static final ItemEntry<Item> CHIPS_SYALS                = item("chips_syals"               ,"Syals"                        ,"事乐薯片"      ,"potato/chips_syals"               );
-    public static final ItemEntry<Item> CHIPS_BAG                  = item("chips_bag"                 ,"Bag O' Chips"                 ,"袋装薯片"      ,"potato/chips_bag"                 );
-    public static final ItemEntry<Item> CHIPS_KETTLE               = item("chips_kettle"              ,"Kettle Chips"                 ,"手作薯片"      ,"potato/chips_kettle"              );
-    public static final ItemEntry<Item> CHIPS_NAQUADAH             = item("chips_naquadah"            ,"Naquadah Chips"               ,"硅岩薯片"      ,"potato/chips_naquadah"            );
-    public static final ItemEntry<Item> CHIPS_REDUCED_FAT          = item("chips_reduced_fat"         ,"Bay Salmon Reduced Fat Chips" ,"湾鲑牌减脂薯片","potato/chips_reduced_fat"         );
-    public static final ItemEntry<Item> CHIPS_VINEGAR              = item("chips_vinegar"             ,"Vinegar Chips"                ,"醋味薯片"      ,"potato/chips_vinegar"             );
+    public static final ItemEntry<ExComponentItem> POTATO_STICK_ROASTED     = foodItem("potato_stick_roasted","Roasted Potato on a Stick","烤马铃薯棒","potato/stick_roasted",Foods.POTATO_STICK_ROASTED);
+    public static final ItemEntry<ExComponentItem> FRENCH_FRIES             = foodItem("french_fries"        ,"French Fries"             ,"薯条"      ,"potato/french_fries" ,Foods.FRENCH_FRIES);
+    //public static final ItemEntry<Item> CHIPS_BAG_PARTIALLY_FILLED = item("chips_bag_partially_filled","Partially Filled Bag of Chips","未装满的薯片袋","potato/chips_bag_partially_filled");
+    public static final ItemEntry<ExComponentItem> CHIPS_SYALS                = foodItem("chips_syals"               ,"Syals"                        ,"事乐薯片"      ,"potato/chips_syals"      ,Foods.CHIPS_SYALS);
+    public static final ItemEntry<ExComponentItem> CHIPS_BAG                  = foodItem("chips_bag"                 ,"Bag O' Chips"                 ,"袋装薯片"      ,"potato/chips_bag"        ,Foods.CHIPS_BAG);
+    public static final ItemEntry<ExComponentItem> CHIPS_KETTLE               = foodItem("chips_kettle"              ,"Kettle Chips"                 ,"手作薯片"      ,"potato/chips_kettle"     ,Foods.CHIPS_KETTLE);
+    public static final ItemEntry<ExComponentItem> CHIPS_NAQUADAH             = foodItem("chips_naquadah"            ,"Naquadah Chips"               ,"硅岩薯片"      ,"potato/chips_naquadah"   ,Foods.CHIPS_NAQUADAH);
+    public static final ItemEntry<ExComponentItem> CHIPS_REDUCED_FAT          = foodItem("chips_reduced_fat"         ,"Bay Salmon Reduced Fat Chips" ,"湾鲑牌减脂薯片","potato/chips_reduced_fat",Foods.CHIPS_REDUCED_FAT);
+    //public static final ItemEntry<Item> CHIPS_VINEGAR              = item("chips_vinegar"             ,"Vinegar Chips"                ,"醋味薯片"      ,"potato/chips_vinegar"             );
 
     //sandwich
 //    public static final ItemEntry<Item> SANDWICH_BACON        = item("sandwich_bacon"       ,"Bacon Sandwich"       ,"培根三明治"      ,"sandwich/bacon"       );

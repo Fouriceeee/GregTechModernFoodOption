@@ -29,7 +29,7 @@ public class GTMFOMaterials {
 //            .ignoredTagPrefixes(without(TagPrefix.dust))
 //            .buildAndRegister();
 
-    public static Material ZEST = simpleDust("zest",0xd8ff4a,"Zest", "碎橙皮");
+    public static Material Zest = simpleDust("zest",0xd8ff4a,"Zest", "碎橙皮");
     public static Material SodiumCyanide = dust("sodium_cyanide", GTMFOUtils.averageRGB(2,0x6e6a5e,0x7c80ff),"Sodium Cyanide","氰化钠");
 
     private static TagPrefix[] without(TagPrefix tagPrefix){

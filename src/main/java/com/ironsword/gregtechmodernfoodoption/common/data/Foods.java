@@ -88,6 +88,14 @@ public class Foods {
     public static final GTMFOFoodStats TOMATO_SLICE          =    food( 1    , 0     , 32    , 0     , 0.75f , 0     , 0     , 0     );
 
     //potato
+    public static final GTMFOFoodStats CHIPS_SYALS           = builder( 1    , 0.25f , 0     , 0     , 0.5f  , 0     , 0     ).effect(MobEffects.LEVITATION,300,1,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
+    public static final GTMFOFoodStats CHIPS_BAG             = builder( 2    , 0.5f  , 0     , 0     , 0.5f  , 0     , 0     ).effect(MobEffects.DIG_SPEED,600,1,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
+    public static final GTMFOFoodStats CHIPS_KETTLE          = builder( 3    , 0.5f  , 0     , 0     , 1f    , 0     , 0     ).effect(MobEffects.DIG_SPEED,900,1,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
+    public static final GTMFOFoodStats CHIPS_REDUCED_FAT     = builder( 2    , 1.5f  , 0     , 0     , 1.5f  , 0     , 0     ).eatDuration(20).effect(MobEffects.DIG_SPEED,1200,1,1f).effect(MobEffects.DIG_SPEED,1200,2,0.5f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
+    public static final GTMFOFoodStats CHIPS_NAQUADAH        = builder( 2    , 0.5f  , 0     , 0     , 1f    , 0     , 1f    ).alwaysEat().effect(MobEffects.BLINDNESS,500,0,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
+    public static final GTMFOFoodStats FRENCH_FRIES          = builder( 3    , 0     , 0     , 0     , 1f    , 0     , 0     ).eatDuration(20).effect(MobEffects.DAMAGE_BOOST,1200,1,1f).item(GTMFOItems.PAPER_BAG_USED::asStack).build();
+    public static final GTMFOFoodStats POTATO_STICK_ROASTED  = builder( 3    , 0.8f  , 0     , 0     , 1f    , 0     , 0     ).eatDuration(12).item(Items.STICK::getDefaultInstance).build();
+
 
 
     public static final GTMFOFoodStats PORCHETTA             =    food( 7    , 0.7f  , 50    , 0     , 0     , 0     , 0.5f  , 0.1f  );
@@ -98,12 +106,6 @@ public class Foods {
     public static final GTMFOFoodStats LIME                  =    food( 1    , 0.5f  , 32    , 0     , 1f    , 0     , 0     , 0     );
     public static final GTMFOFoodStats ETIRPS                = builder( 0    , 0     , 0     , 0.5f  , 0     , 0     , 0     ).drink().alwaysEat().effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).build();
     public static final GTMFOFoodStats BACON                 =    food( 2    , 0.8f  , 24    , 0     , 0     , 0     , 1f    , 0     );
-    public static final GTMFOFoodStats FRENCH_FRIES          = builder( 3    , 0     , 0     , 0     , 1f    , 0     , 0     ).eatDuration(20).effect(MobEffects.DAMAGE_BOOST,1200,1,1f).item(GTMFOItems.PAPER_BAG_USED::asStack).build();
-    public static final GTMFOFoodStats SYALS                 = builder( 1    , 0.25f , 0     , 0     , 0.5f  , 0     , 0     ).effect(MobEffects.LEVITATION,300,1,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
-    public static final GTMFOFoodStats CHIPS_BAG             = builder( 2    , 0.5f  , 0     , 0     , 0.5f  , 0     , 0     ).effect(MobEffects.DIG_SPEED,600,1,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
-    public static final GTMFOFoodStats CHIPS_KETTLE          = builder( 3    , 0.5f  , 0     , 0     , 1f    , 0     , 0     ).effect(MobEffects.DIG_SPEED,900,1,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
-    public static final GTMFOFoodStats CHIPS_REDUCED_FAT     = builder( 2    , 1.5f  , 0     , 0     , 1.5f  , 0     , 0     ).eatDuration(20).effect(MobEffects.DIG_SPEED,1200,1,1f).effect(MobEffects.DIG_SPEED,1200,2,0.5f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
-    public static final GTMFOFoodStats POTATO_STICK          = builder( 3    , 0.8f  , 0     , 0     , 1f    , 0     , 0     ).eatDuration(12).item(Items.STICK::getDefaultInstance).build();
 
     public static final GTMFOFoodStats TUNGSTENSTEEL_APPLE   = builder( 3    , 1f    , 0     , 1f    , 0     , 0     , 0     ).eatDuration(80).effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f).effect(MobEffects.NIGHT_VISION,3600,2,0.6f).effect(MobEffects.HARM,1,1,1f).build();
     public static final GTMFOFoodStats CAKE_BOTTOM           = builder( 2    , 0.5f  , 0     , 0     , 0.5f  , 0     , 0     ).eatDuration(60).effect(MobEffects.POISON,200,1,0.2f).build();
@@ -224,7 +226,7 @@ public class Foods {
     //public static final GTMFOFoodStats SORBET_VIBRANT        =    food( 0    , 0     , 12    , 0     , 2f    , 0     , 0     , 2f    );
 //    public static final GTMFOFoodStats FERMENTED_CHORUS      =    food( 2    , 0.5f  , 60    , 0     , 0     , 0     , 0     , 2f    );
 //    public static final GTMFOFoodStats FERMENTED_CHORUS_PIE  =    food( 6    , 1f    , 32    , 0     , 0     , 2f    , 0     , 2f    );
-    public static final GTMFOFoodStats CHIPS_NAQUADAH        = builder( 2    , 0.5f  , 0     , 0     , 1f    , 0     , 1f    ).alwaysEat().effect(MobEffects.BLINDNESS,500,0,1f).item(GTMFOItems.CHIPS_BAG_EMPTY::asStack).build();
+
 
     //public static final GTMFOFoodStats SANDWICH_VIBRANT      =    food( 7    , 0.8f  , 40    , 0     , 1f    , 1f    , 1f    , 0     );
 

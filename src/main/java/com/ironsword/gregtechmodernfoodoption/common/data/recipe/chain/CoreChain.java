@@ -21,6 +21,8 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.function.Consumer;
 
+import static com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption.id;
+
 public class CoreChain {
     public static void init(Consumer<FinishedRecipe> provider){
         zestChain(provider);
@@ -119,19 +121,19 @@ public class CoreChain {
     }
 
     public static void sliceBlades(Consumer<FinishedRecipe> provider){
-        VanillaRecipeHelper.addShapedRecipe(provider, "slicer_flat",
+        VanillaRecipeHelper.addShapedRecipe(provider, id("slicer_flat"),
                 GTMFOItems.SLICER_BLADE_FLAT.asStack(),
                 "hPS", " M ", "fPs",
                 'P', ChemicalHelper.get(TagPrefix.plate,GTMaterials.Iron),
                 'S', ChemicalHelper.get(TagPrefix.screw,GTMaterials.Iron),
                 'M', GTItems.SHAPE_EXTRUDER_BLOCK);
-        VanillaRecipeHelper.addShapedRecipe(provider,"slicer_stripes",
+        VanillaRecipeHelper.addShapedRecipe(provider,id("slicer_stripes"),
                 GTMFOItems.SLICER_BLADE_STRIPES.asStack(),
                 "hPS", "PMP", "fPs",
                 'P', ChemicalHelper.get(TagPrefix.plate,GTMaterials.Iron),
                 'S', ChemicalHelper.get(TagPrefix.screw,GTMaterials.Iron),
                 'M', GTItems.SHAPE_EXTRUDER_BLOCK);
-        VanillaRecipeHelper.addShapedRecipe(provider,"slicer_octagonal",
+        VanillaRecipeHelper.addShapedRecipe(provider,id("slicer_octagonal"),
                 GTMFOItems.SLICER_BLADE_OCTAGONAL.asStack(),
                 "PhP", "fMS", "PsP",
                 'P', ChemicalHelper.get(TagPrefix.plate,GTMaterials.Iron),
@@ -140,25 +142,23 @@ public class CoreChain {
     }
 
     public static void liquidFoodExtracts(Consumer<FinishedRecipe> provider){
-//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil")
-//                .inputFluids(GTMaterials.SeedOil.getFluid(16))
-//                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
-//                .circuitMeta(1)
-//                .EUt(12).duration(10).save(provider);
-//
-//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil_hot_2")
-//                .inputFluids(GTMaterials.SeedOil.getFluid(16))
-//                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
-//                .circuitMeta(2)
-//                .EUt(60).duration(25).save(provider);
-//
-//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("frying_oil_hot_1")
-//                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
-//                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
-//                .circuitMeta(1)
-//                .EUt(18).duration(15).save(provider);
-//
-        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("tomato_sauce")
+        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("frying_oil"))
+                .inputFluids(GTMaterials.SeedOil.getFluid(16))
+                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
+                .circuitMeta(1)
+                .EUt(12).duration(10).save(provider);
+        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("frying_oil_hot_2"))
+                .inputFluids(GTMaterials.SeedOil.getFluid(16))
+                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
+                .circuitMeta(2)
+                .EUt(60).duration(25).save(provider);
+        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("frying_oil_hot_1"))
+                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
+                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
+                .circuitMeta(1)
+                .EUt(18).duration(15).save(provider);
+
+        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder(id("tomato_sauce"))
                 .inputItems(GTMFOItems.TOMATO_SLICE.asStack())
                 .outputFluids(GTMFOFluids.TOMATO_SAUCE.getFluid(100))
                 .EUt(2).duration(10).save(provider);
@@ -247,19 +247,19 @@ public class CoreChain {
     private static void slicingRecipes(Consumer<FinishedRecipe> provider){
 
 
-        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder("olive_slice")
+        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("olive_slice"))
                 .inputItems(GTMFOItems.OLIVE)
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
                 .outputItems(GTMFOItems.OLIVE_SLICE,8)
                 .EUt(18).duration(30).save(provider);
 
-        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder("mushroom_slice")
+        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("mushroom_slice"))
                 .inputItems(Items.BROWN_MUSHROOM)
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
                 .outputItems(GTMFOItems.MUSHROOM_SLICE,8)
                 .EUt(18).duration(30).save(provider);
 
-        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder("tomato_slice")
+        GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("tomato_slice"))
                 .inputItems(GTMFOItems.TOMATO)
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
                 .outputItems(GTMFOItems.TOMATO_SLICE,8)
