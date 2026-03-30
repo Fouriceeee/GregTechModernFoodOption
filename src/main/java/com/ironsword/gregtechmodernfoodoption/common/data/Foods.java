@@ -168,13 +168,16 @@ public class Foods {
     public static final GTMFOFoodStats SMORE_1               =    food( 8    , 1.5f  , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
     public static final GTMFOFoodStats SMORE_2               =    food( 20   , 3.8f  , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
     public static final GTMFOFoodStats SMORE_4               =    food( 44,8.61363636364f, 32, 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMORE_8               =    food( 92   , 18.2f , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMORE_16              =    food( 188  , 37.4f , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMORE_32              =    food( 380  , 75.8f , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMORE_64              =    food( 764  , 152.6f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMOGUS                =    food( 1532 , 306.2f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMOGUS_2              =    food( 3068 , 613.4f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
-//    public static final GTMFOFoodStats SMOGUS_4              =    food( 6140 ,1227.8f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+
+    // TODO:smore_8 to smogus_4 are wip
+    public static final GTMFOFoodStats SMORE_8               =    food( 92   , 18.2f , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+    public static final GTMFOFoodStats SMORE_16              =    food( 188  , 37.4f , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+    public static final GTMFOFoodStats SMORE_32              =    food( 380  , 75.8f , 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+    public static final GTMFOFoodStats SMORE_64              =    food( 764  , 152.6f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+    public static final GTMFOFoodStats SMOGUS                =    food( 1532 , 306.2f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+    public static final GTMFOFoodStats SMOGUS_2              =    food( 3068 , 613.4f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+    public static final GTMFOFoodStats SMOGUS_4              =    food( 6140 ,1227.8f, 32    , 0.5f  , 0     , 1f    , 0.5f  , 0     );
+
     public static final GTMFOFoodStats MARSHMALLOW           =    food( 1    , 1f    , 32    , 0     , 0     , 0.5f  , 0.5f  , 0     );
 
     public static final GTMFOFoodStats MUSHY_PEAS            =    food( 3    , 1f    , 32    , 0     , 0     , 0     , 0     , 1f    );

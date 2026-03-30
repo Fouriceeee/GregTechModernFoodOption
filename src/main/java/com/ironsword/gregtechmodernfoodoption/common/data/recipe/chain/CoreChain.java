@@ -1,23 +1,16 @@
 package com.ironsword.gregtechmodernfoodoption.common.data.recipe.chain;
 
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
-import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-import com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption;
-import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOBlocks;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOItems;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOFluids;
-import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterials;
 import com.ironsword.gregtechmodernfoodoption.common.data.recipe.GTMFORecipeTypes;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.fluids.FluidStack;
 
 import java.util.function.Consumer;
 
@@ -84,22 +77,22 @@ public class CoreChain {
     }
 
     public static void caneSyrupChain(Consumer<FinishedRecipe> provider){
-//        GTRecipeTypes.MIXER_RECIPES.recipeBuilder("cane_syrup_unheated")
-//                .inputItems(new ItemStack(Items.SUGAR,24))
-//                .inputFluids(new FluidStack(Fluids.WATER,2000))
-//                .circuitMeta(2)
-//                .outputFluids(GTMFOFluids.CANE_SYRUP_UNHEATED.getFluid(2000))
-//                .EUt(80)
-//                .duration(260)
-//                .save(provider);
-//
-//        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("cane_syrup")
-//                .inputFluids(GTMFOFluids.CANE_SYRUP_UNHEATED.getFluid(1000))
-//                .circuitMeta(2)
-//                .outputFluids(GTMFOFluids.CANE_SYRUP.getFluid(1000))
-//                .EUt(120)
-//                .duration(80)
-//                .save(provider);
+        GTRecipeTypes.MIXER_RECIPES.recipeBuilder("cane_syrup_unheated")
+                .inputItems(Items.SUGAR,24)
+                .inputFluids(GTMaterials.Water.getFluid(2000))
+                .circuitMeta(2)
+                .outputFluids(GTMFOFluids.CaneSyrupUnheated.getFluid(2000))
+                .EUt(80)
+                .duration(260)
+                .save(provider);
+
+        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("cane_syrup")
+                .inputFluids(GTMFOFluids.CaneSyrupUnheated.getFluid(1000))
+                .circuitMeta(2)
+                .outputFluids(GTMFOFluids.CaneSyrup.getFluid(1000))
+                .EUt(120)
+                .duration(80)
+                .save(provider);
     }
 
     public static void generalChemicals(Consumer<FinishedRecipe> provider){
@@ -145,23 +138,23 @@ public class CoreChain {
     public static void liquidFoodExtracts(Consumer<FinishedRecipe> provider){
         GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("frying_oil"))
                 .inputFluids(GTMaterials.SeedOil.getFluid(16))
-                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
+                .outputFluids(GTMFOFluids.FryingOil.getFluid(16))
                 .circuitMeta(1)
                 .EUt(12).duration(10).save(provider);
         GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("frying_oil_hot_2"))
                 .inputFluids(GTMaterials.SeedOil.getFluid(16))
-                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
+                .outputFluids(GTMFOFluids.FryingOilHot.getFluid(16))
                 .circuitMeta(2)
                 .EUt(60).duration(25).save(provider);
         GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("frying_oil_hot_1"))
-                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(16))
-                .outputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(16))
+                .inputFluids(GTMFOFluids.FryingOil.getFluid(16))
+                .outputFluids(GTMFOFluids.FryingOilHot.getFluid(16))
                 .circuitMeta(1)
                 .EUt(18).duration(15).save(provider);
 
         GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder(id("tomato_sauce"))
                 .inputItems(GTMFOItems.TOMATO_SLICE.asStack())
-                .outputFluids(GTMFOFluids.TOMATO_SAUCE.getFluid(100))
+                .outputFluids(GTMFOFluids.TomatoSauce.getFluid(100))
                 .EUt(2).duration(10).save(provider);
 //
 //        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("olive_oil")
@@ -272,6 +265,17 @@ public class CoreChain {
                 .inputItems(Items.EGG.getDefaultInstance())
                 .outputFluids(GTMFOFluids.Egg.getFluid(200))
                 .EUt(24).duration(60).save(provider);
+
+        GTRecipeTypes.CENTRIFUGE_RECIPES.recipeBuilder(id("egg_separation"))
+                .inputFluids(GTMFOFluids.Egg.getFluid(200))
+                .outputFluids(GTMFOFluids.Albumen.getFluid(100))
+                .outputFluids(GTMFOFluids.Yolk.getFluid(100))
+                .EUt(16).duration(60).save(provider);
+
+        GTRecipeTypes.FERMENTING_RECIPES.recipeBuilder(id("butter"))
+                .inputFluids(GTMaterials.Milk.getFluid(10000))
+                .outputFluids(GTMFOFluids.Butter.getFluid(9000))
+                .EUt(15).duration(1200).save(provider);
     }
 
 

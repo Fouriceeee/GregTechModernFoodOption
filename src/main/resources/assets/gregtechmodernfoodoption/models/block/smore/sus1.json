@@ -1,0 +1,43 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "gregtechmodernfoodoption:block/smogus",
+		"particle": "gregtechmodernfoodoption:block/smogus"
+	},
+	"elements": [
+		{
+			"name": "red",
+			"from": [5.5, 0, 3.5],
+			"to": [10.5, 4, 12.5],
+			"faces": {
+				"north": {"uv": [4.5, 4.5, 7, 6.5], "texture": "#0"},
+				"east": {"uv": [4.5, 0, 0, 2], "texture": "#0"},
+				"south": {"uv": [4.5, 4.5, 7, 6.5], "texture": "#0"},
+				"west": {"uv": [0, 0, 4.5, 2], "texture": "#0"},
+				"up": {"uv": [4.5, 4.5, 7, 0], "texture": "#0"},
+				"down": {"uv": [4.5, 0, 7, 4.5], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [6, 4, 8.5],
+			"to": [10, 5, 11.5],
+			"faces": {
+				"north": {"uv": [2, 9, 0, 9.5], "texture": "#0"},
+				"east": {"uv": [1.5, 9.5, 2, 8], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 8, 2, 8.5], "texture": "#0"},
+				"west": {"uv": [0, 8, 0.5, 9.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 9.5, 2, 8], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, 135, 0],
+			"translation": [0, 5, 0]
+		}
+	}
+}

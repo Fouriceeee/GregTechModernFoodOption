@@ -2,10 +2,6 @@ package com.ironsword.gregtechmodernfoodoption.common.data.material;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
-import com.gregtechceu.gtceu.common.data.GTElements;
-import com.mojang.datafixers.util.Pair;
-
-import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class GTMFOFluids {
 
@@ -20,8 +16,8 @@ public class GTMFOFluids {
 //
 //    public static final Material CRANBERRY_EXTRACT  = fluid("cranberry_extract" ,0x8C0D22,"Cranberry Extract","蔓越莓提取液");
 //
-//    public static final Material CANE_SYRUP          = fluid("cane_syrup"         ,0xf2f1dc,"Cane Syrup"         ,"甘蔗糖浆"      );
-//    public static final Material CANE_SYRUP_UNHEATED = fluid("cane_syrup_unheated",0xf0efe4,"Unheated Cane Syrup","未加热甘蔗糖浆");
+    public static final Material CaneSyrup         = fluid("cane_syrup"         ,0xf2f1dc,"Cane Syrup"         ,"甘蔗糖浆"      );
+    public static final Material CaneSyrupUnheated = fluid("cane_syrup_unheated",0xf0efe4,"Unheated Cane Syrup","未加热甘蔗糖浆");
 //
 //    public static final Material ISOPROPYL_CHLORIDE = builder("isopropyl_chloride","Isopropyl Chloride","异丙基氯")
 //                    .components(Carbon,3, Hydrogen,7, Chlorine,1)
@@ -32,13 +28,20 @@ public class GTMFOFluids {
 //                    .components(Hydrogen,1, Gold,1, Chlorine,4)
 //                    .buildAndRegister();
 
-    public static final Material FRYING_OIL     = fluid("frying_oil"    ,0xffe3a1,"Frying Oil"    ,"煎炸油"  );
-    public static final Material FRYING_OIL_HOT = fluid("frying_oil_hot",0xffd166,"Hot Frying Oil","热煎炸油");
+    public static final Material FryingOil = fluid("frying_oil"    ,0xffe3a1,"Frying Oil"    ,"煎炸油"  );
+    public static final Material FryingOilHot = fluid("frying_oil_hot",0xffd166,"Hot Frying Oil","热煎炸油");
 
-    public static final Material TOMATO_SAUCE = fluid("tomato_sauce",0xfc2217,"Tomato Sauce","番茄酱");
-    public static final Material OLIVE_OIL    = fluid("olive_oil"   ,0xd1db5a,"Olive Oil"   ,"橄榄油");
-    public static final Material MilkHot      = fluid("milk_hot"    ,0xfffbf0,"Hot Milk"    ,"热牛奶");
+    public static final Material TomatoSauce = fluid("tomato_sauce",0xfc2217,"Tomato Sauce","番茄酱");
+    public static final Material OliveOil = fluid("olive_oil",0xd1db5a,"Olive Oil","橄榄油");
+    public static final Material HotMilk = fluid("hot_milk",0xfffbf0,"Hot Milk","热牛奶");
     public static final Material Egg          = fluid("egg"         ,0xFFFF0F,"Egg"         ,"蛋"    );
+    public static final Material Albumen      = fluid("albumen"     ,0xfffef7,"Albumen"     ,"蛋清"  );
+    public static final Material Yolk         = fluid("yolk"        ,0xffdf00,"Yolk"        ,"蛋黄"  );
+    public static final Material Butter       = fluid("butter"      ,0xffef82,"Butter"      ,"黄油"  );
+
+    public static final Material SweetenedDilutedCaneSyrupMixture = fluid("sweetened_diluted_cane_syrup_mixture",0xdedcc8,"Sweetened Diluted Cane Syrup Mixture","稀释加糖甘蔗糖浆混合物");
+    public static final Material MarshmallowSyrupMixture = fluid("marshmallow_syrup_mixture",0xe6e0dc,"Marshmallow Syrup Mixture","棉花软糖糖浆混合物");
+    public static final Material MarshmallowFoam = fluid("marshmallow_foam",0xe6e0dc,"Marshmallow Foam","发泡棉花软糖糖浆");
 
     private static Material fluid(String id, int color, String enLang, String cnLang){
         GTMFOMaterials.addLang(id,enLang,cnLang);

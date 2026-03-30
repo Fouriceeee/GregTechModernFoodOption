@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtechmodernfoodoption:item/graham_cracker"
+    "layer0": "gregtechmodernfoodoption:item/smore/graham_cracker/graham_cracker"
   }
 }

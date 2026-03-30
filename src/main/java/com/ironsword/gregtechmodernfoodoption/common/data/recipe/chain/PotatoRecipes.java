@@ -19,10 +19,10 @@ import static com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption.id
 
 public class PotatoRecipes {
     public static void init(Consumer<FinishedRecipe> provider){
-        GTRecipeType dehydratorRecipes =  GTRecipeTypes.get("dehydrator");
-        if (dehydratorRecipes == null){
-            dehydratorRecipes = GTRecipeTypes.CHEMICAL_RECIPES;
-        }
+//        GTRecipeType dehydratorRecipes =  GTRecipeTypes.get("dehydrator");
+//        if (dehydratorRecipes == null){
+//            dehydratorRecipes = GTRecipeTypes.CHEMICAL_RECIPES;
+//        }
 
         GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("potato_peeled"))
                 .inputItems(Items.POTATO)
@@ -47,30 +47,41 @@ public class PotatoRecipes {
                 .EUt(60).duration(40).save(provider);
 
 
-        dehydratorRecipes.recipeBuilder(id("potato_slice_dried"))
+//        dehydratorRecipes.recipeBuilder(id("potato_slice_dried"))
+//                .inputItems(GTMFOItems.POTATO_SLICE.asStack(40))
+//                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(500))
+//                .outputItems(GTMFOItems.POTATO_SLICE_FRIED.asStack(38))
+//                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(450))
+//                .EUt(30).duration(400).save(provider);
+        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_dried"))
                 .inputItems(GTMFOItems.POTATO_SLICE.asStack(40))
-                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(500))
+                .inputFluids(GTMFOFluids.FryingOil.getFluid(500))
                 .outputItems(GTMFOItems.POTATO_SLICE_FRIED.asStack(38))
-                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(450))
+                .outputFluids(GTMFOFluids.FryingOil.getFluid(450))
                 .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CHEMICAL_BATH_RECIPES.recipeBuilder(id("potato_slice_batched_fried"))
                 .inputItems(GTMFOItems.POTATO_SLICE.asStack(40))
-                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(500))
+                .inputFluids(GTMFOFluids.FryingOil.getFluid(500))
                 .outputItems(GTMFOItems.POTATO_SLICE_BATCH_FRIED.asStack(38))
                 .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CENTRIFUGE_RECIPES.recipeBuilder(id("potato_slice_oily"))
                 .inputItems(GTMFOItems.POTATO_SLICE_BATCH_FRIED.asStack(5))
                 .outputItems(GTMFOItems.POTATO_SLICE_OILY.asStack(5))
-                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(20))
+                .outputFluids(GTMFOFluids.FryingOil.getFluid(20))
                 .EUt(50).duration(200).save(provider);
         GTRecipeTypes.THERMAL_CENTRIFUGE_RECIPES.recipeBuilder(id("potato_slice_hot"))
                 .inputItems(GTMFOItems.POTATO_SLICE_BATCH_FRIED.asStack(5))
                 .outputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(5))
                 .EUt(160).duration(500).save(provider);
-        dehydratorRecipes.recipeBuilder(id("potato_slice_reduced_fat"))
+//        dehydratorRecipes.recipeBuilder(id("potato_slice_reduced_fat"))
+//                .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(10))
+//                .outputItems(GTMFOItems.POTATO_SLICE_REDUCED_FAT.asStack(10))
+//                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(60))
+//                .EUt(30).duration(400).save(provider);
+        GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_reduced_fat"))
                 .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(10))
                 .outputItems(GTMFOItems.POTATO_SLICE_REDUCED_FAT.asStack(10))
-                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(60))
+                .outputFluids(GTMFOFluids.FryingOil.getFluid(60))
                 .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_naquadah"))
                 .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(40))
@@ -119,12 +130,12 @@ public class PotatoRecipes {
 
         GTRecipeTypes.CHEMICAL_BATH_RECIPES.recipeBuilder(id("potato_strip_blanched"))
                 .inputItems(GTMFOItems.POTATO_STRIP.asStack(40))
-                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(700))
+                .inputFluids(GTMFOFluids.FryingOil.getFluid(700))
                 .outputItems(GTMFOItems.POTATO_STRIP_BLANCHED.asStack(40))
                 .EUt(60).duration(1000).save(provider);
         GTRecipeTypes.CHEMICAL_BATH_RECIPES.recipeBuilder(id("potato_strip_fried"))
                 .inputItems(GTMFOItems.POTATO_STRIP_BLANCHED.asStack(40))
-                .inputFluids(GTMFOFluids.FRYING_OIL_HOT.getFluid(500))
+                .inputFluids(GTMFOFluids.FryingOilHot.getFluid(500))
                 .outputItems(GTMFOItems.POTATO_STRIP_FRIED.asStack(40))
                 .EUt(60).duration(1000).save(provider);
         GTRecipeTypes.CANNER_RECIPES.recipeBuilder(id("french_fries"))

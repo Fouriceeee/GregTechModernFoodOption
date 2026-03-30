@@ -43,13 +43,12 @@ public class CommonProxy {
 
         GTMFOCreativeModeTabs.init();
         GTMFOBlocks.init();
-        //Foods.init();
         GTMFOItems.init();
-
-        GTMFODataGen.init();
 
         bus.addGenericListener(MachineDefinition.class,CommonProxy::registerMachines);
         bus.addGenericListener(GTRecipeType.class,CommonProxy::registerRecipeTypes);
+
+        GTMFODataGen.init();
 
         GTMFORegistries.REGISTRATE.registerRegistrate();
     }
@@ -57,6 +56,7 @@ public class CommonProxy {
     public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event){
         GTMFOMachines.init();
         GTMFOMultiMachines.init();
+        GTMFODataGen.initMachineLang();
     }
 
     public static void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event){

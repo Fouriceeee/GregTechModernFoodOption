@@ -43,7 +43,7 @@ public class PizzaRecipes {
                         GTMFOItems.DOUGH_FLAT.asStack(),
                         GTMFOItems.MOZZARELLA_SLICE.asStack(8))
                 .circuitMeta(1)
-                .inputFluids(GTMFOFluids.TOMATO_SAUCE.getFluid(600))
+                .inputFluids(GTMFOFluids.TomatoSauce.getFluid(600))
                 .outputItems(GTMFOItems.PIZZA_CHEESE_RAW.asStack())
                 .EUt(30).duration(400).save(provider);
 
@@ -51,9 +51,9 @@ public class PizzaRecipes {
                 .inputItems(
                         GTMFOItems.DOUGH_FLAT.asStack(),
                         GTMFOItems.MOZZARELLA_SLICE.asStack(4),
-                        GTMFOItems.MINCE_MEAT_COOKED.asStack(10))
+                        GTMFOItems.MINCE_MEAT.asStack(10))
                 .circuitMeta(3)
-                .inputFluids(GTMFOFluids.TOMATO_SAUCE.getFluid(450))
+                .inputFluids(GTMFOFluids.TomatoSauce.getFluid(450))
                 .outputItems(GTMFOItems.PIZZA_MEAT_RAW.asStack())
                 .EUt(30).duration(400).save(provider);
 
@@ -64,7 +64,7 @@ public class PizzaRecipes {
                         GTMFOItems.MUSHROOM_SLICE.asStack(8),
                         GTMFOItems.OLIVE_SLICE.asStack(8))
                 .circuitMeta(2)
-                .inputFluids(GTMFOFluids.TOMATO_SAUCE.getFluid(300))
+                .inputFluids(GTMFOFluids.TomatoSauce.getFluid(300))
                 .outputItems(GTMFOItems.PIZZA_VEGGIE_RAW.asStack())
                 .EUt(30).duration(400).save(provider);
 
