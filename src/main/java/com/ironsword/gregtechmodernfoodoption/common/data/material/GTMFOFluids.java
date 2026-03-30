@@ -38,6 +38,7 @@ public class GTMFOFluids {
     public static final Material TOMATO_SAUCE = fluid("tomato_sauce",0xfc2217,"Tomato Sauce","番茄酱");
     public static final Material OLIVE_OIL    = fluid("olive_oil"   ,0xd1db5a,"Olive Oil"   ,"橄榄油");
     public static final Material MilkHot      = fluid("milk_hot"    ,0xfffbf0,"Hot Milk"    ,"热牛奶");
+    public static final Material Egg          = fluid("egg"         ,0xFFFF0F,"Egg"         ,"蛋"    );
 
     private static Material fluid(String id, int color, String enLang, String cnLang){
         GTMFOMaterials.addLang(id,enLang,cnLang);

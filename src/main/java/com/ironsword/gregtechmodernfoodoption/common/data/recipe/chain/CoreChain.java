@@ -31,6 +31,7 @@ public class CoreChain {
         sliceBlades(provider);
         liquidFoodExtracts(provider);
         slicingRecipes(provider);
+        misc(provider);
     }
 
     public static void zestChain(Consumer<FinishedRecipe> provider){
@@ -266,7 +267,12 @@ public class CoreChain {
                 .EUt(18).duration(30).save(provider);
     }
 
-
+    private static void misc(Consumer<FinishedRecipe> provider) {
+        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder(id("egg"))
+                .inputItems(Items.EGG.getDefaultInstance())
+                .outputFluids(GTMFOFluids.Egg.getFluid(200))
+                .EUt(24).duration(60).save(provider);
+    }
 
 
 

@@ -278,9 +278,9 @@ public class GTMFOItems {
     public static final ItemEntry<Item> DOUGH                = item("dough"               ,"Dough"               ,"面团"        ,"dough/dough"         );
     public static final ItemEntry<Item> DOUGH_FLAT           = item("flat_dough"          ,"Flat Dough"          ,"扁平面团"    ,"dough/flat"          );
     public static final ItemEntry<Item> DOUGH_SUGARY         = item("sugary_dough"        ,"Sugary Dough"        ,"甜面团"      ,"dough/sugary"        );
-    public static final ItemEntry<Item> DOUGH_PASTA          = item("pasta_dough"         ,"Pasta Dough"         ,"意面面团"    ,"dough/pasta"         );
-    public static final ItemEntry<Item> DOUGH_EGG_PASTA      = item("egg_pasta_dough"     ,"Egg Pasta Dough"     ,"蛋液意面面团","dough/egg_pasta"     );
-    public static final ItemEntry<Item> DOUGH_PREMIXED_PASTA = item("premixed_pasta_dough","Premixed Pasta Dough","预拌意面面团","dough/premixed_pasta");
+    public static final ItemEntry<Item> PASTA_DOUGH          = item("pasta_dough"         ,"Pasta Dough"         ,"意面面团"    ,"dough/pasta"         );
+    public static final ItemEntry<Item> PASTA_DOUGH_EGG      = item("pasta_dough_egg"     ,"Egg Pasta Dough"     ,"蛋液意面面团","dough/pasta_egg"     );
+    public static final ItemEntry<Item> PASTA_DOUGH_PREMIXED = item("pasta_dough_premixed","Premixed Pasta Dough","预拌意面面团","dough/pasta_premixed");
 
     //drink
     public static final ItemEntry<ExComponentItem> ANTAF            = foodItem("antaf"           ,"Antaf™"         ,"Antaf™"     ,"drink/antaf"           ,Foods.EMPTY);
@@ -360,23 +360,23 @@ public class GTMFOItems {
 
     //kebab
 
-    public static final ItemEntry<Item> KEBAB_BARG        = item("kebab_barg"       ,"Barg Kebab"       ,"伊朗叶子肉烤串"  ,"kebab/barg"       );
-    public static final ItemEntry<Item> KEBAB_BARG_RAW    = item("kebab_barg_raw"   ,"Raw Barg Kebab"   ,"生伊朗叶子肉烤串","kebab/barg_raw"   );
-    public static final ItemEntry<Item> KEBAB_CARROT      = item("kebab_carrot"     ,"Carrot Kebab"     ,"烤胡萝卜串"      ,"kebab/carrot"     );
-    public static final ItemEntry<Item> KEBAB_CARROT_RAW  = item("kebab_carrot_raw" ,"Raw Carrot Kebab" ,"生胡萝卜串"      ,"kebab/carrot_raw" );
-    public static final ItemEntry<Item> KEBAB_CHUM        = item("kebab_chum"       ,"Chum Kebab"       ,"烤海霸串"        ,"kebab/chum"       );
-    public static final ItemEntry<Item> KEBAB_CHUM_RAW    = item("kebab_chum_raw"   ,"Raw Chum Kebab"   ,"生海霸串"        ,"kebab/chum_raw"   );
-    public static final ItemEntry<Item> KEBAB_FAT         = item("kebab_fat"        ,"TailFat Kebab"    ,"烤肥尾串"        ,"kebab/fat"        );
-    public static final ItemEntry<Item> KEBAB_FAT_RAW     = item("kebab_fat_raw"    ,"Raw TailFat Kebab","生肥尾串"        ,"kebab/fat_raw"    );
-    public static final ItemEntry<Item> KEBAB_KUBIDEH     = item("kebab_kubideh"    ,"Kubideh Kebab"    ,"伊朗碎肉烤串"    ,"kebab/kubideh"    );
-    public static final ItemEntry<Item> KEBAB_KUBIDEH_RAW = item("kebab_kubideh_raw","Raw Kubideh Kebab","生伊朗碎肉烤串"  ,"kebab/kubideh_raw");
-    public static final ItemEntry<Item> KEBAB_MEAT        = item("kebab_meat"       ,"Meat Kebab"       ,"烤肉串"          ,"kebab/meat"       );
-    public static final ItemEntry<Item> KEBAB_MEAT_RAW    = item("kebab_meat_raw"   ,"Raw Meat Kebab"   ,"生肉串"          ,"kebab/meat_raw"   );
-    public static final ItemEntry<Item> KEBAB_ONION       = item("kebab_onion"      ,"Onion Kebab"      ,"烤洋葱串"        ,"kebab/onion"      );
-    public static final ItemEntry<Item> KEBAB_ONION_RAW   = item("kebab_onion_raw"  ,"Raw Onion Kebab"  ,"生洋葱串"        ,"kebab/onion_raw"  );
-    public static final ItemEntry<Item> KEBAB_TOMATO      = item("kebab_tomato"     ,"Tomato Kebab"     ,"烤番茄串"        ,"kebab/tomato"     );
-    public static final ItemEntry<Item> KEBAB_TOMATO_RAW  = item("kebab_tomato_raw" ,"Raw Tomato Kebab" ,"生番茄串"        ,"kebab/tomato_raw" );
-    public static final ItemEntry<Item> KEBAB_SOLTANI     = item("kebab_soltani"    ,"Kebab e Soltani!" ,"苏丹烤肉"        ,"kebab/soltani"    );
+//    public static final ItemEntry<Item> KEBAB_BARG        = item("kebab_barg"       ,"Barg Kebab"       ,"伊朗叶子肉烤串"  ,"kebab/barg"       );
+//    public static final ItemEntry<Item> KEBAB_BARG_RAW    = item("kebab_barg_raw"   ,"Raw Barg Kebab"   ,"生伊朗叶子肉烤串","kebab/barg_raw"   );
+//    public static final ItemEntry<Item> KEBAB_CARROT      = item("kebab_carrot"     ,"Carrot Kebab"     ,"烤胡萝卜串"      ,"kebab/carrot"     );
+//    public static final ItemEntry<Item> KEBAB_CARROT_RAW  = item("kebab_carrot_raw" ,"Raw Carrot Kebab" ,"生胡萝卜串"      ,"kebab/carrot_raw" );
+//    public static final ItemEntry<Item> KEBAB_CHUM        = item("kebab_chum"       ,"Chum Kebab"       ,"烤海霸串"        ,"kebab/chum"       );
+//    public static final ItemEntry<Item> KEBAB_CHUM_RAW    = item("kebab_chum_raw"   ,"Raw Chum Kebab"   ,"生海霸串"        ,"kebab/chum_raw"   );
+//    public static final ItemEntry<Item> KEBAB_FAT         = item("kebab_fat"        ,"TailFat Kebab"    ,"烤肥尾串"        ,"kebab/fat"        );
+//    public static final ItemEntry<Item> KEBAB_FAT_RAW     = item("kebab_fat_raw"    ,"Raw TailFat Kebab","生肥尾串"        ,"kebab/fat_raw"    );
+//    public static final ItemEntry<Item> KEBAB_KUBIDEH     = item("kebab_kubideh"    ,"Kubideh Kebab"    ,"伊朗碎肉烤串"    ,"kebab/kubideh"    );
+//    public static final ItemEntry<Item> KEBAB_KUBIDEH_RAW = item("kebab_kubideh_raw","Raw Kubideh Kebab","生伊朗碎肉烤串"  ,"kebab/kubideh_raw");
+//    public static final ItemEntry<Item> KEBAB_MEAT        = item("kebab_meat"       ,"Meat Kebab"       ,"烤肉串"          ,"kebab/meat"       );
+//    public static final ItemEntry<Item> KEBAB_MEAT_RAW    = item("kebab_meat_raw"   ,"Raw Meat Kebab"   ,"生肉串"          ,"kebab/meat_raw"   );
+//    public static final ItemEntry<Item> KEBAB_ONION       = item("kebab_onion"      ,"Onion Kebab"      ,"烤洋葱串"        ,"kebab/onion"      );
+//    public static final ItemEntry<Item> KEBAB_ONION_RAW   = item("kebab_onion_raw"  ,"Raw Onion Kebab"  ,"生洋葱串"        ,"kebab/onion_raw"  );
+//    public static final ItemEntry<Item> KEBAB_TOMATO      = item("kebab_tomato"     ,"Tomato Kebab"     ,"烤番茄串"        ,"kebab/tomato"     );
+//    public static final ItemEntry<Item> KEBAB_TOMATO_RAW  = item("kebab_tomato_raw" ,"Raw Tomato Kebab" ,"生番茄串"        ,"kebab/tomato_raw" );
+//    public static final ItemEntry<Item> KEBAB_SOLTANI     = item("kebab_soltani"    ,"Kebab e Soltani!" ,"苏丹烤肉"        ,"kebab/soltani"    );
 
 
     //pasta
@@ -412,11 +412,6 @@ public class GTMFOItems {
     public static final ItemEntry<Item> PIZZA_VEGGIE_SLICE   = item("pizza_veggie_slice"  ,"Olive and Mushroom Pizza Slice","橄榄蘑菇披萨片","pizza/veggie_slice");
     public static final ItemEntry<Item> PIZZA_MEAT_RAW       = item("pizza_meat_raw"      ,"Raw Mince Meat Pizza"          ,"生肉末披萨"    ,"pizza/meat_raw"    );
     public static final ItemEntry<Item> PIZZA_MEAT_SLICE     = item("pizza_meat_slice"    ,"Mince Meat Pizza Slice"        ,"肉末披萨片"    ,"pizza/meat_slice"  );
-
-
-//    public static final ItemEntry<Item> PIZZA_CHEESE         = item("pizza_cheese"        ,"Cheese Pizza"                  ,"芝士披萨"      ,"pizza/cheese"      );
-//    public static final ItemEntry<Item> PIZZA_MEAT           = item("pizza_meat"          ,"Mince Meat Pizza"              ,"肉末披萨"      ,"pizza/meat"        );
-//    public static final ItemEntry<Item> PIZZA_VEGGIE         = item("pizza_veggie"        ,"Olive and Mushroom Pizza"      ,"橄榄蘑菇披萨"  ,"pizza/veggie"      );
 
     //potato
     public static final ItemEntry<Item> POTATO_PEELED            = item("potato_peeled"           ,"Peeled Potato"            ,"去皮马铃薯"        ,"potato/peeled"           );
@@ -517,7 +512,7 @@ public class GTMFOItems {
 //    public static ItemEntry<Item> TEST_ITEM;
 //    public static ItemEntry<Item> TEST_ITEM_2;
 
-//    public static final ItemEntry<Item> ANIMAL_FAT          = item("animal_fat" ,"Animal Fat" ,"动物脂肪");
+    public static final ItemEntry<Item> ANIMAL_FAT          = item("animal_fat" ,"Animal Fat" ,"动物脂肪");
 //    public static final ItemEntry<Item> APPLE_CORED         = item("apple_cored"        ,"Cored Apple"        ,"去核苹果");
 //    public static final ItemEntry<Item> APPLE_SLICE         = item("apple_slice"        ,"Apple Slice"        ,"苹果片"  );
 //    public static final ItemEntry<Item> APPLE_TUNGSTENSTEEL = item("apple_tungstensteel","Tungstensteel Apple","钨钢苹果");

@@ -7,10 +7,7 @@ import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOBlocks;
 import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOItems;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOFluids;
-import com.ironsword.gregtechmodernfoodoption.common.data.recipe.chain.CoreChain;
-import com.ironsword.gregtechmodernfoodoption.common.data.recipe.chain.KebabRecipes;
-import com.ironsword.gregtechmodernfoodoption.common.data.recipe.chain.PizzaRecipes;
-import com.ironsword.gregtechmodernfoodoption.common.data.recipe.chain.PotatoRecipes;
+import com.ironsword.gregtechmodernfoodoption.common.data.recipe.chain.*;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -26,6 +23,7 @@ public class GTMFORecipes {
         PotatoRecipes.init(provider);
         PizzaRecipes.init(provider);
         KebabRecipes.init(provider);
+        ItalianRecipes.init(provider);
 
         cheeseRecipes(provider);
         doughRecipes(provider);
