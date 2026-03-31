@@ -7,10 +7,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.ironsword.gregtechmodernfoodoption.GTMFOConfigHolder;
 import com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption;
 import com.ironsword.gregtechmodernfoodoption.api.capability.forge.GTMFOCapability;
-import com.ironsword.gregtechmodernfoodoption.common.data.Foods;
-import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOBlocks;
-import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOCreativeModeTabs;
-import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOItems;
+import com.ironsword.gregtechmodernfoodoption.common.data.*;
 import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMachines;
 import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMultiMachines;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOFluids;
@@ -51,6 +48,8 @@ public class CommonProxy {
         GTMFODataGen.init();
 
         GTMFORegistries.REGISTRATE.registerRegistrate();
+
+        GTMFOEffects.init(bus);
     }
 
     public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event){

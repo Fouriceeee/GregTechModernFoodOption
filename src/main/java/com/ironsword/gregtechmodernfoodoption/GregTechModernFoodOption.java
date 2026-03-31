@@ -26,4 +26,8 @@ public class GregTechModernFoodOption {
     public static ResourceLocation id(String path){
         return ResourceLocation.tryBuild(MODID,path);
     }
+
+    public static String langKey(String prefix,String suffix){
+        return prefix + "." + MODID + "." + suffix;
+    }
 }

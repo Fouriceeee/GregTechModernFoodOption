@@ -2,6 +2,7 @@ package com.ironsword.gregtechmodernfoodoption.data;
 
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOEffects;
 import com.ironsword.gregtechmodernfoodoption.common.data.machine.GTMFOMachines;
 import com.ironsword.gregtechmodernfoodoption.common.data.material.GTMFOMaterials;
 import com.ironsword.gregtechmodernfoodoption.common.registry.GTMFORegistries;
@@ -24,6 +25,11 @@ public class GTMFODataGen {
     public static void initMachineLang(){
         GTMFORegistries.REGISTRATE.addDataGenerator(ProviderType.LANG, GTMFOMachines::initENLang);
         GTMFORegistries.REGISTRATE.addDataGenerator(GTMFOProviderTypes.CNLANG, GTMFOMachines::initCNLang);
+    }
+
+    public static void initEffectLang(){
+        GTMFORegistries.REGISTRATE.addDataGenerator(ProviderType.LANG, GTMFOEffects::initENLang);
+        GTMFORegistries.REGISTRATE.addDataGenerator(GTMFOProviderTypes.CNLANG, GTMFOEffects::initCNLang);
     }
 
 }

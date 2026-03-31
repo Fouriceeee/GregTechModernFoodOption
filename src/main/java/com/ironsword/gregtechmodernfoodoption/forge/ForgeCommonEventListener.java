@@ -4,15 +4,20 @@ import com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption;
 import com.ironsword.gregtechmodernfoodoption.api.capability.NutrientsTracker;
 import com.ironsword.gregtechmodernfoodoption.api.capability.forge.GTMFOCapability;
 import com.ironsword.gregtechmodernfoodoption.common.command.NutrientCommands;
+import com.ironsword.gregtechmodernfoodoption.common.data.GTMFOEffects;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
@@ -48,5 +53,41 @@ public class ForgeCommonEventListener {
     public static void registerCommands(RegisterCommandsEvent event){
         NutrientCommands.register(event.getDispatcher(),event.getBuildContext());
     }
+
+    @SubscribeEvent
+    public static void onLivingEntityFall(LivingFallEvent event){
+        LivingEntity entity = event.getEntity();
+        if (entity.hasEffect(GTMFOEffects.CREATIVE_FLY.get())){
+            event.setDamageMultiplier(0);
+        }
+    }
+
+//    @SubscribeEvent
+//    public static void onEffectAdded(MobEffectEvent.Added event){
+//        if (event.getEffectInstance().getEffect().equals(GTMFOEffects.CREATIVE_FLY.get()) && event.getEntity() instanceof Player player){
+//            Abilities abilities =  player.getAbilities();
+//            abilities.flying = true;
+//        }
+//    }
+//
+//    @SubscribeEvent
+//    public static void onEffectRemoved(MobEffectEvent.Remove event){
+//        if (event.getEffectInstance().getEffect().equals(GTMFOEffects.CREATIVE_FLY.get()) && event.getEntity() instanceof Player player){
+//            Abilities abilities = player.getAbilities();
+//            if (!abilities.instabuild && !player.isSpectator()){
+//                abilities.mayfly = false;
+//            }
+//        }
+//    }
+//
+//    @SubscribeEvent
+//    public static void onEffectExpired(MobEffectEvent.Expired event){
+//        if (event.getEffectInstance().getEffect().equals(GTMFOEffects.CREATIVE_FLY.get()) && event.getEntity() instanceof Player player){
+//            Abilities abilities = player.getAbilities();
+//            if (!abilities.instabuild && !player.isSpectator()){
+//                abilities.mayfly = false;
+//            }
+//        }
+//    }
 
 }
