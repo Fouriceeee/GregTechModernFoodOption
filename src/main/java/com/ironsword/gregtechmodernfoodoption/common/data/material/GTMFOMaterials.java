@@ -11,7 +11,9 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.materials.FirstDegreeMaterials;
 import com.ironsword.gregtechmodernfoodoption.GTMFOUtils;
+import com.ironsword.gregtechmodernfoodoption.data.CNLangProvider;
 import com.mojang.datafixers.util.Pair;
+import com.tterrag.registrate.providers.RegistrateLangProvider;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
@@ -50,5 +52,14 @@ public class GTMFOMaterials {
     }
 
     public static void init(){
+        GTMaterials.BismuthBronze.addFlags(MaterialFlags.GENERATE_FRAME);
+    }
+
+    public static void initENLang(RegistrateLangProvider provider){
+        LANG_MAP.forEach((key,value)->provider.add(key,value.getFirst()));
+    }
+
+    public static void initCNLang(CNLangProvider provider){
+        LANG_MAP.forEach((key,value)->provider.add(key,value.getSecond()));
     }
 }

@@ -22,6 +22,7 @@ public class GTMFOMultiMachines {
 
     public static final MultiblockMachineDefinition ELECTRIC_BAKING_OVEN = REGISTRATE
             .multiblock("electric_baking_oven", WorkableElectricMultiblockMachine::new)
+            .langValue("Electric Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeType(GTMFORecipeTypes.BAKING_OVEN_RECIPES)
             .appearanceBlock(GTMFOBlocks.BISMUTH_BRONZE_CASING)
@@ -43,6 +44,7 @@ public class GTMFOMultiMachines {
 
     public static final MultiblockMachineDefinition STEAM_BAKING_OVEN = REGISTRATE
             .multiblock("steam_baking_oven", WorkableElectricMultiblockMachine::new)
+            .langValue("Steam Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeType(GTMFORecipeTypes.BAKING_OVEN_RECIPES)
             .appearanceBlock(GTBlocks.CASING_BRONZE_BRICKS)
@@ -64,5 +66,9 @@ public class GTMFOMultiMachines {
                     GTCEu.id("block/machines/baking_oven"))
             .register();
 
-    public static void init(){}
+    public static void init(){
+        GTMFOMachines.addJEILang("baking_oven","Baking Oven","烤炉");
+        GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".electric_baking_oven","电力烤炉");
+        GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".steam_baking_oven","蒸汽烤炉");
+    }
 }

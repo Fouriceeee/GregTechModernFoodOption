@@ -25,6 +25,8 @@ public class GTMFORecipes {
         cheeseRecipes(provider);
         doughRecipes(provider);
 
+        GTMFOMachineRecipes.init(provider);
+
     }
 
     private static void cheeseRecipes(Consumer<FinishedRecipe> provider){
