@@ -9,7 +9,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
@@ -17,7 +16,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
-import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
@@ -57,7 +55,7 @@ public class ForgeCommonEventListener {
     @SubscribeEvent
     public static void onLivingEntityFall(LivingFallEvent event){
         LivingEntity entity = event.getEntity();
-        if (entity.hasEffect(GTMFOEffects.CREATIVE_FLY.get())){
+        if (entity.hasEffect(GTMFOEffects.FLY.get())){
             event.setDamageMultiplier(0);
         }
     }

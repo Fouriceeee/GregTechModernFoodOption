@@ -8,7 +8,6 @@ import com.mojang.datafixers.util.Pair;
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +21,11 @@ public class GTMFOEffects {
 
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, GregTechModernFoodOption.MODID);
 
-    public static final RegistryObject<MobEffect> CREATIVE_FLY = register("creative_fly",MobEffectCategory.BENEFICIAL,0,"Creative Fly","创造飞行");
+    //WIP
+    public static final RegistryObject<MobEffect> FLY     = register("fly"    ,MobEffectCategory.BENEFICIAL,0,"Fly"            ,"飞行");
+    public static final RegistryObject<MobEffect> SNOW    = register("snow"   ,MobEffectCategory.NEUTRAL   ,0,"Snow-Protected" ,"霜之守护");
+    public static final RegistryObject<MobEffect> VENTING = register("venting",MobEffectCategory.NEUTRAL   ,0,"Venting"        ,"风口传送");
+    public static final RegistryObject<MobEffect> CHORUS  = register("chorus" ,MobEffectCategory.NEUTRAL   ,0,"Enhanced Chorus","Enhanced Chorus");
 
     private static RegistryObject<MobEffect> register(String name, MobEffectCategory category, int color, String enLang, String cnLang){
         EffectLangMap.put(GregTechModernFoodOption.langKey("effect",name),Pair.of(enLang,cnLang));

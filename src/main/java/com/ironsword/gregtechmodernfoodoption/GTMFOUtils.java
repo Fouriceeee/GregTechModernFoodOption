@@ -1,5 +1,8 @@
 package com.ironsword.gregtechmodernfoodoption;
 
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
 public class GTMFOUtils {
     public static int averageRGB(float divisor, int... inputs) {
         int red = 0;
@@ -17,5 +20,16 @@ public class GTMFOUtils {
         result += (int) (red / divisor) << 16;
 
         return result;
+    }
+
+    public static final VoxelShape[] EMPTY_SHAPES = {
+      Block.box(0,0,0,0,0,0),
+      Block.box(0,0,0,0,0,0),
+      Block.box(0,0,0,0,0,0),
+      Block.box(0,0,0,0,0,0)
+    };
+
+    public static VoxelShape[] createHorizontalShapes(final VoxelShape northShape){
+        return EMPTY_SHAPES;
     }
 }

@@ -146,31 +146,35 @@ public class GTMFOItems {
     private static final Item.Properties STACK_16 = new Item.Properties().stacksTo(16);
 
     //container
-    public static final ItemEntry<Item> BAKING_TRAY           = item("baking_tray",          "Baking Tray",             "烤盘",        "container/baking_tray");
-    public static final ItemEntry<Item> CAN                   = item("can",                  "Can",                     "易拉罐",      "container/can");
-    public static final ItemEntry<Item> CERAMIC_BOWL          = item("ceramic_bowl",         "Ceramic Bowl",            "瓷碗",        "container/bowl");
-    public static final ItemEntry<Item> CERAMIC_BOWL_DIRTY    = item("ceramic_bowl_dirty",   "Dirty Bowl",              "脏碗",        "container/bowl_dirty");
-    public static final ItemEntry<Item> CERAMIC_BOWL_UNFIRED  = item("ceramic_bowl_unfired", "Unfired Bone China Bowl", "未烧制骨瓷碗","container/bowl_unfired");
-    public static final ItemEntry<Item> CERAMIC_PLATE         = item("ceramic_plate",        "Ceramic Plate",           "瓷盘",        "container/plate");
-    public static final ItemEntry<Item> CERAMIC_PLATE_DIRTY   = item("ceramic_plate_dirty",  "Dirty Plate",             "脏盘子",      "container/plate_dirty");
-    public static final ItemEntry<Item> CERAMIC_PLATE_UNFIRED = item("ceramic_plate_unfired","Unfired Bone China Plate","未烧制骨瓷盘","container/plate_unfired");
-    public static final ItemEntry<Item> CUP_EMPTY             = item("cup_empty",            "Empty Cup",               "空杯",        "container/cup_empty");
-    public static final ItemEntry<Item> CUP_UNFIRED           = item("cup_unfired",          "Unfired Cup",             "未烧制杯子",  "container/cup_unfired");
-    public static final ItemEntry<Item> PAPER_BAG             = item("paper_bag",            "Paper Bag",               "纸袋",        "container/bag");
-    public static final ItemEntry<Item> PAPER_BAG_USED        = item("paper_bag_used",       "Used Paper Bag",          "用过的纸袋",  "container/bag_used");
-    public static final ItemEntry<Item> PLASTIC_BOTTLE        = item("plastic_bottle",       "Plastic Bottle",          "塑料瓶",      "container/plastic_bottle");
+    public static final ItemEntry<Item> BAKING_TRAY           = item("baking_tray"          ,"Baking Tray"             ,"烤盘"        ,"container/baking_tray"   );
+    public static final ItemEntry<Item> CAN                   = item("can"                  ,"Can"                     ,"易拉罐"      ,"container/can"           );
+    public static final ItemEntry<Item> CERAMIC_BOWL          = item("ceramic_bowl"         ,"Ceramic Bowl"            ,"瓷碗"        ,"container/bowl"          );
+    public static final ItemEntry<Item> CERAMIC_BOWL_DIRTY    = item("ceramic_bowl_dirty"   ,"Dirty Bowl"              ,"脏碗"        ,"container/bowl_dirty"    );
+    public static final ItemEntry<Item> CERAMIC_BOWL_UNFIRED  = item("ceramic_bowl_unfired" ,"Unfired Bone China Bowl" ,"未烧制骨瓷碗","container/bowl_unfired"  );
+    public static final ItemEntry<Item> CERAMIC_PLATE         = item("ceramic_plate"        ,"Ceramic Plate"           ,"瓷盘"        ,"container/plate"         );
+    public static final ItemEntry<Item> CERAMIC_PLATE_DIRTY   = item("ceramic_plate_dirty"  ,"Dirty Plate"             ,"脏盘子"      ,"container/plate_dirty"   );
+    public static final ItemEntry<Item> CERAMIC_PLATE_UNFIRED = item("ceramic_plate_unfired","Unfired Bone China Plate","未烧制骨瓷盘","container/plate_unfired" );
+    public static final ItemEntry<Item> CUP_EMPTY             = item("cup_empty"            ,"Empty Cup"               ,"空杯"        ,"container/cup_empty"     );
+    public static final ItemEntry<Item> CUP_UNFIRED           = item("cup_unfired"          ,"Unfired Cup"             ,"未烧制杯子"  ,"container/cup_unfired"   );
+    public static final ItemEntry<Item> PAPER_BAG             = item("paper_bag"            ,"Paper Bag"               ,"纸袋"        ,"container/bag"           );
+    public static final ItemEntry<Item> PAPER_BAG_USED        = item("paper_bag_used"       ,"Used Paper Bag"          ,"用过的纸袋"  ,"container/bag_used"      );
+    public static final ItemEntry<Item> PLASTIC_BOTTLE        = item("plastic_bottle"       ,"Plastic Bottle"          ,"塑料瓶"      ,"container/plastic_bottle");
     //kebab
     public static final ItemEntry<Item> SKEWER            = item("skewer"           ,"Skewer"           ,"铁签"            ,"kebab/skewer"     );
     //potato
     public static final ItemEntry<Item> CHIPS_BAG_EMPTY            = item("chips_bag_empty"           ,"Empty Chip Bag"               ,"空薯片袋"      ,"potato/chips_bag_empty"           );
 
 
-    //apple_candy
-//    public static final ItemEntry<ExComponentItem> APPLE_HARD_CANDY         = foodItem("apple_hard_candy"        ,"Apple Hard Candy"        ,"苹果硬糖"    ,"apple_candy/hard", Foods.APPLE_HARD_CANDY);
-//    public static final ItemEntry<Item>            APPLE_HARD_CANDY_HOT     =     item("apple_hard_candy_hot"    ,"Hot Apple Hard Candy"    ,"热苹果硬糖"  ,"apple_candy/hot"    );
-//    public static final ItemEntry<Item>            APPLE_HARD_CANDY_PLATE   =     item("apple_hard_candy_plate"  ,"Apple Hard Candy Sheet"  ,"苹果硬糖片"  ,"apple_candy/plate"  );
-//    public static final ItemEntry<Item>            APPLE_HARD_CANDY_RESIN   =     item("apple_hard_candy_resin"  ,"Apple Hard Candy Resin"  ,"苹果硬糖糖坯","apple_candy/resin"  );
-//    public static final ItemEntry<Item>            APPLE_HARD_CANDY_CRUSHED =     item("apple_hard_candy_crushed","Crushed Apple Hard Candy","苹果硬糖碎"  ,"apple_candy/crushed");
+    //apple
+    public static final ItemEntry<Item>            APPLE_CORED         =     item("apple_cored"        ,"Cored Apple"        ,"去核苹果","apple/cored"        );
+    public static final ItemEntry<ExComponentItem> APPLE_SLICE         = foodItem("apple_slice"        ,"Apple Slice"        ,"苹果片"  ,"apple/slice"        ,Foods.APPLE_SLICE);
+    public static final ItemEntry<ExComponentItem> APPLE_TUNGSTENSTEEL = foodItem("apple_tungstensteel","Tungstensteel Apple","钨钢苹果","apple/tungstensteel",Foods.APPLE_TUNGSTENSTEEL);
+    //apple/candy
+    public static final ItemEntry<ExComponentItem> APPLE_HARD_CANDY         = foodItem("apple_hard_candy"        ,"Apple Hard Candy"        ,"苹果硬糖"    ,"apple/candy/hard", Foods.APPLE_HARD_CANDY);
+    public static final ItemEntry<Item>            APPLE_HARD_CANDY_HOT     =     item("apple_hard_candy_hot"    ,"Hot Apple Hard Candy"    ,"热苹果硬糖"  ,"apple/candy/hot"    );
+    public static final ItemEntry<Item>            APPLE_HARD_CANDY_PLATE   =     item("apple_hard_candy_plate"  ,"Apple Hard Candy Sheet"  ,"苹果硬糖片"  ,"apple/candy/plate"  );
+    public static final ItemEntry<Item>            APPLE_HARD_CANDY_RESIN   =     item("apple_hard_candy_resin"  ,"Apple Hard Candy Resin"  ,"苹果硬糖糖坯","apple/candy/resin"  );
+    public static final ItemEntry<Item>            APPLE_HARD_CANDY_CRUSHED =     item("apple_hard_candy_crushed","Crushed Apple Hard Candy","苹果硬糖碎"  ,"apple/candy/crushed");
 
     //berry
 //    public static final ItemEntry<ExComponentItem> BLACKBERRY    = foodItem("blackberry"   ,"Blackberry"   ,"黑莓"    ,"berry/blackberry"   ,Foods.BERRY     );
@@ -501,6 +505,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> SLICER_BLADE_FLAT      = item("slicer_blade_flat"     ,"Slicer Blade (Flat)"   ,"切片机刀片（切片）"  ,"slicer_blade/flat"     );
     public static final ItemEntry<Item> SLICER_BLADE_STRIPES   = item("slicer_blade_stripes"  ,"Slicer Blade (Stripes)","切片机刀片（切条）"  ,"slicer_blade/stripes"  );
     public static final ItemEntry<Item> SLICER_BLADE_OCTAGONAL = item("slicer_blade_octagonal","Slicer Blade (Eights)" ,"切片机刀片（八等分）","slicer_blade/octagonal");
+    public static final ItemEntry<Item> SLICER_BLADE_PITTER    = item("slicer_blade_pitter"   ,"Slicer Blade (Pitter)" ,"切片机刀片（去核）"  ,"slicer_blade/pitter");
 
     //smore
     public static final ItemEntry<ExComponentItem> SMORE_1  = smore(1 ,"S'more S'mingot"                          ,"巧克力棉花糖夹心饼干"        ,Foods.SMORE_1,false);
@@ -547,9 +552,7 @@ public class GTMFOItems {
 //    public static ItemEntry<ExComponentItem> TEST_ITEM_2;
 
 //    public static final ItemEntry<Item> ANIMAL_FAT          = item("animal_fat" ,"Animal Fat" ,"动物脂肪");
-//    public static final ItemEntry<Item> APPLE_CORED         = item("apple_cored"        ,"Cored Apple"        ,"去核苹果");
-//    public static final ItemEntry<Item> APPLE_SLICE         = item("apple_slice"        ,"Apple Slice"        ,"苹果片"  );
-//    public static final ItemEntry<Item> APPLE_TUNGSTENSTEEL = item("apple_tungstensteel","Tungstensteel Apple","钨钢苹果");
+
 //    public static final ItemEntry<Item> BACON     = item("bacon"    ,"Bacon"         ,"培根"  );
 //    public static final ItemEntry<Item> BACON_RAW = item("bacon_raw","Uncooked Bacon","生培根");
 //    public static final ItemEntry<Item> BAKED_BEANS = item("baked_beans","Baked Beans","焗豆");

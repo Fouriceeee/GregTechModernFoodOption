@@ -34,6 +34,8 @@ public class Foods {
     public static final GTMFOFoodStats EMPTY = food(0,0f,0,0,0,0,0);
 
     //apple_candy
+    public static final GTMFOFoodStats APPLE_SLICE           =    food( 1    , 0.1f  , 32    , 0     , 1f    , 0     , 0     , 0     );
+    public static final GTMFOFoodStats APPLE_TUNGSTENSTEEL   = builder( 3    , 1f    , 0     , 1f    , 0     , 0     , 0     ).eatDuration(80).effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f).effect(MobEffects.NIGHT_VISION,3600,2,0.6f).effect(MobEffects.HARM,1,1,1f).build();
     public static final GTMFOFoodStats APPLE_HARD_CANDY      = builder( 1    , 1f    , 0     , 0.5f  , 0     , 0     , 0     ).eatDuration(24).effect(MobEffects.REGENERATION,1200,0,0.5f).build();
 
     //berry
@@ -107,7 +109,6 @@ public class Foods {
     public static final GTMFOFoodStats ETIRPS                = builder( 0    , 0     , 0     , 0.5f  , 0     , 0     , 0     ).drink().alwaysEat().effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).build();
     public static final GTMFOFoodStats BACON                 =    food( 2    , 0.8f  , 24    , 0     , 0     , 0     , 1f    , 0     );
 
-    public static final GTMFOFoodStats TUNGSTENSTEEL_APPLE   = builder( 3    , 1f    , 0     , 1f    , 0     , 0     , 0     ).eatDuration(80).effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f).effect(MobEffects.NIGHT_VISION,3600,2,0.6f).effect(MobEffects.HARM,1,1,1f).build();
     public static final GTMFOFoodStats CAKE_BOTTOM           = builder( 2    , 0.5f  , 0     , 0     , 0.5f  , 0     , 0     ).eatDuration(60).effect(MobEffects.POISON,200,1,0.2f).build();
     public static final GTMFOFoodStats CAKE_BOTTOM_BAKED     =    food( 3    , 0.5f  , 60    , 0     , 0     , 1f    , 0     , 0     );
     public static final GTMFOFoodStats PIZZA_CHEESE          = builder( 10   , 0.8f  , 1f    , 0     , 1f    , 0     , 1f    ).eatDuration(50).effect(MobEffects.DIG_SPEED,2000,2,1f).build();
@@ -149,7 +150,6 @@ public class Foods {
     public static final GTMFOFoodStats KEBAB_CHUM            = builder( 6    , 0.3f  , 0     , 0     , 0.5f  , 0.5f  , 0     ).eatDuration(12).alwaysEat().effect(MobEffects.CONFUSION,100,10,0.1f).item(GTMFOItems.SKEWER::asStack).build();
     public static final GTMFOFoodStats KEBAB_CHUM_BUCKET     = builder( 16   , 2f    , 0     , 1f    , 1.5f  , 1.5f  , 1f    ).eatDuration(60).alwaysEat().effect(MobEffects.CONFUSION,1000,10,0.5f).effect(MobEffects.UNLUCK,1000,11,0.5f).effect(MobEffects.MOVEMENT_SPEED,1000,3,0.5f).effect(MobEffects.HEALTH_BOOST,1000,3,0.5f).item(Items.BUCKET::getDefaultInstance).build();
 
-    public static final GTMFOFoodStats APPLE_SLICE           =    food( 1    , 0.1f  , 32    , 0     , 1f    , 0     , 0     , 0     );
 
     public static final GTMFOFoodStats JUICE                 = builder( 3    , 0.2f  , 0     , 1f    , 0     , 0     , 0     ).alwaysEat().drink().effect(MobEffects.MOVEMENT_SPEED,500,1,0.45f).item(Items.GLASS_BOTTLE::getDefaultInstance).build();
     public static final GTMFOFoodStats ICE_CREAM_PLAIN       = builder( 4    , 0.25f , 1f    , 0     , 0     , 0     , 0     ).alwaysEat().build();
