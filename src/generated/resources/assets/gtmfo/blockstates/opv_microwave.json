@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gtmfo:block/machine/opv_microwave",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gtmfo:block/machine/opv_microwave"
+    },
+    "facing=south": {
+      "model": "gtmfo:block/machine/opv_microwave",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtmfo:block/machine/opv_microwave",
+      "y": 270
+    }
+  }
+}

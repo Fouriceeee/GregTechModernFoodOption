@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gtmfo:block/machine/uev_slicer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gtmfo:block/machine/uev_slicer"
+    },
+    "facing=south": {
+      "model": "gtmfo:block/machine/uev_slicer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtmfo:block/machine/uev_slicer",
+      "y": 270
+    }
+  }
+}

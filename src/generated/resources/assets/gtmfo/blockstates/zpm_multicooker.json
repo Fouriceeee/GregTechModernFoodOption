@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gtmfo:block/machine/zpm_multicooker",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gtmfo:block/machine/zpm_multicooker"
+    },
+    "facing=south": {
+      "model": "gtmfo:block/machine/zpm_multicooker",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtmfo:block/machine/zpm_multicooker",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "gtmfo:block/pizza/pizza_slice4",
+  "textures": {
+    "layer": "gtmfo:block/pizza/veggie",
+    "particle": "gtmfo:block/pizza/top_2",
+    "top": "gtmfo:block/pizza/top_2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "slices=1": {
+      "model": "gtmfo:block/pizza_cheese_slice1"
+    },
+    "slices=2": {
+      "model": "gtmfo:block/pizza_cheese_slice2"
+    },
+    "slices=3": {
+      "model": "gtmfo:block/pizza_cheese_slice3"
+    },
+    "slices=4": {
+      "model": "gtmfo:block/pizza_cheese_slice4"
+    }
+  }
+}

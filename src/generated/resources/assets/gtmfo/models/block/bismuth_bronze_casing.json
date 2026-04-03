@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gtmfo:block/bismuth_bronze_casing"
+  }
+}
