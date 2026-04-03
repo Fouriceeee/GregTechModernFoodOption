@@ -8,10 +8,8 @@ import com.ironsword.gregtechmodernfoodoption.api.item.component.GTMFOFoodStats;
 import com.ironsword.gregtechmodernfoodoption.data.GTMFOProviderTypes;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Supplier;
 
@@ -169,12 +167,12 @@ public class GTMFOItems {
     public static final ItemEntry<Item>            APPLE_CORED         =     item("apple_cored"        ,"Cored Apple"        ,"去核苹果","apple/cored"        );
     public static final ItemEntry<ExComponentItem> APPLE_SLICE         = foodItem("apple_slice"        ,"Apple Slice"        ,"苹果片"  ,"apple/slice"        ,Foods.APPLE_SLICE);
     public static final ItemEntry<ExComponentItem> APPLE_TUNGSTENSTEEL = foodItem("apple_tungstensteel","Tungstensteel Apple","钨钢苹果","apple/tungstensteel",Foods.APPLE_TUNGSTENSTEEL);
-    //apple/candy
-    public static final ItemEntry<ExComponentItem> APPLE_HARD_CANDY         = foodItem("apple_hard_candy"        ,"Apple Hard Candy"        ,"苹果硬糖"    ,"apple/candy/hard", Foods.APPLE_HARD_CANDY);
-    public static final ItemEntry<Item>            APPLE_HARD_CANDY_HOT     =     item("apple_hard_candy_hot"    ,"Hot Apple Hard Candy"    ,"热苹果硬糖"  ,"apple/candy/hot"    );
-    public static final ItemEntry<Item>            APPLE_HARD_CANDY_PLATE   =     item("apple_hard_candy_plate"  ,"Apple Hard Candy Sheet"  ,"苹果硬糖片"  ,"apple/candy/plate"  );
-    public static final ItemEntry<Item>            APPLE_HARD_CANDY_RESIN   =     item("apple_hard_candy_resin"  ,"Apple Hard Candy Resin"  ,"苹果硬糖糖坯","apple/candy/resin"  );
-    public static final ItemEntry<Item>            APPLE_HARD_CANDY_CRUSHED =     item("apple_hard_candy_crushed","Crushed Apple Hard Candy","苹果硬糖碎"  ,"apple/candy/crushed");
+
+    public static final ItemEntry<ExComponentItem> APPLE_CANDY         = foodItem("apple_candy"        ,"Apple Candy"        ,"苹果糖"    ,"apple/candy"        ,Foods.APPLE_CANDY);
+    public static final ItemEntry<Item>            APPLE_CANDY_HOT     =     item("apple_candy_hot"    ,"Hot Apple Candy"    ,"热苹果糖"  ,"apple/candy_hot"    );
+    public static final ItemEntry<Item>            APPLE_CANDY_PLATE   =     item("apple_candy_plate"  ,"Apple Candy Sheet"  ,"苹果糖片"  ,"apple/candy_plate"  );
+    public static final ItemEntry<Item>            APPLE_CANDY_RESIN   =     item("apple_candy_resin"  ,"Apple Candy Resin"  ,"苹果糖糖坯","apple/candy_resin"  );
+    public static final ItemEntry<Item>            APPLE_CANDY_CRUSHED =     item("apple_candy_crushed","Crushed Apple Candy","苹果糖碎"  ,"apple/candy_crushed");
 
     //berry
 //    public static final ItemEntry<ExComponentItem> BLACKBERRY    = foodItem("blackberry"   ,"Blackberry"   ,"黑莓"    ,"berry/blackberry"   ,Foods.BERRY     );

@@ -15,12 +15,14 @@ import static com.ironsword.gregtechmodernfoodoption.GregTechModernFoodOption.id
 public class GTMFORecipes {
 
     public static void init(Consumer<FinishedRecipe> provider){
+        AppleRecipes.init(provider);
         CoreChain.init(provider);
         PotatoRecipes.init(provider);
         PizzaRecipes.init(provider);
         KebabRecipes.init(provider);
         ItalianRecipes.init(provider);
         SmoreRecipes.init(provider);
+
 
         cheeseRecipes(provider);
         doughRecipes(provider);

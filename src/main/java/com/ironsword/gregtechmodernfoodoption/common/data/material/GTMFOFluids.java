@@ -5,12 +5,12 @@ import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 
 public class GTMFOFluids {
 
-//    public static final Material LEMON_EXTRACT  = fluid("lemon_extract" ,0xfce80a,"Lemon Extract","柠檬提取液");
-//    public static final Material LIME_EXTRACT   = fluid("lime_extract"  ,0x85f218,"Lime Extract" ,"酸橙提取液");
-//    public static final Material ORANGE_EXTRACT = fluid("orange_extract",0xff6100,"Orange Juice" ,"橙汁"      );
-//    public static final Material APPLE_EXTRACT  = fluid("apple_extract" ,0xe9ba58,"Apple Juice"  ,"苹果汁"    );
-//    public static final Material MELON_EXTRACT  = fluid("melon_extract" ,0xfc7996,"Melon Extract","西瓜提取液");
-//    public static final Material GRAPE_EXTRACT  = fluid("grape_extract" ,0xa83351,"Grape Extract","葡萄汁"    );
+    public static final Material LEMON_EXTRACT  = fluid("lemon_extract" ,0xfce80a,"Lemon Extract","柠檬提取液");
+    public static final Material LIME_EXTRACT   = fluid("lime_extract"  ,0x85f218,"Lime Extract" ,"酸橙提取液");
+    public static final Material ORANGE_EXTRACT = fluid("orange_extract",0xff6100,"Orange Juice" ,"橙汁"      );
+    public static final Material AppleExtract   = fluid("apple_extract" ,0xe9ba58,"Apple Juice"  ,"苹果汁"    );
+    public static final Material MELON_EXTRACT  = fluid("melon_extract" ,0xfc7996,"Melon Extract","西瓜提取液");
+    public static final Material GRAPE_EXTRACT  = fluid("grape_extract" ,0xa83351,"Grape Extract","葡萄汁"    );
 //
 //    public static final Material APRICOT_EXTRACT = fluid("apricot_extract",0xe3de9d,"Apricot Extract","杏子提取液");
 //
@@ -18,7 +18,7 @@ public class GTMFOFluids {
 //
     public static final Material CaneSyrup         = fluid("cane_syrup"         ,0xf2f1dc,"Cane Syrup"         ,"甘蔗糖浆"      );
     public static final Material CaneSyrupUnheated = fluid("cane_syrup_unheated",0xf0efe4,"Unheated Cane Syrup","未加热甘蔗糖浆");
-//
+
 //    public static final Material ISOPROPYL_CHLORIDE = builder("isopropyl_chloride","Isopropyl Chloride","异丙基氯")
 //                    .components(Carbon,3, Hydrogen,7, Chlorine,1)
 //                    .formula("(CH3)2CHCl",true)
@@ -42,6 +42,8 @@ public class GTMFOFluids {
     public static final Material SweetenedDilutedCaneSyrupMixture = fluid("sweetened_diluted_cane_syrup_mixture",0xdedcc8,"Sweetened Diluted Cane Syrup Mixture","稀释加糖甘蔗糖浆混合物");
     public static final Material MarshmallowSyrupMixture = fluid("marshmallow_syrup_mixture",0xe6e0dc,"Marshmallow Syrup Mixture","棉花软糖糖浆混合物");
     public static final Material MarshmallowFoam = fluid("marshmallow_foam",0xe6e0dc,"Marshmallow Foam","发泡棉花软糖糖浆");
+
+    public static final Material AppleCandySyrup = fluid("apple_candy_syrup",0xe7f5ae,"Apple Candy Syrup","苹果糖浆");
 
     private static Material fluid(String id, int color, String enLang, String cnLang){
         GTMFOMaterials.addLang(id,enLang,cnLang);

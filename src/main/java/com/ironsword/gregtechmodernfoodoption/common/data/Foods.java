@@ -4,7 +4,6 @@ import com.ironsword.gregtechmodernfoodoption.api.item.component.GTMFOFoodStats;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Items;
 
 import java.util.function.Supplier;
@@ -36,7 +35,7 @@ public class Foods {
     //apple_candy
     public static final GTMFOFoodStats APPLE_SLICE           =    food( 1    , 0.1f  , 32    , 0     , 1f    , 0     , 0     , 0     );
     public static final GTMFOFoodStats APPLE_TUNGSTENSTEEL   = builder( 3    , 1f    , 0     , 1f    , 0     , 0     , 0     ).eatDuration(80).effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f).effect(MobEffects.NIGHT_VISION,3600,2,0.6f).effect(MobEffects.HARM,1,1,1f).build();
-    public static final GTMFOFoodStats APPLE_HARD_CANDY      = builder( 1    , 1f    , 0     , 0.5f  , 0     , 0     , 0     ).eatDuration(24).effect(MobEffects.REGENERATION,1200,0,0.5f).build();
+    public static final GTMFOFoodStats APPLE_CANDY           = builder( 1    , 1f    , 0     , 0.5f  , 0     , 0     , 0     ).eatDuration(24).effect(MobEffects.REGENERATION,1200,0,0.5f).build();
 
     //berry
     public static final GTMFOFoodStats BERRY                 =    food( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     );
