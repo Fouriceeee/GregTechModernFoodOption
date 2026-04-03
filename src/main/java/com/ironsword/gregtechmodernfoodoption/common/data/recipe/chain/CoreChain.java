@@ -162,11 +162,6 @@ public class CoreChain {
 //                .outputFluids(GTMFOFluids.OLIVE_OIL.getFluid(100))
 //                .EUt(27).duration(60).save(provider);
 //
-//        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("apple_extract")
-//                .inputItems(GTMFOItems.APPLE_SLICE.asStack())
-//                .outputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
-//                .EUt(2).duration(10).save(provider);
-//
 //        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("melon_extract")
 //                .inputItems(Items.MELON_SLICE.getDefaultInstance())
 //                .outputFluids(GTMFOFluids.MELON_EXTRACT.getFluid(100))
@@ -196,17 +191,7 @@ public class CoreChain {
 //                .circuitMeta(1)
 //                .EUt(8).duration(40).save(provider);
 //
-//        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("apple_extract")
-//                .inputItems(GTMFOItems.JUICE_APPLE.asStack())
-//                .outputItems(Items.GLASS_BOTTLE)
-//                .outputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
-//                .EUt(12).duration(30).save(provider);
-//
-//        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("apple_juice")
-//                .inputItems(Items.GLASS_BOTTLE)
-//                .inputFluids(GTMFOFluids.APPLE_EXTRACT.getFluid(100))
-//                .outputItems(GTMFOItems.JUICE_APPLE.asStack())
-//                .EUt(12).duration(30).save(provider);
+
 //
 //        GTRecipeTypes.CANNER_RECIPES.recipeBuilder("orange_extract")
 //                .inputItems(GTMFOItems.JUICE_ORANGE.asStack())

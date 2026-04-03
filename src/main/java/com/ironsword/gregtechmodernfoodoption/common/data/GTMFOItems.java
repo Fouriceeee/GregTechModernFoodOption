@@ -5,8 +5,12 @@ import com.gregtechceu.gtceu.api.item.component.IItemComponent;
 import com.ironsword.gregtechmodernfoodoption.api.item.ExComponentItem;
 import com.ironsword.gregtechmodernfoodoption.api.item.component.BlockItemComponent;
 import com.ironsword.gregtechmodernfoodoption.api.item.component.GTMFOFoodStats;
+import com.ironsword.gregtechmodernfoodoption.data.CNLangProvider;
 import com.ironsword.gregtechmodernfoodoption.data.GTMFOProviderTypes;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -17,8 +21,6 @@ import static com.ironsword.gregtechmodernfoodoption.common.registry.GTMFORegist
 
 //@SuppressWarnings("unused")
 public class GTMFOItems {
-    private static final String CN = "占位文本";
-
     static{
         REGISTRATE.creativeModeTab(()-> GTMFOCreativeModeTabs.MAIN_TAB);
     }
@@ -27,11 +29,18 @@ public class GTMFOItems {
         return item -> item.attachComponents(components);
     }
 
+    private static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, CNLangProvider> cn(String cnLang){
+        return (ctx,prov)->prov.add(ctx.get().getDescriptionId(),cnLang);
+    }
+
+    private static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, RegistrateItemModelProvider> itemModel(String path){
+        return (ctx,prov)->prov.generated(ctx::getEntry,prov.modLoc("item/"+path));
+    }
+
     private static ItemEntry<Item> item(String id,String enLang,String cnLang){
         return REGISTRATE.item(id,Item::new)
                 .lang(enLang)
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
                 .defaultModel()
                 .register();
     }
@@ -40,8 +49,7 @@ public class GTMFOItems {
         return REGISTRATE.item(id,Item::new)
                 .lang(enLang)
                 .initialProperties(()->properties)
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
                 .defaultModel()
                 .register();
     }
@@ -49,10 +57,8 @@ public class GTMFOItems {
     private static ItemEntry<Item> item(String id, String enLang, String cnLang, String path){
         return REGISTRATE.item(id,Item::new)
                 .lang(enLang)
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
-                .model((ctx,prov)->
-                        prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
                 .register();
     }
 
@@ -60,10 +66,8 @@ public class GTMFOItems {
         return REGISTRATE.item(id,Item::new)
                 .lang(enLang)
                 .initialProperties(()->properties)
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
-                .model((ctx,prov)->
-                        prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
                 .register();
     }
 
@@ -71,8 +75,7 @@ public class GTMFOItems {
         return REGISTRATE.item(id,ExComponentItem::create)
                 .lang(enLang)
                 .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
                 .defaultModel()
                 .register();
     }
@@ -82,8 +85,7 @@ public class GTMFOItems {
                 .lang(enLang)
                 .initialProperties(()->properties)
                 .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
                 .defaultModel()
                 .register();
     }
@@ -92,10 +94,8 @@ public class GTMFOItems {
         return REGISTRATE.item(id,ExComponentItem::create)
                 .lang(enLang)
                 .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
-                .model((ctx,prov)->
-                        prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
                 .register();
     }
 
@@ -104,10 +104,8 @@ public class GTMFOItems {
                 .lang(enLang)
                 .initialProperties(()->properties)
                 .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
-                .model((ctx,prov)->
-                        prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
                 .register();
     }
 
@@ -116,8 +114,7 @@ public class GTMFOItems {
                 .lang(enLang)
                 //.properties(p->p.stacksTo(64/number))
                 .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
                 .model((ctx,prov)->{
                     if (blockModel){
                         prov.withExistingParent("item/smore_"+number,prov.modLoc("block/smore/"+number));
@@ -128,12 +125,21 @@ public class GTMFOItems {
                 .register();
     }
 
+    private static ItemEntry<ExComponentItem> berry(String id, String enLang, String cnLang){
+        return REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .onRegister(attach(Foods.BERRY))
+                .tag(GTMFOTags.BERRY)
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel("berry/"+id))
+                .register();
+    }
+
     private static ItemEntry<ExComponentItem> smogus(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Supplier<? extends Block> block){
         return REGISTRATE.item(id,ExComponentItem::create)
                 .lang(enLang)
                 .onRegister(attach(foodStats,new BlockItemComponent(block)))
-                .setData(GTMFOProviderTypes.CNLANG, (ctx,prov)->
-                        prov.add(ctx.get().getDescriptionId(),cnLang))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
                 .model((ctx,prov)->prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
                 .register();
     }
@@ -175,16 +181,21 @@ public class GTMFOItems {
     public static final ItemEntry<Item>            APPLE_CANDY_CRUSHED =     item("apple_candy_crushed","Crushed Apple Candy","苹果糖碎"  ,"apple/candy_crushed");
 
     //berry
-//    public static final ItemEntry<ExComponentItem> BLACKBERRY    = foodItem("blackberry"   ,"Blackberry"   ,"黑莓"    ,"berry/blackberry"   ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> BLUEBERRY     = foodItem("blueberry"    ,"Blueberry"    ,"蓝莓"    ,"berry/blueberry"    ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> CRANBERRY     = foodItem("cranberry"    ,"Cranberry"    ,"蔓越莓"  ,"berry/cranberry"    ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> ELDERBERRY    = foodItem("elderberry"   ,"Elderberry"   ,"接骨木莓","berry/elderberry"   ,Foods.ELDERBERRY);
-//    public static final ItemEntry<ExComponentItem> LINGONBERRY   = foodItem("lingonberry"  ,"Lingonberry"  ,"越橘"    ,"berry/lingonberry"  ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> RASPBERRY     = foodItem("raspberry"    ,"Raspberry"    ,"树莓"    ,"berry/raspberry"    ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> STRAWBERRY    = foodItem("strawberry"   ,"Strawberry"   ,"草莓"    ,"berry/strawberry"   ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> BLACK_CURRANT = foodItem("black_currant","Black Currant","黑加仑"  ,"berry/black_currant",Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> RED_CURRANT   = foodItem("red_currant"  ,"Red Currant"  ,"红加仑"  ,"berry/red_currant"  ,Foods.BERRY     );
-//    public static final ItemEntry<ExComponentItem> WHITE_CURRANT = foodItem("white_currant","White Currant","白加仑"  ,"berry/white_currant",Foods.BERRY     );
+    public static final ItemEntry<ExComponentItem> BLACKBERRY    = berry("blackberry"   ,"Blackberry"   ,"黑莓"  );
+    public static final ItemEntry<ExComponentItem> BLUEBERRY     = berry("blueberry"    ,"Blueberry"    ,"蓝莓"  );
+    public static final ItemEntry<ExComponentItem> CRANBERRY     = berry("cranberry"    ,"Cranberry"    ,"蔓越莓");
+    public static final ItemEntry<ExComponentItem> LINGONBERRY   = berry("lingonberry"  ,"Lingonberry"  ,"越橘"  );
+    public static final ItemEntry<ExComponentItem> RASPBERRY     = berry("raspberry"    ,"Raspberry"    ,"树莓"  );
+    public static final ItemEntry<ExComponentItem> STRAWBERRY    = berry("strawberry"   ,"Strawberry"   ,"草莓"  );
+    public static final ItemEntry<ExComponentItem> BLACK_CURRANT = berry("black_currant","Black Currant","黑加仑");
+    public static final ItemEntry<ExComponentItem> RED_CURRANT   = berry("red_currant"  ,"Red Currant"  ,"红加仑");
+    public static final ItemEntry<ExComponentItem> WHITE_CURRANT = berry("white_currant","White Currant","白加仑");
+    public static final ItemEntry<ExComponentItem> ELDERBERRY    = REGISTRATE.item("elderberry", ExComponentItem::create)
+            .lang("Elderberry").setData(GTMFOProviderTypes.CNLANG,cn("接骨木莓"))
+            .onRegister(attach(Foods.ELDERBERRY))
+            .tag(GTMFOTags.BERRY)
+            .model(itemModel("berry/elderberry"))
+            .register();
 
     //bread
 //    public static final ItemEntry<Item>            WOODEN_FORM_BUN      =     item("wooden_form_bun"     ,"Bun Wooden Form"     ,"木制圆面包模具"  ,"bread/wooden_form_bun"     ,STACK_1);
@@ -237,6 +248,12 @@ public class GTMFOItems {
 //    public static final ItemEntry<Item>            PARMIGIANO_AGED_ROLL   = item("parmigiano_aged_roll"  ,"Aged Parmigiano-Reggiano Roll"              ,"熟化帕马森-雷加诺奶酪卷"                  ,"cheese/parmigiano_aged_roll"  );
 //    public static final ItemEntry<Item>            PARMIGIANO_CURDLING    = item("parmigiano_curdling"   ,"Curdling Parmigiano-Reggiano in Cheese Form","装有半凝固帕马森-雷加诺奶酪乳液的奶酪模具","cheese/parmigiano_curdling"   );
 
+    //cocoa
+    public static final ItemEntry<Item> COCOA_BEANS_ROASTED = item("cocoa_beans_roasted","Roasted Cocoa Beans","烘焙可可豆","cocoa/roasted");
+    public static final ItemEntry<Item> COCOA_BEANS_HULLED  = item("cocoa_beans_hulled" ,"Hulled Cocoa Beans" ,"去壳可可豆","cocoa/hulled" );
+    public static final ItemEntry<Item> COCOA_SHELL         = item("cocoa_shell"        ,"Cocoa Shell"        ,"可可壳"    ,"cocoa/shell"  );
+    public static final ItemEntry<Item> COCOA_NIBS          = item("cocoa_nibs"         ,"Ground Cocoa Nibs"  ,"可可碎"    ,"cocoa/nibs"   );
+
     //coffee
 //    public static final ItemEntry<Item> COFFEE_CHERRY                = item("coffee_cherry",               "Coffee Cherry",               "咖啡果",        "coffee/cherry");
 //    public static final ItemEntry<Item> COFFEE_CHERRY_LARGE          = item("coffee_cherry_large",         "Large Coffee Cherry",         "大咖啡果",      "coffee/cherry_large");
@@ -266,26 +283,31 @@ public class GTMFOItems {
 //    public static final ItemEntry<ExComponentItem> POPCORN_BAG = foodItem("popcorn_bag"           ,"Popcorn Bag"           ,"袋装爆米花"  ,"corn/popcorn_bag"      ,Foods.EMPTY);
 
     //crop
-//    public static final ItemEntry<Item> ARTICHOKE      = item("artichoke"     ,"Artichoke Heart"  ,"洋蓟心"  ,"crop/artichoke"     );
-//    public static final ItemEntry<Item> BASIL          = item("basil"         ,"Basil Leaf"       ,"罗勒叶"  ,"crop/basil"         );
-//    public static final ItemEntry<Item> BLACK_PEPPER   = item("black_pepper"  ,"Black Peppercorns","黑胡椒籽","crop/black_pepper"  );
-//    public static final ItemEntry<Item> CARROT_SLICE   = item("carrot_slice"  ,"Carrot Slice"     ,"胡萝卜片","crop/carrot_slice"  );
-//    public static final ItemEntry<Item> COTTON         = item("cotton"        ,"Cotton"           ,"棉花"    ,"crop/cotton"        );
-//    public static final ItemEntry<Item> CUCUMBER       = item("cucumber"      ,"Cucumber"         ,"黄瓜"    ,"crop/cucumber"      );
-//    public static final ItemEntry<Item> CUCUMBER_SLICE = item("cucumber_slice","Cucumber Slice"   ,"黄瓜片"  ,"crop/cucumber_slice");
-//    public static final ItemEntry<Item> EGGPLANT       = item("eggplant"      ,"Eggplant"         ,"茄子"    ,"crop/eggplant"      );
-//    public static final ItemEntry<Item> EGGPLANT_SLICE = item("eggplant_slice","Eggplant Slice"   ,"茄子片"  ,"crop/eggplant_slice");
-//    public static final ItemEntry<Item> GARLIC         = item("garlic"        ,"Garlic Bulb"      ,"大蒜头"  ,"crop/garlic"        );
-//    public static final ItemEntry<Item> HORSERADISH    = item("horseradish"   ,"Horseradish"      ,"辣根"    ,"crop/horseradish"   );
+    public static final ItemEntry<Item> ARTICHOKE      = item("artichoke"     ,"Artichoke Heart"  ,"洋蓟心"  ,"crop/artichoke"     );
+    public static final ItemEntry<Item> BASIL          = item("basil"         ,"Basil Leaf"       ,"罗勒叶"  ,"crop/basil"         );
+    public static final ItemEntry<Item> BLACK_PEPPER   = item("black_pepper"  ,"Black Peppercorns","黑胡椒籽","crop/black_pepper"  );
+    public static final ItemEntry<Item> CARROT_SLICE   = item("carrot_slice"  ,"Carrot Slice"     ,"胡萝卜片","crop/carrot_slice"  );
+    public static final ItemEntry<Item> COTTON         = item("cotton"        ,"Cotton"           ,"棉花"    ,"crop/cotton"        );
+    public static final ItemEntry<Item> CUCUMBER       = item("cucumber"      ,"Cucumber"         ,"黄瓜"    ,"crop/cucumber"      );
+    public static final ItemEntry<Item> CUCUMBER_SLICE = item("cucumber_slice","Cucumber Slice"   ,"黄瓜片"  ,"crop/cucumber_slice");
+    public static final ItemEntry<Item> EGGPLANT       = item("eggplant"      ,"Eggplant"         ,"茄子"    ,"crop/eggplant"      );
+    public static final ItemEntry<Item> EGGPLANT_SLICE = item("eggplant_slice","Eggplant Slice"   ,"茄子片"  ,"crop/eggplant_slice");
+    public static final ItemEntry<Item> GARLIC_PURPLE  = item("garlic_purple" ,"Purple Garlic"    ,"紫大蒜"  ,"crop/garlic_purple" );
+    public static final ItemEntry<Item> GARLIC_WHITE   = item("garlic_white"  ,"White Garlic"     ,"白大蒜"  ,"crop/garlic_white"  );
+    public static final ItemEntry<Item> HOP            = item("hop"           ,"Hop"              ,"啤酒花"  ,"crop/hop"           );
+    public static final ItemEntry<Item> HORSERADISH    = item("horseradish"   ,"Horseradish"      ,"辣根"    ,"crop/horseradish"   );
+    public static final ItemEntry<Item> LETTUCE        = item("lettuce"       ,"Lettuce"          ,"生菜"    ,"crop/lettuce"       );
+    public static final ItemEntry<Item> LETTUCE_LEAF   = item("lettuce_leaf"  ,"Lettuce Leaf"     ,"生菜叶"  ,"crop/lettuce_leaf"  );
     public static final ItemEntry<Item> MUSHROOM_SLICE = item("mushroom_slice","Mushroom Slice"   ,"蘑菇片"  ,"crop/mushroom_slice");
     public static final ItemEntry<Item> OLIVE          = item("olive"         ,"Olive"            ,"橄榄"    ,"crop/olive"         );
     public static final ItemEntry<Item> OLIVE_SLICE    = item("olive_slice"   ,"Olive Slice"      ,"橄榄片"  ,"crop/olive_slice"   );
-//    public static final ItemEntry<Item> ONION          = item("onion"         ,"Onion"            ,"洋葱"    ,"crop/onion"         );
-//    public static final ItemEntry<Item> ONION_SLICE    = item("onion"         ,"Onion Slice"      ,"洋葱片"  ,"crop/onion_slice"   );
-//    public static final ItemEntry<Item> OREGANO        = item("oregano"       ,"Oregano Leaf"     ,"牛至叶"  ,"crop/oregano"       );
-//    public static final ItemEntry<Item> PEA_POD        = item("pea_pod"       ,"Pea Pod"          ,"豌豆荚"  ,"crop/pea_pod"       );
-//    public static final ItemEntry<Item> RICE           = item("rice"          ,"Rice"             ,"大米"    ,"crop/rice"          );
-//    public static final ItemEntry<Item> SOYBEAN        = item("soybean"       ,"Soybean"          ,"大豆"    ,"crop/soybean"       );
+    public static final ItemEntry<Item> ONION          = item("onion"         ,"Onion"            ,"洋葱"    ,"crop/onion"         );
+    public static final ItemEntry<Item> ONION_SLICE    = item("onion"         ,"Onion Slice"      ,"洋葱片"  ,"crop/onion_slice"   );
+    public static final ItemEntry<Item> OREGANO        = item("oregano"       ,"Oregano Leaf"     ,"牛至叶"  ,"crop/oregano"       );
+    public static final ItemEntry<Item> PEA_POD        = item("pea_pod"       ,"Pea Pod"          ,"豌豆荚"  ,"crop/pea_pod"       );
+    public static final ItemEntry<Item> RICE           = item("rice"          ,"Rice"             ,"大米"    ,"crop/rice"          );
+    public static final ItemEntry<Item> SOYBEAN        = item("soybean"       ,"Soybean"          ,"大豆"    ,"crop/soybean"       );
+    public static final ItemEntry<Item> SOYBEAN_POD    = item("soybean_pod"   ,"Soybean Pod"      ,"大豆荚"  ,"crop/soybean_pod"   );
     public static final ItemEntry<Item> TOMATO         = item("tomato"        ,"Tomato"           ,"番茄"    ,"crop/tomato"        );
     public static final ItemEntry<Item> TOMATO_SLICE   = item("tomato_slice"  ,"Tomato Slice"     ,"番茄片"  ,"crop/tomato_slice"  );
 
@@ -307,22 +329,22 @@ public class GTMFOItems {
     public static final ItemEntry<Item> PASTA_DOUGH_PREMIXED = item("pasta_dough_premixed","Premixed Pasta Dough","预拌意面面团","dough/pasta_premixed");
 
     //drink
-//    public static final ItemEntry<ExComponentItem> ANTAF            = foodItem("antaf"           ,"Antaf™"         ,"Antaf™"     ,"drink/antaf"           ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> BEER             = foodItem("beer"            ,"Beer"            ,"啤酒"        ,"drink/beer"            ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> COAC             = foodItem("coac"            ,"Coac"            ,"乐可"        ,"drink/coac"            ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> ETIRPS           = foodItem("etirps"          ,"Etirps™"        ,"碧雪™"      ,"drink/etirps"          ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> ETIRPS_CRANBERRY = foodItem("etirps_cranberry","Etirps Cranberry","蔓越莓味碧雪","drink/etirps_cranberry",Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> GREEN_ISLAND     = foodItem("green_island"    ,"Green Island™"  ,"绿岛啤酒™"  ,"drink/green_island"    ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> JUICE_APPLE      = foodItem("juice_apple"     ,"Apple Juice"     ,"苹果汁"      ,"drink/juice_apple"     ,Foods.JUICE);
-//    public static final ItemEntry<ExComponentItem> JUICE_ORANGE     = foodItem("juice_orange"    ,"Orange Juice"    ,"橙汁"        ,"drink/juice_orange"    ,Foods.JUICE);
-//    public static final ItemEntry<ExComponentItem> LENINADE         = foodItem("leninade"        ,"Leninade"        ,"列宁檬汁"    ,"drink/leninade"        ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> MINERAL_WATER    = foodItem("mineral_water"   ,"Mineral Water"   ,"矿泉水"      ,"drink/mineral_water"   ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> NILK             = foodItem("nilk"            ,"Nilk"            ,"硅岩风味乳"  ,"drink/nilk"            ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> RED_WINE         = foodItem("red_wine"        ,"Red Wine"        ,"红葡萄酒"    ,"drink/red_wine"        ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> SEPIP            = foodItem("sepip"           ,"Sepip"           ,"事百"        ,"drink/sepip"           ,Foods.ETIRPS);
-//    public static final ItemEntry<ExComponentItem> SPARKLING_WATER  = foodItem("sparkling_water" ,"Sparkling Water" ,"气泡水"      ,"drink/sparkling_water" ,Foods.SPARKLING_WATER);
-//    public static final ItemEntry<ExComponentItem> VODKA            = foodItem("vodka"           ,"Vodka"           ,"伏特加"      ,"drink/vodka"           ,Foods.VODKA);
-//    public static final ItemEntry<ExComponentItem> WHITE_WINE       = foodItem("white_wine"      ,"White Wine"      ,"白葡萄酒"    ,"drink/white_wine"      ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> ANTAF            = foodItem("antaf"           ,"Antaf™"         ,"Antaf™"     ,"drink/antaf"           ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> BEER             = foodItem("beer"            ,"Beer"            ,"啤酒"        ,"drink/beer"            ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> COAC             = foodItem("coac"            ,"Coac"            ,"乐可"        ,"drink/coac"            ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> ETIRPS           = foodItem("etirps"          ,"Etirps™"        ,"碧雪™"      ,"drink/etirps"          ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> ETIRPS_CRANBERRY = foodItem("etirps_cranberry","Etirps Cranberry","蔓越莓味碧雪","drink/etirps_cranberry",Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> GREEN_ISLAND     = foodItem("green_island"    ,"Green Island™"  ,"绿岛啤酒™"  ,"drink/green_island"    ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> JUICE_APPLE      = foodItem("juice_apple"     ,"Apple Juice"     ,"苹果汁"      ,"drink/juice_apple"     ,Foods.JUICE);
+    public static final ItemEntry<ExComponentItem> JUICE_ORANGE     = foodItem("juice_orange"    ,"Orange Juice"    ,"橙汁"        ,"drink/juice_orange"    ,Foods.JUICE);
+    public static final ItemEntry<ExComponentItem> LENINADE         = foodItem("leninade"        ,"Leninade"        ,"列宁檬汁"    ,"drink/leninade"        ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> MINERAL_WATER    = foodItem("mineral_water"   ,"Mineral Water"   ,"矿泉水"      ,"drink/mineral_water"   ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> NILK             = foodItem("nilk"            ,"Nilk"            ,"硅岩风味乳"  ,"drink/nilk"            ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> RED_WINE         = foodItem("red_wine"        ,"Red Wine"        ,"红葡萄酒"    ,"drink/red_wine"        ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> SEPIP            = foodItem("sepip"           ,"Sepip"           ,"事百"        ,"drink/sepip"           ,Foods.ETIRPS);
+    public static final ItemEntry<ExComponentItem> SPARKLING_WATER  = foodItem("sparkling_water" ,"Sparkling Water" ,"气泡水"      ,"drink/sparkling_water" ,Foods.SPARKLING_WATER);
+    public static final ItemEntry<ExComponentItem> VODKA            = foodItem("vodka"           ,"Vodka"           ,"伏特加"      ,"drink/vodka"           ,Foods.VODKA);
+    public static final ItemEntry<ExComponentItem> WHITE_WINE       = foodItem("white_wine"      ,"White Wine"      ,"白葡萄酒"    ,"drink/white_wine"      ,Foods.EMPTY);
 
     //food_chinese
 //    public static final ItemEntry<Item> JIAOZI     = item("jiaozi"    ,"Jiaozi"    ,"饺子"  ,"food_chinese/jiaozi"    );
@@ -473,23 +495,24 @@ public class GTMFOItems {
 //    public static final ItemEntry<Item> SANDWICH_VIBRANT      = item("sandwich_vibrant"     ,"Vibrant Sandwich"     ,"Vibrant Sandwich","sandwich/vibrant"     );
 
     //seed
-//    public static final ItemEntry<Item> SEED_UNKNOWN     = item("seed_unknown"    ,"Undetermined GTMFO Seeds","不明GTMFO种子","seed/unknown"    );
-//    public static final ItemEntry<Item> SEED_ARTICHOKE   = item("seed_artichoke"  ,"Artichoke Seeds"         ,"洋蓟种子"     ,"seed/artichoke"  );
-//    public static final ItemEntry<Item> SEED_BASIL       = item("seed_basil"      ,"Basil Seeds"             ,"罗勒种子"     ,"seed/basil"      );
-//    public static final ItemEntry<Item> SEED_BEAN        = item("seed_bean"       ,"Beans"                   ,"菜豆"         ,"seed/bean"       );
-//    public static final ItemEntry<Item> SEED_COFFEE      = item("seed_coffee"     ,"Coffee Seed"             ,"咖啡种子"     ,"seed/coffee"     );
-//    public static final ItemEntry<Item> SEED_COTTON      = item("seed_cotton"     ,"Cotton Seeds"            ,"棉花种子"     ,"seed/cotton"     );
-//    public static final ItemEntry<Item> SEED_CUCUMBER    = item("seed_cucumber"   ,"Cucumber Seeds"          ,"黄瓜种子"     ,"seed/cucumber"   );
-//    public static final ItemEntry<Item> SEED_EGGPLANT    = item("seed_eggplant"   ,"Eggplant Seeds"          ,"茄子种子"     ,"seed/eggplant"   );
-//    public static final ItemEntry<Item> SEED_GARLIC      = item("seed_garlic"     ,"Garlic Clove"            ,"大蒜瓣"       ,"seed/garlic"     );
-//    public static final ItemEntry<Item> SEED_GRAPE       = item("seed_grape"      ,"Grape Seeds"             ,"葡萄种子"     ,"seed/grape"      );
-//    public static final ItemEntry<Item> SEED_HORSERADISH = item("seed_horseradish","Horseradish Seeds"       ,"辣根种子"     ,"seed/horseradish");
-//    public static final ItemEntry<Item> SEED_ONION       = item("seed_onion"      ,"Onion Seeds"             ,"洋葱种子"     ,"seed/onion"      );
-//    public static final ItemEntry<Item> SEED_OREGANO     = item("seed_oregano"    ,"Oregano Seeds"           ,"牛至种子"     ,"seed/oregano"    );
-//    public static final ItemEntry<Item> SEED_PEA         = item("seed_pea"        ,"Peas"                    ,"豌豆"         ,"seed/pea"        );
-//    public static final ItemEntry<Item> SEED_SOY         = item("seed_soy"        ,"Soybean Seeds"           ,"大豆种子"     ,"seed/soy"        );
-//    public static final ItemEntry<Item> SEED_TOMATO      = item("seed_tomato"     ,"Tomato Seeds"            ,"番茄种子"     ,"seed/tomato"     );
-//    public static final ItemEntry<Item> SEED_WHITE_GRAPE = item("seed_white_grape","White Grape Seeds"       ,"白葡萄种子"   ,"seed/white_grape");
+    public static final ItemEntry<Item> SEED_UNKNOWN       = item("seed_unknown"      ,"Undetermined GTMFO Seeds","不明GTMFO种子","seed/unknown"      );
+    public static final ItemEntry<Item> SEED_ARTICHOKE     = item("seed_artichoke"    ,"Artichoke Seeds"         ,"洋蓟种子"     ,"seed/artichoke"    );
+    public static final ItemEntry<Item> SEED_BASIL         = item("seed_basil"        ,"Basil Seeds"             ,"罗勒种子"     ,"seed/basil"        );
+    public static final ItemEntry<Item> SEED_BEAN          = item("seed_bean"         ,"Beans"                   ,"菜豆"         ,"seed/bean"         );
+    public static final ItemEntry<Item> SEED_COFFEE        = item("seed_coffee"       ,"Coffee Seed"             ,"咖啡种子"     ,"seed/coffee"       );
+    public static final ItemEntry<Item> SEED_COTTON        = item("seed_cotton"       ,"Cotton Seeds"            ,"棉花种子"     ,"seed/cotton"       );
+    public static final ItemEntry<Item> SEED_CUCUMBER      = item("seed_cucumber"     ,"Cucumber Seeds"          ,"黄瓜种子"     ,"seed/cucumber"     );
+    public static final ItemEntry<Item> SEED_EGGPLANT      = item("seed_eggplant"     ,"Eggplant Seeds"          ,"茄子种子"     ,"seed/eggplant"     );
+    public static final ItemEntry<Item> SEED_GARLIC_PURPLE = item("seed_garlic_purple","Purple Garlic Clove"     ,"紫大蒜瓣"     ,"seed/garlic_purple");
+    public static final ItemEntry<Item> SEED_GARLIC_WHITE  = item("seed_garlic_white" ,"White Garlic Clove"      ,"白大蒜瓣"     ,"seed/garlic_white" );
+    public static final ItemEntry<Item> SEED_GRAPE         = item("seed_grape"        ,"Grape Seeds"             ,"葡萄种子"     ,"seed/grape"        );
+    public static final ItemEntry<Item> SEED_HORSERADISH   = item("seed_horseradish"  ,"Horseradish Seeds"       ,"辣根种子"     ,"seed/horseradish"  );
+    public static final ItemEntry<Item> SEED_ONION         = item("seed_onion"        ,"Onion Seeds"             ,"洋葱种子"     ,"seed/onion"        );
+    public static final ItemEntry<Item> SEED_OREGANO       = item("seed_oregano"      ,"Oregano Seeds"           ,"牛至种子"     ,"seed/oregano"      );
+    public static final ItemEntry<Item> SEED_PEA           = item("seed_pea"          ,"Peas"                    ,"豌豆"         ,"seed/pea"          );
+    public static final ItemEntry<Item> SEED_SOY           = item("seed_soy"          ,"Soybean Seeds"           ,"大豆种子"     ,"seed/soy"          );
+    public static final ItemEntry<Item> SEED_TOMATO        = item("seed_tomato"       ,"Tomato Seeds"            ,"番茄种子"     ,"seed/tomato"       );
+    public static final ItemEntry<Item> SEED_WHITE_GRAPE   = item("seed_white_grape"  ,"White Grape Seeds"       ,"白葡萄种子"   ,"seed/white_grape"  );
 
     //shape
 //    public static final ItemEntry<Item> SHAPE_PASTA_BLANK       = item("shape_pasta_blank"      ,"Blank Pasta Extruder Shape"      ,"空青铜模板"              ,"shape/pasta/blank"      );
@@ -560,16 +583,16 @@ public class GTMFOItems {
 //    public static final ItemEntry<Item> BEEF_SLICE         = item("beef_slice"        ,"Beef Slice"        ,"生牛肉片");
 //    public static final ItemEntry<Item> BEEF_SLICE_ROASTED = item("beef_slice_roasted","Roasted Beef Slice","熟牛肉片");
 //    public static final ItemEntry<Item> BERRY_MEDLEY = item("berry_medley","Berry Medley","什锦浆果");
-//    public static final ItemEntry<Item> BRICK_ADOBE = item("brick_adobe","Adobe Brick","土坯砖");
-//    public static final ItemEntry<Item> BRICK_MUB   = item("brick_mud"  ,"Mud Brick"  ,"泥砖"  );
+    public static final ItemEntry<Item> BRICK_ADOBE = item("brick_adobe","Adobe Brick","土坯砖");
+    public static final ItemEntry<Item> BRICK_MUB   = item("brick_mud"  ,"Mud Brick"  ,"泥砖"  );
 //    public static final ItemEntry<Item> CAKE_BOTTOM       = item("cake_bottom"      ,"Cake Bottom"      ,"蛋糕底"  );
 //    public static final ItemEntry<Item> CAKE_BOTTOM_BAKED = item("cake_bottom_baked","Baked Cake Bottom","烤蛋糕底");
+    public static final ItemEntry<Item> CERAMIC_CLAY = item("ceramic_clay","Ceramic Clay","瓷土");
 
 //    public static final ItemEntry<ExComponentItem> CHUM        = foodItem("chum"       ,"Chum"                 ,"海霸糊"    ,Foods.CHUM);
 //    public static final ItemEntry<ExComponentItem> CHUM_BUCKET = foodItem("chum_bucket","Chum Bucket Kebab Mix","烤海霸拌桶",Foods.EMPTY);
 //    public static final ItemEntry<ExComponentItem> CHUM_STICK  = foodItem("chum_stick" ,"Chum on a Stick"      ,"海霸糊棒"  ,Foods.CHUM_STICK,STACK_16);
-//    public static final ItemEntry<Item> COCOA_BEANS_ROASTED = item("cocoa_beans_roasted","Roasted Cocoa Beans","烘焙可可豆");
-//    public static final ItemEntry<Item> COCOA_NIBS          = item("cocoa_nibs"         ,"Ground Cocoa Nibs"  ,"可可粉"    );
+
 //    public static final ItemEntry<Item> COFFEE_FILTER = item("coffee_filter","Coffee Filter","咖啡滤纸");
 //    public static final ItemEntry<Item> EMERGENCY_RATIONS = item("emergency_rations","Emergency Rations","应急配给");
 //    public static final ItemEntry<Item> FERMENTED_CHORUS     = item("fermented_chorus"    ,"Fermented Chorus"    ,"发酵紫颂果"  );
