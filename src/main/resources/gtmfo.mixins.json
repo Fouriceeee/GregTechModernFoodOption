@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ironsword.gtmfo.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "com.ironsword.gtmfo.mixin.GTMFOMixinPlugin",
+  "mixins": [
+    "FoodPropertiesMixin",
+    "ItemMixin",
+    "PlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "gtportal.refmap.json"
+}

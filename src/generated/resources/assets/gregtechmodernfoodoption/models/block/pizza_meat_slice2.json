@@ -1,8 +1,0 @@
-{
-  "parent": "gregtechmodernfoodoption:block/pizza/pizza_slice2",
-  "textures": {
-    "layer": "gregtechmodernfoodoption:block/pizza/meat",
-    "particle": "gregtechmodernfoodoption:block/pizza/top_1",
-    "top": "gregtechmodernfoodoption:block/pizza/top_1"
-  }
-}

@@ -1,0 +1,189 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "gtmfo:block/smore",
+		"particle": "gtmfo:block/smore"
+	},
+	"elements": [
+		{
+			"name": "smore",
+			"from": [5.5, 2.5, 3.5],
+			"to": [10.5, 4.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 9, 5, 13], "texture": "#0"},
+				"east": {"uv": [5, 0, 14, 4], "texture": "#0"},
+				"south": {"uv": [0, 9, 5, 13], "texture": "#0"},
+				"west": {"uv": [5, 0, 14, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 0, 3.5],
+			"to": [10.5, 1.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 13], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 4], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 13], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 4], "texture": "#0"},
+				"down": {"uv": [0, 0, 5, 9], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 1.5, 3.5],
+			"to": [10.5, 2.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 5.5, 3.5],
+			"to": [10.5, 7, 12.5],
+			"faces": {
+				"north": {"uv": [0, 9, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 0, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 9, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 0, 14, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 4.5, 3.5],
+			"to": [10.5, 5.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 10.5, 3.5],
+			"to": [10.5, 12.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 9, 5, 13], "texture": "#0"},
+				"east": {"uv": [5, 0, 14, 4], "texture": "#0"},
+				"south": {"uv": [0, 9, 5, 13], "texture": "#0"},
+				"west": {"uv": [5, 0, 14, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 8, 3.5],
+			"to": [10.5, 9.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 13], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 4], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 13], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 9.5, 3.5],
+			"to": [10.5, 10.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 13.5, 3.5],
+			"to": [10.5, 15, 12.5],
+			"faces": {
+				"north": {"uv": [0, 9, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 0, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 9, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 0, 14, 3], "texture": "#0"},
+				"up": {"uv": [0, 0, 5, 9], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 12.5, 3.5],
+			"to": [10.5, 13.5, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "smore",
+			"from": [5.5, 7, 3.5],
+			"to": [10.5, 8, 12.5],
+			"faces": {
+				"north": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"east": {"uv": [5, 1, 14, 3], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 12], "texture": "#0"},
+				"west": {"uv": [5, 1, 14, 3], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, 45, 0],
+			"translation": [0, 0.5, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "foursmore",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"children": [
+				0,
+				{
+					"name": "moresmore",
+					"origin": [0, 0, 0],
+					"scope": 0,
+					"color": 0,
+					"children": [1, 2]
+				},
+				{
+					"name": "moresmore",
+					"origin": [0, 0, 0],
+					"scope": 0,
+					"color": 0,
+					"children": [3, 4]
+				}
+			]
+		},
+		{
+			"name": "foursmore",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"children": [
+				5,
+				{
+					"name": "moresmore",
+					"origin": [0, 0, 0],
+					"scope": 0,
+					"color": 0,
+					"children": [6, 7]
+				},
+				{
+					"name": "moresmore",
+					"origin": [0, 0, 0],
+					"scope": 0,
+					"color": 0,
+					"children": [8, 9]
+				}
+			]
+		},
+		10
+	]
+}
