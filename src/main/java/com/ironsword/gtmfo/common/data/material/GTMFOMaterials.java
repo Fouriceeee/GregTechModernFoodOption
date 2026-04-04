@@ -20,7 +20,7 @@ public class GTMFOMaterials {
     public static final Map<String, Pair<String,String>> LANG_MAP = new HashMap<>();
 
     public static Material Zest = simpleDust("zest",0xd8ff4a,"Zest", "碎橙皮");
-    public static Material SodiumCyanide = dust("sodium_cyanide", GTMFOUtils.averageRGB(2,0x6e6a5e,0x7c80ff),"Sodium Cyanide","氰化钠");
+    public static Material SodiumCyanide = dust("sodium_cyanide", 0x7575ae,"Sodium Cyanide","氰化钠");
 
     private static TagPrefix[] without(TagPrefix tagPrefix){
         return TagPrefix.values().stream().filter(prefix->!prefix.equals(tagPrefix)).toArray(TagPrefix[]::new);

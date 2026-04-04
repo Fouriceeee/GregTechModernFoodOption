@@ -16,6 +16,7 @@ public class GTMFORecipes {
 
     public static void init(Consumer<FinishedRecipe> provider){
         AppleRecipes.init(provider);
+        BerryRecipes.init(provider);
         CoreChain.init(provider);
         PotatoRecipes.init(provider);
         PizzaRecipes.init(provider);

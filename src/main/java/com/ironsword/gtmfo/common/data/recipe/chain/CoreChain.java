@@ -24,6 +24,7 @@ public class CoreChain {
         sliceBlades(provider);
         liquidFoodExtracts(provider);
         slicingRecipes(provider);
+        drink(provider);
         misc(provider);
     }
 
@@ -243,6 +244,15 @@ public class CoreChain {
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
                 .outputItems(GTMFOItems.TOMATO_SLICE,8)
                 .EUt(18).duration(30).save(provider);
+    }
+
+    private static void drink(Consumer<FinishedRecipe> provider){
+        GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("carbonated_water"))
+                .inputFluids(
+                        GTMaterials.Water.getFluid(1000),
+                        GTMaterials.CarbonDioxide.getFluid(100))
+                .outputFluids(GTMFOFluids.CarbonatedWater.getFluid(1050))
+                .EUt(120).duration(60).save(provider);
     }
 
     private static void misc(Consumer<FinishedRecipe> provider) {

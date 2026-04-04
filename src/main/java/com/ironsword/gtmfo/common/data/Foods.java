@@ -39,7 +39,7 @@ public class Foods {
 
     //berry
     public static final GTMFOFoodStats BERRY                 =    food( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     );
-    public static final GTMFOFoodStats ELDERBERRY            = builder( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     ).effect(MobEffects.CONFUSION,400,0,0.05f).effect(MobEffects.POISON,200,0,0.10f).build();
+    public static final GTMFOFoodStats BERRY_POISONOUS       = builder( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     ).effect(MobEffects.CONFUSION,400,0,0.05f).effect(MobEffects.POISON,200,0,0.10f).build();
     public static final GTMFOFoodStats BERRY_MEDLEY          =    food( 5    , 0.5f  , 0     , 1f    , 0     , 0     , 0     );
 
     //bread
