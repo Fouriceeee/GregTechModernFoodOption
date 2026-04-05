@@ -7,6 +7,7 @@ import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.chain.*;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Consumer;
 
@@ -17,6 +18,7 @@ public class GTMFORecipes {
     public static void init(Consumer<FinishedRecipe> provider){
         AppleRecipes.init(provider);
         BerryRecipes.init(provider);
+        BreadsRecipes.init(provider);
         CoreChain.init(provider);
         PotatoRecipes.init(provider);
         PizzaRecipes.init(provider);
@@ -30,6 +32,10 @@ public class GTMFORecipes {
 
         GTMFOMachineRecipes.init(provider);
 
+    }
+
+    public static void remove(Consumer<ResourceLocation> consumer){
+        BreadsRecipes.remove(consumer);
     }
 
     private static void cheeseRecipes(Consumer<FinishedRecipe> provider){

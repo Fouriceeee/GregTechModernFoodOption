@@ -22,32 +22,27 @@ public class Foods {
         return new GTMFOFoodStats.Builder(foodLevel,saturation,dairy,fruit,grain,protein,vegetable);
     }
 
-    private static Supplier<MobEffectInstance> effect(MobEffect mobEffect,int duration){
-        return ()->new MobEffectInstance(mobEffect,duration,0);
-    }
-
-    private static Supplier<MobEffectInstance> effect(MobEffect mobEffect,int duration,int amplifier){
-        return ()->new MobEffectInstance(mobEffect,duration,amplifier);
-    }
-
     public static final GTMFOFoodStats EMPTY = food(0,0f,0,0,0,0,0);
 
     //apple_candy
-    public static final GTMFOFoodStats APPLE_SLICE           =    food( 1    , 0.1f  , 32    , 0     , 1f    , 0     , 0     , 0     );
+    public static final GTMFOFoodStats APPLE_CORED           = builder( 4    , 0.3f  , 0     , 1f    , 0     , 0     , 0     ).eatDuration(24).build();
+    public static final GTMFOFoodStats APPLE_SLICE           = builder( 1    , 0.1f  , 0     , 1f    , 0     , 0     , 0     ).build();
     public static final GTMFOFoodStats APPLE_TUNGSTENSTEEL   = builder( 3    , 1f    , 0     , 1f    , 0     , 0     , 0     ).eatDuration(80).effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f).effect(MobEffects.NIGHT_VISION,3600,2,0.6f).effect(MobEffects.HARM,1,1,1f).build();
-    public static final GTMFOFoodStats APPLE_CANDY           = builder( 1    , 1f    , 0     , 0.5f  , 0     , 0     , 0     ).eatDuration(24).effect(MobEffects.REGENERATION,1200,0,0.5f).build();
+    public static final GTMFOFoodStats APPLE_CANDY           = builder( 1    , 1f    , 0     , 0.5f  , 0     , 0     , 0     ).eatDuration(24).effect(MobEffects.REGENERATION,1200,1,0.5f).build();
 
     //berry
-    public static final GTMFOFoodStats BERRY                 =    food( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     );
+    public static final GTMFOFoodStats BERRY                 = builder( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     ).build();
     public static final GTMFOFoodStats BERRY_POISONOUS       = builder( 1    , 0.5f  , 0     , 1f    , 0     , 0     , 0     ).effect(MobEffects.CONFUSION,400,0,0.05f).effect(MobEffects.POISON,200,0,0.10f).build();
-    public static final GTMFOFoodStats BERRY_MEDLEY          =    food( 5    , 0.5f  , 0     , 1f    , 0     , 0     , 0     );
+    public static final GTMFOFoodStats BERRY_MEDLEY          = builder( 5    , 0.5f  , 0     , 1f    , 0     , 0     , 0     ).item(Items.BOWL::getDefaultInstance).build();
 
     //bread
-    public static final GTMFOFoodStats BUN                   =    food( 1    , 1f    , 25    , 0     , 0     , 1f    , 0     , 0     );
-    public static final GTMFOFoodStats BUN_PRESLICED         =    food( 0    , 0     , 20    , 0     , 0     , 0.5f  , 0     , 0     );
-    public static final GTMFOFoodStats BREAD_PRESLICED       =    food( 1    , 1f    , 20    , 0     , 0     , 0.5f  , 0     , 0     );
+    public static final GTMFOFoodStats BUN                   = builder( 1    , 1f    , 0     , 0     , 1f    , 0     , 0     ).eatDuration(25).build();
+    public static final GTMFOFoodStats BUN_SLICED            = builder( 0    , 0     , 0     , 0     , 0.5f  , 0     , 0     ).eatDuration(20).build();
+    public static final GTMFOFoodStats BREAD_SLICED          = builder( 1    , 1f    , 0     , 0     , 0.5f  , 0     , 0     ).eatDuration(20).build();
     public static final GTMFOFoodStats BAGUETTE              = builder( 2    , 1f    , 0     , 0     , 1f    , 0     , 0     ).eatDuration(40).effect(MobEffects.DIG_SPEED,1200,0,0.5f).build();
-    public static final GTMFOFoodStats BAGUETTE_PRESLICED    =    food( 1    , 1f    , 20    , 0     , 0     , 0.5f  , 0     , 0     );
+    public static final GTMFOFoodStats BAGUETTE_SLICED       = builder( 1    , 1f    , 0     , 0     , 0.5f  , 0     , 0     ).eatDuration(20).build();
+    public static final GTMFOFoodStats BREAD_SLICE           = builder( 1    , 0.5f  , 0     , 0     , 1f    , 0     , 0     ).build();
+    public static final GTMFOFoodStats TOAST                 = builder( 2    , 0.5f  , 0     , 0     , 1.5f  , 0     , 0     ).build();
 
     //burger
     public static final GTMFOFoodStats BURGER_VEGGIE         =    food( 4    , 0.6f  , 32    , 0     , 0     , 1f    , 0     , 1f    );
@@ -180,8 +175,7 @@ public class Foods {
     public static final GTMFOFoodStats MARSHMALLOW           =    food( 1    , 1f    , 32    , 0     , 0     , 0.5f  , 0.5f  , 0     );
 
     public static final GTMFOFoodStats MUSHY_PEAS            =    food( 3    , 1f    , 32    , 0     , 0     , 0     , 0     , 1f    );
-    public static final GTMFOFoodStats BREAD_SLICE           =    food( 1    , 0.5f  , 32    , 0     , 0     , 1f    , 0     , 0     );
-    public static final GTMFOFoodStats TOAST                 =    food( 2    , 0.5f  , 32    , 0     , 0     , 1.5f  , 0     , 0     );
+
     public static final GTMFOFoodStats FISH_AND_CHIPS        =    food( 7    , 0.6f  , 32    , 0     , 0     , 1f    , 1f    , 0.25f );
     public static final GTMFOFoodStats FULL_BREAKFAST        =    food( 10   , 1.2f  , 32    , 0     , 1f    , 1f    , 1.5f  , 1f    );
     public static final GTMFOFoodStats SHEPHERDS_PIE         =    food( 9    , 1f    , 32    , 0     , 0     , 1f    , 1f    , 1f    );

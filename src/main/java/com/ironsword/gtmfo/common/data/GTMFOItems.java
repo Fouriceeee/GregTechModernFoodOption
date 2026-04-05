@@ -176,7 +176,7 @@ public class GTMFOItems {
 
 
     //apple
-    public static final ItemEntry<Item>            APPLE_CORED         =     item("apple_cored"        ,"Cored Apple"        ,"去核苹果","apple/cored"        );
+    public static final ItemEntry<ExComponentItem> APPLE_CORED         = foodItem("apple_cored"        ,"Cored Apple"        ,"去核苹果","apple/cored"        ,Foods.APPLE_CORED);
     public static final ItemEntry<ExComponentItem> APPLE_SLICE         = foodItem("apple_slice"        ,"Apple Slice"        ,"苹果片"  ,"apple/slice"        ,Foods.APPLE_SLICE);
     public static final ItemEntry<ExComponentItem> APPLE_TUNGSTENSTEEL = foodItem("apple_tungstensteel","Tungstensteel Apple","钨钢苹果","apple/tungstensteel",Foods.APPLE_TUNGSTENSTEEL);
     public static final ItemEntry<ExComponentItem> APPLE_CANDY         = foodItem("apple_candy"        ,"Apple Candy"        ,"苹果糖"    ,"apple/candy"        ,Foods.APPLE_CANDY);
@@ -196,21 +196,22 @@ public class GTMFOItems {
     public static final ItemEntry<ExComponentItem> BLACK_CURRANT = berry("black_currant",GTMFOTags.BERRY_TART     ,"Black Currant","黑加仑"  );
     public static final ItemEntry<ExComponentItem> RED_CURRANT   = berry("red_currant"  ,GTMFOTags.BERRY_TART     ,"Red Currant"  ,"红加仑"  );
     public static final ItemEntry<ExComponentItem> WHITE_CURRANT = berry("white_currant",GTMFOTags.BERRY_TART     ,"White Currant","白加仑"  );
+    public static final ItemEntry<ExComponentItem> BERRY_MEDLEY  = foodItem("berry_medley"                        ,"Berry Medley" ,"什锦浆果","berry/medley",Foods.BERRY_MEDLEY);
 
     //bread
-//    public static final ItemEntry<Item>            WOODEN_FORM_BUN      =     item("wooden_form_bun"     ,"Bun Wooden Form"     ,"木制圆面包模具"  ,"bread/wooden_form_bun"     ,STACK_1);
-//    public static final ItemEntry<Item>            WOODEN_FORM_BREAD    =     item("wooden_form_bread"   ,"Bread Wooden Form"   ,"木制面包模具"    ,"bread/wooden_form_bread"   ,STACK_1);
-//    public static final ItemEntry<Item>            WOODEN_FORM_BAGUETTE =     item("wooden_form_baguette","Baguette Wooden Form","木制法棍面包模具","bread/wooden_form_baguette",STACK_1);
-//    public static final ItemEntry<Item>            BUN_UNBAKED          =     item("bun_unbaked"         ,"Unbaked Bun"         ,"圆面包坯"        ,"bread/bun_unbaked"         );
-//    public static final ItemEntry<Item>            BREAD_UNBAKED        =     item("bread_unbaked"       ,"Unbaked Bread"       ,"面包坯"          ,"bread/bread_unbaked"       );
-//    public static final ItemEntry<Item>            BAGUETTE_UNCOOKED    =     item("baguette_unbaked"    ,"Unbaked Baguette"    ,"法棍面包坯"      ,"bread/baguette_unbaked"    );
-//    public static final ItemEntry<ExComponentItem> BUN                  = foodItem("bun"                 ,"Bun"                 ,"圆面包"          ,"bread/bun"                 ,Foods.BUN);
-//    public static final ItemEntry<ExComponentItem> BUN_PRESLICED        = foodItem("bun_presliced"       ,"Pre-Sliced Bun"      ,"切好的圆面包"    ,"bread/bun_presliced"       ,Foods.BUN_PRESLICED);
-//    public static final ItemEntry<ExComponentItem> BREAD_PRESLICED      = foodItem("bread_presliced"     ,"Pre-Sliced Bread"    ,"切好的面包"      ,"bread/bread_presliced"     ,Foods.BREAD_PRESLICED);
-//    public static final ItemEntry<ExComponentItem> BREAD_SLICE          = foodItem("bread_slice"         ,"Bread Slice"         ,"面包片"          ,"bread/bread_slice"         ,Foods.BREAD_SLICE);
-//    public static final ItemEntry<ExComponentItem> TOAST                = foodItem("toast"               ,"Toast"               ,"吐司"            ,"bread/toast"               ,Foods.TOAST);
-//    public static final ItemEntry<ExComponentItem> BAGUETTE             = foodItem("baguette"            ,"Baguette"            ,"法棍面包"        ,"bread/baguette"            ,Foods.BAGUETTE);
-//    public static final ItemEntry<ExComponentItem> BAGUETTE_PRESLICED   = foodItem("baguette_presliced"  ,"Pre-Sliced Baguette" ,"切好的法棍面包"  ,"bread/baguette_presliced"  ,Foods.BAGUETTE_PRESLICED);
+    public static final ItemEntry<Item>            WOODEN_FORM_BUN      =     item("wooden_form_bun"     ,"Bun Wooden Form"     ,"木制圆面包模具"  ,"bread/wooden_form_bun"     ,STACK_1);
+    public static final ItemEntry<Item>            WOODEN_FORM_BREAD    =     item("wooden_form_bread"   ,"Bread Wooden Form"   ,"木制面包模具"    ,"bread/wooden_form_bread"   ,STACK_1);
+    public static final ItemEntry<Item>            WOODEN_FORM_BAGUETTE =     item("wooden_form_baguette","Baguette Wooden Form","木制法棍面包模具","bread/wooden_form_baguette",STACK_1);
+    public static final ItemEntry<Item>            BUN_UNBAKED          =     item("bun_unbaked"         ,"Unbaked Bun"         ,"圆面包坯"        ,"bread/bun_unbaked"         );
+    public static final ItemEntry<Item>            BREAD_UNBAKED        =     item("bread_unbaked"       ,"Unbaked Bread"       ,"面包坯"          ,"bread/bread_unbaked"       );
+    public static final ItemEntry<Item>            BAGUETTE_UNCOOKED    =     item("baguette_unbaked"    ,"Unbaked Baguette"    ,"法棍面包坯"      ,"bread/baguette_unbaked"    );
+    public static final ItemEntry<ExComponentItem> BUN                  = foodItem("bun"                 ,"Bun"                 ,"圆面包"          ,"bread/bun"                 ,Foods.BUN);
+    public static final ItemEntry<ExComponentItem> BUN_SLICED           = foodItem("bun_sliced"          ,"Pre-Sliced Bun"      ,"切好的圆面包"    ,"bread/bun_sliced"          ,Foods.BUN_SLICED);
+    public static final ItemEntry<ExComponentItem> BREAD_SLICED         = foodItem("bread_sliced"        ,"Pre-Sliced Bread"    ,"切好的面包"      ,"bread/bread_sliced"        ,Foods.BREAD_SLICED);
+    public static final ItemEntry<ExComponentItem> BREAD_SLICE          = foodItem("bread_slice"         ,"Bread Slice"         ,"面包片"          ,"bread/bread_slice"         ,Foods.BREAD_SLICE);
+    public static final ItemEntry<ExComponentItem> TOAST                = foodItem("toast"               ,"Toast"               ,"吐司"            ,"bread/toast"               ,Foods.TOAST);
+    public static final ItemEntry<ExComponentItem> BAGUETTE             = foodItem("baguette"            ,"Baguette"            ,"法棍面包"        ,"bread/baguette"            ,Foods.BAGUETTE);
+    public static final ItemEntry<ExComponentItem> BAGUETTE_SLICED      = foodItem("baguette_sliced"     ,"Pre-Sliced Baguette" ,"切好的法棍面包"  ,"bread/baguette_sliced"     ,Foods.BAGUETTE_SLICED);
 
     //burger
 //    public static final ItemEntry<ExComponentItem> BURGER_BACON  = foodItem("burger_bacon" ,"Bacon Burger" ,"培根汉堡","burger/bacon" ,Foods.EMPTY);
@@ -582,7 +583,7 @@ public class GTMFOItems {
 //    public static final ItemEntry<Item> BEANS_WITH_SAUCE = item("beans_with_sauce","Beans with Sauce","番茄酱豆");
 //    public static final ItemEntry<Item> BEEF_SLICE         = item("beef_slice"        ,"Beef Slice"        ,"生牛肉片");
 //    public static final ItemEntry<Item> BEEF_SLICE_ROASTED = item("beef_slice_roasted","Roasted Beef Slice","熟牛肉片");
-    public static final ItemEntry<Item> BERRY_MEDLEY = item("berry_medley","Berry Medley","什锦浆果");
+
     public static final ItemEntry<Item> BRICK_ADOBE = item("brick_adobe","Adobe Brick","土坯砖");
     public static final ItemEntry<Item> BRICK_MUB   = item("brick_mud"  ,"Mud Brick"  ,"泥砖"  );
 //    public static final ItemEntry<Item> CAKE_BOTTOM       = item("cake_bottom"      ,"Cake Bottom"      ,"蛋糕底"  );

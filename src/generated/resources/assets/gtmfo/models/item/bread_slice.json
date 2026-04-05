@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gtmfo:item/berry/medley"
+    "layer0": "gtmfo:item/bread/bread_slice"
   }
 }

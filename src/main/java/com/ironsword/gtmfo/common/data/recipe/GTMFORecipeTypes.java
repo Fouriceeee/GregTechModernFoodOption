@@ -21,7 +21,7 @@ import static com.lowdragmc.lowdraglib.gui.texture.ProgressTexture.FillDirection
 public class GTMFORecipeTypes {
 
     public static final GTRecipeType SLICER_RECIPES = GTRecipeTypes.register("slicer",GTRecipeTypes.ELECTRIC)
-            .setMaxIOSize(2,2,1,1)
+            .setMaxIOSize(3,2,1,1)
             .setEUIO(IO.IN)
             .setSound(GTSoundEntries.CUT)
             .setSlotOverlay(false,false,false, GTMFOGuiTextures.SLICER_INPUT_OVERLAY)

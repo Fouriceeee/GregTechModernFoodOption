@@ -8,6 +8,7 @@ import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipes;
 import com.ironsword.gtmfo.common.registry.GTMFORegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Consumer;
 
@@ -31,6 +32,11 @@ public class GTMFOAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         GTMFORecipes.init(provider);
+    }
+
+    @Override
+    public void removeRecipes(Consumer<ResourceLocation> consumer) {
+        GTMFORecipes.remove(consumer);
     }
 
     @Override
