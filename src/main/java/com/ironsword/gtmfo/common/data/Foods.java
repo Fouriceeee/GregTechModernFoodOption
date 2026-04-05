@@ -45,10 +45,9 @@ public class Foods {
     public static final GTMFOFoodStats TOAST                 = builder( 2    , 0.5f  , 0     , 0     , 1.5f  , 0     , 0     ).build();
 
     //burger
-    public static final GTMFOFoodStats BURGER_VEGGIE         =    food( 4    , 0.6f  , 32    , 0     , 0     , 1f    , 0     , 1f    );
-    public static final GTMFOFoodStats BURGER_CHEESE         =    food( 4    , 0.6f  , 32    , 1f    , 0     , 1f    , 0     , 0     );
-    //public static final GTMFOFoodStats BURGER_BACON          =    food( 4    , 0.7f  , 32    , 0     , 0     , 1f    , 1f    , 0     );
-    public static final GTMFOFoodStats BURGER_STEAK          =    food( 4    , 0.7f  , 32    , 0     , 0     , 1f    , 1f    , 0     );
+    public static final GTMFOFoodStats BURGER_VEGGIE         = builder( 4    , 0.6f  , 0     , 0     , 1f    , 0     , 1f    ).build();
+    public static final GTMFOFoodStats BURGER_CHEESE         = builder( 4    , 0.6f  , 1f    , 0     , 1f    , 0     , 0     ).build();
+    public static final GTMFOFoodStats BURGER_MEAT           = builder( 4    , 0.7f  , 0     , 0     , 1f    , 1f    , 0     ).build();
     public static final GTMFOFoodStats BURGER_CHUM           = builder( 4    , 1f    , 0     , 0     , 1f    , 0.5f  , 0     ).effect(MobEffects.CONFUSION,500,10,0.01f).build();
 
     //caplet
