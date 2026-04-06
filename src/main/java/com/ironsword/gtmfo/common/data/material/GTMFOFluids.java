@@ -51,8 +51,9 @@ public class GTMFOFluids {
     public static final Material CranberrySodaSyrup = fluid("cranberry_soda_syrup",0x5f202a,"Cranberry Soda Syrup","蔓越莓苏打水糖浆");
     public static final Material CranberryEtirps = fluid("cranberry_etirps",0x5f202a,"Etirps Cranberry","蔓越莓味碧雪");
 
-
     public static final Material CarbonatedWater = fluid("carbonated_water",0xf5ffff,"Carbonated Water","碳酸水");
+
+    public static final Material GelatinSolution = fluid("gelatin_solution",0xD3D3D3,"Gelatin Solution","明胶溶液");
 
     private static Material fluid(String id, int color, String enLang, String cnLang){
         GTMFOMaterials.addLang(id,enLang,cnLang);

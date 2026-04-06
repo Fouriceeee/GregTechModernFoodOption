@@ -220,14 +220,14 @@ public class GTMFOItems {
     public static final ItemEntry<ExComponentItem> BURGER_STEAK  = foodItem("burger_steak" ,"Steak Burger" ,"牛肉汉堡","burger/steak" ,Foods.BURGER_MEAT);
     public static final ItemEntry<ExComponentItem> BURGER_VEGGIE = foodItem("burger_veggie","Veggie Burger","蔬菜汉堡","burger/veggie",Foods.BURGER_VEGGIE);
 
-    //caplet
-//    public static final ItemEntry<Item> CAPLET_CAP           = item("caplet_cap"          ,"Caplet Cap"             ,"囊帽"            ,"caplet/cap"          );
-//    public static final ItemEntry<Item> CAPLET_BODY          = item("caplet_body"         ,"Caplet Body"            ,"囊体"            ,"caplet/body"         );
-//    public static final ItemEntry<ExComponentItem> CAPLET_GEL           = foodItem("caplet_gel"          ,"Gel Caplet"             ,"明胶胶囊"        ,"caplet/gel"          ,Foods.CAPLET_GEL);
-//    public static final ItemEntry<ExComponentItem> CAPLET_PARACETAMOL   = foodItem("caplet_paracetamol"  ,"Paracetamol Caplet"     ,"对乙酰氨基酚胶囊","caplet/paracetamol"  ,Foods.CAPLET_PARACETAMOL);
-//    public static final ItemEntry<ExComponentItem> CAPLET_PLUTONIUM_241 = foodItem("caplet_plutonium_241","Plutonium-241 Caplet"   ,"钚-241胶囊"      ,"caplet/plutonium_241",Foods.CAPLET_PLUTONIUM_241);
-//    public static final ItemEntry<ExComponentItem> CAPLET_CHORUS        = foodItem("caplet_chorus"       ,"Fermented Chorus Caplet","发酵紫颂果胶囊"  ,"caplet/chorus"       ,Foods.EMPTY);
-//    public static final ItemEntry<ExComponentItem> CAPLET_VIBRANT       = foodItem("caplet_vibrant"      ,"Vibrant Caplet"         ,"Vibrant Caplet"  ,"caplet/vibrant"      ,Foods.EMPTY);
+    //TODO:caplet
+    public static final ItemEntry<Item> CAPLET_CAP           = item("caplet_cap"          ,"Caplet Cap"             ,"囊帽"            ,"caplet/cap"          );
+    public static final ItemEntry<Item> CAPLET_BODY          = item("caplet_body"         ,"Caplet Body"            ,"囊体"            ,"caplet/body"         );
+    public static final ItemEntry<ExComponentItem> CAPLET_GEL           = foodItem("caplet_gel"          ,"Gel Caplet"             ,"明胶胶囊"        ,"caplet/gel"          ,Foods.CAPLET_GEL);
+    public static final ItemEntry<ExComponentItem> CAPLET_PARACETAMOL   = foodItem("caplet_paracetamol"  ,"Paracetamol Caplet"     ,"对乙酰氨基酚胶囊","caplet/paracetamol"  ,Foods.CAPLET_PARACETAMOL);
+    public static final ItemEntry<ExComponentItem> CAPLET_PLUTONIUM_241 = foodItem("caplet_plutonium_241","Plutonium-241 Caplet"   ,"钚-241胶囊"      ,"caplet/plutonium_241",Foods.CAPLET_PLUTONIUM_241);
+    public static final ItemEntry<ExComponentItem> CAPLET_CHORUS        = foodItem("caplet_chorus"       ,"Fermented Chorus Caplet","发酵紫颂果胶囊"  ,"caplet/chorus"       ,Foods.CAPLET_GEL);
+    public static final ItemEntry<ExComponentItem> CAPLET_VIBRANT       = foodItem("caplet_vibrant"      ,"Vibrant Caplet"         ,"Vibrant Caplet"  ,"caplet/vibrant"      ,Foods.CAPLET_GEL);
 
     //cheese
     public static final ItemEntry<Item>            CHEDDAR_BLOCK     =     item("cheddar_block"    ,"Cheddar Block"    ,"块状切达奶酪"          ,"cheese/cheddar_block"    );
@@ -272,16 +272,14 @@ public class GTMFOItems {
 //    public static final ItemEntry<ExComponentItem> COFFEE           = foodItem("coffee"          ,"Coffee Cup"          ,"咖啡"    ,"coffee/normal"   ,Foods.COFFEE);
 //    public static final ItemEntry<ExComponentItem> COFFEE_ENERGIZED = foodItem("coffee_energized","Energized Coffee Cup","提神咖啡","coffee/energized",Foods.COFFEE_ENERGIZING);
 
-
-
     //corn
-//    public static final ItemEntry<Item> CORN_COB               = item("corn_cob"              ,"Corn Cob"              ,"玉米芯"      ,"corn/cob"              );
-//    public static final ItemEntry<Item> CORN_EAR               = item("corn_ear"              ,"Corn Ear"              ,"玉米穗"      ,"corn/ear"              );
-//    public static final ItemEntry<Item> CORN_EAR_DRIED         = item("corn_ear_dried"        ,"Dried Corn Ear"        ,"烘干玉米穗"  ,"corn/ear_dried"        );
-//    public static final ItemEntry<Item> CORN_KERNEL            = item("corn_kernel"           ,"Corn Kernel"           ,"玉米粒"      ,"corn/kernel"           );
-//    public static final ItemEntry<Item> CORN_KERNEL_ACCEPTABLE = item("corn_kernel_acceptable","Acceptable Corn Kernel","合格级玉米粒","corn/kernel_acceptable");
-//    public static final ItemEntry<Item> FLAVORED_POPCORN_FLAKE = item("flavored_flake"        ,"Flavored Popcorn Flake","调味爆米花粒","corn/flavored_flake"   );
-//    public static final ItemEntry<ExComponentItem> POPCORN_BAG = foodItem("popcorn_bag"           ,"Popcorn Bag"           ,"袋装爆米花"  ,"corn/popcorn_bag"      ,Foods.EMPTY);
+    public static final ItemEntry<Item> CORN_COB               = item("corn_cob"              ,"Corn Cob"              ,"玉米芯"      ,"corn/cob"              );
+    public static final ItemEntry<Item> CORN_EAR               = item("corn_ear"              ,"Corn Ear"              ,"玉米穗"      ,"corn/ear"              );
+    //public static final ItemEntry<Item> CORN_EAR_DRIED         = item("corn_ear_dried"        ,"Dried Corn Ear"        ,"烘干玉米穗"  ,"corn/ear_dried"        );
+    public static final ItemEntry<Item> CORN_KERNEL            = item("corn_kernel"           ,"Corn Kernel"           ,"玉米粒"      ,"corn/kernel"           );
+    //public static final ItemEntry<Item> CORN_KERNEL_ACCEPTABLE = item("corn_kernel_acceptable","Acceptable Corn Kernel","合格级玉米粒","corn/kernel_acceptable");
+    public static final ItemEntry<Item> FLAVORED_POPCORN_FLAKE = item("flavored_flake"        ,"Flavored Popcorn Flake","调味爆米花粒","corn/flavored_flake"   );
+    public static final ItemEntry<ExComponentItem> POPCORN_BAG = foodItem("popcorn_bag"           ,"Popcorn Bag"           ,"袋装爆米花"  ,"corn/popcorn_bag"      ,Foods.EMPTY);
 
     //crop
     public static final ItemEntry<Item> ARTICHOKE      = item("artichoke"     ,"Artichoke Heart"  ,"洋蓟心"  ,"crop/artichoke"     );
@@ -617,7 +615,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> MEAT_INGOT        = item("meat_ingot"       ,"Meat Ingot"       ,"肉锭"  );
     public static final ItemEntry<Item> MEAT_INGOT_COOKED = item("meat_ingot_cooked","Cooked Meat Ingot","熟肉锭");
 //    public static final ItemEntry<Item> MUSHY_PEAS = item("mushy_peas","Mushy Peas","豌豆糊");
-//    public static final ItemEntry<Item> PIE_CRUST = item("pie_crust","Pie Crust","馅饼皮");
+    public static final ItemEntry<Item> PIE_CRUST = item("pie_crust","Pie Crust","馅饼皮");
 //    public static final ItemEntry<Item> RICE_COOKED = item("rice_cooked","Cooked Rice","熟米饭");
 //    public static final ItemEntry<Item> ROTTEN_FISH = item("rotten_fish","Rotten Fish","臭鱼");
 //    public static final ItemEntry<Item> ROTTEN_MEAT = item("rotten_meat","Rotten Meat","臭肉");

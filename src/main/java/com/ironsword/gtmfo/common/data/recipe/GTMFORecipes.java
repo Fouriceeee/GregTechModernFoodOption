@@ -19,6 +19,7 @@ public class GTMFORecipes {
         AppleRecipes.init(provider);
         BerryRecipes.init(provider);
         BreadsRecipes.init(provider);
+        CapletRecipes.init(provider);
         CoreChain.init(provider);
         PotatoRecipes.init(provider);
         PizzaRecipes.init(provider);

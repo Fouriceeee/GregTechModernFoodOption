@@ -28,6 +28,7 @@ public class BreadsRecipes {
         cookie(provider);
         burger(provider);
         sandwich(provider);
+        pumpkinPie(provider);
 
 
     }
@@ -259,6 +260,13 @@ public class BreadsRecipes {
 
     }
 
+    private static void pumpkinPie(Consumer<FinishedRecipe> provider){
+        VanillaRecipeHelper.addShapelessRecipe(provider,id("pie_crust_by_hand"),GTMFOItems.PIE_CRUST.asStack(),
+                GTMFOItems.DOUGH_SUGARY.asStack(),'r');
+        VanillaRecipeHelper.addShapelessRecipe(provider,id("pumpkin_pie_by_hand"),Items.PUMPKIN_PIE.getDefaultInstance(),
+                GTMFOItems.PIE_CRUST.asStack(),Items.PUMPKIN.getDefaultInstance(),Items.SUGAR.getDefaultInstance());
+    }
+
 
     public static void remove(Consumer<ResourceLocation> consumer){
         consumer.accept(GTCEu.id("smelting/dough_to_bread"));
@@ -271,5 +279,7 @@ public class BreadsRecipes {
         consumer.accept(GTCEu.id("shapeless/cookie_from_dough"));
 
         consumer.accept(GTCEu.id("forming_press/cookie"));
+
+        consumer.accept(GTCEu.id("shapeless/pumpkin_pie_from_dough"));
     }
 }
