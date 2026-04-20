@@ -91,6 +91,7 @@ public class PotatoRecipes {
 
         GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder(id("chips_bag_empty"))
                 .inputItems(TagPrefix.foil,GTMaterials.Aluminium)
+                .circuitMeta(7)
                 .inputFluids(GTMaterials.Polyethylene.getFluid(10))
                 .outputItems(GTMFOItems.CHIPS_BAG_EMPTY.asStack())
                 .EUt(20).duration(32).save(provider);

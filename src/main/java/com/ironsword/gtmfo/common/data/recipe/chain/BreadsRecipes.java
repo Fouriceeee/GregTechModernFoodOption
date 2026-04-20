@@ -50,10 +50,10 @@ public class BreadsRecipes {
                 'M', GTItems.WOODEN_FORM_EMPTY.asStack());
         VanillaRecipeHelper.addShapedRecipe(provider,id("wooden_form_baguette"),
                 GTMFOItems.WOODEN_FORM_BAGUETTE.asStack(),
-                "  k",
+                " k ",
                 " M ",
                 "   ",
-                'M', GTItems.WOODEN_FORM_EMPTY.asStack());
+                'M', GTMFOItems.WOODEN_FORM_BREAD.asStack());
 
         //unbaked
         VanillaRecipeHelper.addShapedRecipe(provider,id("bun_dough_by_hand"),
