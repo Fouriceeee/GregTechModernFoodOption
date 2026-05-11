@@ -256,21 +256,22 @@ public class GTMFOItems {
     public static final ItemEntry<Item> COCOA_NIBS          = item("cocoa_nibs"         ,"Ground Cocoa Nibs"  ,"可可碎"    ,"cocoa/nibs"   );
 
     //coffee
-//    public static final ItemEntry<Item> COFFEE_CHERRY                = item("coffee_cherry",               "Coffee Cherry",               "咖啡果",        "coffee/cherry");
-//    public static final ItemEntry<Item> COFFEE_CHERRY_LARGE          = item("coffee_cherry_large",         "Large Coffee Cherry",         "大咖啡果",      "coffee/cherry_large");
-//    public static final ItemEntry<Item> COFFEE_CHERRY_SMALL          = item("coffee_cherry_small",         "Small Coffee Cherry",         "小咖啡果",      "coffee/cherry_small");
-//    public static final ItemEntry<Item> COFFEE_BEANS_RAW_LARGE       = item("coffee_beans_raw_large",      "Large Raw Coffee Beans",      "大粒生咖啡豆",  "coffee/raw_large");
-//    public static final ItemEntry<Item> COFFEE_BEANS_RAW_SMALL       = item("coffee_beans_raw_small",      "Small Raw Coffee Beans",      "小粒生咖啡豆",  "coffee/raw_small");
-//    public static final ItemEntry<Item> COFFEE_BEANS_FERMENTED_LARGE = item("coffee_beans_fermented_large","Large Fermented Coffee Beans","发酵大粒咖啡豆","coffee/fermented_large");
-//    public static final ItemEntry<Item> COFFEE_BEANS_FERMENTED_SMALL = item("coffee_beans_fermented_small","Small Fermented Coffee Beans","发酵小粒咖啡豆","coffee/fermented_small");
-//    public static final ItemEntry<Item> COFFEE_BEANS_DRIED_LARGE     = item("coffee_beans_dried_large",    "Large Dried Coffee Beans",    "烘干大粒咖啡豆","coffee/dried_large");
-//    public static final ItemEntry<Item> COFFEE_BEANS_DRIED_SMALL     = item("coffee_beans_dried_small",    "Small Dried Coffee Beans",    "烘干小粒咖啡豆","coffee/dried_small");
-//    public static final ItemEntry<Item> COFFEE_BEANS_HULLED_LARGE    = item("coffee_beans_hulled_large",   "Large Hulled Coffee Beans",   "去壳大粒咖啡豆","coffee/hulled_large");
-//    public static final ItemEntry<Item> COFFEE_BEANS_HULLED_SMALL    = item("coffee_beans_hulled_small",   "Small Hulled Coffee Beans",   "去壳小粒咖啡豆","coffee/hulled_small");
-//    public static final ItemEntry<Item> COFFEE_BEANS_ROASTED_LARGE   = item("coffee_beans_roasted_large",  "Large Roasted Coffee Beans",  "烘焙大粒咖啡豆","coffee/roasted_large");
-//    public static final ItemEntry<Item> COFFEE_BEANS_ROASTED_SMALL   = item("coffee_beans_roasted_small",  "Small Roasted Coffee Beans",  "烘焙小粒咖啡豆","coffee/roasted_small");
-//    public static final ItemEntry<ExComponentItem> COFFEE           = foodItem("coffee"          ,"Coffee Cup"          ,"咖啡"    ,"coffee/normal"   ,Foods.COFFEE);
-//    public static final ItemEntry<ExComponentItem> COFFEE_ENERGIZED = foodItem("coffee_energized","Energized Coffee Cup","提神咖啡","coffee/energized",Foods.COFFEE_ENERGIZING);
+    public static final ItemEntry<Item> COFFEE_CHERRY                = item("coffee_cherry"               ,"Coffee Cherry"               ,"咖啡果"        ,"coffee/cherry"         );
+    public static final ItemEntry<Item> COFFEE_SEED                  = item("coffee_seed"                 ,"Coffee Seed"                 ,"咖啡种子"      ,"coffee/seed"           );
+    public static final ItemEntry<Item> COFFEE_CHERRY_LARGE          = item("coffee_cherry_large"         ,"Large Coffee Cherry"         ,"大咖啡果"      ,"coffee/cherry_large"   );
+    public static final ItemEntry<Item> COFFEE_CHERRY_SMALL          = item("coffee_cherry_small"         ,"Small Coffee Cherry"         ,"小咖啡果"      ,"coffee/cherry_small"   );
+    public static final ItemEntry<Item> COFFEE_BEANS_RAW_LARGE       = item("coffee_beans_raw_large"      ,"Large Raw Coffee Beans"      ,"大粒生咖啡豆"  ,"coffee/raw_large"      );
+    public static final ItemEntry<Item> COFFEE_BEANS_RAW_SMALL       = item("coffee_beans_raw_small"      ,"Small Raw Coffee Beans"      ,"小粒生咖啡豆"  ,"coffee/raw_small"      );
+    public static final ItemEntry<Item> COFFEE_BEANS_FERMENTED_LARGE = item("coffee_beans_fermented_large","Large Fermented Coffee Beans","发酵大粒咖啡豆","coffee/fermented_large");
+    public static final ItemEntry<Item> COFFEE_BEANS_FERMENTED_SMALL = item("coffee_beans_fermented_small","Small Fermented Coffee Beans","发酵小粒咖啡豆","coffee/fermented_small");
+    public static final ItemEntry<Item> COFFEE_BEANS_DRIED_LARGE     = item("coffee_beans_dried_large"    ,"Large Dried Coffee Beans"    ,"烘干大粒咖啡豆","coffee/dried_large"    );
+    public static final ItemEntry<Item> COFFEE_BEANS_DRIED_SMALL     = item("coffee_beans_dried_small"    ,"Small Dried Coffee Beans"    ,"烘干小粒咖啡豆","coffee/dried_small"    );
+    public static final ItemEntry<Item> COFFEE_BEANS_HULLED_LARGE    = item("coffee_beans_hulled_large"   ,"Large Hulled Coffee Beans"   ,"去壳大粒咖啡豆","coffee/hulled_large"   );
+    public static final ItemEntry<Item> COFFEE_BEANS_HULLED_SMALL    = item("coffee_beans_hulled_small"   ,"Small Hulled Coffee Beans"   ,"去壳小粒咖啡豆","coffee/hulled_small"   );
+    public static final ItemEntry<Item> COFFEE_BEANS_ROASTED_LARGE   = item("coffee_beans_roasted_large"  ,"Large Roasted Coffee Beans"  ,"烘焙大粒咖啡豆","coffee/roasted_large"  );
+    public static final ItemEntry<Item> COFFEE_BEANS_ROASTED_SMALL   = item("coffee_beans_roasted_small"  ,"Small Roasted Coffee Beans"  ,"烘焙小粒咖啡豆","coffee/roasted_small"  );
+    public static final ItemEntry<ExComponentItem> COFFEE           = foodItem("coffee"          ,"Coffee Cup"          ,"咖啡"    ,"coffee/normal"   ,Foods.COFFEE);
+    public static final ItemEntry<ExComponentItem> COFFEE_ENERGIZED = foodItem("coffee_energized","Energized Coffee Cup","提神咖啡","coffee/energized",Foods.COFFEE_ENERGIZING);
 
     //corn
     public static final ItemEntry<Item> CORN_COB               = item("corn_cob"              ,"Corn Cob"              ,"玉米芯"      ,"corn/cob"              );
@@ -309,8 +310,6 @@ public class GTMFOItems {
     public static final ItemEntry<Item> SOYBEAN_POD    = item("soybean_pod"   ,"Soybean Pod"      ,"大豆荚"  ,"crop/soybean_pod"   );
     public static final ItemEntry<Item> TOMATO         = item("tomato"        ,"Tomato"           ,"番茄"    ,"crop/tomato"        );
     public static final ItemEntry<Item> TOMATO_SLICE   = item("tomato_slice"  ,"Tomato Slice"     ,"番茄片"  ,"crop/tomato_slice"  );
-
-    //public static final ItemEntry<Item> COFFEE_CHERRY= item("coffee_cherry" ,"Coffee Cherry"    ,"咖啡果"  ,"crop/coffee"        );
 
     //dewar_flask
 //    public static final ItemEntry<Item> DEWAR_FLASK                = item("dewar_flask"               ,"Dewar Flask"               ,"保温杯",          "dewar_flask/new");

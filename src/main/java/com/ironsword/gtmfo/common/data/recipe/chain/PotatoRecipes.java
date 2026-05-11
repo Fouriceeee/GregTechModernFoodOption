@@ -79,19 +79,21 @@ public class PotatoRecipes {
 //                .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_reduced_fat"))
                 .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(10))
+                .circuitMeta(1)
                 .outputItems(GTMFOItems.POTATO_SLICE_REDUCED_FAT.asStack(10))
                 .outputFluids(GTMFOFluids.FryingOil.getFluid(60))
                 .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_naquadah"))
                 .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(40))
                 .inputFluids(GTMaterials.Naquadah.getFluid(10))
+                .circuitMeta(2)
                 .outputItems(GTMFOItems.POTATO_SLICE_NAQUADAH.asStack(40))
                 .EUt(GTValues.VA[GTValues.LuV]).duration(800).save(provider);
 
 
         GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder(id("chips_bag_empty"))
                 .inputItems(TagPrefix.foil,GTMaterials.Aluminium)
-                .circuitMeta(7)
+                .circuitMeta(3)
                 .inputFluids(GTMaterials.Polyethylene.getFluid(10))
                 .outputItems(GTMFOItems.CHIPS_BAG_EMPTY.asStack())
                 .EUt(20).duration(32).save(provider);
