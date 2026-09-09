@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gtmfo:item/seed/coffee"
+    "layer0": "gtmfo:item/shape/pasta/rigatoni"
   }
 }
