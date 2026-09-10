@@ -6,7 +6,6 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.ironsword.gtmfo.GTMFOConfigHolder;
 import com.ironsword.gtmfo.GregTechModernFoodOption;
-import com.ironsword.gtmfo.api.capability.forge.GTMFOCapability;
 import com.ironsword.gtmfo.common.data.*;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMachines;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMultiMachines;
@@ -17,7 +16,6 @@ import com.ironsword.gtmfo.common.registry.GTMFORegistries;
 import com.ironsword.gtmfo.data.GTMFODataGen;
 import com.ironsword.gtmfo.data.GTMFOProviderTypes;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -60,11 +58,6 @@ public class CommonProxy {
 
     public static void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event){
         GTMFORecipeTypes.init();
-    }
-
-    @SubscribeEvent
-    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        GTMFOCapability.register(event);
     }
 
     @SubscribeEvent

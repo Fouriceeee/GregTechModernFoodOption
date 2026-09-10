@@ -2,20 +2,12 @@ package com.ironsword.gtmfo.api.item.component;
 
 import com.google.common.collect.Lists;
 import com.gregtechceu.gtceu.api.item.component.FoodStats;
-import com.ironsword.gtmfo.GTMFOConfigHolder;
-import com.ironsword.gtmfo.api.capability.NutrientsTracker;
-import com.ironsword.gtmfo.api.capability.forge.GTMFOCapability;
 import com.mojang.datafixers.util.Pair;
-import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
-import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import lombok.Getter;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,57 +15,18 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class GTMFOFoodStats extends FoodStats {
-    protected Object2FloatMap<String> nutrients = new Object2FloatArrayMap<>();
     @Getter
     protected int eatingDuration = 32;
 
-    public GTMFOFoodStats(FoodProperties properties, int eatingDuration,boolean isDrink, @Nullable Supplier<ItemStack> containerItem) {
+    public GTMFOFoodStats(FoodProperties properties, int eatingDuration, boolean isDrink, @Nullable Supplier<ItemStack> containerItem) {
         super(properties, isDrink, containerItem);
         this.eatingDuration = eatingDuration;
-    }
-
-    private GTMFOFoodStats nutrients(float dairy, float fruit, float grain, float protein, float vegetable){
-        if (dairy > 0) {
-            this.nutrients.put("dairy", dairy);
-        }
-        if (fruit > 0) {
-            this.nutrients.put("fruit", fruit);
-        }
-        if (grain > 0) {
-            this.nutrients.put("grain", grain);
-        }
-        if (protein > 0) {
-            this.nutrients.put("protein", protein);
-        }
-        if (vegetable > 0) {
-            this.nutrients.put("vegetable", vegetable);
-        }
-        return this;
-    }
-
-    @Override
-    public ItemStack finishUsingItem(ItemStack food, Level level, LivingEntity livingEntity) {
-        if (GTMFOConfigHolder.INSTANCE.devConfigs.nutrientMode){
-            Player player = livingEntity instanceof Player ? (Player) livingEntity : null;
-            if (player != null){
-                final NutrientsTracker tracker = GTMFOCapability.getNutrientsTracker(player);
-                if (tracker != null){
-                    nutrients.forEach(tracker::gain);
-                }
-            }
-        }
-        return super.finishUsingItem(food, level, livingEntity);
     }
 
     public static class Builder{
         private int foodLevel;
         private float saturation;
         private int eatingDuration = 32;
-        private float dairy;
-        private float fruit;
-        private float grain;
-        private float protein;
-        private float vegetable;
 
         private boolean isMeat = false;
         private boolean isDrink = false;
@@ -82,25 +35,15 @@ public class GTMFOFoodStats extends FoodStats {
 
         private List<Pair<Supplier<MobEffectInstance>, Float>> effects = Lists.newArrayList();
 
-        public Builder(int foodLevel, float saturation, int eatingDuration, float dairy, float fruit, float grain, float protein, float vegetable) {
+        public Builder(int foodLevel, float saturation) {
+            this.foodLevel = foodLevel;
+            this.saturation = saturation;
+        }
+
+        public Builder(int foodLevel, float saturation, int eatingDuration) {
             this.foodLevel = foodLevel;
             this.saturation = saturation;
             this.eatingDuration = eatingDuration;
-            this.dairy = dairy;
-            this.fruit = fruit;
-            this.grain = grain;
-            this.protein = protein;
-            this.vegetable = vegetable;
-        }
-
-        public Builder(int foodLevel, float saturation, float dairy, float fruit, float grain, float protein, float vegetable) {
-            this.foodLevel = foodLevel;
-            this.saturation = saturation;
-            this.dairy = dairy;
-            this.fruit = fruit;
-            this.grain = grain;
-            this.protein = protein;
-            this.vegetable = vegetable;
         }
 
         public Builder eatDuration(int duration){
@@ -149,7 +92,7 @@ public class GTMFOFoodStats extends FoodStats {
                 effects.forEach((pair)-> propertyBuilder.effect(pair.getFirst(), pair.getSecond()));
             }
 
-            return new GTMFOFoodStats(propertyBuilder.build(),eatingDuration,isDrink,containerItem).nutrients(dairy,fruit,grain,protein,vegetable);
+            return new GTMFOFoodStats(propertyBuilder.build(),eatingDuration,isDrink,containerItem);
         }
     }
 }
