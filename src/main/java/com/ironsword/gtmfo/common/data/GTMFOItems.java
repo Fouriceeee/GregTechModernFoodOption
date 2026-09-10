@@ -22,6 +22,8 @@ import static com.ironsword.gtmfo.common.registry.GTMFORegistries.REGISTRATE;
 
 //@SuppressWarnings("unused")
 public class GTMFOItems {
+    private static final String TEMP = "temp";
+
     static{
         REGISTRATE.creativeModeTab(()-> GTMFOCreativeModeTabs.MAIN_TAB);
     }
@@ -626,6 +628,13 @@ public class GTMFOItems {
 //    public static final ItemEntry<Item> SEASONED_PORK = item("seasoned_pork","Seasoned Pork","调味猪肉");
 //    public static final ItemEntry<Item> SHEPHERDS_PIE = item("shepherds_pie","Shepherd's Pie","牧羊人派");
 //    public static final ItemEntry<Item> SPRINKLER = item("sprinkler","Sprinkler","洒水器");
+
+    public static final ItemEntry<Item> DIPHENYLAMINE = item("diphenylamine","Diphenylamine","二苯胺",TEMP);
+    public static final ItemEntry<Item> PHENOTHIAZINE = item("phenothiazine","Phenothiazine","吩噻嗪",TEMP);
+    public static final ItemEntry<Item> PROMETHAZINE = item("promethazine","Promethazine","异丙嗪",TEMP); //0xf8fade C17H20N2S
+    public static final ItemEntry<Item> POPPY_CRUSHED = item("poppy_crushed","Crushed Poppy","虞美人粉",TEMP);
+    public static final ItemEntry<Item> CODEINE = item("codeine","Codeine","可待因",TEMP); //0xfadef2 C18H21NO3
+
 
     public static void init() {
 //        TEST_ITEM = REGISTRATE.item("test_item",ExComponentItem::create)

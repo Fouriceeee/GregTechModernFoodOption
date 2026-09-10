@@ -2,12 +2,14 @@ package com.ironsword.gtmfo.common.data.material;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 
 public class GTMFOFluids {
 
     public static final Material LemonExtract   = fluid("lemon_extract" ,0xfce80a,"Lemon Extract","柠檬提取液");
-    public static final Material LIME_EXTRACT   = fluid("lime_extract"  ,0x85f218,"Lime Extract" ,"酸橙提取液");
-    public static final Material ORANGE_EXTRACT = fluid("orange_extract",0xff6100,"Orange Juice" ,"橙汁"      );
+    public static final Material LimeExtract = fluid("lime_extract"  ,0x85f218,"Lime Extract" ,"酸橙提取液");
+    public static final Material OrangeExtract = fluid("orange_extract",0xff6100,"Orange Juice" ,"橙汁"      );
     public static final Material AppleExtract   = fluid("apple_extract" ,0xe9ba58,"Apple Juice"  ,"苹果汁"    );
     public static final Material MELON_EXTRACT  = fluid("melon_extract" ,0xfc7996,"Melon Extract","西瓜提取液");
     public static final Material GRAPE_EXTRACT  = fluid("grape_extract" ,0xa83351,"Grape Extract","葡萄汁"    );
@@ -44,6 +46,29 @@ public class GTMFOFluids {
     public static final Material MarshmallowFoam = fluid("marshmallow_foam",0xe6e0dc,"Marshmallow Foam","发泡棉花软糖糖浆");
 
     public static final Material AppleCandySyrup = fluid("apple_candy_syrup",0xe7f5ae,"Apple Candy Syrup","苹果糖浆");
+    public static final Material PurpleDrink = fluid("purple_drink",0xb405ff,"Purple Drink","紫色饮料");
+
+    public static final Material LemonLimeSolution = fluid("lemon_lime_solution",0xbddb5a,"Lemon Lime Solution","柠檬酸橙混合液");
+    public static final Material LemonLimeSludge = fluid("lemon_lime_sludge",0x779906,"Lemon Lime Sludge","柠檬酸橙果浆混合液");
+    public static final Material LemonLimeSodaSyrup = fluid("lemon_lime_soda_syrup",0x76ff0d,"Lemon Lime Soda Syrup","柠檬酸橙苏打水糖浆");
+    public static final Material Etirps = fluid("etirps",0xb0ff73,"Etirps","碧雪");
+
+
+
+    public static final Material Aniline = builder("aniline",0x4c911d,"Aniline","苯胺")
+            .components(GTMaterials.Carbon, 6, GTMaterials.Hydrogen, 7, GTMaterials.Nitrogen, 1)
+            .flags(MaterialFlags.DISABLE_DECOMPOSITION)
+            .formula("C6H5NH2",true)
+            .buildAndRegister();
+    public static final Material IsopropylChloride = builder("isopropyl_chloride","Isopropyl Chloride","异丙基氯")
+            .components(GTMaterials.Carbon, 3, GTMaterials.Hydrogen, 7, GTMaterials.Chlorine, 1)
+            .formula("(CH3)2CHCl",true)
+            .buildAndRegister();
+    public static final Material XPhenothiazineIIPropylChloride = builder("x_phenothiazine_ii_propyl_chloride","10-Phenothiazine-2-propyl chloride","10-（2-氯丙基）吩噻嗪")
+            .components(GTMaterials.Carbon, 15, GTMaterials.Hydrogen, 14, GTMaterials.Nitrogen, 1, GTMaterials.Sulfur, 1, GTMaterials.Chlorine, 1)
+            .flags(MaterialFlags.DISABLE_DECOMPOSITION)
+            .buildAndRegister();
+    public static final Material CoughSyrup = fluid("cough_syrup",0x5c1b5e,"Cough Syrup","止咳糖浆");
 
     public static final Material BerryJam = fluid("berry_jam",0x61262D,"Berry Jam","浆果果酱");
     public static final Material ElderberryJam = fluid("elderberry_jam",0x5F414F,"Elderberry Jam","接骨木莓果酱");
