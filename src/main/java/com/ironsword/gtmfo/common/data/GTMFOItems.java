@@ -5,6 +5,7 @@ import com.gregtechceu.gtceu.api.item.component.IItemComponent;
 import com.ironsword.gtmfo.api.item.ExComponentItem;
 import com.ironsword.gtmfo.api.item.component.BlockItemComponent;
 import com.ironsword.gtmfo.api.item.component.GTMFOFoodStats;
+import com.ironsword.gtmfo.common.data.builder.ItemBuilder;
 import com.ironsword.gtmfo.data.CNLangProvider;
 import com.ironsword.gtmfo.data.GTMFOProviderTypes;
 import com.tterrag.registrate.providers.DataGenContext;
@@ -27,132 +28,6 @@ public class GTMFOItems {
     static{
         REGISTRATE.creativeModeTab(()-> GTMFOCreativeModeTabs.MAIN_TAB);
     }
-
-    private static <T extends ComponentItem> NonNullConsumer<T> attach(IItemComponent... components) {
-        return item -> item.attachComponents(components);
-    }
-
-    private static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, CNLangProvider> cn(String cnLang){
-        return (ctx,prov)->prov.add(ctx.get().getDescriptionId(),cnLang);
-    }
-
-    private static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, RegistrateItemModelProvider> itemModel(String path){
-        return (ctx,prov)->prov.generated(ctx::getEntry,prov.modLoc("item/"+path));
-    }
-
-    private static ItemEntry<Item> item(String id,String enLang,String cnLang){
-        return REGISTRATE.item(id,Item::new)
-                .lang(enLang)
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .defaultModel()
-                .register();
-    }
-
-    private static ItemEntry<Item> item(String id,String enLang,String cnLang,Item.Properties properties){
-        return REGISTRATE.item(id,Item::new)
-                .lang(enLang)
-                .initialProperties(()->properties)
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .defaultModel()
-                .register();
-    }
-
-    private static ItemEntry<Item> item(String id, String enLang, String cnLang, String path){
-        return REGISTRATE.item(id,Item::new)
-                .lang(enLang)
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel(path))
-                .register();
-    }
-
-    private static ItemEntry<Item> item(String id, String enLang, String cnLang, String path, Item.Properties properties){
-        return REGISTRATE.item(id,Item::new)
-                .lang(enLang)
-                .initialProperties(()->properties)
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel(path))
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, GTMFOFoodStats foodStats){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .defaultModel()
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, GTMFOFoodStats foodStats, Item.Properties properties){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .initialProperties(()->properties)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .defaultModel()
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel(path))
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Item.Properties properties){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .initialProperties(()->properties)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel(path))
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> smore(int number, String enLang, String cnLang, GTMFOFoodStats foodStats, boolean blockModel){
-        return REGISTRATE.item("smore_"+number,ExComponentItem::create)
-                .lang(enLang)
-                //.properties(p->p.stacksTo(64/number))
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model((ctx,prov)->{
-                    if (blockModel){
-                        prov.withExistingParent("item/smore_"+number,prov.modLoc("block/smore/"+number));
-                    }
-                    else {
-                        prov.generated(ctx::getEntry,prov.modLoc("item/smore/"+number));
-                    }})
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> berry(String id, TagKey<Item> subTag, String enLang, String cnLang){
-        var builder = REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel("berry/"+id));
-        if (subTag.equals(GTMFOTags.POISONOUS_BERRY)){
-            builder.onRegister(attach(Foods.BERRY_POISONOUS))
-                    .tag(GTMFOTags.POISONOUS_BERRY);
-        }else {
-            builder.onRegister(attach(Foods.BERRY))
-                    .tag(GTMFOTags.BERRY,subTag);
-        }
-        return builder.register();
-    }
-
-    private static ItemEntry<ExComponentItem> smogus(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Supplier<? extends Block> block){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .onRegister(attach(foodStats,new BlockItemComponent(block)))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model((ctx,prov)->prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
-                .register();
-    }
-
-
 
     private static final Item.Properties STACK_1 = new Item.Properties().stacksTo(1);
     private static final Item.Properties STACK_16 = new Item.Properties().stacksTo(16);
@@ -182,10 +57,17 @@ public class GTMFOItems {
     public static final ItemEntry<ExComponentItem> APPLE_SLICE         = foodItem("apple_slice"        ,"Apple Slice"        ,"苹果片"  ,"apple/slice"        ,Foods.APPLE_SLICE);
     public static final ItemEntry<ExComponentItem> APPLE_TUNGSTENSTEEL = foodItem("apple_tungstensteel","Tungstensteel Apple","钨钢苹果","apple/tungstensteel",Foods.APPLE_TUNGSTENSTEEL);
     public static final ItemEntry<ExComponentItem> APPLE_CANDY         = foodItem("apple_candy"        ,"Apple Candy"        ,"苹果糖"    ,"apple/candy"        ,Foods.APPLE_CANDY);
-    public static final ItemEntry<Item>            APPLE_CANDY_HOT     =     item("apple_candy_hot"    ,"Hot Apple Candy"    ,"热苹果糖"  ,"apple/candy_hot"    );
-    public static final ItemEntry<Item>            APPLE_CANDY_PLATE   =     item("apple_candy_plate"  ,"Apple Candy Sheet"  ,"苹果糖片"  ,"apple/candy_plate"  );
-    public static final ItemEntry<Item>            APPLE_CANDY_RESIN   =     item("apple_candy_resin"  ,"Apple Candy Resin"  ,"苹果糖糖坯","apple/candy_resin"  );
-    public static final ItemEntry<Item>            APPLE_CANDY_CRUSHED =     item("apple_candy_crushed","Crushed Apple Candy","苹果糖碎"  ,"apple/candy_crushed");
+
+    public static final ItemEntry<Item>
+            APPLE_CANDY_HOT = simple("apple_candy_hot").texture("apple/candy_hot").en("Hot Apple Candy").cn("热苹果糖").register(),
+            APPLE_CANDY_PLATE = simple("apple_candy_plate").texture("apple/candy_plate").en("Apple Candy Sheet").cn("苹果糖片").register(),
+            APPLE_CANDY_RESIN = simple("apple_candy_resin").texture("apple/candy_resin").en("Apple Candy Resin").cn("苹果糖糖坯").register(),
+            APPLE_CANDY_CRUSHED = simple("apple_candy_crushed").texture("apple/candy_crushed").en("Crushed Apple Candy").cn("苹果糖碎").register();
+
+//    public static final ItemEntry<Item>            APPLE_CANDY_HOT     =     item("apple_candy_hot"    ,"Hot Apple Candy"    ,"热苹果糖"  ,"apple/candy_hot"    );
+//    public static final ItemEntry<Item>            APPLE_CANDY_PLATE   =     item("apple_candy_plate"  ,"Apple Candy Sheet"  ,"苹果糖片"  ,"apple/candy_plate"  );
+//    public static final ItemEntry<Item>            APPLE_CANDY_RESIN   =     item("apple_candy_resin"  ,"Apple Candy Resin"  ,"苹果糖糖坯","apple/candy_resin"  );
+//    public static final ItemEntry<Item>            APPLE_CANDY_CRUSHED =     item("apple_candy_crushed","Crushed Apple Candy","苹果糖碎"  ,"apple/candy_crushed");
 
     //berry
     public static final ItemEntry<ExComponentItem> BLACKBERRY    = berry("blackberry"   ,GTMFOTags.BERRY_TART     ,"Blackberry"   ,"黑莓"    );
@@ -314,11 +196,11 @@ public class GTMFOItems {
     public static final ItemEntry<Item> TOMATO_SLICE   = item("tomato_slice"  ,"Tomato Slice"     ,"番茄片"  ,"crop/tomato_slice"  );
 
     //dewar_flask
-//    public static final ItemEntry<Item> DEWAR_FLASK                = item("dewar_flask"               ,"Dewar Flask"               ,"保温杯",          "dewar_flask/new");
-//    public static final ItemEntry<Item> DEWAR_FLASK_USED           = item("dewar_flask_used"          ,"Used Dewar Flask"          ,"使用过的保温杯",  "dewar_flask/used");
-//    public static final ItemEntry<Item> DEWAR_FLASK_CAP            = item("dewar_flask_cap"           ,"Dewar Flask Cap"           ,"保温杯盖",        "dewar_flask/cap");
-//    public static final ItemEntry<Item> DEWAR_FLASK_CASING         = item("dewar_flask_casing"        ,"Dewar Flask Casing"        ,"保温杯身",        "dewar_flask/casing");
-//    public static final ItemEntry<Item> DEWAR_FLASK_CASING_LEACHED = item("dewar_flask_casing_leached","Leached Dewar Flask Casing","使用过的保温杯身","dewar_flask/casing_leached");
+    public static final ItemEntry<Item> DEWAR_FLASK                = item("dewar_flask"               ,"Dewar Flask"               ,"保温杯",          "dewar_flask/new");
+    public static final ItemEntry<Item> DEWAR_FLASK_USED           = item("dewar_flask_used"          ,"Used Dewar Flask"          ,"使用过的保温杯",  "dewar_flask/used");
+    public static final ItemEntry<Item> DEWAR_FLASK_CAP            = item("dewar_flask_cap"           ,"Dewar Flask Cap"           ,"保温杯盖",        "dewar_flask/cap");
+    public static final ItemEntry<Item> DEWAR_FLASK_CASING         = item("dewar_flask_casing"        ,"Dewar Flask Casing"        ,"保温杯身",        "dewar_flask/casing");
+    public static final ItemEntry<Item> DEWAR_FLASK_CASING_LEACHED = item("dewar_flask_casing_leached","Leached Dewar Flask Casing","使用过的保温杯身","dewar_flask/casing_leached");
 
     //dough
     public static final ItemEntry<Item> DOUGH                = item("dough"               ,"Dough"               ,"面团"        ,"dough/dough"         );
@@ -480,7 +362,7 @@ public class GTMFOItems {
     public static final ItemEntry<ExComponentItem> CHIPS_KETTLE               = foodItem("chips_kettle"              ,"Kettle Chips"                 ,"手作薯片"      ,"potato/chips_kettle"     ,Foods.CHIPS_KETTLE);
     public static final ItemEntry<ExComponentItem> CHIPS_NAQUADAH             = foodItem("chips_naquadah"            ,"Naquadah Chips"               ,"硅岩薯片"      ,"potato/chips_naquadah"   ,Foods.CHIPS_NAQUADAH);
     public static final ItemEntry<ExComponentItem> CHIPS_REDUCED_FAT          = foodItem("chips_reduced_fat"         ,"Bay Salmon Reduced Fat Chips" ,"湾鲑牌减脂薯片","potato/chips_reduced_fat",Foods.CHIPS_REDUCED_FAT);
-    //public static final ItemEntry<Item> CHIPS_VINEGAR              = item("chips_vinegar"             ,"Vinegar Chips"                ,"醋味薯片"      ,"potato/chips_vinegar"             );
+    public static final ItemEntry<Item> CHIPS_VINEGAR              = item("chips_vinegar"             ,"Vinegar Chips"                ,"醋味薯片"      ,"potato/chips_vinegar"             );
 
     //sandwich
     public static final ItemEntry<Item> SANDWICH_BACON        = item("sandwich_bacon"       ,"Bacon Sandwich"       ,"培根三明治"      ,"sandwich/bacon"       );
@@ -499,7 +381,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> SEED_ARTICHOKE     = item("seed_artichoke"    ,"Artichoke Seeds"         ,"洋蓟种子"     ,"seed/artichoke"    );
     public static final ItemEntry<Item> SEED_BASIL         = item("seed_basil"        ,"Basil Seeds"             ,"罗勒种子"     ,"seed/basil"        );
     public static final ItemEntry<Item> SEED_BEAN          = item("seed_bean"         ,"Beans"                   ,"菜豆"         ,"seed/bean"         );
-//    public static final ItemEntry<Item> SEED_COFFEE        = item("seed_coffee"       ,"Coffee Seed"             ,"咖啡种子"     ,"seed/coffee"       );
+    public static final ItemEntry<Item> SEED_COFFEE        = item("seed_coffee"       ,"Coffee Seed"             ,"咖啡种子"     ,"seed/coffee"       );
     public static final ItemEntry<Item> SEED_COTTON        = item("seed_cotton"       ,"Cotton Seeds"            ,"棉花种子"     ,"seed/cotton"       );
     public static final ItemEntry<Item> SEED_CUCUMBER      = item("seed_cucumber"     ,"Cucumber Seeds"          ,"黄瓜种子"     ,"seed/cucumber"     );
     public static final ItemEntry<Item> SEED_EGGPLANT      = item("seed_eggplant"     ,"Eggplant Seeds"          ,"茄子种子"     ,"seed/eggplant"     );
@@ -564,17 +446,17 @@ public class GTMFOItems {
     public static final ItemEntry<ExComponentItem> SORBET_VIBRANT = foodItem("sorbet_vibrant","Vibrant Sorbet","Vibrant Sorbet","sorbet/vibrant",Foods.EMPTY);
 
     //structural_mesh
-//    public static final ItemEntry<Item> APPLE_STRUCTURAL_MESH  = item("apple_structural_mesh" ,"Apple Structural Mesh" ,"苹果纤维骨架"  ,"structural_mesh/apple" );
-//    public static final ItemEntry<Item> CARROT_STRUCTURAL_MESH = item("carrot_structural_mesh","Carrot Structural Mesh","胡萝卜纤维骨架","structural_mesh/carrot");
+    public static final ItemEntry<Item> APPLE_STRUCTURAL_MESH  = item("apple_structural_mesh" ,"Apple Structural Mesh" ,"苹果纤维骨架"  ,"structural_mesh/apple" );
+    public static final ItemEntry<Item> CARROT_STRUCTURAL_MESH = item("carrot_structural_mesh","Carrot Structural Mesh","胡萝卜纤维骨架","structural_mesh/carrot");
 
     //utility
-//    public static final ItemEntry<Item> KITCHEN_RECIPE = item("kitchen_recipe","utility/kitchen_recipe");
+    public static final ItemEntry<Item> KITCHEN_RECIPE = item("kitchen_recipe","Kitchen Recipe","厨房配方","utility/kitchen_recipe");
 //    public static ItemEntry<ExComponentItem> TEST_ITEM;
 //    public static ItemEntry<ExComponentItem> TEST_ITEM_2;
 
 
     //unsorted
-//    public static final ItemEntry<Item> ANIMAL_FAT          = item("animal_fat" ,"Animal Fat" ,"动物脂肪");
+    public static final ItemEntry<Item> ANIMAL_FAT          = item("animal_fat" ,"Animal Fat" ,"动物脂肪");
     public static final ItemEntry<Item> BACON     = item("bacon"    ,"Bacon"         ,"培根"  );
     public static final ItemEntry<Item> BACON_RAW = item("bacon_raw","Uncooked Bacon","生培根");
     public static final ItemEntry<Item> BAKED_BEANS = item("baked_beans","Baked Beans","焗豆");
@@ -603,31 +485,31 @@ public class GTMFOItems {
     public static final ItemEntry<Item> FULL_BREAKFAST = item("full_breakfast","Full Breakfast","全英早餐");
     public static final ItemEntry<Item> GELATIN = item("gelatin","Gelatin","明胶");
 
-//    public static final ItemEntry<Item> GUMMY_BEAR = item("gummy_bear","Gummy Bear","小熊软糖");
-//    public static final ItemEntry<ExComponentItem> HOT_BEETROOT_SOUP = foodItem("hot_beetroot_soup","Hot Beetroot Soup","热甜菜汤",Foods.HOT_BEETROOT_SOUP,STACK_1);
-//    public static final ItemEntry<ExComponentItem> HOT_MUSHROOM_STEW = foodItem("hot_mushroom_stew","Hot Mushroom Stew","热蘑菇煲",Foods.HOT_MUSHROOM_STEW,STACK_1);
-//    public static final ItemEntry<ExComponentItem> HOT_RABBIT_STEW   = foodItem("hot_rabbit_stew"  ,"Hot Rabbit Stew"  ,"热兔肉煲",Foods.HOT_RABBIT_STEW  ,STACK_1);
-//    public static final ItemEntry<Item> IV_BAG = item("iv_bag","IV Bag","静脉注射(IV)袋");
+    public static final ItemEntry<Item> GUMMY_BEAR = item("gummy_bear","Gummy Bear","小熊软糖");
+    public static final ItemEntry<ExComponentItem> HOT_BEETROOT_SOUP = foodItem("hot_beetroot_soup","Hot Beetroot Soup","热甜菜汤",Foods.HOT_BEETROOT_SOUP,STACK_1);
+    public static final ItemEntry<ExComponentItem> HOT_MUSHROOM_STEW = foodItem("hot_mushroom_stew","Hot Mushroom Stew","热蘑菇煲",Foods.HOT_MUSHROOM_STEW,STACK_1);
+    public static final ItemEntry<ExComponentItem> HOT_RABBIT_STEW   = foodItem("hot_rabbit_stew"  ,"Hot Rabbit Stew"  ,"热兔肉煲",Foods.HOT_RABBIT_STEW  ,STACK_1);
+    public static final ItemEntry<Item> IV_BAG = item("iv_bag","IV Bag","静脉注射(IV)袋");
     public static final ItemEntry<Item> MARSHMALLOW               = item("marshmallow"              ,"Marshmallow"           ,"棉花软糖"  );
-//    public static final ItemEntry<Item> MARSHMALLOW_STICK         = item("marshmallow_stick"        ,"Marshmallow on a Stick","棉花软糖串");
-//    public static final ItemEntry<Item> MARSHMALLOW_STICK_ROASTED = item("marshmallow_stick_roasted","Roasted Marshmallow"   ,"烤棉花软糖");
+    public static final ItemEntry<Item> MARSHMALLOW_STICK         = item("marshmallow_stick"        ,"Marshmallow on a Stick","棉花软糖串");
+    public static final ItemEntry<Item> MARSHMALLOW_STICK_ROASTED = item("marshmallow_stick_roasted","Roasted Marshmallow"   ,"烤棉花软糖");
     public static final ItemEntry<Item> MINCE_MEAT        = item("mince_meat"       ,"Mince Meat"       ,"肉末"  );
     public static final ItemEntry<Item> MINCE_MEAT_COOKED = item("mince_meat_cooked","Cooked Mince Meat","熟肉末");
     public static final ItemEntry<Item> MEAT_INGOT        = item("meat_ingot"       ,"Meat Ingot"       ,"肉锭"  );
     public static final ItemEntry<Item> MEAT_INGOT_COOKED = item("meat_ingot_cooked","Cooked Meat Ingot","熟肉锭");
-//    public static final ItemEntry<Item> MUSHY_PEAS = item("mushy_peas","Mushy Peas","豌豆糊");
+    public static final ItemEntry<Item> MUSHY_PEAS = item("mushy_peas","Mushy Peas","豌豆糊");
     public static final ItemEntry<Item> PIE_CRUST = item("pie_crust","Pie Crust","馅饼皮");
-//    public static final ItemEntry<Item> RICE_COOKED = item("rice_cooked","Cooked Rice","熟米饭");
-//    public static final ItemEntry<Item> ROTTEN_FISH = item("rotten_fish","Rotten Fish","臭鱼");
-//    public static final ItemEntry<Item> ROTTEN_MEAT = item("rotten_meat","Rotten Meat","臭肉");
-//    public static final ItemEntry<Item> SAUSAGE          = item("sausage"         ,"Sausage"              ,"香肠"    );
-//    public static final ItemEntry<Item> SAUSAGE_RAW      = item("sausage_raw"     ,"Raw Sausage"          ,"生香肠"  );
-//    public static final ItemEntry<Item> SAUSAGE_ROLL     = item("sausage_roll"    ,"Sausage Roll"         ,"香肠卷"  );
-//    public static final ItemEntry<Item> SAUSAGE_ROLL_RAW = item("sausage_roll_raw","Uncooked Sausage Roll","生香肠卷");
-//    public static final ItemEntry<Item> SCRAP_MEAT = item("scrap_meat","Scrap Meat","废肉");
-//    public static final ItemEntry<Item> SEASONED_PORK = item("seasoned_pork","Seasoned Pork","调味猪肉");
-//    public static final ItemEntry<Item> SHEPHERDS_PIE = item("shepherds_pie","Shepherd's Pie","牧羊人派");
-//    public static final ItemEntry<Item> SPRINKLER = item("sprinkler","Sprinkler","洒水器");
+    public static final ItemEntry<Item> RICE_COOKED = item("rice_cooked","Cooked Rice","熟米饭");
+    public static final ItemEntry<Item> ROTTEN_FISH = item("rotten_fish","Rotten Fish","臭鱼");
+    public static final ItemEntry<Item> ROTTEN_MEAT = item("rotten_meat","Rotten Meat","臭肉");
+    public static final ItemEntry<Item> SAUSAGE          = item("sausage"         ,"Sausage"              ,"香肠"    );
+    public static final ItemEntry<Item> SAUSAGE_RAW      = item("sausage_raw"     ,"Raw Sausage"          ,"生香肠"  );
+    public static final ItemEntry<Item> SAUSAGE_ROLL     = item("sausage_roll"    ,"Sausage Roll"         ,"香肠卷"  );
+    public static final ItemEntry<Item> SAUSAGE_ROLL_RAW = item("sausage_roll_raw","Uncooked Sausage Roll","生香肠卷");
+    public static final ItemEntry<Item> SCRAP_MEAT = item("scrap_meat","Scrap Meat","废肉");
+    public static final ItemEntry<Item> SEASONED_PORK = item("seasoned_pork","Seasoned Pork","调味猪肉");
+    public static final ItemEntry<Item> SHEPHERDS_PIE = item("shepherds_pie","Shepherd's Pie","牧羊人派");
+    public static final ItemEntry<Item> SPRINKLER = item("sprinkler","Sprinkler","洒水器");
 
     public static void init() {
 //        TEST_ITEM = REGISTRATE.item("test_item",ExComponentItem::create)
@@ -644,4 +526,132 @@ public class GTMFOItems {
 //                .register();
     }
 
+
+    private static <T extends ComponentItem> NonNullConsumer<T> attach(IItemComponent... components) {
+        return item -> item.attachComponents(components);
+    }
+
+    private static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, CNLangProvider> cn(String cnLang){
+        return (ctx,prov)->prov.add(ctx.get().getDescriptionId(),cnLang);
+    }
+
+    private static <T extends Item> NonNullBiConsumer<DataGenContext<Item, T>, RegistrateItemModelProvider> itemModel(String path){
+        return (ctx,prov)->prov.generated(ctx::getEntry,prov.modLoc("item/"+path));
+    }
+
+    private static ItemBuilder simple(String id){
+        return new ItemBuilder(id);
+    }
+
+    private static ItemEntry<Item> item(String id,String enLang,String cnLang){
+        return REGISTRATE.item(id,Item::new)
+                .lang(enLang)
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .defaultModel()
+                .register();
+    }
+
+    private static ItemEntry<Item> item(String id,String enLang,String cnLang,Item.Properties properties){
+        return REGISTRATE.item(id,Item::new)
+                .lang(enLang)
+                .initialProperties(()->properties)
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .defaultModel()
+                .register();
+    }
+
+    private static ItemEntry<Item> item(String id, String enLang, String cnLang, String path){
+        return REGISTRATE.item(id,Item::new)
+                .lang(enLang)
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
+                .register();
+    }
+
+    private static ItemEntry<Item> item(String id, String enLang, String cnLang, String path, Item.Properties properties){
+        return REGISTRATE.item(id,Item::new)
+                .lang(enLang)
+                .initialProperties(()->properties)
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
+                .register();
+    }
+
+    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, GTMFOFoodStats foodStats){
+        return REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .onRegister(attach(foodStats))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .defaultModel()
+                .register();
+    }
+
+    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, GTMFOFoodStats foodStats, Item.Properties properties){
+        return REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .initialProperties(()->properties)
+                .onRegister(attach(foodStats))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .defaultModel()
+                .register();
+    }
+
+    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats){
+        return REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .onRegister(attach(foodStats))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
+                .register();
+    }
+
+    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Item.Properties properties){
+        return REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .initialProperties(()->properties)
+                .onRegister(attach(foodStats))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel(path))
+                .register();
+    }
+
+    private static ItemEntry<ExComponentItem> smore(int number, String enLang, String cnLang, GTMFOFoodStats foodStats, boolean blockModel){
+        return REGISTRATE.item("smore_"+number,ExComponentItem::create)
+                .lang(enLang)
+                //.properties(p->p.stacksTo(64/number))
+                .onRegister(attach(foodStats))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model((ctx,prov)->{
+                    if (blockModel){
+                        prov.withExistingParent("item/smore_"+number,prov.modLoc("block/smore/"+number));
+                    }
+                    else {
+                        prov.generated(ctx::getEntry,prov.modLoc("item/smore/"+number));
+                    }})
+                .register();
+    }
+
+    private static ItemEntry<ExComponentItem> berry(String id, TagKey<Item> subTag, String enLang, String cnLang){
+        var builder = REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model(itemModel("berry/"+id));
+        if (subTag.equals(GTMFOTags.POISONOUS_BERRY)){
+            builder.onRegister(attach(Foods.BERRY_POISONOUS))
+                    .tag(GTMFOTags.POISONOUS_BERRY);
+        }else {
+            builder.onRegister(attach(Foods.BERRY))
+                    .tag(GTMFOTags.BERRY,subTag);
+        }
+        return builder.register();
+    }
+
+    private static ItemEntry<ExComponentItem> smogus(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Supplier<? extends Block> block){
+        return REGISTRATE.item(id,ExComponentItem::create)
+                .lang(enLang)
+                .onRegister(attach(foodStats,new BlockItemComponent(block)))
+                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
+                .model((ctx,prov)->prov.generated(ctx::getEntry,prov.modLoc("item/"+path)))
+                .register();
+    }
 }
