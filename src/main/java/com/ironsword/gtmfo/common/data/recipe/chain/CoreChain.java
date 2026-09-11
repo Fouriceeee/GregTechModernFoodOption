@@ -247,12 +247,7 @@ public class CoreChain {
     }
 
     private static void drink(Consumer<FinishedRecipe> provider){
-        GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("carbonated_water"))
-                .inputFluids(
-                        GTMaterials.Water.getFluid(1000),
-                        GTMaterials.CarbonDioxide.getFluid(100))
-                .outputFluids(GTMFOFluids.CarbonatedWater.getFluid(1050))
-                .EUt(120).duration(60).save(provider);
+
     }
 
     private static void misc(Consumer<FinishedRecipe> provider) {

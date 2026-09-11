@@ -22,6 +22,16 @@ public class GTMFOMaterials {
     public static Material Zest = simpleDust("zest",0xd8ff4a,"Zest", "碎橙皮");
     public static Material SodiumCyanide = dust("sodium_cyanide", 0x7575ae,"Sodium Cyanide","氰化钠");
 
+    public static Material Diphenylamine = dust("diphenylamine","Diphenylamine","二苯胺").color(0xe3932b).formula("C12H11N").buildAndRegister();
+    public static Material Phenothiazine = dust("phenothiazine","Phenothiazine","吩噻嗪").color(0x67735c).formula("C12H9NS").buildAndRegister();
+    public static Material Promethazine = dust("promethazine","Promethazine","异丙嗪").color(0xf8fade).formula("C17H20N2S").buildAndRegister();
+    public static Material Poppy = dust("poppy", "Poppy","虞美人").color(0x940801).buildAndRegister();
+    public static Material Codeine = dust("codeine", "Codeine","可待因").color(0xfadef2).formula("C18H21NO3").buildAndRegister();
+
+
+
+
+
     private static TagPrefix[] without(TagPrefix tagPrefix){
         return TagPrefix.values().stream().filter(prefix->!prefix.equals(tagPrefix)).toArray(TagPrefix[]::new);
     }
@@ -43,6 +53,11 @@ public class GTMFOMaterials {
     private static Material dust(String id,int color,String enLang,String cnLang){
         addLang(id,enLang,cnLang);
         return new Material.Builder(GTCEu.id(id)).color(color).dust().iconSet(MaterialIconSet.DULL).buildAndRegister();
+    }
+
+    private static Material.Builder dust(String id,String enLang,String cnLang){
+        addLang(id,enLang,cnLang);
+        return new Material.Builder(GTCEu.id(id)).dust().iconSet(MaterialIconSet.DULL);
     }
 
     public static void init(){

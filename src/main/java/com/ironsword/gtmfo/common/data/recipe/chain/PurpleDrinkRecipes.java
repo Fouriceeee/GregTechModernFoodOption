@@ -6,6 +6,7 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
+import com.ironsword.gtmfo.common.data.material.GTMFOMaterials;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
 
@@ -30,11 +31,16 @@ public class PurpleDrinkRecipes {
                 .inputItems(Items.GLASS_BOTTLE)
                 .outputItems(GTItems.BOTTLE_PURPLE_DRINK)
                 .EUt(30).duration(20).save(provider);
-
-
     }
 
     private static void EtirpsRecipes(Consumer<FinishedRecipe> provider){
+        GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("carbonated_water"))
+                .inputFluids(
+                        GTMaterials.Water.getFluid(1000),
+                        GTMaterials.CarbonDioxide.getFluid(100))
+                .outputFluids(GTMFOFluids.CarbonatedWater.getFluid(1050))
+                .EUt(120).duration(60).save(provider);
+
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("lemon_lime_solution"))
                 .inputFluids(
                         GTMFOFluids.LemonExtract.getFluid(500),
@@ -70,7 +76,6 @@ public class PurpleDrinkRecipes {
     }
 
     private static void CoughSyrupRecipes(Consumer<FinishedRecipe> provider){
-
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("isopropyl_chloride"))
                 .inputFluids(
                         GTMaterials.HydrochloricAcid.getFluid(1000),
@@ -90,18 +95,18 @@ public class PurpleDrinkRecipes {
                 .inputFluids(
                         GTMFOFluids.Aniline.getFluid(2000),
                         GTMaterials.HydrofluoricAcid.getFluid(1000))
-                .outputItems(GTMFOItems.DIPHENYLAMINE,24)
+                .outputItems(TagPrefix.dust,GTMFOMaterials.Diphenylamine,24)
                 .outputItems(TagPrefix.dust, GTMaterials.AmmoniumChloride, 2)
                 .EUt(480).duration(120).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("phenothiazine"))
-                .inputItems(GTMFOItems.DIPHENYLAMINE,24)
+                .inputItems(TagPrefix.dust,GTMFOMaterials.Diphenylamine,24)
                 .inputItems(TagPrefix.dust,GTMaterials.Sulfur,2)
-                .outputItems(GTMFOItems.PHENOTHIAZINE,23)
+                .outputItems(TagPrefix.dust,GTMFOMaterials.Phenothiazine,23)
                 .outputFluids(GTMaterials.HydrogenSulfide.getFluid(1000))
                 .EUt(120).duration(120).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("x_phenothiazine_ii_propyl_chloride"))
                 .inputFluids(GTMFOFluids.IsopropylChloride.getFluid(1000))
-                .inputItems(GTMFOItems.PHENOTHIAZINE,23)
+                .inputItems(TagPrefix.dust,GTMFOMaterials.Phenothiazine,23)
                 .outputFluids(GTMFOFluids.XPhenothiazineIIPropylChloride.getFluid(1000))
                 .EUt(240).duration(120).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("promethazine"))
@@ -109,22 +114,22 @@ public class PurpleDrinkRecipes {
                         GTMaterials.Dimethylamine.getFluid(1000),
                         GTMFOFluids.XPhenothiazineIIPropylChloride.getFluid(1000))
                 .notConsumable(TagPrefix.dust,GTMaterials.Copper)
-                .outputItems(GTMFOItems.PROMETHAZINE,40)
+                .outputItems(TagPrefix.dust,GTMFOMaterials.Promethazine,40)
                 .outputFluids(GTMaterials.HydrochloricAcid.getFluid(1000))
                 .EUt(8000).duration(120).save(provider);
 
         GTRecipeTypes.MACERATOR_RECIPES.recipeBuilder(id("poppy_crushed"))
                 .inputItems(Items.POPPY)
-                .outputItems(GTMFOItems.POPPY_CRUSHED)
+                .outputItems(TagPrefix.dust,GTMFOMaterials.Poppy)
                 .EUt(4).duration(20).save(provider);
         GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder(id("codeine"))
-                .inputItems(GTMFOItems.POPPY_CRUSHED,30)
-                .outputItems(GTMFOItems.CODEINE,42)
+                .inputItems(TagPrefix.dust,GTMFOMaterials.Poppy,30)
+                .outputItems(TagPrefix.dust,GTMFOMaterials.Codeine,42)
                 .EUt(1920).duration(600).save(provider);
 
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("cough_syrup"))
-                .inputItems(GTMFOItems.PROMETHAZINE,40)
-                .inputItems(GTMFOItems.CODEINE,42)
+                .inputItems(TagPrefix.dust,GTMFOMaterials.Promethazine,40)
+                .inputItems(TagPrefix.dust,GTMFOMaterials.Codeine,42)
                 .inputFluids(GTMaterials.Water,1000)
                 .outputFluids(GTMFOFluids.CoughSyrup.getFluid(1000))
                 .EUt(60).duration(60).save(provider);
