@@ -6,6 +6,8 @@ import com.ironsword.gtmfo.api.item.component.GTMFOFoodStats;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.List;
+
 public class ExComponentItem extends ComponentItem {
     protected ExComponentItem(Properties properties) {
         super(properties);
@@ -14,6 +16,11 @@ public class ExComponentItem extends ComponentItem {
     public static ExComponentItem create(Item.Properties properties){
         return new ExComponentItem(properties);
     }
+
+    public void setComponents(List<IItemComponent> components){
+        this.components = components;
+    }
+
 
     @Override
     public int getUseDuration(ItemStack pStack) {
