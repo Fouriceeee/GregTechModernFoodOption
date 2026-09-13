@@ -15,6 +15,8 @@ import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
 import com.ironsword.gtmfo.common.machine.multiblock.primitive.PrimitiveBakingOvenMachine;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 
 import static com.gregtechceu.gtceu.api.pattern.util.RelativeDirection.*;
 import static com.ironsword.gtmfo.common.registry.GTMFORegistries.REGISTRATE;
@@ -72,18 +74,19 @@ public class GTMFOMultiMachines {
             .langValue("Primitive Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeType(GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES)
-            .appearanceBlock(GTBlocks.CASING_PRIMITIVE_BRICKS)
+            .appearanceBlock(()->Blocks.MUD_BRICKS)
             .pattern(definition->FactoryBlockPattern.start()
                     .aisle("XXX", "XXX")
                     .aisle("XFX", "X#X")
                     .aisle("XYX", "XXX")
-                    .where('X', Predicates.blocks(GTBlocks.CASING_PRIMITIVE_BRICKS.get()))
+                    .where('X', Predicates.blocks(Blocks.MUD_BRICKS))
                     .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt,GTMaterials.Iron)))
                     .where('#', Predicates.air())
                     .where('Y', Predicates.controller(Predicates.blocks(definition.getBlock())))
                     .build())
             .workableCasingModel(
-                    GTCEu.id("block/casings/solid/machine_primitive_bricks"),
+                    //GTCEu.id("block/casings/solid/machine_primitive_bricks"),
+                    ResourceLocation.withDefaultNamespace("block/mud_bricks"),
                     GTCEu.id("block/machines/baking_oven"))
             .register();
 

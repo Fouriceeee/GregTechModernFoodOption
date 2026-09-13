@@ -5,18 +5,16 @@ import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
-
+import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
 import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
-
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.ForgeHooks;
-
 import org.jetbrains.annotations.Nullable;
-
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -35,10 +33,12 @@ public class PrimitiveBakingOvenRecipeLogic extends RecipeLogic {
 
     @Persisted
     @DescSynced
-    private int[] progresses = new int[4];
+    private final int[] progresses = new int[4];
     @Persisted
     @DescSynced
-    private int[] durations = new int[4];
+    private final int[] durations = new int[4];
+
+    private final List<ItemStack> displayOutputs = new ArrayList<>();
 
     public PrimitiveBakingOvenRecipeLogic(PrimitiveBakingOvenMachine machine) {
         super(machine);
@@ -83,17 +83,55 @@ public class PrimitiveBakingOvenRecipeLogic extends RecipeLogic {
         }
     }
 
-    private void processAllSlots(){
+    private void processAllSlots() {
         setStatus(Status.WORKING);
+        List<ItemStack> outputs = new ArrayList<>(4);
+        int duration = 0;
         for (int slot = 0; slot < 4; slot++) {
-            process(slot);
+            GTRecipe recipe = process(slot);
+            if (recipe == null) continue;
+            ItemStack result = outputStack(recipe.getOutputContents(ItemRecipeCapability.CAP).get(0));
+            if (result.isEmpty()) continue;
+            outputs.add(result);
+            duration = Math.max(duration, recipe.duration);
         }
+        updateDisplayRecipe(outputs, duration);
     }
 
     private void resetAllProgress() {
         setStatus(Status.IDLE);
         Arrays.fill(progresses, 0);
         Arrays.fill(durations, 0);
+        updateDisplayRecipe(List.of(), 0);
+    }
+
+    private void updateDisplayRecipe(List<ItemStack> outputs, int duration) {
+        if (outputs.isEmpty()) {
+            if (lastRecipe != null) {
+                lastRecipe = null;
+                displayOutputs.clear();
+            }
+            return;
+        }
+        if (compareItemStacks(displayOutputs, outputs)) {
+            return;
+        }
+
+        displayOutputs.clear();
+        displayOutputs.addAll(outputs);
+
+        lastRecipe = GTRecipeBuilder.ofRaw()
+                .duration(duration)
+                .outputItems(outputs.toArray(ItemStack[]::new))
+                .buildRawRecipe();
+    }
+
+    private static boolean compareItemStacks(List<ItemStack> a, List<ItemStack> b) {
+        if (a.size() != b.size()) return false;
+        for (int i = 0; i < a.size(); i++) {
+            if (!ItemStack.matches(a.get(i), b.get(i))) return false;
+        }
+        return true;
     }
 
     private boolean hasRecipe() {
@@ -121,13 +159,14 @@ public class PrimitiveBakingOvenRecipeLogic extends RecipeLogic {
         return true;
     }
 
-    private void process(int slot) {
+    @Nullable
+    private GTRecipe process(int slot) {
         GTRecipe recipe = findRecipe(slot);
         if (recipe == null) {
             //no recipe is found, reset duration and process
             durations[slot] = 0;
             progresses[slot] = 0;
-            return;
+            return null;
         }
         if (durations[slot] != recipe.duration) {
             //find new recipe, reset progress to 0
@@ -142,6 +181,7 @@ public class PrimitiveBakingOvenRecipeLogic extends RecipeLogic {
             durations[slot] = 0;
             progresses[slot] = 0;
         }
+        return recipe;
     }
 
     @Nullable

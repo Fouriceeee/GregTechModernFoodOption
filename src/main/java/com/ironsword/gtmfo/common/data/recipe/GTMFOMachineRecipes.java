@@ -11,6 +11,7 @@ import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMachines;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMultiMachines;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
@@ -50,6 +51,15 @@ public class GTMFOMachineRecipes {
                 'C', GTCraftingComponents.CIRCUIT,
                 'A', GTCraftingComponents.CABLE,
                 'L', ChemicalHelper.get(TagPrefix.plate, GTMaterials.Lead));
+
+        VanillaRecipeHelper.addShapedRecipe(provider,id("primitive_baking_oven"),
+                GTMFOMultiMachines.PRIMITIVE_BAKING_OVEN.asStack(),
+                "dSS",
+                "RRA",
+                "fSS",
+                'S', ChemicalHelper.get(TagPrefix.screw,GTMaterials.Iron),
+                'R', ChemicalHelper.get(TagPrefix.rod,GTMaterials.Iron),
+                'A', Blocks.MUD_BRICKS.asItem().getDefaultInstance());
 
         VanillaRecipeHelper.addShapedRecipe(provider,id("steam_baking_oven"),
                 GTMFOMultiMachines.STEAM_BAKING_OVEN.asStack(),

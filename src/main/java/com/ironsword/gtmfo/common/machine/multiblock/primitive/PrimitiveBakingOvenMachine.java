@@ -10,28 +10,20 @@ import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.common.machine.multiblock.primitive.PrimitiveWorkableMachine;
 import com.ironsword.gtmfo.common.data.GTMFOGuiTextures;
-
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
 import com.lowdragmc.lowdraglib.gui.widget.ImageWidget;
 import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.ProgressWidget;
+import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
-
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.ForgeHooks;
-
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * A primitive oven that burns vanilla furnace fuel to bake up to four items at once.
- * <p>
- * The machine itself only owns its inventories and its GUI; all baking behaviour lives in
- * {@link PrimitiveBakingOvenRecipeLogic}.
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class PrimitiveBakingOvenMachine extends PrimitiveWorkableMachine implements IUIMachine {
@@ -93,41 +85,40 @@ public class PrimitiveBakingOvenMachine extends PrimitiveWorkableMachine impleme
 
     @Override
     public ModularUI createUI(Player entityPlayer) {
-        ModularUI ui = new ModularUI(176, 166, this, entityPlayer)
+        return new ModularUI(176, 166, this, entityPlayer)
                 .background(GuiTextures.PRIMITIVE_BACKGROUND)
-                .widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()));
+                .widget(new LabelWidget(5, 5, getBlockState().getBlock().getDescriptionId()))
+                //fuel
+                .widget(new ProgressWidget(this::getFuelPercent, 7, 24, 18, 18)
+                        .setProgressTexture(
+                                GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_FUEL_BAR.getSubTexture(0, 0, 1, 0.5),
+                                GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_FUEL_BAR.getSubTexture(0, 0.5, 1, 0.5))
+                        .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP))
+                .widget(new SlotWidget(fuelItems.storage, 0, 7, 42, true, true).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                //input
+                .widget(new SlotWidget(importItems.storage,0,31,24,true,true).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                .widget(new SlotWidget(importItems.storage,1,55,24,true,true).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                .widget(new SlotWidget(importItems.storage,2,31,42,true,true).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                .widget(new SlotWidget(importItems.storage,3,55,42,true,true).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                //output
+                .widget(new SlotWidget(exportItems.storage,0,115,24,true,false).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                .widget(new SlotWidget(exportItems.storage,1,133,24,true,false).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                .widget(new SlotWidget(exportItems.storage,2,115,42,true,false).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                .widget(new SlotWidget(exportItems.storage,3,133,42,true,false).setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT))
+                //heat bar
+                .widget(heatWidget(0,49,24))
+                .widget(heatWidget(1,73,24))
+                .widget(heatWidget(2,49,42))
+                .widget(heatWidget(3,73,42))
+                .widget(new ImageWidget(87,34,20,15,GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR.getSubTexture(0,0,1,0.5)))
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.PRIMITIVE_SLOT, 7, 84, true));
+    }
 
-        // Fuel: a vertical flame bar sitting on top of the fuel slot.
-        ui.widget(new ProgressWidget(this::getFuelPercent, 6, 20, 18, 18)
+    private Widget heatWidget(int slot, int x, int y){
+        return new ProgressWidget(() -> getProgressPercent(slot), x, y, 6, 18)
                 .setProgressTexture(
-                        GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_FUEL_BAR.getSubTexture(0, 0, 1, 0.5),
-                        GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_FUEL_BAR.getSubTexture(0, 0.5, 1, 0.5))
-                .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP));
-        ui.widget(new SlotWidget(fuelItems.storage, 0, 6, 38, true, true)
-                .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT));
-
-        // Four independent input slots with a heat bar to the right of each, the matching output slots
-        // on the far right.
-        int[] slotX = { 30, 54, 30, 54 };
-        int[] slotY = { 20, 20, 38, 38 };
-        int[] heatX = { 46, 70, 46, 70 };
-        for (int slot = 0; slot < 4; slot++) {
-            ui.widget(new SlotWidget(importItems.storage, slot, slotX[slot], slotY[slot], true, true)
-                    .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT));
-            ui.widget(new SlotWidget(exportItems.storage, slot, 110 + (slot % 2) * 18, 20 + (slot / 2) * 18, true, false)
-                    .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT));
-        }
-        for (int slot = 0; slot < 4; slot++) {
-            final int heatSlot = slot;
-            ui.widget(new ProgressWidget(() -> getProgressPercent(heatSlot), heatX[slot], slotY[slot], 10, 18)
-                    .setProgressTexture(
-                            GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_HEAT_BAR.getSubTexture(0, 0, 1, 0.5),
-                            GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_HEAT_BAR.getSubTexture(0, 0.5, 1, 0.5))
-                    .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP));
-        }
-
-        ui.widget(new ImageWidget(84,30,20,15,GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR.getSubTexture(0,0,1,0.5)));
-        ui.widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.PRIMITIVE_SLOT, 7, 84, true));
-        return ui;
+                        GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_HEAT_BAR.getSubTexture(0, 0, 1, 0.5),
+                        GTMFOGuiTextures.PRIMITIVE_BAKING_OVEN_HEAT_BAR.getSubTexture(0, 0.5, 1, 0.5))
+                .setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP);
     }
 }
