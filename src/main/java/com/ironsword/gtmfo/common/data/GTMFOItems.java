@@ -70,16 +70,16 @@ public class GTMFOItems {
 
 
     //berry
-    public static final ItemEntry<ExComponentItem> BLACKBERRY = ex("blackberry").texture("berry/"+"blackberry").en("Blackberry").cn("黑莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
-    public static final ItemEntry<ExComponentItem> BLUEBERRY = ex("blueberry").texture("berry/"+"blueberry").en("Blueberry").cn("蓝莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
-    public static final ItemEntry<ExComponentItem> CRANBERRY = ex("cranberry").texture("berry/"+"cranberry").en("Cranberry").cn("蔓越莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
-    public static final ItemEntry<ExComponentItem> ELDERBERRY = ex("elderberry").texture("berry/"+"elderberry").en("Elderberry").cn("接骨木莓").attach(Foods.BERRY_POISONOUS).tags(GTMFOTags.POISONOUS_BERRY).register();
-    public static final ItemEntry<ExComponentItem> LINGONBERRY = ex("lingonberry").texture("berry/"+"lingonberry").en("Lingonberry").cn("越橘").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
-    public static final ItemEntry<ExComponentItem> RASPBERRY = ex("raspberry").texture("berry/"+"raspberry").en("Raspberry").cn("树莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
-    public static final ItemEntry<ExComponentItem> STRAWBERRY = ex("strawberry").texture("berry/"+"strawberry").en("Strawberry").cn("草莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
-    public static final ItemEntry<ExComponentItem> BLACK_CURRANT = ex("black_currant").texture("berry/"+"black_currant").en("Black Currant").cn("黑加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
-    public static final ItemEntry<ExComponentItem> RED_CURRANT = ex("red_currant").texture("berry/"+"red_currant").en("Red Currant").cn("红加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
-    public static final ItemEntry<ExComponentItem> WHITE_CURRANT = ex("white_currant").texture("berry/"+"white_currant").en("White Currant").cn("白加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> BLACKBERRY = ex("blackberry").texture("berry/blackberry").en("Blackberry").cn("黑莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> BLUEBERRY = ex("blueberry").texture("berry/blueberry").en("Blueberry").cn("蓝莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> CRANBERRY = ex("cranberry").texture("berry/cranberry").en("Cranberry").cn("蔓越莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> ELDERBERRY = ex("elderberry").texture("berry/elderberry").en("Elderberry").cn("接骨木莓").attach(Foods.BERRY_POISONOUS).tags(GTMFOTags.POISONOUS_BERRY).register();
+    public static final ItemEntry<ExComponentItem> LINGONBERRY = ex("lingonberry").texture("berry/lingonberry").en("Lingonberry").cn("越橘").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> RASPBERRY = ex("raspberry").texture("berry/raspberry").en("Raspberry").cn("树莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> STRAWBERRY = ex("strawberry").texture("berry/strawberry").en("Strawberry").cn("草莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> BLACK_CURRANT = ex("black_currant").texture("berry/black_currant").en("Black Currant").cn("黑加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> RED_CURRANT = ex("red_currant").texture("berry/red_currant").en("Red Currant").cn("红加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> WHITE_CURRANT = ex("white_currant").texture("berry/white_currant").en("White Currant").cn("白加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
     public static final ItemEntry<ExComponentItem> BERRY_MEDLEY  = ex("berry_medley").texture("berry/medley").en("Berry Medley").cn("什锦浆果").attach(Foods.BERRY_MEDLEY).register();
 
     //bread
@@ -219,8 +219,8 @@ public class GTMFOItems {
     public static final ItemEntry<ExComponentItem> ANTAF            = ex("antaf").texture("drink/antaf").en("Antaf™").cn("Antaf™").attach(Foods.EMPTY).register();
     public static final ItemEntry<ExComponentItem> BEER             = ex("beer").texture("drink/beer").en("Beer").cn("啤酒").attach(Foods.EMPTY).register();
     public static final ItemEntry<ExComponentItem> COAC             = ex("coac").texture("drink/coac").en("Coac").cn("乐可").attach(Foods.EMPTY).register();
-    public static final ItemEntry<ExComponentItem> ETIRPS           = ex("etirps").texture("drink/etirps").en("Etirps™").cn("碧雪™").attach(Foods.EMPTY).register();
-    public static final ItemEntry<ExComponentItem> ETIRPS_CRANBERRY = ex("etirps_cranberry").texture("drink/etirps_cranberry").en("Etirps Cranberry").cn("蔓越莓味碧雪").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> ETIRPS           = ex("etirps").texture("drink/etirps").en("Etirps™").cn("碧雪™").attach(Foods.ETIRPS).register();
+    public static final ItemEntry<ExComponentItem> ETIRPS_CRANBERRY = ex("etirps_cranberry").texture("drink/etirps_cranberry").en("Etirps Cranberry").cn("蔓越莓味碧雪").attach(Foods.ETIRPS_CRANBERRY).register();
     public static final ItemEntry<ExComponentItem> GREEN_ISLAND     = ex("green_island").texture("drink/green_island").en("Green Island™").cn("绿岛啤酒™").attach(Foods.EMPTY).register();
     public static final ItemEntry<ExComponentItem> JUICE_APPLE      = ex("juice_apple").texture("drink/juice_apple").en("Apple Juice").cn("苹果汁").attach(Foods.JUICE).register();
     public static final ItemEntry<ExComponentItem> JUICE_ORANGE     = ex("juice_orange").texture("drink/juice_orange").en("Orange Juice").cn("橙汁").attach(Foods.JUICE).register();
@@ -556,21 +556,6 @@ public class GTMFOItems {
                         prov.generated(ctx::getEntry,prov.modLoc("item/smore/"+number));
                     }})
                 .register();
-    }
-
-    private static ItemEntry<ExComponentItem> berry(String id, TagKey<Item> subTag, String enLang, String cnLang){
-        var builder = REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel("berry/"+id));
-        if (subTag.equals(GTMFOTags.POISONOUS_BERRY)){
-            builder.onRegister(attach(Foods.BERRY_POISONOUS))
-                    .tag(GTMFOTags.POISONOUS_BERRY);
-        }else {
-            builder.onRegister(attach(Foods.BERRY))
-                    .tag(GTMFOTags.BERRY,subTag);
-        }
-        return builder.register();
     }
 
     private static ItemEntry<ExComponentItem> smogus(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Supplier<? extends Block> block){

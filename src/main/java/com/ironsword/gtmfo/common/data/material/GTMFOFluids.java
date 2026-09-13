@@ -7,12 +7,13 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 
 public class GTMFOFluids {
 
-    public static final Material LemonExtract   = fluid("lemon_extract" ,0xfce80a,"Lemon Extract","柠檬提取液");
-    public static final Material LimeExtract = fluid("lime_extract"  ,0x85f218,"Lime Extract" ,"酸橙提取液");
+    public static final Material LemonExtract   = fluid("lemon_extract" ,0xfce80a,"Lemon Extract","柠檬汁");
+    public static final Material LimeExtract = fluid("lime_extract"  ,0x85f218,"Lime Extract" ,"酸橙汁");
     public static final Material OrangeExtract = fluid("orange_extract",0xff6100,"Orange Juice" ,"橙汁"      );
     public static final Material AppleExtract   = fluid("apple_extract" ,0xe9ba58,"Apple Juice"  ,"苹果汁"    );
-    public static final Material MELON_EXTRACT  = fluid("melon_extract" ,0xfc7996,"Melon Extract","西瓜提取液");
+    public static final Material MELON_EXTRACT  = fluid("melon_extract" ,0xfc7996,"Melon Extract","西瓜汁");
     public static final Material GRAPE_EXTRACT  = fluid("grape_extract" ,0xa83351,"Grape Extract","葡萄汁"    );
+    public static final Material CranberryExtract = fluid("cranberry_extract",0x8C0D22,"Cranberry Extract","蔓越莓汁");
 //
 //    public static final Material APRICOT_EXTRACT = fluid("apricot_extract",0xe3de9d,"Apricot Extract","杏子提取液");
 //
@@ -48,8 +49,8 @@ public class GTMFOFluids {
     public static final Material AppleCandySyrup = fluid("apple_candy_syrup",0xe7f5ae,"Apple Candy Syrup","苹果糖浆");
     public static final Material PurpleDrink = fluid("purple_drink",0xb405ff,"Purple Drink","紫色饮料");
 
-    public static final Material LemonLimeSolution = fluid("lemon_lime_solution",0xbddb5a,"Lemon Lime Solution","柠檬酸橙混合液");
-    public static final Material LemonLimeSludge = fluid("lemon_lime_sludge",0x779906,"Lemon Lime Sludge","柠檬酸橙果浆混合液");
+    public static final Material LemonLimeSolution = fluid("lemon_lime_solution",0xbddb5a,"Lemon Lime Solution","柠檬酸橙混合汁");
+    public static final Material LemonLimeSludge = fluid("lemon_lime_sludge",0x779906,"Lemon Lime Sludge","柠檬酸橙浆");
     public static final Material LemonLimeSodaSyrup = fluid("lemon_lime_soda_syrup",0x76ff0d,"Lemon Lime Soda Syrup","柠檬酸橙苏打水糖浆");
     public static final Material Etirps = fluid("etirps",0xb0ff73,"Etirps","碧雪");
 
@@ -70,7 +71,7 @@ public class GTMFOFluids {
             .buildAndRegister();
     public static final Material CoughSyrup = fluid("cough_syrup",0x5c1b5e,"Cough Syrup","止咳糖浆");
 
-    public static final Material BerryJam = fluid("berry_jam",0x61262D,"Berry Jam","浆果果酱");
+    public static final Material BerryJam = fluid("berry_jam",0x61262D,"Berry Jam","果酱");
     public static final Material ElderberryJam = fluid("elderberry_jam",0x5F414F,"Elderberry Jam","接骨木莓果酱");
     public static final Material CranberrySludge = fluid("cranberry_sludge",0x571722,"Cranberry Sludge","蔓越莓浆");
     public static final Material CranberrySodaSyrup = fluid("cranberry_soda_syrup",0x5f202a,"Cranberry Soda Syrup","蔓越莓苏打水糖浆");

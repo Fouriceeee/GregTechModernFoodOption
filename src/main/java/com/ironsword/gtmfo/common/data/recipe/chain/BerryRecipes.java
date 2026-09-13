@@ -20,31 +20,30 @@ public class BerryRecipes {
         //berry_medley
         VanillaRecipeHelper.addShapelessRecipe(provider,id("berry_medley"),
                 GTMFOItems.BERRY_MEDLEY.asStack(),
-                GTMFOTags.BERRY_SWEET,GTMFOTags.BERRY_SWEET,GTMFOTags.BERRY_TART,GTMFOTags.BERRY_TART, Items.BOWL);
+                GTMFOTags.BERRY,GTMFOTags.BERRY,GTMFOTags.BERRY,GTMFOTags.BERRY,Items.BOWL);
         GTMFORecipeTypes.MULTICOOKER_RECIPES.recipeBuilder(id("berry_jam"))
                 .inputItems(GTMFOTags.BERRY)
                 .inputItems(Items.SUGAR.getDefaultInstance())
                 .inputFluids(GTMFOFluids.LemonExtract.getFluid(150))
-                .outputFluids(GTMFOFluids.BerryJam.getFluid(1000))
+                .outputFluids(GTMFOFluids.BerryJam.getFluid(250))
                 .EUt(16).duration(240).save(provider);
         GTMFORecipeTypes.MULTICOOKER_RECIPES.recipeBuilder(id("elderberry_jam"))
                 .inputItems(GTMFOItems.ELDERBERRY.asStack())
                 .inputItems(Items.SUGAR.getDefaultInstance())
                 .inputFluids(GTMFOFluids.LemonExtract.getFluid(150))
-                .outputFluids(GTMFOFluids.ElderberryJam.getFluid(1000))
+                .outputFluids(GTMFOFluids.ElderberryJam.getFluid(250))
                 .EUt(16).duration(240).save(provider);
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("berry_medley"))
                 .inputItems(GTMFOTags.BERRY_SWEET)
                 .inputItems(GTMFOTags.BERRY_TART)
-                .inputFluids(GTMFOFluids.BerryJam.getFluid(100))
+                .inputFluids(GTMFOFluids.BerryJam.getFluid(50))
                 .inputItems(Items.BOWL.getDefaultInstance())
                 .outputItems(GTMFOItems.BERRY_MEDLEY.asStack())
                 .EUt(8).duration(20).save(provider);
 
         //cranberry_etirps
-        GTMFORecipeTypes.MULTICOOKER_RECIPES.recipeBuilder(id("cranberry_sludge"))
-                .inputItems(GTMFOItems.CRANBERRY)
-                .inputFluids(GTMFOFluids.BerryJam.getFluid(1000))
+        GTRecipeTypes.CENTRIFUGE_RECIPES.recipeBuilder(id("cranberry_sludge"))
+                .inputFluids(GTMFOFluids.CranberryExtract.getFluid(1500))
                 .outputFluids(GTMFOFluids.CranberrySludge.getFluid(1000))
                 .EUt(30).duration(140).save(provider);
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("cranberry_soda_syrup"))
@@ -59,8 +58,8 @@ public class BerryRecipes {
                 .outputFluids(GTMFOFluids.CranberryEtirps.getFluid(2000))
                 .EUt(60).duration(20).save(provider);
         GTRecipeTypes.CANNER_RECIPES.recipeBuilder(id("cranberry_etirps"))
-                .inputFluids(GTMFOFluids.CranberryEtirps.getFluid(250))
-                .inputItems(GTMFOItems.PLASTIC_BOTTLE)
+                .inputFluids(GTMFOFluids.CranberryEtirps.getFluid(500))
+                .inputItems(GTMFOItems.CAN)
                 .outputItems(GTMFOItems.ETIRPS_CRANBERRY)
                 .EUt(30).duration(20).save(provider);
 

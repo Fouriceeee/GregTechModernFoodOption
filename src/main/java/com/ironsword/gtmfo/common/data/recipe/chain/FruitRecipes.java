@@ -27,5 +27,9 @@ public class FruitRecipes {
                 .inputItems(GTMFOItems.ORANGE.asStack())
                 .outputFluids(GTMFOFluids.OrangeExtract.getFluid(100))
                 .EUt(5).duration(100).save(provider);
+        GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder(id("cranberry_extract"))
+                .inputItems(GTMFOItems.CRANBERRY.asStack())
+                .outputFluids(GTMFOFluids.CranberryExtract.getFluid(100))
+                .EUt(5).duration(100).save(provider);
     }
 }

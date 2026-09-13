@@ -66,6 +66,11 @@ public class GTMFOFoodStats extends FoodStats {
             return this;
         }
 
+        public Builder fast(){
+            this.eatingDuration = 16;
+            return this;
+        }
+
         public Builder item(@NotNull Supplier<ItemStack> containerItem){
             this.containerItem = containerItem;
             return this;

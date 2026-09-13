@@ -25,10 +25,16 @@ public class Foods {
     public static final GTMFOFoodStats EMPTY = food(0, 0f);
 
     //apple_candy
-    public static final GTMFOFoodStats APPLE_CORED           = builder(4, 0.3f).eatDuration(24).build();
-    public static final GTMFOFoodStats APPLE_SLICE           = builder(1, 0.1f).build();
-    public static final GTMFOFoodStats APPLE_TUNGSTENSTEEL   = builder(3, 1f).eatDuration(80).effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f).effect(MobEffects.NIGHT_VISION,3600,2,0.6f).effect(MobEffects.HARM,1,1,1f).build();
-    public static final GTMFOFoodStats APPLE_CANDY           = builder(1, 1f).eatDuration(24).effect(MobEffects.REGENERATION,1200,1,0.5f).build();
+    public static final GTMFOFoodStats APPLE_CORED = builder(4, 0.3f).eatDuration(24).build();
+    public static final GTMFOFoodStats APPLE_SLICE = builder(1, 0.1f).fast().build();
+    public static final GTMFOFoodStats APPLE_TUNGSTENSTEEL =
+            builder(3, 1f).eatDuration(80)
+                    .effect(MobEffects.MOVEMENT_SPEED,1200,2,1f)
+                    .effect(MobEffects.DAMAGE_RESISTANCE,1200,3,1f)
+                    .effect(MobEffects.NIGHT_VISION,3600,2,0.6f)
+                    .effect(MobEffects.HARM,1,1,1f)
+                    .build();
+    public static final GTMFOFoodStats APPLE_CANDY = builder(1, 1f).eatDuration(24).effect(MobEffects.REGENERATION,1200,1,0.5f).build();
 
     //berry
     public static final GTMFOFoodStats BERRY                 = builder(1, 0.5f).build();
@@ -99,7 +105,7 @@ public class Foods {
     public static final GTMFOFoodStats SPARKLING_WATER       = builder(1, 1f).drink().effect(MobEffects.MOVEMENT_SPEED,600,1,1f).item(GTMFOItems.PLASTIC_BOTTLE::asStack).build();
     public static final GTMFOFoodStats LEMON                 =    food(1, 0.5f, 32);
     public static final GTMFOFoodStats LIME                  =    food(1, 0.5f, 32);
-    public static final GTMFOFoodStats ETIRPS                = builder(0, 0).drink().alwaysEat().effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).build();
+    public static final GTMFOFoodStats ETIRPS                = builder(0, 0).drink().alwaysEat().effect(MobEffects.MOVEMENT_SPEED,1200,2,1f).item(GTMFOItems.CAN::asStack).build();
     public static final GTMFOFoodStats BACON                 =    food(2, 0.8f, 24);
 
     public static final GTMFOFoodStats CAKE_BOTTOM           = builder(2, 0.5f).eatDuration(60).effect(MobEffects.POISON,200,1,0.2f).build();
@@ -211,7 +217,7 @@ public class Foods {
     public static final GTMFOFoodStats RED_WINE              = builder(4, 0.7f).drink().alwaysEat().eatDuration(96).effect(MobEffects.CONFUSION,600,0,0.4f).effect(MobEffects.ABSORPTION,1200,1,0.6f).item(Items.GLASS_BOTTLE::getDefaultInstance).build();
     public static final GTMFOFoodStats EMERGENCY_RATIONS     = builder(5, 1.0f).alwaysEat().eatDuration(60).effect(MobEffects.CONFUSION,400,0,0.1f).build();
 
-    public static final GTMFOFoodStats ETIRPS_CRANBERRY      = builder(3, 0.3f).drink().alwaysEat().effect(MobEffects.MOVEMENT_SPEED,2400,2,1f).effect(MobEffects.REGENERATION,200,1,0.8f).item(GTMFOItems.PLASTIC_BOTTLE::asStack).build();
+    public static final GTMFOFoodStats ETIRPS_CRANBERRY      = builder(3, 0.3f).drink().alwaysEat().effect(MobEffects.MOVEMENT_SPEED,2400,2,1f).effect(MobEffects.REGENERATION,200,1,0.8f).item(GTMFOItems.CAN::asStack).build();
     public static final GTMFOFoodStats PELMENI               =    food(5, 0.5f, 32);
     public static final GTMFOFoodStats PELMENI_SEASONED      =    food(7, 1f, 24);
     public static final GTMFOFoodStats ANTAF                 = builder(5, 0.5f).drink().alwaysEat().item(GTMFOItems.PLASTIC_BOTTLE::asStack).build();
