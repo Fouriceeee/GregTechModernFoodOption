@@ -19,7 +19,7 @@ public abstract class ExComponentItemBuilder<A extends Item, T extends ExCompone
         super(id);
     }
 
-    protected T attach(IItemComponent component){
+    public T attach(IItemComponent component){
         _Components.add(component);
         return self();
     }

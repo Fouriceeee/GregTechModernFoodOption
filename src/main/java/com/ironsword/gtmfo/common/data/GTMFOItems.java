@@ -55,75 +55,83 @@ public class GTMFOItems {
 
 
     //apple
-    public static final ItemEntry<ExComponentItem> APPLE_CORED         = foodItem("apple_cored"        ,"Cored Apple"        ,"去核苹果","apple/cored"        ,Foods.APPLE_CORED);
-    public static final ItemEntry<ExComponentItem> APPLE_SLICE         = foodItem("apple_slice"        ,"Apple Slice"        ,"苹果片"  ,"apple/slice"        ,Foods.APPLE_SLICE);
-    public static final ItemEntry<ExComponentItem> APPLE_TUNGSTENSTEEL = foodItem("apple_tungstensteel","Tungstensteel Apple","钨钢苹果","apple/tungstensteel",Foods.APPLE_TUNGSTENSTEEL);
-    public static final ItemEntry<ExComponentItem> APPLE_CANDY         = foodItem("apple_candy"        ,"Apple Candy"        ,"苹果糖"    ,"apple/candy"        ,Foods.APPLE_CANDY);
-
     public static final ItemEntry<Item>
             APPLE_CANDY_HOT = item("apple_candy_hot").texture("apple/candy_hot").en("Hot Apple Candy").cn("热苹果糖").register(),
             APPLE_CANDY_PLATE = item("apple_candy_plate").texture("apple/candy_plate").en("Apple Candy Sheet").cn("苹果糖片").register(),
             APPLE_CANDY_RESIN = item("apple_candy_resin").texture("apple/candy_resin").en("Apple Candy Resin").cn("苹果糖糖坯").register(),
             APPLE_CANDY_CRUSHED = item("apple_candy_crushed").texture("apple/candy_crushed").en("Crushed Apple Candy").cn("苹果糖碎").register();
 
+    public static final ItemEntry<ExComponentItem>
+            APPLE_CORED = ex("apple_cored").texture("apple/cored").en("Cored Apple").cn("去核苹果").attach(Foods.APPLE_CORED).register(),
+            APPLE_SLICE = ex("apple_slice").texture("apple/slice").en("Apple Slice").cn("苹果片").attach(Foods.APPLE_SLICE).register(),
+            APPLE_CANDY = ex("apple_candy").texture("apple/candy").en("Apple Candy").cn("苹果糖").attach(Foods.APPLE_CANDY).register(),
+            APPLE_TUNGSTENSTEEL = ex("apple_tungstensteel").texture("apple/tungstensteel").en("Tungstensteel Apple").cn("钨钢苹果").attach(Foods.APPLE_TUNGSTENSTEEL).register();
+
+
+
     //berry
-    public static final ItemEntry<ExComponentItem> BLACKBERRY    = berry("blackberry"   ,GTMFOTags.BERRY_TART     ,"Blackberry"   ,"黑莓"    );
-    public static final ItemEntry<ExComponentItem> BLUEBERRY     = berry("blueberry"    ,GTMFOTags.BERRY_SWEET    ,"Blueberry"    ,"蓝莓"    );
-    public static final ItemEntry<ExComponentItem> CRANBERRY     = berry("cranberry"    ,GTMFOTags.BERRY_SWEET    ,"Cranberry"    ,"蔓越莓"  );
-    public static final ItemEntry<ExComponentItem> ELDERBERRY    = berry("elderberry"   ,GTMFOTags.POISONOUS_BERRY,"Elderberry"   ,"接骨木莓");
-    public static final ItemEntry<ExComponentItem> LINGONBERRY   = berry("lingonberry"  ,GTMFOTags.BERRY_TART     ,"Lingonberry"  ,"越橘"    );
-    public static final ItemEntry<ExComponentItem> RASPBERRY     = berry("raspberry"    ,GTMFOTags.BERRY_SWEET    ,"Raspberry"    ,"树莓"    );
-    public static final ItemEntry<ExComponentItem> STRAWBERRY    = berry("strawberry"   ,GTMFOTags.BERRY_SWEET    ,"Strawberry"   ,"草莓"    );
-    public static final ItemEntry<ExComponentItem> BLACK_CURRANT = berry("black_currant",GTMFOTags.BERRY_TART     ,"Black Currant","黑加仑"  );
-    public static final ItemEntry<ExComponentItem> RED_CURRANT   = berry("red_currant"  ,GTMFOTags.BERRY_TART     ,"Red Currant"  ,"红加仑"  );
-    public static final ItemEntry<ExComponentItem> WHITE_CURRANT = berry("white_currant",GTMFOTags.BERRY_TART     ,"White Currant","白加仑"  );
-    public static final ItemEntry<ExComponentItem> BERRY_MEDLEY  = foodItem("berry_medley"                        ,"Berry Medley" ,"什锦浆果","berry/medley",Foods.BERRY_MEDLEY);
+    public static final ItemEntry<ExComponentItem> BLACKBERRY = ex("blackberry").texture("berry/"+"blackberry").en("Blackberry").cn("黑莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> BLUEBERRY = ex("blueberry").texture("berry/"+"blueberry").en("Blueberry").cn("蓝莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> CRANBERRY = ex("cranberry").texture("berry/"+"cranberry").en("Cranberry").cn("蔓越莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> ELDERBERRY = ex("elderberry").texture("berry/"+"elderberry").en("Elderberry").cn("接骨木莓").attach(Foods.BERRY_POISONOUS).tags(GTMFOTags.POISONOUS_BERRY).register();
+    public static final ItemEntry<ExComponentItem> LINGONBERRY = ex("lingonberry").texture("berry/"+"lingonberry").en("Lingonberry").cn("越橘").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> RASPBERRY = ex("raspberry").texture("berry/"+"raspberry").en("Raspberry").cn("树莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> STRAWBERRY = ex("strawberry").texture("berry/"+"strawberry").en("Strawberry").cn("草莓").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_SWEET).register();
+    public static final ItemEntry<ExComponentItem> BLACK_CURRANT = ex("black_currant").texture("berry/"+"black_currant").en("Black Currant").cn("黑加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> RED_CURRANT = ex("red_currant").texture("berry/"+"red_currant").en("Red Currant").cn("红加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> WHITE_CURRANT = ex("white_currant").texture("berry/"+"white_currant").en("White Currant").cn("白加仑").attach(Foods.BERRY).tags(GTMFOTags.BERRY, GTMFOTags.BERRY_TART).register();
+    public static final ItemEntry<ExComponentItem> BERRY_MEDLEY  = ex("berry_medley").texture("berry/medley").en("Berry Medley").cn("什锦浆果").attach(Foods.BERRY_MEDLEY).register();
 
     //bread
-    public static final ItemEntry<Item>            WOODEN_FORM_BUN      = item("wooden_form_bun").stack(1).texture("bread/wooden_form_bun").en("Bun Wooden Form").cn("木制圆面包模具").register();
-    public static final ItemEntry<Item>            WOODEN_FORM_BREAD    = item("wooden_form_bread").stack(1).texture("bread/wooden_form_bread").en("Bread Wooden Form").cn("木制面包模具").register();
-    public static final ItemEntry<Item>            WOODEN_FORM_BAGUETTE = item("wooden_form_baguette").stack(1).texture("bread/wooden_form_baguette").en("Baguette Wooden Form").cn("木制法棍面包模具").register();
-    public static final ItemEntry<Item>            BUN_UNBAKED          = item("bun_unbaked").texture("bread/bun_unbaked").en("Unbaked Bun").cn("圆面包坯").register();
-    public static final ItemEntry<Item>            BREAD_UNBAKED        = item("bread_unbaked").texture("bread/bread_unbaked").en("Unbaked Bread").cn("面包坯").register();
-    public static final ItemEntry<Item>            BAGUETTE_UNCOOKED    = item("baguette_unbaked").texture("bread/baguette_unbaked").en("Unbaked Baguette").cn("法棍面包坯").register();
-    public static final ItemEntry<ExComponentItem> BUN                  = foodItem("bun"                 ,"Bun"                 ,"圆面包"          ,"bread/bun"                 ,Foods.BUN);
-    public static final ItemEntry<ExComponentItem> BUN_SLICED           = foodItem("bun_sliced"          ,"Pre-Sliced Bun"      ,"切好的圆面包"    ,"bread/bun_sliced"          ,Foods.BUN_SLICED);
-    public static final ItemEntry<ExComponentItem> BREAD_SLICED         = foodItem("bread_sliced"        ,"Pre-Sliced Bread"    ,"切好的面包"      ,"bread/bread_sliced"        ,Foods.BREAD_SLICED);
-    public static final ItemEntry<ExComponentItem> BREAD_SLICE          = foodItem("bread_slice"         ,"Bread Slice"         ,"面包片"          ,"bread/bread_slice"         ,Foods.BREAD_SLICE);
-    public static final ItemEntry<ExComponentItem> TOAST                = foodItem("toast"               ,"Toast"               ,"吐司"            ,"bread/toast"               ,Foods.TOAST);
-    public static final ItemEntry<ExComponentItem> BAGUETTE             = foodItem("baguette"            ,"Baguette"            ,"法棍面包"        ,"bread/baguette"            ,Foods.BAGUETTE);
-    public static final ItemEntry<ExComponentItem> BAGUETTE_SLICED      = foodItem("baguette_sliced"     ,"Pre-Sliced Baguette" ,"切好的法棍面包"  ,"bread/baguette_sliced"     ,Foods.BAGUETTE_SLICED);
+    public static final ItemEntry<Item>
+            WOODEN_FORM_BUN      = item("wooden_form_bun").stack(1).texture("bread/wooden_form_bun").en("Bun Wooden Form").cn("木制圆面包模具").register(),
+            WOODEN_FORM_BREAD    = item("wooden_form_bread").stack(1).texture("bread/wooden_form_bread").en("Bread Wooden Form").cn("木制面包模具").register(),
+            WOODEN_FORM_BAGUETTE = item("wooden_form_baguette").stack(1).texture("bread/wooden_form_baguette").en("Baguette Wooden Form").cn("木制法棍面包模具").register(),
+            BUN_UNBAKED          = item("bun_unbaked").texture("bread/bun_unbaked").en("Unbaked Bun").cn("圆面包坯").register(),
+            BREAD_UNBAKED        = item("bread_unbaked").texture("bread/bread_unbaked").en("Unbaked Bread").cn("面包坯").register(),
+            BAGUETTE_UNCOOKED    = item("baguette_unbaked").texture("bread/baguette_unbaked").en("Unbaked Baguette").cn("法棍面包坯").register();
+
+    public static final ItemEntry<ExComponentItem>
+            BUN                  = ex("bun").texture("bread/bun").en("Bun").cn("圆面包").attach(Foods.BUN).register(),
+            BUN_SLICED           = ex("bun_sliced").texture("bread/bun_sliced").en("Pre-Sliced Bun").cn("切好的圆面包").attach(Foods.BUN_SLICED).register(),
+            BREAD_SLICED         = ex("bread_sliced").texture("bread/bread_sliced").en("Pre-Sliced Bread").cn("切好的面包").attach(Foods.BREAD_SLICED).register(),
+            BREAD_SLICE          = ex("bread_slice").texture("bread/bread_slice").en("Bread Slice").cn("面包片").attach(Foods.BREAD_SLICE).register(),
+            TOAST                = ex("toast").texture("bread/toast").en("Toast").cn("吐司").attach(Foods.TOAST).register(),
+            BAGUETTE             = ex("baguette").texture("bread/baguette").en("Baguette").cn("法棍面包").attach(Foods.BAGUETTE).register(),
+            BAGUETTE_SLICED      = ex("baguette_sliced").texture("bread/baguette_sliced").en("Pre-Sliced Baguette").cn("切好的法棍面包").attach(Foods.BAGUETTE_SLICED).register();
 
     //burger
-    public static final ItemEntry<ExComponentItem> BURGER_BACON  = foodItem("burger_bacon" ,"Bacon Burger" ,"培根汉堡","burger/bacon" ,Foods.BURGER_MEAT);
-    public static final ItemEntry<ExComponentItem> BURGER_CHEESE = foodItem("burger_cheese","Cheese Burger","芝士汉堡","burger/cheese",Foods.BURGER_CHEESE);
-    public static final ItemEntry<ExComponentItem> BURGER_CHUM   = foodItem("burger_chum"  ,"Chum Burger"  ,"海霸堡"  ,"burger/chum"  ,Foods.BURGER_CHUM);
-    public static final ItemEntry<ExComponentItem> BURGER_STEAK  = foodItem("burger_steak" ,"Steak Burger" ,"牛肉汉堡","burger/steak" ,Foods.BURGER_MEAT);
-    public static final ItemEntry<ExComponentItem> BURGER_VEGGIE = foodItem("burger_veggie","Veggie Burger","蔬菜汉堡","burger/veggie",Foods.BURGER_VEGGIE);
+    public static final ItemEntry<ExComponentItem>
+            BURGER_BACON  = ex("burger_bacon").texture("burger/bacon").en("Bacon Burger").cn("培根汉堡").attach(Foods.BURGER_MEAT).register(),
+            BURGER_CHEESE = ex("burger_cheese").texture("burger/cheese").en("Cheese Burger").cn("芝士汉堡").attach(Foods.BURGER_CHEESE).register(),
+            BURGER_CHUM   = ex("burger_chum").texture("burger/chum").en("Chum Burger").cn("海霸堡").attach(Foods.BURGER_CHUM).register(),
+            BURGER_STEAK  = ex("burger_steak").texture("burger/steak").en("Steak Burger").cn("牛肉汉堡").attach(Foods.BURGER_MEAT).register(),
+            BURGER_VEGGIE = ex("burger_veggie").texture("burger/veggie").en("Veggie Burger").cn("蔬菜汉堡").attach(Foods.BURGER_VEGGIE).register();
 
     //TODO:caplet
     public static final ItemEntry<Item> CAPLET_CAP           = item("caplet_cap").texture("caplet/cap").en("Caplet Cap").cn("囊帽").register();
     public static final ItemEntry<Item> CAPLET_BODY          = item("caplet_body").texture("caplet/body").en("Caplet Body").cn("囊体").register();
-    public static final ItemEntry<ExComponentItem> CAPLET_GEL           = foodItem("caplet_gel"          ,"Gel Caplet"             ,"明胶胶囊"        ,"caplet/gel"          ,Foods.CAPLET_GEL);
-    public static final ItemEntry<ExComponentItem> CAPLET_PARACETAMOL   = foodItem("caplet_paracetamol"  ,"Paracetamol Caplet"     ,"对乙酰氨基酚胶囊","caplet/paracetamol"  ,Foods.CAPLET_PARACETAMOL);
-    public static final ItemEntry<ExComponentItem> CAPLET_PLUTONIUM_241 = foodItem("caplet_plutonium_241","Plutonium-241 Caplet"   ,"钚-241胶囊"      ,"caplet/plutonium_241",Foods.CAPLET_PLUTONIUM_241);
-    public static final ItemEntry<ExComponentItem> CAPLET_CHORUS        = foodItem("caplet_chorus"       ,"Fermented Chorus Caplet","发酵紫颂果胶囊"  ,"caplet/chorus"       ,Foods.CAPLET_GEL);
-    public static final ItemEntry<ExComponentItem> CAPLET_VIBRANT       = foodItem("caplet_vibrant"      ,"Vibrant Caplet"         ,"Vibrant Caplet"  ,"caplet/vibrant"      ,Foods.CAPLET_GEL);
+    public static final ItemEntry<ExComponentItem>
+            CAPLET_GEL           = ex("caplet_gel").texture("caplet/gel").en("Gel Caplet").cn("明胶胶囊").attach(Foods.CAPLET_GEL).register(),
+            CAPLET_PARACETAMOL   = ex("caplet_paracetamol").texture("caplet/paracetamol").en("Paracetamol Caplet").cn("对乙酰氨基酚胶囊").attach(Foods.CAPLET_PARACETAMOL).register(),
+            CAPLET_PLUTONIUM_241 = ex("caplet_plutonium_241").texture("caplet/plutonium_241").en("Plutonium-241 Caplet").cn("钚-241胶囊").attach(Foods.CAPLET_PLUTONIUM_241).register(),
+            CAPLET_CHORUS        = ex("caplet_chorus").texture("caplet/chorus").en("Fermented Chorus Caplet").cn("发酵紫颂果胶囊").attach(Foods.CAPLET_GEL).register(),
+            CAPLET_VIBRANT       = ex("caplet_vibrant").texture("caplet/vibrant").en("Vibrant Caplet").cn("Vibrant Caplet").attach(Foods.CAPLET_GEL).register();
 
     //cheese
     public static final ItemEntry<Item>            CHEDDAR_BLOCK     = item("cheddar_block").texture("cheese/cheddar_block").en("Cheddar Block").cn("块状切达奶酪").register();
-    public static final ItemEntry<ExComponentItem> CHEDDAR_SLICE     = foodItem("cheddar_slice"    ,"Cheddar Slice"    ,"切达奶酪片"            ,"cheese/cheddar_slice"    ,Foods.CHEDDAR_SLICE);
+    public static final ItemEntry<ExComponentItem> CHEDDAR_SLICE     = ex("cheddar_slice").texture("cheese/cheddar_slice").en("Cheddar Slice").cn("切达奶酪片").attach(Foods.CHEDDAR_SLICE).register();
     public static final ItemEntry<Item>            CHEDDAR_AGED_MOLD = item("cheddar_aged_mold").texture("cheese/cheddar_aged_mold").en("Aged Cheddar Mold").cn("装有熟化切达奶酪的模具").register();
     public static final ItemEntry<Item>            CHEDDAR_CURD_MOLD = item("cheddar_curd_mold").texture("cheese/cheddar_curd_mold").en("Cheddar Curd Mold").cn("装有切达奶酪凝乳的模具").register();
     public static final ItemEntry<Item>            MOZZARELLA_SLICE  = item("mozzarella_slice").texture("cheese/mozzarella_slice").en("Mozzarella Slice").cn("马苏里拉奶酪片").register();
-    public static final ItemEntry<ExComponentItem> MOZZARELLA_BALL   = foodItem("mozzarella_ball"  ,"Mozzarella Ball"  ,"马苏里拉奶酪球"        ,"cheese/mozzarella_ball"  ,Foods.MOZZARELLA_BALL);
+    public static final ItemEntry<ExComponentItem> MOZZARELLA_BALL   = ex("mozzarella_ball").texture("cheese/mozzarella_ball").en("Mozzarella Ball").cn("马苏里拉奶酪球").attach(Foods.MOZZARELLA_BALL).register();
     public static final ItemEntry<Item>            RICOTTA_PIECE     = item("ricotta_piece").texture("cheese/ricotta_piece").en("Ricotta Piece").cn("里科塔奶酪凝块").register();
     public static final ItemEntry<Item>            GORGONZOLA_WHEEL               = item("gorgonzola_wheel").texture("cheese/gorgonzola_wheel").en("Gorgonzola Wheel").cn("戈贡佐拉奶酪轮").register();
     public static final ItemEntry<Item>            GORGONZOLA_WHEEL_SALTED        = item("gorgonzola_wheel_salted").texture("cheese/gorgonzola_wheel_salted").en("Salted Gorgonzola Wheel").cn("加盐戈贡佐拉奶酪轮").register();
     public static final ItemEntry<Item>            GORGONZOLA_WHEEL_SLIGHTLY_AGED = item("gorgonzola_wheel_slightly_aged").texture("cheese/gorgonzola_wheel_slightly_aged").en("Slightly Aged Gorgonzola Wheel").cn("初步熟化戈贡佐拉奶酪轮").register();
     public static final ItemEntry<Item>            GORGONZOLA_WHEEL_PUNCTURED     = item("gorgonzola_wheel_punctured").texture("cheese/gorgonzola_wheel_punctured").en("Punctured Gorgonzola Wheel").cn("扎孔戈贡佐拉奶酪轮").register();
     public static final ItemEntry<Item>            GORGONZOLA_WHEEL_FULLY_CURED   = item("gorgonzola_wheel_fully_cured").texture("cheese/gorgonzola_wheel_fully_cured").en("Fully Cured Gorgonzola Wheel").cn("硬化戈贡佐拉奶酪轮").register();
-    public static final ItemEntry<ExComponentItem> GORGONZOLA_TRIANGULAR_SLICE    = foodItem("gorgonzola_triangular_slice"   ,"Gorgonzola Triangular Slice"   ,"戈贡佐拉奶酪三角"      ,"cheese/gorgonzola_triangular_slice"   ,Foods.GORGONZOLA_TRIANGULAR);
+    public static final ItemEntry<ExComponentItem> GORGONZOLA_TRIANGULAR_SLICE    = ex("gorgonzola_triangular_slice").texture("cheese/gorgonzola_triangular_slice").en("Gorgonzola Triangular Slice").cn("戈贡佐拉奶酪三角").attach(Foods.GORGONZOLA_TRIANGULAR).register();
     public static final ItemEntry<Item>            PARMIGIANO_CHEESE_FORM = item("parmigiano_cheese_form").texture("cheese/parmigiano_cheese_form").en("Stainless Steel Cheese Form").cn("不锈钢奶酪模具").register();
     public static final ItemEntry<Item>            PARMIGIANO_BRINED      = item("parmigiano_brined").texture("cheese/parmigiano_brined").en("Brined Parmigiano-Reggiano in Cheese Form").cn("装有盐渍帕马森-雷加诺奶酪的奶酪模具").register();
     public static final ItemEntry<Item>            PARMIGIANO_BRINED_ROLL = item("parmigiano_brined_roll").texture("cheese/parmigiano_brined_roll").en("Brined Parmigiano-Reggiano Roll").cn("盐渍帕马森-雷加诺奶酪卷").register();
@@ -151,8 +159,8 @@ public class GTMFOItems {
     public static final ItemEntry<Item> COFFEE_BEANS_HULLED_SMALL    = item("coffee_beans_hulled_small").texture("coffee/hulled_small").en("Small Hulled Coffee Beans").cn("去壳小粒咖啡豆").register();
     public static final ItemEntry<Item> COFFEE_BEANS_ROASTED_LARGE   = item("coffee_beans_roasted_large").texture("coffee/roasted_large").en("Large Roasted Coffee Beans").cn("烘焙大粒咖啡豆").register();
     public static final ItemEntry<Item> COFFEE_BEANS_ROASTED_SMALL   = item("coffee_beans_roasted_small").texture("coffee/roasted_small").en("Small Roasted Coffee Beans").cn("烘焙小粒咖啡豆").register();
-    public static final ItemEntry<ExComponentItem> COFFEE           = foodItem("coffee"          ,"Coffee Cup"          ,"咖啡"    ,"coffee/normal"   ,Foods.COFFEE);
-    public static final ItemEntry<ExComponentItem> COFFEE_ENERGIZED = foodItem("coffee_energized","Energized Coffee Cup","提神咖啡","coffee/energized",Foods.COFFEE_ENERGIZING);
+    public static final ItemEntry<ExComponentItem> COFFEE           = ex("coffee").texture("coffee/normal").en("Coffee Cup").cn("咖啡").attach(Foods.COFFEE).register();
+    public static final ItemEntry<ExComponentItem> COFFEE_ENERGIZED = ex("coffee_energized").texture("coffee/energized").en("Energized Coffee Cup").cn("提神咖啡").attach(Foods.COFFEE_ENERGIZING).register();
 
     //corn
     public static final ItemEntry<Item> CORN_COB               = item("corn_cob").texture("corn/cob").en("Corn Cob").cn("玉米芯").register();
@@ -161,7 +169,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> CORN_KERNEL            = item("corn_kernel").texture("corn/kernel").en("Corn Kernel").cn("玉米粒").register();
     //public static final ItemEntry<Item> CORN_KERNEL_ACCEPTABLE = item("corn_kernel_acceptable","Acceptable Corn Kernel","合格级玉米粒","corn/kernel_acceptable");
     public static final ItemEntry<Item> FLAVORED_POPCORN_FLAKE = item("flavored_flake").texture("corn/flavored_flake").en("Flavored Popcorn Flake").cn("调味爆米花粒").register();
-    public static final ItemEntry<ExComponentItem> POPCORN_BAG = foodItem("popcorn_bag"           ,"Popcorn Bag"           ,"袋装爆米花"  ,"corn/popcorn_bag"      ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> POPCORN_BAG = ex("popcorn_bag").texture("corn/popcorn_bag").en("Popcorn Bag").cn("袋装爆米花").attach(Foods.EMPTY).register();
 
     //crop
     public static final ItemEntry<Item> ARTICHOKE      = item("artichoke").texture("crop/artichoke").en("Artichoke Heart").cn("洋蓟心").register();
@@ -208,22 +216,22 @@ public class GTMFOItems {
     public static final ItemEntry<Item> PASTA_DOUGH_PREMIXED = item("pasta_dough_premixed").texture("dough/pasta_premixed").en("Premixed Pasta Dough").cn("预拌意面面团").register();
 
     //drink
-    public static final ItemEntry<ExComponentItem> ANTAF            = foodItem("antaf"           ,"Antaf™"         ,"Antaf™"     ,"drink/antaf"           ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> BEER             = foodItem("beer"            ,"Beer"            ,"啤酒"        ,"drink/beer"            ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> COAC             = foodItem("coac"            ,"Coac"            ,"乐可"        ,"drink/coac"            ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> ETIRPS           = foodItem("etirps"          ,"Etirps™"        ,"碧雪™"      ,"drink/etirps"          ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> ETIRPS_CRANBERRY = foodItem("etirps_cranberry","Etirps Cranberry","蔓越莓味碧雪","drink/etirps_cranberry",Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> GREEN_ISLAND     = foodItem("green_island"    ,"Green Island™"  ,"绿岛啤酒™"  ,"drink/green_island"    ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> JUICE_APPLE      = foodItem("juice_apple"     ,"Apple Juice"     ,"苹果汁"      ,"drink/juice_apple"     ,Foods.JUICE);
-    public static final ItemEntry<ExComponentItem> JUICE_ORANGE     = foodItem("juice_orange"    ,"Orange Juice"    ,"橙汁"        ,"drink/juice_orange"    ,Foods.JUICE);
-    public static final ItemEntry<ExComponentItem> LENINADE         = foodItem("leninade"        ,"Leninade"        ,"列宁檬汁"    ,"drink/leninade"        ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> MINERAL_WATER    = foodItem("mineral_water"   ,"Mineral Water"   ,"矿泉水"      ,"drink/mineral_water"   ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> NILK             = foodItem("nilk"            ,"Nilk"            ,"硅岩风味乳"  ,"drink/nilk"            ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> RED_WINE         = foodItem("red_wine"        ,"Red Wine"        ,"红葡萄酒"    ,"drink/red_wine"        ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> SEPIP            = foodItem("sepip"           ,"Sepip"           ,"事百"        ,"drink/sepip"           ,Foods.ETIRPS);
-    public static final ItemEntry<ExComponentItem> SPARKLING_WATER  = foodItem("sparkling_water" ,"Sparkling Water" ,"气泡水"      ,"drink/sparkling_water" ,Foods.SPARKLING_WATER);
-    public static final ItemEntry<ExComponentItem> VODKA            = foodItem("vodka"           ,"Vodka"           ,"伏特加"      ,"drink/vodka"           ,Foods.VODKA);
-    public static final ItemEntry<ExComponentItem> WHITE_WINE       = foodItem("white_wine"      ,"White Wine"      ,"白葡萄酒"    ,"drink/white_wine"      ,Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> ANTAF            = ex("antaf").texture("drink/antaf").en("Antaf™").cn("Antaf™").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> BEER             = ex("beer").texture("drink/beer").en("Beer").cn("啤酒").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> COAC             = ex("coac").texture("drink/coac").en("Coac").cn("乐可").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> ETIRPS           = ex("etirps").texture("drink/etirps").en("Etirps™").cn("碧雪™").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> ETIRPS_CRANBERRY = ex("etirps_cranberry").texture("drink/etirps_cranberry").en("Etirps Cranberry").cn("蔓越莓味碧雪").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> GREEN_ISLAND     = ex("green_island").texture("drink/green_island").en("Green Island™").cn("绿岛啤酒™").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> JUICE_APPLE      = ex("juice_apple").texture("drink/juice_apple").en("Apple Juice").cn("苹果汁").attach(Foods.JUICE).register();
+    public static final ItemEntry<ExComponentItem> JUICE_ORANGE     = ex("juice_orange").texture("drink/juice_orange").en("Orange Juice").cn("橙汁").attach(Foods.JUICE).register();
+    public static final ItemEntry<ExComponentItem> LENINADE         = ex("leninade").texture("drink/leninade").en("Leninade").cn("列宁檬汁").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> MINERAL_WATER    = ex("mineral_water").texture("drink/mineral_water").en("Mineral Water").cn("矿泉水").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> NILK             = ex("nilk").texture("drink/nilk").en("Nilk").cn("硅岩风味乳").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> RED_WINE         = ex("red_wine").texture("drink/red_wine").en("Red Wine").cn("红葡萄酒").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> SEPIP            = ex("sepip").texture("drink/sepip").en("Sepip").cn("事百").attach(Foods.ETIRPS).register();
+    public static final ItemEntry<ExComponentItem> SPARKLING_WATER  = ex("sparkling_water").texture("drink/sparkling_water").en("Sparkling Water").cn("气泡水").attach(Foods.SPARKLING_WATER).register();
+    public static final ItemEntry<ExComponentItem> VODKA            = ex("vodka").texture("drink/vodka").en("Vodka").cn("伏特加").attach(Foods.VODKA).register();
+    public static final ItemEntry<ExComponentItem> WHITE_WINE       = ex("white_wine").texture("drink/white_wine").en("White Wine").cn("白葡萄酒").attach(Foods.EMPTY).register();
 
     //food_chinese
     public static final ItemEntry<Item> JIAOZI     = item("jiaozi").texture("food_chinese/jiaozi").en("Jiaozi").cn("饺子").register();
@@ -350,13 +358,13 @@ public class GTMFOItems {
     public static final ItemEntry<Item> POTATO_SLICE_REDUCED_FAT = item("potato_slice_reduced_fat").texture("potato/slice_reduced_fat").en("Reduced Fat Potato Chip").cn("减脂薯片").register();
     public static final ItemEntry<Item> POTATO_SLICE_NAQUADAH    = item("potato_slice_naquadah").texture("potato/slice_naquadah").en("Naquadah Potato Slice").cn("硅岩油炸薯片").register();
     public static final ItemEntry<Item> POTATO_STICK             = item("potato_stick").texture("potato/stick").en("Potato on a Stick").cn("马铃薯棒").register();
-    public static final ItemEntry<ExComponentItem> POTATO_STICK_ROASTED     = foodItem("potato_stick_roasted","Roasted Potato on a Stick","烤马铃薯棒","potato/stick_roasted",Foods.POTATO_STICK_ROASTED);
-    public static final ItemEntry<ExComponentItem> FRENCH_FRIES             = foodItem("french_fries"        ,"French Fries"             ,"薯条"      ,"potato/french_fries" ,Foods.FRENCH_FRIES);
-    public static final ItemEntry<ExComponentItem> CHIPS_SYALS                = foodItem("chips_syals"               ,"Syals"                        ,"事乐薯片"      ,"potato/chips_syals"      ,Foods.CHIPS_SYALS);
-    public static final ItemEntry<ExComponentItem> CHIPS_BAG                  = foodItem("chips_bag"                 ,"Bag O' Chips"                 ,"袋装薯片"      ,"potato/chips_bag"        ,Foods.CHIPS_BAG);
-    public static final ItemEntry<ExComponentItem> CHIPS_KETTLE               = foodItem("chips_kettle"              ,"Kettle Chips"                 ,"手作薯片"      ,"potato/chips_kettle"     ,Foods.CHIPS_KETTLE);
-    public static final ItemEntry<ExComponentItem> CHIPS_NAQUADAH             = foodItem("chips_naquadah"            ,"Naquadah Chips"               ,"硅岩薯片"      ,"potato/chips_naquadah"   ,Foods.CHIPS_NAQUADAH);
-    public static final ItemEntry<ExComponentItem> CHIPS_REDUCED_FAT          = foodItem("chips_reduced_fat"         ,"Bay Salmon Reduced Fat Chips" ,"湾鲑牌减脂薯片","potato/chips_reduced_fat",Foods.CHIPS_REDUCED_FAT);
+    public static final ItemEntry<ExComponentItem> POTATO_STICK_ROASTED     = ex("potato_stick_roasted").texture("potato/stick_roasted").en("Roasted Potato on a Stick").cn("烤马铃薯棒").attach(Foods.POTATO_STICK_ROASTED).register();
+    public static final ItemEntry<ExComponentItem> FRENCH_FRIES             = ex("french_fries").texture("potato/french_fries").en("French Fries").cn("薯条").attach(Foods.FRENCH_FRIES).register();
+    public static final ItemEntry<ExComponentItem> CHIPS_SYALS                = ex("chips_syals").texture("potato/chips_syals").en("Syals").cn("事乐薯片").attach(Foods.CHIPS_SYALS).register();
+    public static final ItemEntry<ExComponentItem> CHIPS_BAG                  = ex("chips_bag").texture("potato/chips_bag").en("Bag O' Chips").cn("袋装薯片").attach(Foods.CHIPS_BAG).register();
+    public static final ItemEntry<ExComponentItem> CHIPS_KETTLE               = ex("chips_kettle").texture("potato/chips_kettle").en("Kettle Chips").cn("手作薯片").attach(Foods.CHIPS_KETTLE).register();
+    public static final ItemEntry<ExComponentItem> CHIPS_NAQUADAH             = ex("chips_naquadah").texture("potato/chips_naquadah").en("Naquadah Chips").cn("硅岩薯片").attach(Foods.CHIPS_NAQUADAH).register();
+    public static final ItemEntry<ExComponentItem> CHIPS_REDUCED_FAT          = ex("chips_reduced_fat").texture("potato/chips_reduced_fat").en("Bay Salmon Reduced Fat Chips").cn("湾鲑牌减脂薯片").attach(Foods.CHIPS_REDUCED_FAT).register();
     public static final ItemEntry<Item> CHIPS_VINEGAR              = item("chips_vinegar").texture("potato/chips_vinegar").en("Vinegar Chips").cn("醋味薯片").register();
 
     //sandwich
@@ -432,13 +440,13 @@ public class GTMFOItems {
     public static final ItemEntry<Item> GRAHAM_CRACKER_DOUGH_HOT       = item("graham_cracker_dough_hot").texture("smore/graham_cracker/dough_hot").en("Hot Graham Cracker Dough").cn("热全麦饼干面团").register();
     public static final ItemEntry<Item> GRAHAM_CRACKER_DOUGH_CHUNK_HOT = item("graham_cracker_dough_chunk_hot").texture("smore/graham_cracker/dough_chunk_hot").en("Hot Graham Cracker Dough Chunk").cn("热全麦饼干坯").register();
     //sorbet
-    public static final ItemEntry<ExComponentItem> SORBET         = foodItem("sorbet"        ,"Plain Sorbet"  ,"原味雪葩"      ,"sorbet/plain"  ,Foods.SORBET_PLAIN);
-    public static final ItemEntry<ExComponentItem> SORBET_APPLE   = foodItem("sorbet_apple"  ,"Apple Sorbet"  ,"苹果雪葩"      ,"sorbet/apple"  ,Foods.SORBET_FRUIT);
-    public static final ItemEntry<ExComponentItem> SORBET_APRICOT = foodItem("sorbet_apricot","Apricot Sorbet","杏子雪葩"      ,"sorbet/apricot",Foods.SORBET_FRUIT);
-    public static final ItemEntry<ExComponentItem> SORBET_CHORUS  = foodItem("sorbet_chorus" ,"Chorus Sorbet" ,"紫颂果雪葩"    ,"sorbet/chorus" ,Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> SORBET_GRAPE   = foodItem("sorbet_grape"  ,"Grape Sorbet"  ,"葡萄雪葩"      ,"sorbet/grape"  ,Foods.SORBET_FRUIT);
-    public static final ItemEntry<ExComponentItem> SORBET_LIME    = foodItem("sorbet_lime"   ,"Lime Sorbet"   ,"酸柠雪葩"      ,"sorbet/lime"   ,Foods.SORBET_FRUIT);
-    public static final ItemEntry<ExComponentItem> SORBET_VIBRANT = foodItem("sorbet_vibrant","Vibrant Sorbet","Vibrant Sorbet","sorbet/vibrant",Foods.EMPTY);
+    public static final ItemEntry<ExComponentItem> SORBET         = ex("sorbet").texture("sorbet/plain").en("Plain Sorbet").cn("原味雪葩").attach(Foods.SORBET_PLAIN).register();
+    public static final ItemEntry<ExComponentItem> SORBET_APPLE   = ex("sorbet_apple").texture("sorbet/apple").en("Apple Sorbet").cn("苹果雪葩").attach(Foods.SORBET_FRUIT).register();
+    public static final ItemEntry<ExComponentItem> SORBET_APRICOT = ex("sorbet_apricot").texture("sorbet/apricot").en("Apricot Sorbet").cn("杏子雪葩").attach(Foods.SORBET_FRUIT).register();
+    public static final ItemEntry<ExComponentItem> SORBET_CHORUS  = ex("sorbet_chorus").texture("sorbet/chorus").en("Chorus Sorbet").cn("紫颂果雪葩").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> SORBET_GRAPE   = ex("sorbet_grape").texture("sorbet/grape").en("Grape Sorbet").cn("葡萄雪葩").attach(Foods.SORBET_FRUIT).register();
+    public static final ItemEntry<ExComponentItem> SORBET_LIME    = ex("sorbet_lime").texture("sorbet/lime").en("Lime Sorbet").cn("酸柠雪葩").attach(Foods.SORBET_FRUIT).register();
+    public static final ItemEntry<ExComponentItem> SORBET_VIBRANT = ex("sorbet_vibrant").texture("sorbet/vibrant").en("Vibrant Sorbet").cn("Vibrant Sorbet").attach(Foods.EMPTY).register();
 
     //structural_mesh
     public static final ItemEntry<Item> APPLE_STRUCTURAL_MESH  = item("apple_structural_mesh").texture("structural_mesh/apple").en("Apple Structural Mesh").cn("苹果纤维骨架").register();
@@ -467,9 +475,9 @@ public class GTMFOItems {
     public static final ItemEntry<Item> CAKE_BOTTOM_BAKED = item("cake_bottom_baked").en("Baked Cake Bottom").cn("烤蛋糕底").register();
     public static final ItemEntry<Item> CERAMIC_CLAY = item("ceramic_clay").en("Ceramic Clay").cn("瓷土").register();
 
-    public static final ItemEntry<ExComponentItem> CHUM        = foodItem("chum"       ,"Chum"                 ,"海霸糊"    ,Foods.CHUM);
-    public static final ItemEntry<ExComponentItem> CHUM_BUCKET = foodItem("chum_bucket","Chum Bucket Kebab Mix","烤海霸拌桶",Foods.EMPTY);
-    public static final ItemEntry<ExComponentItem> CHUM_STICK  = foodItem("chum_stick" ,"Chum on a Stick"      ,"海霸糊棒"  ,Foods.CHUM_STICK,STACK_16);
+    public static final ItemEntry<ExComponentItem> CHUM        = ex("chum").en("Chum").cn("海霸糊").attach(Foods.CHUM).register();
+    public static final ItemEntry<ExComponentItem> CHUM_BUCKET = ex("chum_bucket").en("Chum Bucket Kebab Mix").cn("烤海霸拌桶").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> CHUM_STICK  = ex("chum_stick").stack(16).en("Chum on a Stick").cn("海霸糊棒").attach(Foods.CHUM_STICK).register();
 
     public static final ItemEntry<Item> COFFEE_FILTER = item("coffee_filter").en("Coffee Filter").cn("咖啡滤纸").register();
     public static final ItemEntry<Item> EMERGENCY_RATIONS = item("emergency_rations").en("Emergency Rations").cn("应急配给").register();
@@ -481,9 +489,9 @@ public class GTMFOItems {
     public static final ItemEntry<Item> GELATIN = item("gelatin").en("Gelatin").cn("明胶").register();
 
     public static final ItemEntry<Item> GUMMY_BEAR = item("gummy_bear").en("Gummy Bear").cn("小熊软糖").register();
-    public static final ItemEntry<ExComponentItem> HOT_BEETROOT_SOUP = foodItem("hot_beetroot_soup","Hot Beetroot Soup","热甜菜汤",Foods.HOT_BEETROOT_SOUP,STACK_1);
-    public static final ItemEntry<ExComponentItem> HOT_MUSHROOM_STEW = foodItem("hot_mushroom_stew","Hot Mushroom Stew","热蘑菇煲",Foods.HOT_MUSHROOM_STEW,STACK_1);
-    public static final ItemEntry<ExComponentItem> HOT_RABBIT_STEW   = foodItem("hot_rabbit_stew"  ,"Hot Rabbit Stew"  ,"热兔肉煲",Foods.HOT_RABBIT_STEW  ,STACK_1);
+    public static final ItemEntry<ExComponentItem> HOT_BEETROOT_SOUP = ex("hot_beetroot_soup").stack(1).en("Hot Beetroot Soup").cn("热甜菜汤").attach(Foods.HOT_BEETROOT_SOUP).register();
+    public static final ItemEntry<ExComponentItem> HOT_MUSHROOM_STEW = ex("hot_mushroom_stew").stack(1).en("Hot Mushroom Stew").cn("热蘑菇煲").attach(Foods.HOT_MUSHROOM_STEW).register();
+    public static final ItemEntry<ExComponentItem> HOT_RABBIT_STEW   = ex("hot_rabbit_stew").stack(1).en("Hot Rabbit Stew").cn("热兔肉煲").attach(Foods.HOT_RABBIT_STEW).register();
     public static final ItemEntry<Item> IV_BAG = item("iv_bag").en("IV Bag").cn("静脉注射(IV)袋").register();
     public static final ItemEntry<Item> MARSHMALLOW               = item("marshmallow").en("Marshmallow").cn("棉花软糖").register();
     public static final ItemEntry<Item> MARSHMALLOW_STICK         = item("marshmallow_stick").en("Marshmallow on a Stick").cn("棉花软糖串").register();
@@ -507,18 +515,6 @@ public class GTMFOItems {
     public static final ItemEntry<Item> SPRINKLER = item("sprinkler").en("Sprinkler").cn("洒水器").register();
 
     public static void init() {
-//        TEST_ITEM = REGISTRATE.item("test_item",ExComponentItem::create)
-//                .model((ctx,provider) ->
-//                        provider.generated(ctx::getEntry, provider.modLoc("item/utility/test_item")))
-//                .onRegister(attach(new BlockItemComponent(GTMFOBlocks.SMORE_1::get)))
-//                .register();
-//
-//        TEST_ITEM_2 = REGISTRATE.item("test_item_2",ExComponentItem::create)
-//                .model((ctx,provider) ->
-//                        provider.generated(ctx::getEntry, provider.modLoc("item/utility/test_item_2")))
-//                .onRegister(attach(
-//                        new BlockItemComponent(GTMFOBlocks.SMORE_64::get),Foods.BACON))
-//                .register();
     }
 
 
@@ -542,42 +538,8 @@ public class GTMFOItems {
         return ItemBuilder.createItemBuilder(id);
     }
 
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, GTMFOFoodStats foodStats){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .defaultModel()
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, GTMFOFoodStats foodStats, Item.Properties properties){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .initialProperties(()->properties)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .defaultModel()
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel(path))
-                .register();
-    }
-
-    private static ItemEntry<ExComponentItem> foodItem(String id, String enLang, String cnLang, String path, GTMFOFoodStats foodStats, Item.Properties properties){
-        return REGISTRATE.item(id,ExComponentItem::create)
-                .lang(enLang)
-                .initialProperties(()->properties)
-                .onRegister(attach(foodStats))
-                .setData(GTMFOProviderTypes.CNLANG, cn(cnLang))
-                .model(itemModel(path))
-                .register();
+    private static ExComponentItemBuilder<ExComponentItem, ?> ex(String id){
+        return ExComponentItemBuilder.createExComponentItemBuilder(id);
     }
 
     private static ItemEntry<ExComponentItem> smore(int number, String enLang, String cnLang, GTMFOFoodStats foodStats, boolean blockModel){
