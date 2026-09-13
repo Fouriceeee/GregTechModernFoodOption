@@ -60,6 +60,12 @@ public class GTMFORecipeTypes {
             .setSlotOverlay(false,false,true,GuiTextures.FURNACE_OVERLAY_1)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT);
 
+    public static final GTRecipeType PRIMITIVE_BAKING_OVEN_RECIPES = GTRecipeTypes.register("primitive_baking_oven",GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(1,1,0,0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setMaxTooltips(1)
+            .setSound(GTSoundEntries.FURNACE);
+
     private static BiConsumer<GTRecipeBuilder, Consumer<FinishedRecipe>> gtmfoID(){
         return (builder,consumer)->{
             ResourceLocation rl = builder.id;

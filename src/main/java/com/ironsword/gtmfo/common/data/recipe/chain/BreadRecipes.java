@@ -17,12 +17,11 @@ import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
-import static com.gregtechceu.gtceu.api.GTValues.LV;
-import static com.gregtechceu.gtceu.api.GTValues.VA;
 import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
-public class BreadsRecipes {
+public class BreadRecipes {
     public static void init(Consumer<FinishedRecipe> provider){
+        form(provider);
         bbb(provider);
         cake(provider);
         cookie(provider);
@@ -33,9 +32,7 @@ public class BreadsRecipes {
 
     }
 
-    //bun, bread, and baguette
-    private static void bbb(Consumer<FinishedRecipe> provider){
-        //wooden
+    private static void form(Consumer<FinishedRecipe> provider){
         VanillaRecipeHelper.addShapedRecipe(provider,id("wooden_form_bun"),
                 GTMFOItems.WOODEN_FORM_BUN.asStack(),
                 "   ",
@@ -54,7 +51,10 @@ public class BreadsRecipes {
                 " M ",
                 "   ",
                 'M', GTMFOItems.WOODEN_FORM_BREAD.asStack());
+    }
 
+    //bun, bread, and baguette
+    private static void bbb(Consumer<FinishedRecipe> provider){
         //unbaked
         VanillaRecipeHelper.addShapedRecipe(provider,id("bun_dough_by_hand"),
                 GTMFOItems.BUN_UNBAKED.asStack(),

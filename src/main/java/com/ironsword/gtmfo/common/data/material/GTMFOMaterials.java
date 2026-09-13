@@ -62,6 +62,7 @@ public class GTMFOMaterials {
 
     public static void init(){
         GTMaterials.BismuthBronze.addFlags(MaterialFlags.GENERATE_FRAME);
+        GTMaterials.Iron.addFlags(MaterialFlags.GENERATE_FRAME);
     }
 
     public static void initENLang(RegistrateLangProvider provider){

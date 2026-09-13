@@ -3,6 +3,7 @@ package com.ironsword.gtmfo.common.data.recipe;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
+import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.chain.*;
@@ -18,7 +19,7 @@ public class GTMFORecipes {
     public static void init(Consumer<FinishedRecipe> provider){
         AppleRecipes.init(provider);
         BerryRecipes.init(provider);
-        BreadsRecipes.init(provider);
+        BreadRecipes.init(provider);
         CapletRecipes.init(provider);
         CoreChain.init(provider);
         FruitRecipes.init(provider);
@@ -35,10 +36,24 @@ public class GTMFORecipes {
 
         GTMFOMachineRecipes.init(provider);
 
+
+        GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES.recipeBuilder(id("test_cheese"))
+                .inputItems(GTMFOItems.PIZZA_CHEESE_RAW)
+                .outputItems(GTMFOBlocks.PIZZA_CHEESE)
+                .duration(100).save(provider);
+        GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES.recipeBuilder(id("test_meat"))
+                .inputItems(GTMFOItems.PIZZA_MEAT_RAW)
+                .outputItems(GTMFOBlocks.PIZZA_MEAT)
+                .duration(100).save(provider);
+        GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES.recipeBuilder(id("test_veggie"))
+                .inputItems(GTMFOItems.PIZZA_VEGGIE_RAW)
+                .outputItems(GTMFOBlocks.PIZZA_VEGGIE)
+                .duration(100).save(provider);
+
     }
 
     public static void remove(Consumer<ResourceLocation> consumer){
-        BreadsRecipes.remove(consumer);
+        BreadRecipes.remove(consumer);
     }
 
     private static void cheeseRecipes(Consumer<FinishedRecipe> provider){
