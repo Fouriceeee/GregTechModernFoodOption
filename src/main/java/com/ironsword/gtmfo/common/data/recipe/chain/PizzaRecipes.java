@@ -1,40 +1,43 @@
 package com.ironsword.gtmfo.common.data.recipe.chain;
 
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
-import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
 public class PizzaRecipes {
-    public static void init(Consumer<FinishedRecipe> provider){
-        VanillaRecipeHelper.addShapedRecipe(provider,id("pizza_cheese"),
+
+    public static void init(Consumer<FinishedRecipe> provider) {
+        VanillaRecipeHelper.addShapedRecipe(provider, id("pizza_cheese"),
                 GTMFOBlocks.PIZZA_CHEESE.asStack(),
-                "SS","SS",
+                "SS", "SS",
                 'S', GTMFOItems.PIZZA_CHEESE_SLICE.asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider,id("pizza_meat"),
+        VanillaRecipeHelper.addShapedRecipe(provider, id("pizza_meat"),
                 GTMFOBlocks.PIZZA_MEAT.asStack(),
-                "SS","SS",
+                "SS", "SS",
                 'S', GTMFOItems.PIZZA_MEAT_SLICE.asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider,id("pizza_veggie"),
+        VanillaRecipeHelper.addShapedRecipe(provider, id("pizza_veggie"),
                 GTMFOBlocks.PIZZA_VEGGIE.asStack(),
-                "SS","SS",
+                "SS", "SS",
                 'S', GTMFOItems.PIZZA_VEGGIE_SLICE.asStack());
 
-        VanillaRecipeHelper.addShapelessRecipe(provider,id("pizza_cheese_slice"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("pizza_cheese_slice"),
                 GTMFOItems.PIZZA_CHEESE_SLICE.asStack(4),
                 GTMFOBlocks.PIZZA_CHEESE.asStack());
-        VanillaRecipeHelper.addShapelessRecipe(provider,id("pizza_meat_slice"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("pizza_meat_slice"),
                 GTMFOItems.PIZZA_MEAT_SLICE.asStack(4),
                 GTMFOBlocks.PIZZA_MEAT.asStack());
-        VanillaRecipeHelper.addShapelessRecipe(provider,id("pizza_veggie_slice"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("pizza_veggie_slice"),
                 GTMFOItems.PIZZA_VEGGIE_SLICE.asStack(4),
                 GTMFOBlocks.PIZZA_VEGGIE.asStack());
 

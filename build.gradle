@@ -5,6 +5,7 @@ plugins {
     id 'org.spongepowered.mixin' version '0.7.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'io.freefair.lombok' version '9.5.0'
+    id 'com.diffplug.spotless' version '8.1.0'
 }
 
 version = mod_version
@@ -142,6 +143,31 @@ dependencies {
 mixin {
     config "${mod_id}.mixins.json"
     add sourceSets.main, "${mod_id}.refmap.json"
+}
+
+spotless {
+    encoding 'UTF-8'
+
+    format 'misc', {
+        target '.gitignore'
+
+        trimTrailingWhitespace()
+        leadingTabsToSpaces(4)
+        endWithNewline()
+    }
+
+    java {
+        target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+
+        def orderFile = file("$rootDir/spotless/spotless.importorder")
+        def formatFile = file("$rootDir/spotless/spotless.eclipseformat.xml")
+
+        toggleOffOn()
+        importOrderFile(orderFile)
+        removeUnusedImports('cleanthat-javaparser-unnecessaryimport')
+        endWithNewline()
+        eclipse('4.31').configFile(formatFile)
+    }
 }
 
 tasks.named('processResources', ProcessResources).configure {

@@ -12,7 +12,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SmogusBlock extends Block {
-    public static final VoxelShape[] SHAPES = new VoxelShape[]{
+
+    public static final VoxelShape[] SHAPES = new VoxelShape[] {
             Block.box(5.5, 0, 3.5, 10.5, 4, 12.5),
             Block.box(5.5, 0, 3.5, 10.5, 8, 12.5),
             Block.box(5.5, 0, 3.5, 10.5, 16, 12.5),
@@ -31,8 +32,10 @@ public class SmogusBlock extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-        return pDirection == Direction.DOWN && !pState.canSurvive(pLevel, pPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
+                                  LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+        return pDirection == Direction.DOWN && !pState.canSurvive(pLevel, pPos) ? Blocks.AIR.defaultBlockState() :
+                super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
     }
 
     @Override

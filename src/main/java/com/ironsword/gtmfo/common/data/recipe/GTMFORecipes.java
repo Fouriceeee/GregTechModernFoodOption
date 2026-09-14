@@ -3,12 +3,13 @@ package com.ironsword.gtmfo.common.data.recipe;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-import com.ironsword.gtmfo.common.data.GTMFOBlocks;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
+
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.chain.*;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Consumer;
 
@@ -16,7 +17,7 @@ import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
 public class GTMFORecipes {
 
-    public static void init(Consumer<FinishedRecipe> provider){
+    public static void init(Consumer<FinishedRecipe> provider) {
         AppleRecipes.init(provider);
         BerryRecipes.init(provider);
         BreadRecipes.init(provider);
@@ -30,20 +31,17 @@ public class GTMFORecipes {
         ItalianRecipes.init(provider);
         SmoreRecipes.init(provider);
 
-
         cheeseRecipes(provider);
         doughRecipes(provider);
 
         GTMFOMachineRecipes.init(provider);
-
-
     }
 
-    public static void remove(Consumer<ResourceLocation> consumer){
+    public static void remove(Consumer<ResourceLocation> consumer) {
         BreadRecipes.remove(consumer);
     }
 
-    private static void cheeseRecipes(Consumer<FinishedRecipe> provider){
+    private static void cheeseRecipes(Consumer<FinishedRecipe> provider) {
         GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder(id("milk_hot"))
                 .inputFluids(GTMaterials.Milk.getFluid(100))
                 .outputFluids(GTMFOFluids.HotMilk.getFluid(100))
@@ -58,16 +56,15 @@ public class GTMFORecipes {
         GTRecipeTypes.EXTRUDER_RECIPES.recipeBuilder(id("mozzarella_slice"))
                 .inputItems(GTMFOItems.MOZZARELLA_BALL.asStack())
                 .notConsumable(GTItems.SHAPE_EXTRUDER_PLATE.asStack())
-                .outputItems(GTMFOItems.MOZZARELLA_SLICE,9)
+                .outputItems(GTMFOItems.MOZZARELLA_SLICE, 9)
                 .EUt(16).duration(400).save(provider);
     }
 
-    private static void doughRecipes(Consumer<FinishedRecipe> provider){
+    private static void doughRecipes(Consumer<FinishedRecipe> provider) {
         GTRecipeTypes.FORGE_HAMMER_RECIPES.recipeBuilder(id("dough_flat"))
                 .inputItems(GTItems.DOUGH.asStack())
                 .outputItems(GTMFOItems.DOUGH_FLAT)
                 .EUt(60).duration(40)
                 .save(provider);
     }
-
 }

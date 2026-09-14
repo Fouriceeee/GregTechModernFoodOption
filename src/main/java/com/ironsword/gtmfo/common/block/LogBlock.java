@@ -1,6 +1,7 @@
 package com.ironsword.gtmfo.common.block;
 
 import com.gregtechceu.gtceu.api.block.property.GTBlockStateProperties;
+
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -9,18 +10,20 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
+
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
 public class LogBlock extends RotatedPillarBlock {
+
     public static final BooleanProperty NATURAL = GTBlockStateProperties.NATURAL;
 
     protected final Supplier<? extends RotatedPillarBlock> stripedLog;
 
-    public LogBlock(Properties pProperties,Supplier<? extends RotatedPillarBlock> stripedLog) {
+    public LogBlock(Properties pProperties, Supplier<? extends RotatedPillarBlock> stripedLog) {
         super(pProperties);
-        registerDefaultState(defaultBlockState().setValue(NATURAL,false));
+        registerDefaultState(defaultBlockState().setValue(NATURAL, false));
         this.stripedLog = stripedLog;
     }
 

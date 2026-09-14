@@ -2,25 +2,26 @@ package com.ironsword.gtmfo.common.data.recipe.chain;
 
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.Items;
+
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.GTMFOTags;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
 import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
-
 public class BerryRecipes {
-    public static void init(Consumer<FinishedRecipe> provider){
 
-        //berry_medley
-        VanillaRecipeHelper.addShapelessRecipe(provider,id("berry_medley"),
+    public static void init(Consumer<FinishedRecipe> provider) {
+        // berry_medley
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("berry_medley"),
                 GTMFOItems.BERRY_MEDLEY.asStack(),
-                GTMFOTags.BERRY,GTMFOTags.BERRY,GTMFOTags.BERRY,GTMFOTags.BERRY,Items.BOWL);
+                GTMFOTags.BERRY, GTMFOTags.BERRY, GTMFOTags.BERRY, GTMFOTags.BERRY, Items.BOWL);
         GTMFORecipeTypes.MULTICOOKER_RECIPES.recipeBuilder(id("berry_jam"))
                 .inputItems(GTMFOTags.BERRY)
                 .inputItems(Items.SUGAR.getDefaultInstance())
@@ -41,13 +42,13 @@ public class BerryRecipes {
                 .outputItems(GTMFOItems.BERRY_MEDLEY.asStack())
                 .EUt(8).duration(20).save(provider);
 
-        //cranberry_etirps
+        // cranberry_etirps
         GTRecipeTypes.CENTRIFUGE_RECIPES.recipeBuilder(id("cranberry_sludge"))
                 .inputFluids(GTMFOFluids.CranberryExtract.getFluid(1500))
                 .outputFluids(GTMFOFluids.CranberrySludge.getFluid(1000))
                 .EUt(30).duration(140).save(provider);
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("cranberry_soda_syrup"))
-                .inputItems(Items.SUGAR,6)
+                .inputItems(Items.SUGAR, 6)
                 .inputFluids(GTMFOFluids.CranberrySludge.getFluid(500))
                 .outputFluids(GTMFOFluids.CranberrySodaSyrup.getFluid(500))
                 .EUt(60).duration(40).save(provider);
@@ -62,6 +63,5 @@ public class BerryRecipes {
                 .inputItems(GTMFOItems.CAN)
                 .outputItems(GTMFOItems.ETIRPS_CRANBERRY)
                 .EUt(30).duration(20).save(provider);
-
     }
 }

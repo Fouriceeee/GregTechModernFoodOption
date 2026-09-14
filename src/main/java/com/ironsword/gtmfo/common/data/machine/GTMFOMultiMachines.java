@@ -12,15 +12,17 @@ import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.machine.multiblock.steam.SteamParallelMultiblockMachine;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+
 import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeModifiers;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
 import com.ironsword.gtmfo.common.machine.multiblock.electric.ElectricBakingOvenMachine;
 import com.ironsword.gtmfo.common.machine.multiblock.primitive.PrimitiveBakingOvenMachine;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Blocks;
 
 import static com.gregtechceu.gtceu.api.pattern.util.RelativeDirection.*;
 import static com.ironsword.gtmfo.common.registry.GTMFORegistries.REGISTRATE;
@@ -34,12 +36,14 @@ public class GTMFOMultiMachines {
             .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
             .recipeModifier(GTMFORecipeModifiers::electricBakingOvenParallel)
             .appearanceBlock(GTMFOBlocks.BISMUTH_BRONZE_CASING)
-            .pattern(definition-> FactoryBlockPattern.start(BACK, UP, RIGHT)
+            .pattern(definition -> FactoryBlockPattern.start(BACK, UP, RIGHT)
                     .aisle("XXXX", "YXXX", "XXXX", "####")
                     .aisle("XXXX", "GFFX", "GIOX", "XXXX").setRepeatable(2, 14)
                     .aisle("XXXX", "XXXX", "XXXX", "####")
-                    .where('X', Predicates.blocks(GTMFOBlocks.BISMUTH_BRONZE_CASING.get()).setMinGlobalLimited(10).or(Predicates.autoAbilities(definition.getRecipeTypes())))
-                    .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt,GTMaterials.Steel)))
+                    .where('X',
+                            Predicates.blocks(GTMFOBlocks.BISMUTH_BRONZE_CASING.get()).setMinGlobalLimited(10)
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes())))
+                    .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt, GTMaterials.Steel)))
                     .where('G', Predicates.blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
                     .where('#', Predicates.any())
                     .where('O', Predicates.air())
@@ -57,20 +61,22 @@ public class GTMFOMultiMachines {
             .langValue("Steam Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
-            .recipeModifier(SteamParallelMultiblockMachine::recipeModifier,true)
+            .recipeModifier(SteamParallelMultiblockMachine::recipeModifier, true)
             .appearanceBlock(GTBlocks.CASING_BRONZE_BRICKS)
-            .pattern(definition->FactoryBlockPattern.start()
+            .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("XXXX", "XGGX", "XXXX")
                     .aisle("XXXX", "GFFG", "XFFX")
                     .aisle("XXXX", "GFFG", "XFFX")
                     .aisle("XXXX", "YGGX", "XXXX")
-                    .where('X',Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get())
+                    .where('X', Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get())
                             .or(Predicates.abilities(PartAbility.STEAM_IMPORT_ITEMS).setPreviewCount(1))
                             .or(Predicates.abilities(PartAbility.STEAM_EXPORT_ITEMS).setPreviewCount(1))
                             .or(Predicates.abilities(PartAbility.STEAM).setExactLimit(1)))
-                    .where('F',Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt,GTMaterials.Steel)))
-                    .where('G',Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get(),GTBlocks.CASING_TEMPERED_GLASS.get()))
-                    .where('Y',Predicates.controller(Predicates.blocks(definition.getBlock())))
+                    .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt, GTMaterials.Steel)))
+                    .where('G',
+                            Predicates.blocks(GTBlocks.CASING_BRONZE_BRICKS.get(),
+                                    GTBlocks.CASING_TEMPERED_GLASS.get()))
+                    .where('Y', Predicates.controller(Predicates.blocks(definition.getBlock())))
                     .build())
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
@@ -82,33 +88,30 @@ public class GTMFOMultiMachines {
             .langValue("Primitive Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
-            .appearanceBlock(()->Blocks.MUD_BRICKS)
-            .pattern(definition->FactoryBlockPattern.start()
+            .appearanceBlock(() -> Blocks.MUD_BRICKS)
+            .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("XXX", "XXX")
                     .aisle("XFX", "X#X")
                     .aisle("XYX", "XXX")
                     .where('X', Predicates.blocks(Blocks.MUD_BRICKS))
-                    .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt,GTMaterials.Iron)))
+                    .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt, GTMaterials.Iron)))
                     .where('#', Predicates.air())
                     .where('Y', Predicates.controller(Predicates.blocks(definition.getBlock())))
                     .build())
             .workableCasingModel(
-                    //GTCEu.id("block/casings/solid/machine_primitive_bricks"),
+                    // GTCEu.id("block/casings/solid/machine_primitive_bricks"),
                     ResourceLocation.withDefaultNamespace("block/mud_bricks"),
                     GTCEu.id("block/machines/baking_oven"))
             .register();
 
-    public static void init(){
-        GTMFOMachines.addJEILang("baking_oven","Baking Oven","烤炉");
-        GTMFOMachines.CNLangMap.put("block.gtmfo.primitive_baking_oven","原始烤炉");
-        GTMFOMachines.CNLangMap.put("block.gtmfo.steam_baking_oven","蒸汽烤炉");
-        GTMFOMachines.CNLangMap.put("block.gtmfo.electric_baking_oven","电力烤炉");
+    public static void init() {
+        GTMFOMachines.addJEILang("baking_oven", "Baking Oven", "烤炉");
+        GTMFOMachines.CNLangMap.put("block.gtmfo.primitive_baking_oven", "原始烤炉");
+        GTMFOMachines.CNLangMap.put("block.gtmfo.steam_baking_oven", "蒸汽烤炉");
+        GTMFOMachines.CNLangMap.put("block.gtmfo.electric_baking_oven", "电力烤炉");
         GTMFOMachines.addTooltipLang(
                 "gtmfo.machine.electric_baking_oven.tooltip.0",
                 "§7Max Parallel Amount = 8 * (repeated layer count - 1)",
                 "§7最大并行数 = 8 * (重复层数 - 1)");
-
-
-
     }
 }

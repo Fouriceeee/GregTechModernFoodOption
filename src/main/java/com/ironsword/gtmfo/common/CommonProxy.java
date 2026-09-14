@@ -4,6 +4,13 @@ import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 import com.ironsword.gtmfo.GTMFOConfigHolder;
 import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.*;
@@ -15,20 +22,15 @@ import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
 import com.ironsword.gtmfo.common.registry.GTMFORegistries;
 import com.ironsword.gtmfo.data.GTMFODataGen;
 import com.ironsword.gtmfo.data.GTMFOProviderTypes;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod.EventBusSubscriber(modid = GregTechModernFoodOption.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CommonProxy {
 
-    public CommonProxy(){
+    public CommonProxy() {
         init();
     }
 
-    public static void init(){
+    public static void init() {
         @SuppressWarnings("removal")
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -40,8 +42,8 @@ public class CommonProxy {
         GTMFOBlocks.init();
         GTMFOItems.init();
 
-        bus.addGenericListener(MachineDefinition.class,CommonProxy::registerMachines);
-        bus.addGenericListener(GTRecipeType.class,CommonProxy::registerRecipeTypes);
+        bus.addGenericListener(MachineDefinition.class, CommonProxy::registerMachines);
+        bus.addGenericListener(GTRecipeType.class, CommonProxy::registerRecipeTypes);
 
         GTMFODataGen.init();
 
@@ -50,18 +52,18 @@ public class CommonProxy {
         GTMFOEffects.init(bus);
     }
 
-    public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event){
+    public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         GTMFOMachines.init();
         GTMFOMultiMachines.init();
         GTMFODataGen.initMachineLang();
     }
 
-    public static void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event){
+    public static void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         GTMFORecipeTypes.init();
     }
 
     @SubscribeEvent
-    public static void registerMaterials(MaterialEvent event){
+    public static void registerMaterials(MaterialEvent event) {
         GTMFOFluids.init();
         GTMFOMaterials.init();
         GTMFODataGen.initMaterialLang();

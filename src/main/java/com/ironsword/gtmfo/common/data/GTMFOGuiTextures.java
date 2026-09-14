@@ -1,7 +1,8 @@
 package com.ironsword.gtmfo.common.data;
 
-import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
+
+import com.ironsword.gtmfo.GregTechModernFoodOption;
 
 public class GTMFOGuiTextures {
 
@@ -15,7 +16,7 @@ public class GTMFOGuiTextures {
             "gtceu:textures/gui/overlay/sliced_matter_overlay.png");
 
     public static final ResourceTexture PRIMITIVE_BAKING_OVEN_FUEL_BAR = new ResourceTexture(
-            GregTechModernFoodOption.MODID+":textures/gui/primitive_baking_oven/fuel_bar.png");
+            GregTechModernFoodOption.MODID + ":textures/gui/primitive_baking_oven/fuel_bar.png");
     public static final ResourceTexture PRIMITIVE_BAKING_OVEN_HEAT_BAR = new ResourceTexture(
-            GregTechModernFoodOption.MODID+":textures/gui/primitive_baking_oven/heat_bar.png");
+            GregTechModernFoodOption.MODID + ":textures/gui/primitive_baking_oven/heat_bar.png");
 }

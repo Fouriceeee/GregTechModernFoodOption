@@ -3,6 +3,7 @@ package com.ironsword.gtmfo.common.data.machine;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils;
+
 import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.GTMFOCreativeModeTabs;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
@@ -19,6 +20,7 @@ import static com.ironsword.gtmfo.common.registry.GTMFORegistries.REGISTRATE;
 import static net.minecraft.ChatFormatting.*;
 
 public class GTMFOMachines {
+
     public static final String[] VLVH_CN = new String[] {
             "超低压",
             "基础",
@@ -36,49 +38,54 @@ public class GTMFOMachines {
             BLUE.toString() + BOLD + "传奇",
             RED.toString() + BOLD + "MAX" };
 
-    public static final Map<String, Pair<String,String>> JEILangPairMap = new HashMap<>();
-    public static final Map<String, Pair<String,String>> TooltipPairMap = new HashMap<>();
+    public static final Map<String, Pair<String, String>> JEILangPairMap = new HashMap<>();
+    public static final Map<String, Pair<String, String>> TooltipPairMap = new HashMap<>();
     public static final Map<String, String> CNLangMap = new HashMap<>();
 
     static {
-        REGISTRATE.creativeModeTab(()-> GTMFOCreativeModeTabs.MAIN_TAB);
+        REGISTRATE.creativeModeTab(() -> GTMFOCreativeModeTabs.MAIN_TAB);
     }
 
-    public static MachineDefinition[] SLICER = GTMachineUtils.registerSimpleMachines(REGISTRATE,"slicer", GTMFORecipeTypes.SLICER_RECIPES);
-    public static MachineDefinition[] CUISINE_ASSEMBLER = GTMachineUtils.registerSimpleMachines(REGISTRATE,"cuisine_assembler",GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES);
-    public static MachineDefinition[] MICROWAVE = GTMachineUtils.registerSimpleMachines(REGISTRATE,"microwave",GTMFORecipeTypes.MICROWAVE_RECIPES);
-    public static MachineDefinition[] MULTICOOKER = GTMachineUtils.registerSimpleMachines(REGISTRATE,"multicooker",GTMFORecipeTypes.MULTICOOKER_RECIPES);
+    public static MachineDefinition[] SLICER = GTMachineUtils.registerSimpleMachines(REGISTRATE, "slicer",
+            GTMFORecipeTypes.SLICER_RECIPES);
+    public static MachineDefinition[] CUISINE_ASSEMBLER = GTMachineUtils.registerSimpleMachines(REGISTRATE,
+            "cuisine_assembler", GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES);
+    public static MachineDefinition[] MICROWAVE = GTMachineUtils.registerSimpleMachines(REGISTRATE, "microwave",
+            GTMFORecipeTypes.MICROWAVE_RECIPES);
+    public static MachineDefinition[] MULTICOOKER = GTMachineUtils.registerSimpleMachines(REGISTRATE, "multicooker",
+            GTMFORecipeTypes.MULTICOOKER_RECIPES);
 
-    public static void addTooltipLang(String id, String enLang, String cnLang){
-        TooltipPairMap.put(id,Pair.of(enLang,cnLang));
+    public static void addTooltipLang(String id, String enLang, String cnLang) {
+        TooltipPairMap.put(id, Pair.of(enLang, cnLang));
     }
 
-    public static void addJEILang(String name, String enLang, String cnLang){
-        JEILangPairMap.put("gtceu."+name,Pair.of(enLang,cnLang));
+    public static void addJEILang(String name, String enLang, String cnLang) {
+        JEILangPairMap.put("gtceu." + name, Pair.of(enLang, cnLang));
     }
 
-    public static void addTieredLang(String name, String enLang, String cnLang){
-        addJEILang(name,enLang,cnLang);
-        for (int tier:GTMachineUtils.ELECTRIC_TIERS){
-            CNLangMap.put("block."+ GregTechModernFoodOption.MODID+ "." +GTValues.VN[tier].toLowerCase(Locale.ROOT) + "_" + name,"%s%s %s".formatted(VLVH_CN[tier], cnLang, VLVT[tier]));
+    public static void addTieredLang(String name, String enLang, String cnLang) {
+        addJEILang(name, enLang, cnLang);
+        for (int tier : GTMachineUtils.ELECTRIC_TIERS) {
+            CNLangMap.put("block." + GregTechModernFoodOption.MODID + "." + GTValues.VN[tier].toLowerCase(Locale.ROOT) +
+                    "_" + name, "%s%s %s".formatted(VLVH_CN[tier], cnLang, VLVT[tier]));
         }
     }
 
-    public static void init(){
-        addTieredLang("slicer","Slicer","食材切片机");
-        addTieredLang("cuisine_assembler","Cuisine Assembler","菜肴组装机");
-        addTieredLang("microwave","Microwave","微波炉");
-        addTieredLang("multicooker","Multicooker","多功能烹饪机");
+    public static void init() {
+        addTieredLang("slicer", "Slicer", "食材切片机");
+        addTieredLang("cuisine_assembler", "Cuisine Assembler", "菜肴组装机");
+        addTieredLang("microwave", "Microwave", "微波炉");
+        addTieredLang("multicooker", "Multicooker", "多功能烹饪机");
     }
 
-    public static void initENLang(RegistrateLangProvider provider){
-        JEILangPairMap.forEach((key, value)->provider.add(key,value.getFirst()));
-        TooltipPairMap.forEach((key,value)->provider.add(key,value.getFirst()));
+    public static void initENLang(RegistrateLangProvider provider) {
+        JEILangPairMap.forEach((key, value) -> provider.add(key, value.getFirst()));
+        TooltipPairMap.forEach((key, value) -> provider.add(key, value.getFirst()));
     }
 
-    public static void initCNLang(CNLangProvider provider){
-        JEILangPairMap.forEach((key, value)->provider.add(key,value.getSecond()));
-        TooltipPairMap.forEach((key,value)->provider.add(key,value.getSecond()));
+    public static void initCNLang(CNLangProvider provider) {
+        JEILangPairMap.forEach((key, value) -> provider.add(key, value.getSecond()));
+        TooltipPairMap.forEach((key, value) -> provider.add(key, value.getSecond()));
         CNLangMap.forEach(provider::add);
     }
 }

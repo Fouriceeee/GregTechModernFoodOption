@@ -6,13 +6,15 @@ import dev.toma.configuration.config.format.ConfigFormats;
 
 @Config(id = GregTechModernFoodOption.MODID)
 public class GTMFOConfigHolder {
+
     public static GTMFOConfigHolder INSTANCE;
     private static final Object LOCK = new Object();
 
     public static void init() {
         synchronized (LOCK) {
             if (INSTANCE == null) {
-                INSTANCE = Configuration.registerConfig(GTMFOConfigHolder.class, ConfigFormats.yaml()).getConfigInstance();
+                INSTANCE = Configuration.registerConfig(GTMFOConfigHolder.class, ConfigFormats.yaml())
+                        .getConfigInstance();
             }
         }
     }

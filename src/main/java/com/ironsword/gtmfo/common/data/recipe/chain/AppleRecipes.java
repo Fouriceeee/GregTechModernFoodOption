@@ -3,20 +3,23 @@ package com.ironsword.gtmfo.common.data.recipe.chain;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-import com.ironsword.gtmfo.common.data.GTMFOItems;
-import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
-import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 
+import com.ironsword.gtmfo.common.data.GTMFOItems;
+import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
+import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
+
 import java.util.function.Consumer;
+
 import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
 public class AppleRecipes {
 
-    public static void init(Consumer<FinishedRecipe> provider){
-        //extract
+    public static void init(Consumer<FinishedRecipe> provider) {
+        // extract
         GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("apple_cored"))
                 .inputItems(Items.APPLE.getDefaultInstance())
                 .notConsumable(GTMFOItems.SLICER_BLADE_PITTER.asStack())
@@ -36,12 +39,12 @@ public class AppleRecipes {
                 .outputFluids(GTMFOFluids.AppleExtract.getFluid(100))
                 .EUt(2).duration(10).save(provider);
 
-        //candy
+        // candy
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("apple_candy_syrup"))
                 .inputFluids(
                         GTMFOFluids.AppleExtract.getFluid(1000),
                         GTMFOFluids.CaneSyrup.getFluid(1000))
-                .inputItems(Tags.Items.DYES_LIME,5)
+                .inputItems(Tags.Items.DYES_LIME, 5)
                 .outputFluids(GTMFOFluids.AppleCandySyrup.getFluid(2000))
                 .EUt(120).duration(60).save(provider);
         GTRecipeTypes.FLUID_SOLIDFICATION_RECIPES.recipeBuilder(id("apple_candy_resin"))
@@ -64,7 +67,7 @@ public class AppleRecipes {
                 .outputItems(GTMFOItems.APPLE_CANDY.asStack())
                 .EUt(5).duration(200).save(provider);
 
-        //candy_crushed
+        // candy_crushed
         GTRecipeTypes.FORGE_HAMMER_RECIPES.recipeBuilder(id("apple_candy_crushed_1"))
                 .inputItems(GTMFOItems.APPLE_CANDY.asStack())
                 .outputItems(GTMFOItems.APPLE_CANDY_CRUSHED.asStack())
@@ -74,7 +77,7 @@ public class AppleRecipes {
                 .outputItems(GTMFOItems.APPLE_CANDY_CRUSHED.asStack(2))
                 .EUt(480).duration(200).save(provider);
 
-        //juice
+        // juice
         GTRecipeTypes.CANNER_RECIPES.recipeBuilder(id("apple_extract_from_juice"))
                 .inputItems(GTMFOItems.JUICE_APPLE.asStack())
                 .outputItems(Items.GLASS_BOTTLE)
@@ -86,12 +89,11 @@ public class AppleRecipes {
                 .outputItems(GTMFOItems.JUICE_APPLE.asStack())
                 .EUt(12).duration(30).save(provider);
 
-        //tungstensteel_apple
+        // tungstensteel_apple
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("tungstensteel_apple"))
                 .inputItems(Items.APPLE.getDefaultInstance())
                 .inputFluids(GTMaterials.TungstenSteel.getFluid(12000))
                 .outputItems(GTMFOItems.APPLE_TUNGSTENSTEEL.asStack())
                 .EUt(1000000).duration(10000).save(provider);
-
     }
 }

@@ -8,8 +8,9 @@ import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 
 public class CreativeFlyEffect extends MobEffect {
+
     public CreativeFlyEffect() {
-        super(MobEffectCategory.BENEFICIAL,0);
+        super(MobEffectCategory.BENEFICIAL, 0);
     }
 
     @Override
@@ -19,7 +20,7 @@ public class CreativeFlyEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (livingEntity instanceof Player player){
+        if (livingEntity instanceof Player player) {
             Abilities abilities = player.getAbilities();
             abilities.mayfly = true;
         }

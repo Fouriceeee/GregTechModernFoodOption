@@ -1,6 +1,5 @@
 package com.ironsword.gtmfo.common.block;
 
-import com.ironsword.gtmfo.common.data.GTMFOBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -23,28 +22,32 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import com.ironsword.gtmfo.common.data.GTMFOBlockStateProperties;
+
 public class PizzaBlock extends Block {
+
     public static final int MAX_SLICES = 4;
     public static final IntegerProperty SLICES = GTMFOBlockStateProperties.SLICES;
-    public static final VoxelShape[] SHAPES = new VoxelShape[]{
-            Block.box(0,0,0,8,2,8),
-            Block.box(0,0,0,16,2,8),
-            Shapes.or(Block.box(0,0,0,16,2,8),Block.box(0,0,8,8,2,16)),
-            Block.box(0,0,0,16,2,16)
+    public static final VoxelShape[] SHAPES = new VoxelShape[] {
+            Block.box(0, 0, 0, 8, 2, 8),
+            Block.box(0, 0, 0, 16, 2, 8),
+            Shapes.or(Block.box(0, 0, 0, 16, 2, 8), Block.box(0, 0, 8, 8, 2, 16)),
+            Block.box(0, 0, 0, 16, 2, 16)
     };
 
     public PizzaBlock(Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(SLICES,MAX_SLICES));
+        this.registerDefaultState(this.stateDefinition.any().setValue(SLICES, MAX_SLICES));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return SHAPES[pState.getValue(SLICES)-1];
+        return SHAPES[pState.getValue(SLICES) - 1];
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
+                                 BlockHitResult pHit) {
         ItemStack itemStack = pPlayer.getItemInHand(pHand);
         if (pLevel.isClientSide) {
             if (eat(pLevel, pPos, pState, pPlayer).consumesAction()) {
@@ -67,7 +70,7 @@ public class PizzaBlock extends Block {
             int i = pState.getValue(SLICES);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);
             if (i > 1) {
-                pLevel.setBlock(pPos, pState.setValue(SLICES, i-1), 3);
+                pLevel.setBlock(pPos, pState.setValue(SLICES, i - 1), 3);
             } else {
                 pLevel.removeBlock(pPos, false);
                 pLevel.gameEvent(pPlayer, GameEvent.BLOCK_DESTROY, pPos);
@@ -78,8 +81,10 @@ public class PizzaBlock extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-        return pDirection == Direction.DOWN && !pState.canSurvive(pLevel, pPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
+                                  LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+        return pDirection == Direction.DOWN && !pState.canSurvive(pLevel, pPos) ? Blocks.AIR.defaultBlockState() :
+                super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
     }
 
     @Override

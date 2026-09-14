@@ -6,22 +6,25 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import com.gregtechceu.gtceu.data.recipe.builder.CampfireRecipeBuilder;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.Items;
+
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
 import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
 public class PotatoRecipes {
-    public static void init(Consumer<FinishedRecipe> provider){
-//        GTRecipeType dehydratorRecipes =  GTRecipeTypes.get("dehydrator");
-//        if (dehydratorRecipes == null){
-//            dehydratorRecipes = GTRecipeTypes.CHEMICAL_RECIPES;
-//        }
+
+    public static void init(Consumer<FinishedRecipe> provider) {
+        // GTRecipeType dehydratorRecipes = GTRecipeTypes.get("dehydrator");
+        // if (dehydratorRecipes == null){
+        // dehydratorRecipes = GTRecipeTypes.CHEMICAL_RECIPES;
+        // }
 
         GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("potato_peeled"))
                 .inputItems(Items.POTATO)
@@ -45,13 +48,12 @@ public class PotatoRecipes {
                 .outputItems(GTMFOItems.POTATO_MASHED.asStack())
                 .EUt(60).duration(40).save(provider);
 
-
-//        dehydratorRecipes.recipeBuilder(id("potato_slice_dried"))
-//                .inputItems(GTMFOItems.POTATO_SLICE.asStack(40))
-//                .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(500))
-//                .outputItems(GTMFOItems.POTATO_SLICE_FRIED.asStack(38))
-//                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(450))
-//                .EUt(30).duration(400).save(provider);
+        // dehydratorRecipes.recipeBuilder(id("potato_slice_dried"))
+        // .inputItems(GTMFOItems.POTATO_SLICE.asStack(40))
+        // .inputFluids(GTMFOFluids.FRYING_OIL.getFluid(500))
+        // .outputItems(GTMFOItems.POTATO_SLICE_FRIED.asStack(38))
+        // .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(450))
+        // .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_dried"))
                 .inputItems(GTMFOItems.POTATO_SLICE.asStack(40))
                 .inputFluids(GTMFOFluids.FryingOil.getFluid(500))
@@ -72,11 +74,11 @@ public class PotatoRecipes {
                 .inputItems(GTMFOItems.POTATO_SLICE_BATCH_FRIED.asStack(5))
                 .outputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(5))
                 .EUt(160).duration(500).save(provider);
-//        dehydratorRecipes.recipeBuilder(id("potato_slice_reduced_fat"))
-//                .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(10))
-//                .outputItems(GTMFOItems.POTATO_SLICE_REDUCED_FAT.asStack(10))
-//                .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(60))
-//                .EUt(30).duration(400).save(provider);
+        // dehydratorRecipes.recipeBuilder(id("potato_slice_reduced_fat"))
+        // .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(10))
+        // .outputItems(GTMFOItems.POTATO_SLICE_REDUCED_FAT.asStack(10))
+        // .outputFluids(GTMFOFluids.FRYING_OIL.getFluid(60))
+        // .EUt(30).duration(400).save(provider);
         GTRecipeTypes.CHEMICAL_RECIPES.recipeBuilder(id("potato_slice_reduced_fat"))
                 .inputItems(GTMFOItems.POTATO_SLICE_HOT.asStack(10))
                 .circuitMeta(1)
@@ -90,9 +92,8 @@ public class PotatoRecipes {
                 .outputItems(GTMFOItems.POTATO_SLICE_NAQUADAH.asStack(40))
                 .EUt(GTValues.VA[GTValues.LuV]).duration(800).save(provider);
 
-
         GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder(id("chips_bag_empty"))
-                .inputItems(TagPrefix.foil,GTMaterials.Aluminium)
+                .inputItems(TagPrefix.foil, GTMaterials.Aluminium)
                 .circuitMeta(3)
                 .inputFluids(GTMaterials.Polyethylene.getFluid(10))
                 .outputItems(GTMFOItems.CHIPS_BAG_EMPTY.asStack())
@@ -129,7 +130,6 @@ public class PotatoRecipes {
                 .outputItems(GTMFOItems.CHIPS_NAQUADAH.asStack())
                 .EUt(64).duration(100).save(provider);
 
-
         GTRecipeTypes.CHEMICAL_BATH_RECIPES.recipeBuilder(id("potato_strip_blanched"))
                 .inputItems(GTMFOItems.POTATO_STRIP.asStack(40))
                 .inputFluids(GTMFOFluids.FryingOil.getFluid(700))
@@ -152,8 +152,7 @@ public class PotatoRecipes {
                 .outputItems(GTMFOItems.PAPER_BAG.asStack())
                 .EUt(30).duration(180).save(provider);
 
-
-        VanillaRecipeHelper.addShapelessRecipe(provider,id("potato_stick"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("potato_stick"),
                 GTMFOItems.POTATO_STICK.asStack(),
                 Items.POTATO.getDefaultInstance(),
                 Items.STICK.getDefaultInstance());

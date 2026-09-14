@@ -7,18 +7,21 @@ import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.GTCraftingComponents;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import com.gregtechceu.gtceu.data.recipe.misc.MetaTileEntityLoader;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.level.block.Blocks;
+
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMachines;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMultiMachines;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
 import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 
 public class GTMFOMachineRecipes {
-    public static void init(Consumer<FinishedRecipe> provider){
+
+    public static void init(Consumer<FinishedRecipe> provider) {
         MetaTileEntityLoader.registerMachineRecipe(provider, GTMFOMachines.SLICER,
                 "PCA",
                 "SHC",
@@ -28,7 +31,7 @@ public class GTMFOMachineRecipes {
                 'A', GTCraftingComponents.CABLE,
                 'S', GTCraftingComponents.SAWBLADE,
                 'H', GTCraftingComponents.HULL,
-                'L', GTCraftingComponents.PLATE,//TODO: densePlate in gtfo
+                'L', GTCraftingComponents.PLATE,// TODO: densePlate in gtfo
                 'O', GTCraftingComponents.CONVEYOR);
 
         MetaTileEntityLoader.registerMachineRecipe(provider, GTMFOMachines.CUISINE_ASSEMBLER,
@@ -52,27 +55,27 @@ public class GTMFOMachineRecipes {
                 'A', GTCraftingComponents.CABLE,
                 'L', ChemicalHelper.get(TagPrefix.plate, GTMaterials.Lead));
 
-        VanillaRecipeHelper.addShapedRecipe(provider,id("primitive_baking_oven"),
+        VanillaRecipeHelper.addShapedRecipe(provider, id("primitive_baking_oven"),
                 GTMFOMultiMachines.PRIMITIVE_BAKING_OVEN.asStack(),
                 "dSS",
                 "RRA",
                 "fSS",
-                'S', ChemicalHelper.get(TagPrefix.screw,GTMaterials.Iron),
-                'R', ChemicalHelper.get(TagPrefix.rod,GTMaterials.Iron),
+                'S', ChemicalHelper.get(TagPrefix.screw, GTMaterials.Iron),
+                'R', ChemicalHelper.get(TagPrefix.rod, GTMaterials.Iron),
                 'A', Blocks.MUD_BRICKS.asItem().getDefaultInstance());
 
-        VanillaRecipeHelper.addShapedRecipe(provider,id("steam_baking_oven"),
+        VanillaRecipeHelper.addShapedRecipe(provider, id("steam_baking_oven"),
                 GTMFOMultiMachines.STEAM_BAKING_OVEN.asStack(),
                 "dSG",
                 "PAR",
                 "fSG",
-                'S', ChemicalHelper.get(TagPrefix.screw,GTMaterials.Steel),
+                'S', ChemicalHelper.get(TagPrefix.screw, GTMaterials.Steel),
                 'P', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
-                'R', ChemicalHelper.get(TagPrefix.pipeSmallFluid,GTMaterials.Bronze),
-                'G', ChemicalHelper.get(TagPrefix.gear,GTMaterials.Invar),
+                'R', ChemicalHelper.get(TagPrefix.pipeSmallFluid, GTMaterials.Bronze),
+                'G', ChemicalHelper.get(TagPrefix.gear, GTMaterials.Invar),
                 'A', GTMachines.STEAM_FURNACE.first().asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider,id("electric_baking_oven"),
+        VanillaRecipeHelper.addShapedRecipe(provider, id("electric_baking_oven"),
                 GTMFOMultiMachines.ELECTRIC_BAKING_OVEN.asStack(),
                 "CPC",
                 "IWI",
@@ -80,25 +83,23 @@ public class GTMFOMachineRecipes {
                 'C', GTMFOBlocks.BISMUTH_BRONZE_CASING.asStack(),
                 'P', GTItems.ELECTRIC_PUMP_MV.asStack(),
                 'I', CustomTags.MV_CIRCUITS,
-                'W', ChemicalHelper.get(TagPrefix.wireGtQuadruple,GTMaterials.Cupronickel),
+                'W', ChemicalHelper.get(TagPrefix.wireGtQuadruple, GTMaterials.Cupronickel),
                 'A', GTBlocks.COIL_CUPRONICKEL.asStack());
 
-
-        //bismuth_bronze_casing
-        VanillaRecipeHelper.addShapedRecipe(provider,true, id("bismuth_bronze_casing"),
+        // bismuth_bronze_casing
+        VanillaRecipeHelper.addShapedRecipe(provider, true, id("bismuth_bronze_casing"),
                 GTMFOBlocks.BISMUTH_BRONZE_CASING.asStack(),
                 "PhP",
                 "PFP",
                 "PwP",
-                'P',ChemicalHelper.get(TagPrefix.plate,GTMaterials.BismuthBronze),
-                'F',ChemicalHelper.get(TagPrefix.frameGt,GTMaterials.BismuthBronze));
+                'P', ChemicalHelper.get(TagPrefix.plate, GTMaterials.BismuthBronze),
+                'F', ChemicalHelper.get(TagPrefix.frameGt, GTMaterials.BismuthBronze));
 
         GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder(id("bismuth_bronze_casing"))
-                .inputItems(TagPrefix.plate,GTMaterials.BismuthBronze,6)
-                .inputItems(TagPrefix.frameGt,GTMaterials.BismuthBronze)
+                .inputItems(TagPrefix.plate, GTMaterials.BismuthBronze, 6)
+                .inputItems(TagPrefix.frameGt, GTMaterials.BismuthBronze)
                 .circuitMeta(6)
                 .outputItems(GTMFOBlocks.BISMUTH_BRONZE_CASING.asStack())
                 .EUt(16).duration(50).addMaterialInfo(true).save(provider);
-
     }
 }

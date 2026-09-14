@@ -1,6 +1,7 @@
 package com.ironsword.gtmfo.api.item.component;
 
 import com.gregtechceu.gtceu.api.item.component.IInteractionItem;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -26,8 +27,9 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.shapes.CollisionContext;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
+
+import javax.annotation.Nullable;
 
 public class BlockItemComponent implements IInteractionItem {
 
@@ -36,7 +38,6 @@ public class BlockItemComponent implements IInteractionItem {
     public BlockItemComponent(Supplier<? extends Block> block) {
         this.block = block;
     }
-
 
     @Override
     public InteractionResultHolder<ItemStack> use(Item item, Level level, Player player, InteractionHand usedHand) {
@@ -47,14 +48,17 @@ public class BlockItemComponent implements IInteractionItem {
     public InteractionResult useOn(UseOnContext context) {
         InteractionResult interactionresult = this.place(new BlockPlaceContext(context));
         if (!interactionresult.consumesAction() && isEdible(context.getItemInHand())) {
-            InteractionResult interactionresult1 = this.use(context.getItemInHand().getItem(),context.getLevel(), context.getPlayer(), context.getHand()).getResult();
-            return interactionresult1 == InteractionResult.CONSUME ? InteractionResult.CONSUME_PARTIAL : interactionresult1;
+            InteractionResult interactionresult1 = this
+                    .use(context.getItemInHand().getItem(), context.getLevel(), context.getPlayer(), context.getHand())
+                    .getResult();
+            return interactionresult1 == InteractionResult.CONSUME ? InteractionResult.CONSUME_PARTIAL :
+                    interactionresult1;
         } else {
             return interactionresult;
         }
     }
 
-    public InteractionResult place(BlockPlaceContext pContext){
+    public InteractionResult place(BlockPlaceContext pContext) {
         if (!block.get().isEnabled(pContext.getLevel().enabledFeatures())) {
             return InteractionResult.FAIL;
         } else if (!pContext.canPlace()) {
@@ -80,12 +84,14 @@ public class BlockItemComponent implements IInteractionItem {
                         this.updateCustomBlockEntityTag(blockpos, level, player, itemstack, blockstate1);
                         blockstate1.getBlock().setPlacedBy(level, blockpos, blockstate1, player, itemstack);
                         if (player instanceof ServerPlayer) {
-                            CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
+                            CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer) player, blockpos, itemstack);
                         }
                     }
 
                     SoundType soundtype = blockstate1.getSoundType(level, blockpos, pContext.getPlayer());
-                    level.playSound(player, blockpos, this.getPlaceSound(blockstate1, level, blockpos, pContext.getPlayer()), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+                    level.playSound(player, blockpos,
+                            this.getPlaceSound(blockstate1, level, blockpos, pContext.getPlayer()), SoundSource.BLOCKS,
+                            (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
                     level.gameEvent(GameEvent.BLOCK_PLACE, blockpos, GameEvent.Context.of(player, blockstate1));
                     if (player == null || !player.getAbilities().instabuild) {
                         itemstack.shrink(1);
@@ -111,7 +117,8 @@ public class BlockItemComponent implements IInteractionItem {
     protected boolean canPlace(BlockPlaceContext pContext, BlockState pState) {
         Player player = pContext.getPlayer();
         CollisionContext collisioncontext = player == null ? CollisionContext.empty() : CollisionContext.of(player);
-        return (pState.canSurvive(pContext.getLevel(), pContext.getClickedPos())) && pContext.getLevel().isUnobstructed(pState, pContext.getClickedPos(), collisioncontext);
+        return (pState.canSurvive(pContext.getLevel(), pContext.getClickedPos())) &&
+                pContext.getLevel().isUnobstructed(pState, pContext.getClickedPos(), collisioncontext);
     }
 
     protected boolean placeBlock(BlockPlaceContext pContext, BlockState pState) {
@@ -125,7 +132,7 @@ public class BlockItemComponent implements IInteractionItem {
             CompoundTag compoundtag1 = compoundtag.getCompound("BlockStateTag");
             StateDefinition<Block, BlockState> statedefinition = pState.getBlock().getStateDefinition();
 
-            for(String s : compoundtag1.getAllKeys()) {
+            for (String s : compoundtag1.getAllKeys()) {
                 Property<?> property = statedefinition.getProperty(s);
                 if (property != null) {
                     String s1 = compoundtag1.get(s).getAsString();
@@ -141,17 +148,20 @@ public class BlockItemComponent implements IInteractionItem {
         return blockstate;
     }
 
-    private static <T extends Comparable<T>> BlockState updateState(BlockState pState, Property<T> pProperty, String pValueIdentifier) {
+    private static <T extends Comparable<T>> BlockState updateState(BlockState pState, Property<T> pProperty,
+                                                                    String pValueIdentifier) {
         return pProperty.getValue(pValueIdentifier).map((value) -> {
             return pState.setValue(pProperty, value);
         }).orElse(pState);
     }
 
-    protected boolean updateCustomBlockEntityTag(BlockPos pPos, Level pLevel, @Nullable Player pPlayer, ItemStack pStack, BlockState pState) {
+    protected boolean updateCustomBlockEntityTag(BlockPos pPos, Level pLevel, @Nullable Player pPlayer,
+                                                 ItemStack pStack, BlockState pState) {
         return updateCustomBlockEntityTag(pLevel, pPlayer, pPos, pStack);
     }
 
-    public static boolean updateCustomBlockEntityTag(Level pLevel, @Nullable Player pPlayer, BlockPos pPos, ItemStack pStack) {
+    public static boolean updateCustomBlockEntityTag(Level pLevel, @Nullable Player pPlayer, BlockPos pPos,
+                                                     ItemStack pStack) {
         MinecraftServer minecraftserver = pLevel.getServer();
         if (minecraftserver == null) {
             return false;
@@ -160,7 +170,8 @@ public class BlockItemComponent implements IInteractionItem {
             if (compoundtag != null) {
                 BlockEntity blockentity = pLevel.getBlockEntity(pPos);
                 if (blockentity != null) {
-                    if (!pLevel.isClientSide && blockentity.onlyOpCanSetNbt() && (pPlayer == null || !pPlayer.canUseGameMasterBlocks())) {
+                    if (!pLevel.isClientSide && blockentity.onlyOpCanSetNbt() &&
+                            (pPlayer == null || !pPlayer.canUseGameMasterBlocks())) {
                         return false;
                     }
 
@@ -188,7 +199,7 @@ public class BlockItemComponent implements IInteractionItem {
         return state.getSoundType(world, pos, entity).getPlaceSound();
     }
 
-    public static boolean isEdible(ItemStack stack){
+    public static boolean isEdible(ItemStack stack) {
         return stack.getItem().isEdible();
     }
 }

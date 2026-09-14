@@ -1,6 +1,7 @@
 package com.ironsword.gtmfo.common.data;
 
 import com.gregtechceu.gtceu.api.data.tag.TagUtil;
+
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 

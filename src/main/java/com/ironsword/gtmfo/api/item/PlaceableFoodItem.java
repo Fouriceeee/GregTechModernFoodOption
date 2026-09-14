@@ -1,6 +1,5 @@
 package com.ironsword.gtmfo.api.item;
 
-import com.ironsword.gtmfo.api.item.component.GTMFOFoodStats;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,11 +10,14 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+
+import com.ironsword.gtmfo.api.item.component.GTMFOFoodStats;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class PlaceableFoodItem extends BlockItem {
+
     protected final GTMFOFoodStats foodStats;
 
     public PlaceableFoodItem(Block block, Properties properties, GTMFOFoodStats foodStats) {
@@ -25,7 +27,7 @@ public class PlaceableFoodItem extends BlockItem {
 
     @Override
     public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
-        return foodStats.getFoodProperties(stack,entity);
+        return foodStats.getFoodProperties(stack, entity);
     }
 
     @Override
@@ -45,13 +47,13 @@ public class PlaceableFoodItem extends BlockItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack,level,tooltip,flag);
-        foodStats.appendHoverText(stack,level,tooltip,flag);
+        super.appendHoverText(stack, level, tooltip, flag);
+        foodStats.appendHoverText(stack, level, tooltip, flag);
     }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
-        return foodStats.finishUsingItem(stack,level,livingEntity);
+        return foodStats.finishUsingItem(stack, level, livingEntity);
     }
 
     @Override

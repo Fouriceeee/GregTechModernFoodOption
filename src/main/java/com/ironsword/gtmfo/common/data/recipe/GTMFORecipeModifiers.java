@@ -7,8 +7,10 @@ import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
-import com.ironsword.gtmfo.common.machine.multiblock.electric.ElectricBakingOvenMachine;
+
 import net.minecraft.MethodsReturnNonnullByDefault;
+
+import com.ironsword.gtmfo.common.machine.multiblock.electric.ElectricBakingOvenMachine;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;

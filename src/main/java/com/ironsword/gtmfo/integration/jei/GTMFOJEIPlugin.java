@@ -1,8 +1,9 @@
 package com.ironsword.gtmfo.integration.jei;
 
+import net.minecraft.resources.ResourceLocation;
+
 import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMultiMachines;
-import net.minecraft.resources.ResourceLocation;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;

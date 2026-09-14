@@ -6,14 +6,18 @@ import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
 import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
+
 import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
+
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.ForgeHooks;
+
 import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -65,20 +69,20 @@ public class PrimitiveBakingOvenRecipeLogic extends RecipeLogic {
     @Override
     public void serverTick() {
         if (fuel > 0) {
-            //has fuel, decline fuel and process every slot
+            // has fuel, decline fuel and process every slot
             fuel--;
             processAllSlots();
         } else if (hasRecipe()) {
-            //no fuel and has recipe to process, try consuming fuel
-            if(consumeFuel()){
-                //consume fuel successfully, then process every slot
+            // no fuel and has recipe to process, try consuming fuel
+            if (consumeFuel()) {
+                // consume fuel successfully, then process every slot
                 processAllSlots();
-            }else{
-                //no available fuel, the reset all progress
+            } else {
+                // no available fuel, the reset all progress
                 resetAllProgress();
             }
         } else {
-            //no fuel and no recipe, just reset all progress
+            // no fuel and no recipe, just reset all progress
             resetAllProgress();
         }
     }
@@ -163,21 +167,21 @@ public class PrimitiveBakingOvenRecipeLogic extends RecipeLogic {
     private GTRecipe process(int slot) {
         GTRecipe recipe = findRecipe(slot);
         if (recipe == null) {
-            //no recipe is found, reset duration and process
+            // no recipe is found, reset duration and process
             durations[slot] = 0;
             progresses[slot] = 0;
             return null;
         }
         if (durations[slot] != recipe.duration) {
-            //find new recipe, reset progress to 0
+            // find new recipe, reset progress to 0
             durations[slot] = recipe.duration;
             progresses[slot] = 0;
         }
-        if(progresses[slot] < durations[slot]){
+        if (progresses[slot] < durations[slot]) {
             progresses[slot]++;
         }
-        if(progresses[slot] >= durations[slot]){
-            finishSlot(slot,recipe);
+        if (progresses[slot] >= durations[slot]) {
+            finishSlot(slot, recipe);
             durations[slot] = 0;
             progresses[slot] = 0;
         }
