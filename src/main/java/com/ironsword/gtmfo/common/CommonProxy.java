@@ -2,6 +2,7 @@ package com.ironsword.gtmfo.common;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
+import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 
@@ -67,5 +68,10 @@ public class CommonProxy {
         GTMFOFluids.init();
         GTMFOMaterials.init();
         GTMFODataGen.initMaterialLang();
+    }
+
+    @SubscribeEvent
+    public static void modifyMaterials(PostMaterialEvent event) {
+        GTMFOToolTypes.addRollingPinToMaterials();
     }
 }

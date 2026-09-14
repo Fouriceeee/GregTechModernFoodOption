@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "gtceu:item/tools/handle",
+    "layer1": "gtmfo:item/tool/rolling_pin"
+  }
+}

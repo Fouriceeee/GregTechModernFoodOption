@@ -1,15 +1,25 @@
 package com.ironsword.gtmfo.common.data.recipe;
 
+import com.gregtechceu.gtceu.GTCEu;
+import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
+import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.api.item.tool.ToolHelper;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
+import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 import com.ironsword.gtmfo.common.data.GTMFOItems;
+import com.ironsword.gtmfo.common.data.GTMFOToolTypes;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.chain.*;
+import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
@@ -33,6 +43,7 @@ public class GTMFORecipes {
 
         cheeseRecipes(provider);
         doughRecipes(provider);
+        rollingPinRecipes(provider);
 
         GTMFOMachineRecipes.init(provider);
     }
@@ -66,5 +77,17 @@ public class GTMFORecipes {
                 .outputItems(GTMFOItems.DOUGH_FLAT)
                 .EUt(60).duration(40)
                 .save(provider);
+    }
+
+    private static void rollingPinRecipes(Consumer<FinishedRecipe> provider) {
+        for (Material material : GTMFOToolTypes.ROLLING_PIN_MATERIALS) {
+            VanillaRecipeHelper.addShapedRecipe(provider, id(material.getName() + "_rolling_pin"),
+                    ToolHelper.get(GTMFOToolTypes.ROLLING_PIN, material),
+                    "  R",
+                    " P ",
+                    "R f",
+                    'P', ChemicalHelper.get(material.hasFlag(MaterialFlags.GENERATE_PLATE) ? TagPrefix.plate : TagPrefix.foil, material),
+                    'R', Items.STICK.getDefaultInstance());
+        }
     }
 }

@@ -7,8 +7,13 @@ import net.minecraft.world.item.Item;
 
 public class GTMFOTags {
 
+    //food
     public static final TagKey<Item> BERRY = TagUtil.createItemTag("berry");
     public static final TagKey<Item> BERRY_SWEET = TagUtil.createItemTag("berry/sweet");
     public static final TagKey<Item> BERRY_TART = TagUtil.createItemTag("berry/tart");
     public static final TagKey<Item> POISONOUS_BERRY = TagUtil.createItemTag("poisonous_berry");
+
+    //tool
+    public static final TagKey<Item> ROLLING_PINS = TagUtil.createItemTag("tools/rolling_pins");
+    public static final TagKey<Item> CRAFTING_ROLLING_PINS = TagUtil.createItemTag("tools/crafting_rolling_pins");
 }
