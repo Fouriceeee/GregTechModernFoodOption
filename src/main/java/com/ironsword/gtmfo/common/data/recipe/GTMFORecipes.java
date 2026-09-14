@@ -37,19 +37,6 @@ public class GTMFORecipes {
         GTMFOMachineRecipes.init(provider);
 
 
-        GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES.recipeBuilder(id("test_cheese"))
-                .inputItems(GTMFOItems.PIZZA_CHEESE_RAW)
-                .outputItems(GTMFOBlocks.PIZZA_CHEESE)
-                .duration(100).save(provider);
-        GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES.recipeBuilder(id("test_meat"))
-                .inputItems(GTMFOItems.PIZZA_MEAT_RAW)
-                .outputItems(GTMFOBlocks.PIZZA_MEAT)
-                .duration(100).save(provider);
-        GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES.recipeBuilder(id("test_veggie"))
-                .inputItems(GTMFOItems.PIZZA_VEGGIE_RAW)
-                .outputItems(GTMFOBlocks.PIZZA_VEGGIE)
-                .duration(100).save(provider);
-
     }
 
     public static void remove(Consumer<ResourceLocation> consumer){

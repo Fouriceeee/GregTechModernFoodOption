@@ -11,6 +11,7 @@ import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.GTMFOGuiTextures;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeType;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -53,18 +54,13 @@ public class GTMFORecipeTypes {
 
 
     //multi_block
-    public static final GTRecipeType BAKING_OVEN_RECIPES = GTRecipeTypes.register("baking_oven",GTRecipeTypes.MULTIBLOCK)
+    public static final GTRecipeType BAKING_OVEN_RECIPES = GTRecipeTypes.register("baking_oven",GTRecipeTypes.MULTIBLOCK, RecipeType.SMOKING)
             .setMaxIOSize(1,1,0,0)
             .setEUIO(IO.IN)
             .setSound(GTSoundEntries.FURNACE)
             .setSlotOverlay(false,false,true,GuiTextures.FURNACE_OVERLAY_1)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT);
-
-    public static final GTRecipeType PRIMITIVE_BAKING_OVEN_RECIPES = GTRecipeTypes.register("primitive_baking_oven",GTRecipeTypes.MULTIBLOCK)
-            .setMaxIOSize(1,1,0,0)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
-            .setMaxTooltips(1)
-            .setSound(GTSoundEntries.FURNACE);
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT)
+            .prepareBuilder(builder->builder.EUt(4));
 
     private static BiConsumer<GTRecipeBuilder, Consumer<FinishedRecipe>> gtmfoID(){
         return (builder,consumer)->{

@@ -14,7 +14,6 @@ import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -89,7 +88,7 @@ public class GTMFOItems {
             WOODEN_FORM_BAGUETTE = item("wooden_form_baguette").stack(1).texture("bread/wooden_form_baguette").en("Baguette Wooden Form").cn("木制法棍面包模具").register(),
             BUN_UNBAKED          = item("bun_unbaked").texture("bread/bun_unbaked").en("Unbaked Bun").cn("圆面包坯").register(),
             BREAD_UNBAKED        = item("bread_unbaked").texture("bread/bread_unbaked").en("Unbaked Bread").cn("面包坯").register(),
-            BAGUETTE_UNCOOKED    = item("baguette_unbaked").texture("bread/baguette_unbaked").en("Unbaked Baguette").cn("法棍面包坯").register();
+            BAGUETTE_UNBAKED = item("baguette_unbaked").texture("bread/baguette_unbaked").en("Unbaked Baguette").cn("法棍面包坯").register();
 
     public static final ItemEntry<ExComponentItem>
             BUN                  = ex("bun").texture("bread/bun").en("Bun").cn("圆面包").attach(Foods.BUN).register(),

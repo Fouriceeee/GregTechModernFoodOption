@@ -73,7 +73,7 @@ public class GTMFOMultiMachines {
             .multiblock("primitive_baking_oven", PrimitiveBakingOvenMachine::new)
             .langValue("Primitive Baking Oven")
             .rotationState(RotationState.ALL)
-            .recipeType(GTMFORecipeTypes.PRIMITIVE_BAKING_OVEN_RECIPES)
+            .recipeType(GTMFORecipeTypes.BAKING_OVEN_RECIPES)
             .appearanceBlock(()->Blocks.MUD_BRICKS)
             .pattern(definition->FactoryBlockPattern.start()
                     .aisle("XXX", "XXX")

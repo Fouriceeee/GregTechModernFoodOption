@@ -81,7 +81,7 @@ public class BreadRecipes {
                 .EUt(20).duration(100).save(provider);
 
         VanillaRecipeHelper.addShapedRecipe(provider,id("baguette_dough_by_hand"),
-                GTMFOItems.BAGUETTE_UNCOOKED.asStack(),
+                GTMFOItems.BAGUETTE_UNBAKED.asStack(),
                 "DDD",
                 " M ",
                 'D', CustomTags.DOUGHS,
@@ -89,23 +89,22 @@ public class BreadRecipes {
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("baguette_dough"))
                 .inputItems(CustomTags.DOUGHS,2)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BAGUETTE)
-                .outputItems(GTMFOItems.BAGUETTE_UNCOOKED)
+                .outputItems(GTMFOItems.BAGUETTE_UNBAKED)
                 .EUt(20).duration(100).save(provider);
 
         //baked
-        //TODO: baking oven recipe
-        RecipeUtils.addFoodSmeltingRecipe(provider,"bun",
-                GTMFOItems.BUN_UNBAKED.asStack(),
-                GTMFOItems.BUN.asStack(),
-                0.35f);
-        RecipeUtils.addFoodSmeltingRecipe(provider,"bread",
-                GTMFOItems.BREAD_UNBAKED.asStack(),
-                Items.BREAD.getDefaultInstance(),
-                0.35f);
-        RecipeUtils.addFoodSmeltingRecipe(provider,"baguette",
-                GTMFOItems.BAGUETTE_UNCOOKED.asStack(),
-                GTMFOItems.BAGUETTE.asStack(),
-                0.35f);
+        GTMFORecipeTypes.BAKING_OVEN_RECIPES.recipeBuilder(id("bun"))
+                .inputItems(GTMFOItems.BUN_UNBAKED)
+                .outputItems(GTMFOItems.BUN)
+                .duration(150).save(provider);
+        GTMFORecipeTypes.BAKING_OVEN_RECIPES.recipeBuilder(id("bread"))
+                .inputItems(GTMFOItems.BREAD_UNBAKED)
+                .outputItems(Items.BREAD)
+                .duration(150).save(provider);
+        GTMFORecipeTypes.BAKING_OVEN_RECIPES.recipeBuilder(id("baguette"))
+                .inputItems(GTMFOItems.BAGUETTE_UNBAKED)
+                .outputItems(GTMFOItems.BAGUETTE)
+                .duration(150).save(provider);
 
         //slice
         VanillaRecipeHelper.addShapedRecipe(provider,id("bun_sliced_by_hand"),
@@ -138,7 +137,6 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.BAGUETTE_SLICED)
                 .EUt(18).duration(30).save(provider);
 
-        //TODO: baking oven recipe
         VanillaRecipeHelper.addShapedRecipe(provider,id("bread_slice_by_hand"),
                 GTMFOItems.BREAD_SLICE.asStack(4),
                 "k",
@@ -173,8 +171,10 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.CAKE_BOTTOM)
                 .EUt(30).duration(100).save(provider);
 
-        //TODO: baking oven recipe
-        RecipeUtils.addFoodSmeltingRecipe(provider,"cake_bottom_baked",GTMFOItems.CAKE_BOTTOM.asStack(),GTMFOItems.CAKE_BOTTOM_BAKED.asStack(),0.35f);
+        GTMFORecipeTypes.BAKING_OVEN_RECIPES.recipeBuilder(id("cake_bottom_baked"))
+                .inputItems(GTMFOItems.CAKE_BOTTOM)
+                .outputItems(GTMFOItems.CAKE_BOTTOM_BAKED)
+                .duration(500).save(provider);
 
         VanillaRecipeHelper.addShapedRecipe(provider,id("cake_by_hand"),Items.CAKE.getDefaultInstance(),
                 "SES","EBE","MMM",
