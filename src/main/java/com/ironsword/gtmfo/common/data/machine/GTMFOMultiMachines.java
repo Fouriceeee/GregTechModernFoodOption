@@ -27,7 +27,7 @@ public class GTMFOMultiMachines {
             .multiblock("electric_baking_oven", WorkableElectricMultiblockMachine::new)
             .langValue("Electric Baking Oven")
             .rotationState(RotationState.ALL)
-            .recipeType(GTMFORecipeTypes.BAKING_OVEN_RECIPES)
+            .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
             .appearanceBlock(GTMFOBlocks.BISMUTH_BRONZE_CASING)
             .pattern(definition-> FactoryBlockPattern.start(BACK, UP, RIGHT)
                     .aisle("XXXX", "YXXX", "XXXX", "####")
@@ -49,7 +49,7 @@ public class GTMFOMultiMachines {
             .multiblock("steam_baking_oven", WorkableElectricMultiblockMachine::new)
             .langValue("Steam Baking Oven")
             .rotationState(RotationState.ALL)
-            .recipeType(GTMFORecipeTypes.BAKING_OVEN_RECIPES)
+            .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
             .appearanceBlock(GTBlocks.CASING_BRONZE_BRICKS)
             .pattern(definition->FactoryBlockPattern.start()
                     .aisle("XXXX", "XGGX", "XXXX")
@@ -73,7 +73,7 @@ public class GTMFOMultiMachines {
             .multiblock("primitive_baking_oven", PrimitiveBakingOvenMachine::new)
             .langValue("Primitive Baking Oven")
             .rotationState(RotationState.ALL)
-            .recipeType(GTMFORecipeTypes.BAKING_OVEN_RECIPES)
+            .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
             .appearanceBlock(()->Blocks.MUD_BRICKS)
             .pattern(definition->FactoryBlockPattern.start()
                     .aisle("XXX", "XXX")
@@ -92,7 +92,6 @@ public class GTMFOMultiMachines {
 
     public static void init(){
         GTMFOMachines.addJEILang("baking_oven","Baking Oven","烤炉");
-        GTMFOMachines.addJEILang("primitive_baking_oven","Primitive Baking Oven","原始烤炉");
         GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".electric_baking_oven","电力烤炉");
         GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".steam_baking_oven","蒸汽烤炉");
         GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".primitive_baking_oven","原始烤炉");
