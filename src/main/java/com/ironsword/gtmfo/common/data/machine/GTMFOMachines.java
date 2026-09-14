@@ -37,6 +37,7 @@ public class GTMFOMachines {
             RED.toString() + BOLD + "MAX" };
 
     public static final Map<String, Pair<String,String>> JEILangPairMap = new HashMap<>();
+    public static final Map<String, Pair<String,String>> TooltipPairMap = new HashMap<>();
     public static final Map<String, String> CNLangMap = new HashMap<>();
 
     static {
@@ -48,6 +49,9 @@ public class GTMFOMachines {
     public static MachineDefinition[] MICROWAVE = GTMachineUtils.registerSimpleMachines(REGISTRATE,"microwave",GTMFORecipeTypes.MICROWAVE_RECIPES);
     public static MachineDefinition[] MULTICOOKER = GTMachineUtils.registerSimpleMachines(REGISTRATE,"multicooker",GTMFORecipeTypes.MULTICOOKER_RECIPES);
 
+    public static void addTooltipLang(String id, String enLang, String cnLang){
+        TooltipPairMap.put(id,Pair.of(enLang,cnLang));
+    }
 
     public static void addJEILang(String name, String enLang, String cnLang){
         JEILangPairMap.put("gtceu."+name,Pair.of(enLang,cnLang));
@@ -69,10 +73,12 @@ public class GTMFOMachines {
 
     public static void initENLang(RegistrateLangProvider provider){
         JEILangPairMap.forEach((key, value)->provider.add(key,value.getFirst()));
+        TooltipPairMap.forEach((key,value)->provider.add(key,value.getFirst()));
     }
 
     public static void initCNLang(CNLangProvider provider){
         JEILangPairMap.forEach((key, value)->provider.add(key,value.getSecond()));
+        TooltipPairMap.forEach((key,value)->provider.add(key,value.getSecond()));
         CNLangMap.forEach(provider::add);
     }
 }

@@ -11,10 +11,14 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
+import com.gregtechceu.gtceu.common.machine.multiblock.steam.SteamParallelMultiblockMachine;
 import com.ironsword.gtmfo.GregTechModernFoodOption;
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
+import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeModifiers;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
+import com.ironsword.gtmfo.common.machine.multiblock.electric.ElectricBakingOvenMachine;
 import com.ironsword.gtmfo.common.machine.multiblock.primitive.PrimitiveBakingOvenMachine;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 
@@ -24,25 +28,28 @@ import static com.ironsword.gtmfo.common.registry.GTMFORegistries.REGISTRATE;
 public class GTMFOMultiMachines {
 
     public static final MultiblockMachineDefinition ELECTRIC_BAKING_OVEN = REGISTRATE
-            .multiblock("electric_baking_oven", WorkableElectricMultiblockMachine::new)
+            .multiblock("electric_baking_oven", ElectricBakingOvenMachine::new)
             .langValue("Electric Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
+            .recipeModifier(GTMFORecipeModifiers::electricBakingOvenParallel)
             .appearanceBlock(GTMFOBlocks.BISMUTH_BRONZE_CASING)
             .pattern(definition-> FactoryBlockPattern.start(BACK, UP, RIGHT)
                     .aisle("XXXX", "YXXX", "XXXX", "####")
-                    .aisle("XXXX", "GFFX", "GOOX", "XXXX").setRepeatable(2, 14)
+                    .aisle("XXXX", "GFFX", "GIOX", "XXXX").setRepeatable(2, 14)
                     .aisle("XXXX", "XXXX", "XXXX", "####")
                     .where('X', Predicates.blocks(GTMFOBlocks.BISMUTH_BRONZE_CASING.get()).setMinGlobalLimited(10).or(Predicates.autoAbilities(definition.getRecipeTypes())))
                     .where('F', Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt,GTMaterials.Steel)))
                     .where('G', Predicates.blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
                     .where('#', Predicates.any())
                     .where('O', Predicates.air())
+                    .where('I', ElectricBakingOvenMachine.lengthIndicator())
                     .where('Y', Predicates.controller(Predicates.blocks(definition.getBlock())))
                     .build())
             .workableCasingModel(
                     GregTechModernFoodOption.id("block/bismuth_bronze_casing"),
                     GTCEu.id("block/machines/baking_oven"))
+            .tooltips(Component.translatable("gtmfo.machine.electric_baking_oven.tooltip.0"))
             .register();
 
     public static final MultiblockMachineDefinition STEAM_BAKING_OVEN = REGISTRATE
@@ -50,6 +57,7 @@ public class GTMFOMultiMachines {
             .langValue("Steam Baking Oven")
             .rotationState(RotationState.ALL)
             .recipeTypes(GTMFORecipeTypes.BAKING_OVEN_RECIPES, GTMFORecipeTypes.BAKING_OVEN_SMOKING_PROXY)
+            .recipeModifier(SteamParallelMultiblockMachine::recipeModifier,true)
             .appearanceBlock(GTBlocks.CASING_BRONZE_BRICKS)
             .pattern(definition->FactoryBlockPattern.start()
                     .aisle("XXXX", "XGGX", "XXXX")
@@ -92,8 +100,15 @@ public class GTMFOMultiMachines {
 
     public static void init(){
         GTMFOMachines.addJEILang("baking_oven","Baking Oven","烤炉");
-        GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".electric_baking_oven","电力烤炉");
-        GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".steam_baking_oven","蒸汽烤炉");
-        GTMFOMachines.CNLangMap.put("block."+GregTechModernFoodOption.MODID+".primitive_baking_oven","原始烤炉");
+        GTMFOMachines.CNLangMap.put("block.gtmfo.primitive_baking_oven","原始烤炉");
+        GTMFOMachines.CNLangMap.put("block.gtmfo.steam_baking_oven","蒸汽烤炉");
+        GTMFOMachines.CNLangMap.put("block.gtmfo.electric_baking_oven","电力烤炉");
+        GTMFOMachines.addTooltipLang(
+                "gtmfo.machine.electric_baking_oven.tooltip.0",
+                "§7Max Parallel Amount = 8 * (repeated layer count - 1)",
+                "§7最大并行数 = 8 * (重复层数 - 1)");
+
+
+
     }
 }
