@@ -47,6 +47,8 @@ public class GTMFORecipes {
         rollingPinRecipes(provider);
 
         GTMFOMachineRecipes.init(provider);
+
+//        VanillaRecipeHelper.addShapelessRecipe(provider,id("test_recipe"),Items.DIAMOND.getDefaultInstance(),GTMFOItems.TEST.asStack(),Items.COAL.getDefaultInstance());
     }
 
     public static void remove(Consumer<ResourceLocation> consumer) {

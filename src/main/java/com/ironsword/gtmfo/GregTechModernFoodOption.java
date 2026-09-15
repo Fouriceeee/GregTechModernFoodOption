@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 public class GregTechModernFoodOption {
 
     public static final String MODID = "gtmfo";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public GregTechModernFoodOption(FMLJavaModLoadingContext context) {
         @SuppressWarnings("removal")

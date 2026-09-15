@@ -165,7 +165,6 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.DOUGH_SUGARY,2)
                 .EUt(7).duration(32).save(provider);
 
-        //TODO: how to let MOLD not consumable???
         VanillaRecipeHelper.addShapedRecipe(provider, id("cake_bottom_by_hand"),
                 GTMFOItems.CAKE_BOTTOM.asStack(),
                 "D D", "DMD",
