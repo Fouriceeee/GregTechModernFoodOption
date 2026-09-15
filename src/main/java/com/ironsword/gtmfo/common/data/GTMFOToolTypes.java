@@ -21,14 +21,10 @@ public class GTMFOToolTypes {
             .materialAmount(2 * GTValues.M)
             .build();
 
-    public static final Material[] ROLLING_PIN_MATERIALS = new Material[] {
-            GTMaterials.Wood, GTMaterials.Rubber,
-            GTMaterials.Polyethylene, GTMaterials.Polytetrafluoroethylene
-    };
-
     public static void addRollingPinToMaterials() {
-        for (Material material : ROLLING_PIN_MATERIALS) {
-            material.getProperty(PropertyKey.TOOL).addTypes(ROLLING_PIN);
-        }
+        GTMaterials.Wood.getProperty(PropertyKey.TOOL).addTypes(ROLLING_PIN);
+        GTMaterials.Rubber.getProperty(PropertyKey.TOOL).addTypes(ROLLING_PIN);
+        GTMaterials.Polyethylene.getProperty(PropertyKey.TOOL).addTypes(ROLLING_PIN);
+        GTMaterials.Polytetrafluoroethylene.getProperty(PropertyKey.TOOL).addTypes(ROLLING_PIN);
     }
 }

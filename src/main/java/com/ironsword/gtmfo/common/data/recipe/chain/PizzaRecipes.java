@@ -1,7 +1,10 @@
 package com.ironsword.gtmfo.common.data.recipe.chain;
 
+import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
+import com.ironsword.gtmfo.common.data.GTMFOTags;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
@@ -16,6 +19,15 @@ import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 public class PizzaRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("dough_flat_by_hand"),
+                GTMFOItems.DOUGH_FLAT.asStack(),
+                GTItems.DOUGH.asStack(), GTMFOTags.CRAFTING_ROLLING_PINS);
+        GTRecipeTypes.FORGE_HAMMER_RECIPES.recipeBuilder(id("dough_flat"))
+                .inputItems(GTItems.DOUGH.asStack())
+                .outputItems(GTMFOItems.DOUGH_FLAT)
+                .EUt(60).duration(40)
+                .save(provider);
+
         VanillaRecipeHelper.addShapedRecipe(provider, id("pizza_cheese"),
                 GTMFOBlocks.PIZZA_CHEESE.asStack(),
                 "SS", "SS",

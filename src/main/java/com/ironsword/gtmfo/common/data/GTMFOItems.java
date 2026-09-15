@@ -334,17 +334,12 @@ public class GTMFOItems {
             .texture("dewar_flask/casing_leached").en("Leached Dewar Flask Casing").cn("使用过的保温杯身").register();
 
     // dough
-    public static final ItemEntry<Item> DOUGH = item("dough").texture("dough/dough").en("Dough").cn("面团").register();
-    public static final ItemEntry<Item> DOUGH_FLAT = item("flat_dough").texture("dough/flat").en("Flat Dough")
-            .cn("扁平面团").register();
-    public static final ItemEntry<Item> DOUGH_SUGARY = item("sugary_dough").texture("dough/sugary").en("Sugary Dough")
-            .cn("甜面团").register();
-    public static final ItemEntry<Item> PASTA_DOUGH = item("pasta_dough").texture("dough/pasta").en("Pasta Dough")
-            .cn("意面面团").register();
-    public static final ItemEntry<Item> PASTA_DOUGH_EGG = item("pasta_dough_egg").texture("dough/pasta_egg")
-            .en("Egg Pasta Dough").cn("蛋液意面面团").register();
-    public static final ItemEntry<Item> PASTA_DOUGH_PREMIXED = item("pasta_dough_premixed")
-            .texture("dough/pasta_premixed").en("Premixed Pasta Dough").cn("预拌意面面团").register();
+    public static final ItemEntry<ExComponentItem> DOUGH = ex("dough").texture("dough/dough").en("Dough").cn("面团").attach(Foods.DOUGH).register();
+    public static final ItemEntry<ExComponentItem> DOUGH_FLAT = ex("flat_dough").texture("dough/flat").en("Flat Dough").cn("扁平面团").attach(Foods.DOUGH).register();
+    public static final ItemEntry<ExComponentItem> DOUGH_SUGARY = ex("sugary_dough").texture("dough/sugary").en("Sugary Dough").cn("甜面团").attach(Foods.DOUGH).register();
+    public static final ItemEntry<Item> PASTA_DOUGH = item("pasta_dough").texture("dough/pasta").en("Pasta Dough").cn("意面面团").register();
+    public static final ItemEntry<Item> PASTA_DOUGH_EGG = item("pasta_dough_egg").texture("dough/pasta_egg").en("Egg Pasta Dough").cn("蛋液意面面团").register();
+    public static final ItemEntry<Item> PASTA_DOUGH_PREMIXED = item("pasta_dough_premixed").texture("dough/pasta_premixed").en("Premixed Pasta Dough").cn("预拌意面面团").register();
 
     // drink
     public static final ItemEntry<ExComponentItem> ANTAF = ex("antaf").texture("drink/antaf").en("Antaf™").cn("Antaf™")

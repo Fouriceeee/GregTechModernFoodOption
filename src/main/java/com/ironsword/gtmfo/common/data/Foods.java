@@ -49,6 +49,8 @@ public class Foods {
     public static final GTMFOFoodStats BREAD_SLICE = builder(1, 0.5f).build();
     public static final GTMFOFoodStats TOAST = builder(2, 0.5f).build();
 
+    public static final GTMFOFoodStats DOUGH = builder(1,0).effect(MobEffects.HUNGER, 400,0,0.4f).effect(MobEffects.POISON, 100,0,0.05f).build();
+
     // burger
     public static final GTMFOFoodStats BURGER_VEGGIE = builder(4, 0.6f).build();
     public static final GTMFOFoodStats BURGER_CHEESE = builder(4, 0.6f).build();

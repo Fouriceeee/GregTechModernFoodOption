@@ -13,6 +13,7 @@ import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 
 import com.ironsword.gtmfo.common.data.GTMFOItems;
@@ -20,6 +21,7 @@ import com.ironsword.gtmfo.common.data.GTMFOToolTypes;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.chain.*;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -42,7 +44,6 @@ public class GTMFORecipes {
         SmoreRecipes.init(provider);
 
         cheeseRecipes(provider);
-        doughRecipes(provider);
         rollingPinRecipes(provider);
 
         GTMFOMachineRecipes.init(provider);
@@ -71,23 +72,34 @@ public class GTMFORecipes {
                 .EUt(16).duration(400).save(provider);
     }
 
-    private static void doughRecipes(Consumer<FinishedRecipe> provider) {
-        GTRecipeTypes.FORGE_HAMMER_RECIPES.recipeBuilder(id("dough_flat"))
-                .inputItems(GTItems.DOUGH.asStack())
-                .outputItems(GTMFOItems.DOUGH_FLAT)
-                .EUt(60).duration(40)
-                .save(provider);
-    }
-
     private static void rollingPinRecipes(Consumer<FinishedRecipe> provider) {
-        for (Material material : GTMFOToolTypes.ROLLING_PIN_MATERIALS) {
-            VanillaRecipeHelper.addShapedRecipe(provider, id(material.getName() + "_rolling_pin"),
-                    ToolHelper.get(GTMFOToolTypes.ROLLING_PIN, material),
-                    "  R",
-                    " P ",
-                    "R f",
-                    'P', ChemicalHelper.get(material.hasFlag(MaterialFlags.GENERATE_PLATE) ? TagPrefix.plate : TagPrefix.foil, material),
-                    'R', Items.STICK.getDefaultInstance());
-        }
+        VanillaRecipeHelper.addShapedRecipe(provider, id("wood_rolling_pin"),
+                ToolHelper.get(GTMFOToolTypes.ROLLING_PIN, GTMaterials.Wood),
+                "  R",
+                " P ",
+                "R f",
+                'P', ItemTags.PLANKS,
+                'R', Items.STICK.getDefaultInstance());
+        VanillaRecipeHelper.addShapedRecipe(provider, id("rubber_rolling_pin"),
+                ToolHelper.get(GTMFOToolTypes.ROLLING_PIN, GTMaterials.Rubber),
+                "  R",
+                " P ",
+                "R f",
+                'P', ChemicalHelper.get(TagPrefix.ingot, GTMaterials.Rubber),
+                'R', Items.STICK.getDefaultInstance());
+        VanillaRecipeHelper.addShapedRecipe(provider, id("polyethylene_rolling_pin"),
+                ToolHelper.get(GTMFOToolTypes.ROLLING_PIN, GTMaterials.Polyethylene),
+                "  R",
+                " P ",
+                "R f",
+                'P', ChemicalHelper.get(TagPrefix.ingot, GTMaterials.Polyethylene),
+                'R', Items.STICK.getDefaultInstance());
+        VanillaRecipeHelper.addShapedRecipe(provider, id("polytetrafluoroethylene_rolling_pin"),
+                ToolHelper.get(GTMFOToolTypes.ROLLING_PIN, GTMaterials.Polytetrafluoroethylene),
+                "  R",
+                " P ",
+                "R f",
+                'P', ChemicalHelper.get(TagPrefix.ingot, GTMaterials.Polytetrafluoroethylene),
+                'R', Items.STICK.getDefaultInstance());
     }
 }

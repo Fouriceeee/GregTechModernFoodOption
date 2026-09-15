@@ -27,7 +27,6 @@ public class BreadRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
         form(provider);
         bbb(provider);
-        flatDough(provider);
         cake(provider);
         cookie(provider);
         burger(provider);
@@ -155,26 +154,22 @@ public class BreadRecipes {
                 GTMFOItems.TOAST.asStack(), 0.35f);
     }
 
-    // flat dough, the base of pizzas and other flat baked goods
-    private static void flatDough(Consumer<FinishedRecipe> provider) {
-        VanillaRecipeHelper.addShapelessRecipe(provider, id("dough_flat_by_hand"),
-                GTMFOItems.DOUGH_FLAT.asStack(),
-                GTItems.DOUGH.asStack(), GTMFOTags.CRAFTING_ROLLING_PINS);
-    }
 
     private static void cake(Consumer<FinishedRecipe> provider) {
         VanillaRecipeHelper.addShapelessRecipe(provider, id("dough_sugary_by_hand"),
-                GTMFOItems.DOUGH_SUGARY.asStack(2),
-                Items.SUGAR.getDefaultInstance(), GTItems.DOUGH.asStack(2));
+                GTMFOItems.DOUGH_SUGARY.asStack(),
+                Items.SUGAR.getDefaultInstance(), GTItems.DOUGH.asStack());
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("dough_sugary"))
                 .inputItems(Items.SUGAR)
                 .inputItems(GTItems.DOUGH)
-                .outputItems(GTMFOItems.DOUGH_SUGARY)
+                .outputItems(GTMFOItems.DOUGH_SUGARY,2)
                 .EUt(7).duration(32).save(provider);
+
+        //TODO: how to let MOLD not consumable???
         VanillaRecipeHelper.addShapedRecipe(provider, id("cake_bottom_by_hand"),
                 GTMFOItems.CAKE_BOTTOM.asStack(),
                 "D D", "DMD",
-                'D', GTMFOItems.CAKE_BOTTOM.asStack(),
+                'D', GTMFOItems.DOUGH_SUGARY.asStack(),
                 'M', GTItems.SHAPE_MOLD_CYLINDER.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("cake_bottom"))
                 .inputItems(GTMFOItems.DOUGH_SUGARY, 4)
@@ -269,7 +264,6 @@ public class BreadRecipes {
     }
 
     private static void sandwich(Consumer<FinishedRecipe> provider) {
-        // regular sandwiches, made from pre-sliced bread
         VanillaRecipeHelper.addShapelessRecipe(provider, id("sandwich_veggie_by_hand"),
                 GTMFOItems.SANDWICH_VEGGIE.asStack(),
                 GTMFOItems.BREAD_SLICED.asStack(),
@@ -331,7 +325,6 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.SANDWICH_TOAST)
                 .EUt(24).duration(120).save(provider);
 
-        // large sandwiches, made from pre-sliced baguettes
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("sandwich_veggie_large"))
                 .inputItems(GTMFOItems.BAGUETTE_SLICED)
                 .inputItems(GTMFOItems.TOMATO_SLICE, 3)
@@ -375,6 +368,7 @@ public class BreadRecipes {
         consumer.accept(GTCEu.id("campfire/dough_to_bread"));
 
         consumer.accept(GTCEu.id("cake"));
+        consumer.accept(GTCEu.id("cake_from_dough"));
 
         consumer.accept(GTCEu.id("shapeless/cookie"));
         consumer.accept(GTCEu.id("shapeless/cookie_from_dough"));
