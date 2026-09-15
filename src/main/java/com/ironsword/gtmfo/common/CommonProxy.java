@@ -1,14 +1,11 @@
 package com.ironsword.gtmfo.common;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 
-import com.gregtechceu.gtceu.common.data.GTItems;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -18,6 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import com.ironsword.gtmfo.GTMFOConfigHolder;
 import com.ironsword.gtmfo.GregTechModernFoodOption;
@@ -27,11 +25,11 @@ import com.ironsword.gtmfo.common.data.machine.GTMFOMultiMachines;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.material.GTMFOMaterials;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
+import com.ironsword.gtmfo.common.registry.GTMFORecipeSerializers;
 import com.ironsword.gtmfo.common.registry.GTMFORegistries;
 import com.ironsword.gtmfo.data.GTMFODataGen;
 import com.ironsword.gtmfo.data.GTMFOProviderTypes;
 import com.mojang.logging.LogUtils;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
@@ -65,6 +63,7 @@ public class CommonProxy {
         GTMFORegistries.REGISTRATE.registerRegistrate();
 
         GTMFOEffects.init(bus);
+        GTMFORecipeSerializers.init(bus);
     }
 
     public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
@@ -91,19 +90,19 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(()->craftingReusable(GTItems.SHAPE_MOLD_CYLINDER.getId()));
+        // event.enqueueWork(()->craftingReusable(GTItems.SHAPE_MOLD_CYLINDER.getId()));
     }
 
-    private static void craftingReusable(ResourceLocation rl){
+    private static void craftingReusable(ResourceLocation rl) {
         Item item = ForgeRegistries.ITEMS.getValue(rl);
-        if (item == null || item == Items.AIR){
+        if (item == null || item == Items.AIR) {
             LOGGER.error("Item {} is not found", rl);
             return;
         }
         try {
             // f_41378_ is just Item#craftingRemainingItem
             Field field = ObfuscationReflectionHelper.findField(Item.class, "f_41378_");
-            field.set(item,item);
+            field.set(item, item);
             LOGGER.debug("Successfully set item {} reusable in crafting recipes", rl);
         } catch (Throwable t) {
             LOGGER.error("Failed to make item {} reusable", rl, t);

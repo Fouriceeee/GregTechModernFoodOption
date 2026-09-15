@@ -4,11 +4,11 @@ import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
-import com.ironsword.gtmfo.common.data.GTMFOTags;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import com.ironsword.gtmfo.common.data.GTMFOBlocks;
 import com.ironsword.gtmfo.common.data.GTMFOItems;
+import com.ironsword.gtmfo.common.data.GTMFOTags;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
 

@@ -17,6 +17,7 @@ import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.GTMFOTags;
 import com.ironsword.gtmfo.common.data.recipe.GTMFORecipeTypes;
 import com.ironsword.gtmfo.common.data.recipe.RecipeUtils;
+import com.ironsword.gtmfo.common.recipe.NonConsumingShapedRecipeBuilder;
 
 import java.util.function.Consumer;
 
@@ -154,7 +155,6 @@ public class BreadRecipes {
                 GTMFOItems.TOAST.asStack(), 0.35f);
     }
 
-
     private static void cake(Consumer<FinishedRecipe> provider) {
         VanillaRecipeHelper.addShapelessRecipe(provider, id("dough_sugary_by_hand"),
                 GTMFOItems.DOUGH_SUGARY.asStack(),
@@ -162,14 +162,21 @@ public class BreadRecipes {
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("dough_sugary"))
                 .inputItems(Items.SUGAR)
                 .inputItems(GTItems.DOUGH)
-                .outputItems(GTMFOItems.DOUGH_SUGARY,2)
+                .outputItems(GTMFOItems.DOUGH_SUGARY, 2)
                 .EUt(7).duration(32).save(provider);
 
-        VanillaRecipeHelper.addShapedRecipe(provider, id("cake_bottom_by_hand"),
-                GTMFOItems.CAKE_BOTTOM.asStack(),
-                "D D", "DMD",
-                'D', GTMFOItems.DOUGH_SUGARY.asStack(),
-                'M', GTItems.SHAPE_MOLD_CYLINDER.asStack());
+        // VanillaRecipeHelper.addShapedRecipe(provider, id("cake_bottom_by_hand"),
+        // GTMFOItems.CAKE_BOTTOM.asStack(),
+        // "D D", "DMD",
+        // 'D', GTMFOItems.DOUGH_SUGARY.asStack(),
+        // 'M', GTItems.SHAPE_MOLD_CYLINDER.asStack());
+        NonConsumingShapedRecipeBuilder.of(id("cake_bottom_by_hand"), GTMFOItems.CAKE_BOTTOM.asStack())
+                .pattern("D D", "DMD")
+                .define('D', GTMFOItems.DOUGH_SUGARY.asStack())
+                .define('M', GTItems.SHAPE_MOLD_CYLINDER.asStack())
+                .keep('M')
+                .save(provider);
+
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("cake_bottom"))
                 .inputItems(GTMFOItems.DOUGH_SUGARY, 4)
                 .notConsumable(GTItems.SHAPE_MOLD_CYLINDER)

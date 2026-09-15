@@ -7,8 +7,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import com.ironsword.gtmfo.client.ClientProxy;
 import com.ironsword.gtmfo.common.CommonProxy;
-import com.mojang.logging.LogUtils;
-import org.slf4j.Logger;
 
 @Mod(GregTechModernFoodOption.MODID)
 public class GregTechModernFoodOption {

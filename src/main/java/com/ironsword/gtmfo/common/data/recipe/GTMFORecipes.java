@@ -1,9 +1,6 @@
 package com.ironsword.gtmfo.common.data.recipe;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
-import com.gregtechceu.gtceu.api.data.chemical.material.Material;
-import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.item.tool.ToolHelper;
 import com.gregtechceu.gtceu.common.data.GTItems;
@@ -14,14 +11,12 @@ import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import com.ironsword.gtmfo.common.data.GTMFOItems;
 import com.ironsword.gtmfo.common.data.GTMFOToolTypes;
 import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import com.ironsword.gtmfo.common.data.recipe.chain.*;
-import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -48,7 +43,7 @@ public class GTMFORecipes {
 
         GTMFOMachineRecipes.init(provider);
 
-//        VanillaRecipeHelper.addShapelessRecipe(provider,id("test_recipe"),Items.DIAMOND.getDefaultInstance(),GTMFOItems.TEST.asStack(),Items.COAL.getDefaultInstance());
+        // VanillaRecipeHelper.addShapelessRecipe(provider,id("test_recipe"),Items.DIAMOND.getDefaultInstance(),GTMFOItems.TEST.asStack(),Items.COAL.getDefaultInstance());
     }
 
     public static void remove(Consumer<ResourceLocation> consumer) {
