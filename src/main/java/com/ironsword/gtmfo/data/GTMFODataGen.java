@@ -1,6 +1,7 @@
 package com.ironsword.gtmfo.data;
 
 import com.ironsword.gtmfo.common.data.GTMFOEffects;
+import com.ironsword.gtmfo.common.data.GTMFOTags;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMachines;
 import com.ironsword.gtmfo.common.data.material.GTMFOMaterials;
 import com.ironsword.gtmfo.common.registry.GTMFORegistries;
@@ -10,7 +11,9 @@ public class GTMFODataGen {
 
     public static void initPre() {}
 
-    public static void init() {}
+    public static void init() {
+        GTMFORegistries.REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, GTMFOTags::initItemTags);
+    }
 
     public static void initMaterialLang() {
         GTMFORegistries.REGISTRATE.addDataGenerator(ProviderType.LANG, GTMFOMaterials::initENLang);

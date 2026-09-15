@@ -1,6 +1,8 @@
 package com.ironsword.gtmfo.common.data.recipe.chain;
 
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
@@ -65,8 +67,8 @@ public class PizzaRecipes {
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("pizza_meat"))
                 .inputItems(
                         GTMFOItems.DOUGH_FLAT.asStack(),
-                        GTMFOItems.MOZZARELLA_SLICE.asStack(4),
-                        GTMFOItems.MINCE_MEAT.asStack(10))
+                        GTMFOItems.MOZZARELLA_SLICE.asStack(4))
+                .inputItems(TagPrefix.dust, GTMaterials.Meat, 10)
                 .circuitMeta(3)
                 .inputFluids(GTMFOFluids.TomatoSauce.getFluid(450))
                 .outputItems(GTMFOItems.PIZZA_MEAT_RAW.asStack())

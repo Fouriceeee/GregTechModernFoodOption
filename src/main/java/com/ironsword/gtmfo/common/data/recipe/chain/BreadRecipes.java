@@ -1,6 +1,8 @@
 package com.ironsword.gtmfo.common.data.recipe.chain;
 
 import com.gregtechceu.gtceu.GTCEu;
+import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.recipe.ingredient.FluidContainerIngredient;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
@@ -165,16 +167,11 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.DOUGH_SUGARY, 2)
                 .EUt(7).duration(32).save(provider);
 
-        // VanillaRecipeHelper.addShapedRecipe(provider, id("cake_bottom_by_hand"),
-        // GTMFOItems.CAKE_BOTTOM.asStack(),
-        // "D D", "DMD",
-        // 'D', GTMFOItems.DOUGH_SUGARY.asStack(),
-        // 'M', GTItems.SHAPE_MOLD_CYLINDER.asStack());
         NonConsumingShapedRecipeBuilder.of(id("cake_bottom_by_hand"), GTMFOItems.CAKE_BOTTOM.asStack())
                 .pattern("D D", "DMD")
                 .define('D', GTMFOItems.DOUGH_SUGARY.asStack())
                 .define('M', GTItems.SHAPE_MOLD_CYLINDER.asStack())
-                .keep('M')
+                .nonConsuming('M')
                 .save(provider);
 
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("cake_bottom"))
@@ -243,20 +240,26 @@ public class BreadRecipes {
 
         VanillaRecipeHelper.addShapelessRecipe(provider, id("burger_bacon_by_hand"), GTMFOItems.BURGER_BACON.asStack(),
                 GTMFOItems.BUN_SLICED.asStack(),
+                GTMFOItems.LETTUCE_LEAF.asStack(),GTMFOItems.LETTUCE_LEAF.asStack(),
                 GTMFOItems.BACON.asStack(), GTMFOItems.BACON.asStack());
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("burger_bacon"))
                 .inputItems(GTMFOItems.BUN_SLICED)
+                .inputItems(GTMFOItems.LETTUCE_LEAF)
                 .inputItems(GTMFOItems.BACON)
                 .outputItems(GTMFOItems.BURGER_BACON)
                 .EUt(24).duration(50).save(provider);
 
-        VanillaRecipeHelper.addShapelessRecipe(provider, id("burger_steak_by_hand"), GTMFOItems.BURGER_STEAK.asStack(),
+
+
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("burger_meat_by_hand"), GTMFOItems.BURGER_MEAT.asStack(),
                 GTMFOItems.BUN_SLICED.asStack(),
+                GTMFOItems.LETTUCE_LEAF.asStack(),GTMFOItems.LETTUCE_LEAF.asStack(),
                 GTMFOItems.MEAT_INGOT_COOKED.asStack(), GTMFOItems.MEAT_INGOT_COOKED.asStack());
-        GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("burger_steak"))
+        GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("burger_meat"))
                 .inputItems(GTMFOItems.BUN_SLICED)
+                .inputItems(GTMFOItems.LETTUCE_LEAF)
                 .inputItems(GTMFOItems.MEAT_INGOT_COOKED)
-                .outputItems(GTMFOItems.BURGER_STEAK)
+                .outputItems(GTMFOItems.BURGER_MEAT)
                 .EUt(24).duration(50).save(provider);
 
         VanillaRecipeHelper.addShapelessRecipe(provider, id("burger_chum_by_hand"), GTMFOItems.BURGER_CHUM.asStack(),

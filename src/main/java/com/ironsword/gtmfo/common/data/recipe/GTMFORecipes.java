@@ -41,6 +41,8 @@ public class GTMFORecipes {
         cheeseRecipes(provider);
         rollingPinRecipes(provider);
 
+        MiscRecipes.init(provider);
+
         GTMFOMachineRecipes.init(provider);
 
         // VanillaRecipeHelper.addShapelessRecipe(provider,id("test_recipe"),Items.DIAMOND.getDefaultInstance(),GTMFOItems.TEST.asStack(),Items.COAL.getDefaultInstance());

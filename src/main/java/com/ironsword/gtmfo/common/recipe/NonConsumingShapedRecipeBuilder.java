@@ -86,24 +86,24 @@ public class NonConsumingShapedRecipeBuilder {
         return define(symbol, Ingredient.of(itemLike));
     }
 
-    public NonConsumingShapedRecipeBuilder keep(char symbol) {
+    public NonConsumingShapedRecipeBuilder nonConsuming(char symbol) {
         this.keepSymbol = symbol;
         this.nonConsumingIngredient = null;
         return this;
     }
 
-    public NonConsumingShapedRecipeBuilder keep(Ingredient ingredient) {
+    public NonConsumingShapedRecipeBuilder nonConsuming(Ingredient ingredient) {
         this.nonConsumingIngredient = ingredient;
         this.keepSymbol = null;
         return this;
     }
 
-    public NonConsumingShapedRecipeBuilder keep(TagKey<Item> tag) {
-        return keep(Ingredient.of(tag));
+    public NonConsumingShapedRecipeBuilder nonConsuming(TagKey<Item> tag) {
+        return nonConsuming(Ingredient.of(tag));
     }
 
-    public NonConsumingShapedRecipeBuilder keep(ItemLike itemLike) {
-        return keep(Ingredient.of(itemLike));
+    public NonConsumingShapedRecipeBuilder nonConsuming(ItemLike itemLike) {
+        return nonConsuming(Ingredient.of(itemLike));
     }
 
     public NonConsumingShapedRecipeBuilder group(String group) {

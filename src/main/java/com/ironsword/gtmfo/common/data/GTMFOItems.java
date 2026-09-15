@@ -146,7 +146,7 @@ public class GTMFOItems {
                     .attach(Foods.BURGER_CHEESE).register(),
             BURGER_CHUM = ex("burger_chum").texture("burger/chum").en("Chum Burger").cn("海霸堡").attach(Foods.BURGER_CHUM)
                     .register(),
-            BURGER_STEAK = ex("burger_steak").texture("burger/steak").en("Steak Burger").cn("牛肉汉堡")
+            BURGER_MEAT = ex("burger_meat").texture("burger/meat").en("Meat Burger").cn("肉饼汉堡")
                     .attach(Foods.BURGER_MEAT).register(),
             BURGER_VEGGIE = ex("burger_veggie").texture("burger/veggie").en("Veggie Burger").cn("蔬菜汉堡")
                     .attach(Foods.BURGER_VEGGIE).register();
@@ -844,9 +844,10 @@ public class GTMFOItems {
             .cn("棉花软糖串").register();
     public static final ItemEntry<Item> MARSHMALLOW_STICK_ROASTED = item("marshmallow_stick_roasted")
             .en("Roasted Marshmallow").cn("烤棉花软糖").register();
-    public static final ItemEntry<Item> MINCE_MEAT = item("mince_meat").en("Mince Meat").cn("肉末").register();
-    public static final ItemEntry<Item> MINCE_MEAT_COOKED = item("mince_meat_cooked").en("Cooked Mince Meat").cn("熟肉末")
-            .register();
+    public static final ItemEntry<Item> TOUGH_MEAT = item("tough_meat").en("Tough Meat").cn("增韧肉").register();
+//    public static final ItemEntry<Item> MINCE_MEAT = item("mince_meat").en("Mince Meat").cn("肉末").register();
+//    public static final ItemEntry<Item> MINCE_MEAT_COOKED = item("mince_meat_cooked").en("Cooked Mince Meat").cn("熟肉末")
+//            .register();
     public static final ItemEntry<Item> MEAT_INGOT = item("meat_ingot").en("Meat Ingot").cn("肉锭").register();
     public static final ItemEntry<Item> MEAT_INGOT_COOKED = item("meat_ingot_cooked").en("Cooked Meat Ingot").cn("熟肉锭")
             .register();
