@@ -1,8 +1,6 @@
 package com.ironsword.gtmfo.common.data.recipe.chain;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
-import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.recipe.ingredient.FluidContainerIngredient;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
@@ -311,17 +309,17 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.SANDWICH_BACON)
                 .EUt(24).duration(120).save(provider);
 
-        VanillaRecipeHelper.addShapelessRecipe(provider, id("sandwich_steak_by_hand"),
-                GTMFOItems.SANDWICH_STEAK.asStack(),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("sandwich_meat_by_hand"),
+                GTMFOItems.SANDWICH_MEAT.asStack(),
                 GTMFOItems.BREAD_SLICED.asStack(),
-                GTMFOItems.MEAT_INGOT_COOKED.asStack(),
+                GTMFOItems.MEAT_INGOT_COOKED.asStack(),GTMFOItems.MEAT_INGOT_COOKED.asStack(),
                 GTMFOItems.CHEDDAR_SLICE.asStack(), GTMFOItems.CHEDDAR_SLICE.asStack());
-        GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("sandwich_steak"))
-                .inputItems(GTMFOItems.BREAD_SLICED, 3)
-                .inputItems(GTMFOItems.CHEDDAR_SLICE, 3)
+        GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("sandwich_meat"))
+                .inputItems(GTMFOItems.BREAD_SLICED)
+                .inputItems(GTMFOItems.CHEDDAR_SLICE)
                 .inputItems(GTMFOItems.MEAT_INGOT_COOKED)
                 .circuitMeta(2)
-                .outputItems(GTMFOItems.SANDWICH_STEAK, 3)
+                .outputItems(GTMFOItems.SANDWICH_MEAT)
                 .EUt(24).duration(120).save(provider);
 
         VanillaRecipeHelper.addShapelessRecipe(provider, id("sandwich_toast_by_hand"),
@@ -355,11 +353,11 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.SANDWICH_BACON_LARGE)
                 .EUt(75).duration(180).save(provider);
 
-        GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("sandwich_steak_large"))
+        GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("sandwich_meat_large"))
                 .inputItems(GTMFOItems.BAGUETTE_SLICED)
                 .inputItems(GTMFOItems.CHEDDAR_SLICE)
                 .inputItems(GTMFOItems.MEAT_INGOT_COOKED)
-                .outputItems(GTMFOItems.SANDWICH_STEAK_LARGE)
+                .outputItems(GTMFOItems.SANDWICH_MEAT_LARGE)
                 .EUt(75).duration(180).save(provider);
     }
 
