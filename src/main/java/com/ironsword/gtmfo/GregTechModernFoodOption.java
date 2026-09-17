@@ -13,11 +13,7 @@ public class GregTechModernFoodOption {
 
     public static final String MODID = "gtmfo";
 
-    public GregTechModernFoodOption(FMLJavaModLoadingContext context) {
-        @SuppressWarnings("removal")
-        var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.register(this);
-
+    public GregTechModernFoodOption() {
         DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
     }
 

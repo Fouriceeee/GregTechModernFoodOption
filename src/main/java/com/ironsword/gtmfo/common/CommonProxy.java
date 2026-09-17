@@ -34,17 +34,20 @@ import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
 
-@Mod.EventBusSubscriber(modid = GregTechModernFoodOption.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@SuppressWarnings("removal")
+//@Mod.EventBusSubscriber(modid = GregTechModernFoodOption.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CommonProxy {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public CommonProxy() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.register(this);
         init();
     }
 
     public static void init() {
-        @SuppressWarnings("removal")
+
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         GTMFOProviderTypes.init();
@@ -78,19 +81,19 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void registerMaterials(MaterialEvent event) {
+    public void registerMaterials(MaterialEvent event) {
         GTMFOFluids.init();
         GTMFOMaterials.init();
         GTMFODataGen.initMaterialLang();
     }
 
     @SubscribeEvent
-    public static void modifyMaterials(PostMaterialEvent event) {
+    public void modifyMaterials(PostMaterialEvent event) {
         GTMFOToolTypes.addRollingPinToMaterials();
     }
 
     @SubscribeEvent
-    public static void commonSetup(FMLCommonSetupEvent event) {
+    public void commonSetup(FMLCommonSetupEvent event) {
         // event.enqueueWork(()->craftingReusable(GTItems.SHAPE_MOLD_CYLINDER.getId()));
     }
 

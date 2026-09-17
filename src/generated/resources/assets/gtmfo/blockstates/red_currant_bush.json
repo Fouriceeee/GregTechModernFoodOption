@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "age=0,facing=down": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_0/down"
+    },
+    "age=0,facing=east": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_0/east"
+    },
+    "age=0,facing=north": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_0/north"
+    },
+    "age=0,facing=south": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_0/south"
+    },
+    "age=0,facing=up": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_0/up"
+    },
+    "age=0,facing=west": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_0/west"
+    },
+    "age=1,facing=down": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_1/down"
+    },
+    "age=1,facing=east": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_1/east"
+    },
+    "age=1,facing=north": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_1/north"
+    },
+    "age=1,facing=south": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_1/south"
+    },
+    "age=1,facing=up": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_1/up"
+    },
+    "age=1,facing=west": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_1/west"
+    },
+    "age=2,facing=down": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_2/down"
+    },
+    "age=2,facing=east": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_2/east"
+    },
+    "age=2,facing=north": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_2/north"
+    },
+    "age=2,facing=south": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_2/south"
+    },
+    "age=2,facing=up": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_2/up"
+    },
+    "age=2,facing=west": {
+      "model": "gtmfo:block/fruit_bush/red_currant_bush/stage_2/west"
+    }
+  }
+}

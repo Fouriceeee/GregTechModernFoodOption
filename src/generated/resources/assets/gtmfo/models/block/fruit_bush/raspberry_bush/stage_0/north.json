@@ -1,0 +1,8 @@
+{
+  "parent": "gtmfo:block/parent/fruit_bush/north",
+  "textures": {
+    "bush": "gtmfo:block/fruit_bush/bush",
+    "overlay": "gtmfo:block/fruit_bush/blank",
+    "particle": "gtmfo:block/fruit_bush/bush"
+  }
+}

@@ -4,9 +4,11 @@ import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
-import com.ironsword.gtmfo.common.block.BerryBushBlock;
+import com.ironsword.gtmfo.common.block.FruitBushBlock;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -20,6 +22,8 @@ import com.ironsword.gtmfo.common.block.SmoreBlock;
 import com.ironsword.gtmfo.data.GTMFOProviderTypes;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import java.util.function.Supplier;
+
 import static com.ironsword.gtmfo.common.registry.GTMFORegistries.REGISTRATE;
 
 public class GTMFOBlocks {
@@ -28,16 +32,56 @@ public class GTMFOBlocks {
         REGISTRATE.creativeModeTab(() -> GTMFOCreativeModeTabs.MAIN_TAB);
     }
 
-    public static final BlockEntry<BerryBushBlock> BLUEBERRY_BUSH = REGISTRATE.block("blueberry_bush", p->new BerryBushBlock(p,GTMFOItems.BLUEBERRY::asItem))
-            .lang("Blueberry Bush")
-            .setData(GTMFOProviderTypes.CNLANG,
-                    (ctx, prov) -> prov.add(ctx.get().getDescriptionId(), "蓝莓灌木"))
-            .initialProperties(()->Blocks.SWEET_BERRY_BUSH)
-            .blockstate(GTMFOModels.berryBushModel())
-            .item(BlockItem::new).model((ctx,prov)->
-                prov.withExistingParent("item/%s".formatted(ctx.getName()),prov.modLoc("block/%s/stage_0/down".formatted(ctx.getName())))
-            ).build()
-            .register();
+    private static final ResourceLocation BUSH_FLOWER_OVERLAY = GregTechModernFoodOption.id("block/fruit_bush/flower");
+    private static final ResourceLocation BUSH_BERRY_OVERLAY = GregTechModernFoodOption.id("block/fruit_bush/berry");
+    private static final ResourceLocation BUSH_CURRANT_OVERLAY = GregTechModernFoodOption.id("block/fruit_bush/currant");
+
+
+    public static final BlockEntry<FruitBushBlock> BLACKBERRY_BUSH = fruitBush("blackberry_bush", "Blackberry Bush", "黑莓灌木",
+            GTMFOItems.BLACKBERRY::asItem, BUSH_BERRY_OVERLAY, 0xFFF0F5, 0x55406B);
+
+    public static final BlockEntry<FruitBushBlock> BLUEBERRY_BUSH = fruitBush("blueberry_bush", "Blueberry Bush", "蓝莓灌木",
+            GTMFOItems.BLUEBERRY::asItem, BUSH_BERRY_OVERLAY, 0xF5F5FF, 0x6B93E3);
+
+    public static final BlockEntry<FruitBushBlock> CRANBERRY_BUSH = fruitBush("cranberry_bush", "Cranberry Bush", "蔓越莓灌木",
+            GTMFOItems.CRANBERRY::asItem, BUSH_BERRY_OVERLAY, 0xF5F5FF, 0xAC3232);
+
+    public static final BlockEntry<FruitBushBlock> ELDERBERRY_BUSH = fruitBush("elderberry_bush", "Elderberry Bush", "接骨木莓灌木",
+            GTMFOItems.ELDERBERRY::asItem, BUSH_BERRY_OVERLAY, 0xFFF0F5, 0x242A38);
+
+    public static final BlockEntry<FruitBushBlock> LINGONBERRY_BUSH = fruitBush("lingonberry_bush", "Lingonberry Bush", "越橘灌木",
+            GTMFOItems.LINGONBERRY::asItem, BUSH_BERRY_OVERLAY, 0xFFF0F5, 0xC0041C);
+
+    public static final BlockEntry<FruitBushBlock> RASPBERRY_BUSH = fruitBush("raspberry_bush", "Raspberry Bush", "树莓灌木",
+            GTMFOItems.RASPBERRY::asItem, BUSH_BERRY_OVERLAY, 0xFFF0F5, 0xF2637B);
+
+    public static final BlockEntry<FruitBushBlock> STRAWBERRY_BUSH = fruitBush("strawberry_bush", "Strawberry Bush", "草莓灌木",
+            GTMFOItems.STRAWBERRY::asItem, BUSH_BERRY_OVERLAY, 0xFFF0F5, 0xE0403C);
+
+    public static final BlockEntry<FruitBushBlock> BLACK_CURRANT_BUSH = fruitBush("black_currant_bush", "Black Currant Bush", "黑加仑灌木",
+            GTMFOItems.BLACK_CURRANT::asItem, BUSH_CURRANT_OVERLAY, 0xFFF0F5, 0x55406B);
+
+    public static final BlockEntry<FruitBushBlock> RED_CURRANT_BUSH = fruitBush("red_currant_bush", "Red Currant Bush", "红加仑灌木",
+            GTMFOItems.RED_CURRANT::asItem, BUSH_CURRANT_OVERLAY, 0xFFF0F5, 0xE0403C);
+
+    public static final BlockEntry<FruitBushBlock> WHITE_CURRANT_BUSH = fruitBush("white_currant_bush", "White Currant Bush", "白加仑灌木",
+            GTMFOItems.WHITE_CURRANT::asItem, BUSH_CURRANT_OVERLAY, 0xFFF0F5, 0xFCF7B8);
+
+
+    private static BlockEntry<FruitBushBlock> fruitBush(String name, String enLang, String cnLang,
+                                                        Supplier<Item> fruitItem, ResourceLocation fruitOverlay, int flowerColor, int fruitColor) {
+        return REGISTRATE.block(name,
+                        p -> new FruitBushBlock(p, fruitItem, flowerColor, fruitColor))
+                .lang(enLang)
+                .setData(GTMFOProviderTypes.CNLANG,
+                        (ctx, prov) -> prov.add(ctx.get().getDescriptionId(), cnLang))
+                .initialProperties(() -> Blocks.SWEET_BERRY_BUSH)
+                .blockstate(GTMFOModels.fruitBushModel(BUSH_FLOWER_OVERLAY, fruitOverlay))
+                .item(BlockItem::new).model((ctx, prov) -> prov.withExistingParent("item/%s".formatted(ctx.getName()),
+                        prov.modLoc("block/fruit_bush/%s/stage_2/down".formatted(ctx.getName()))))
+                .build()
+                .register();
+    }
 
     // public static final BlockEntry<Block> ADOBE_BRICKS = createBrickCasingBlock("adobe_bricks" ,"Adobe Bricks"
     // ,"土坯砖块" );

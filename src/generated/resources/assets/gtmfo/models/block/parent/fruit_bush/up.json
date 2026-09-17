@@ -1,0 +1,124 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bush"
+        },
+        "east": {
+          "texture": "#bush",
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        },
+        "north": {
+          "texture": "#bush",
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        },
+        "south": {
+          "texture": "#bush",
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        },
+        "up": {
+          "texture": "#bush"
+        },
+        "west": {
+          "texture": "#bush",
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        }
+      },
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        4,
+        14
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#overlay",
+          "tintindex": 0,
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        },
+        "north": {
+          "texture": "#overlay",
+          "tintindex": 0,
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        },
+        "south": {
+          "texture": "#overlay",
+          "tintindex": 0,
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        },
+        "up": {
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#overlay",
+          "tintindex": 0,
+          "uv": [
+            2.0,
+            6.0,
+            14.0,
+            10.0
+          ]
+        }
+      },
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        4,
+        14
+      ]
+    }
+  ],
+  "render_type": "minecraft:cutout"
+}
