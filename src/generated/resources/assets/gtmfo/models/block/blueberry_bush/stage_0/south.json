@@ -1,0 +1,7 @@
+{
+  "parent": "gtmfo:block/bush/parent/south",
+  "textures": {
+    "bush": "gtmfo:block/bush/bush",
+    "overlay": "gtmfo:block/bush/blank"
+  }
+}

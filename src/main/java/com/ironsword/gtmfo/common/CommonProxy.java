@@ -48,6 +48,7 @@ public class CommonProxy {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         GTMFOProviderTypes.init();
+        GTMFODataGen.initPre();
 
         GTMFOConfigHolder.init();
 

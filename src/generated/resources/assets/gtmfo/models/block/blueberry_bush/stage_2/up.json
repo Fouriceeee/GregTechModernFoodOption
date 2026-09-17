@@ -1,0 +1,7 @@
+{
+  "parent": "gtmfo:block/bush/parent/up",
+  "textures": {
+    "bush": "gtmfo:block/bush/bush",
+    "overlay": "gtmfo:block/bush/berry"
+  }
+}

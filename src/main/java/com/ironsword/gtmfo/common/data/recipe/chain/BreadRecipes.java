@@ -59,36 +59,45 @@ public class BreadRecipes {
     // bun, bread, and baguette
     private static void bbb(Consumer<FinishedRecipe> provider) {
         // unbaked
-        VanillaRecipeHelper.addShapedRecipe(provider, id("bun_dough_by_hand"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("bun_dough_by_hand"),
                 GTMFOItems.BUN_UNBAKED.asStack(),
-                " D ",
-                " M ",
-                'D', CustomTags.DOUGHS,
-                'M', GTMFOItems.WOODEN_FORM_BUN.asStack());
+                GTMFOItems.WOODEN_FORM_BUN.asStack(),CustomTags.DOUGHS);
+//        VanillaRecipeHelper.addShapedRecipe(provider, id("bun_dough_by_hand"),
+//                GTMFOItems.BUN_UNBAKED.asStack(),
+//                " D ",
+//                " M ",
+//                'D', CustomTags.DOUGHS,
+//                'M', GTMFOItems.WOODEN_FORM_BUN.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("bun_dough"))
                 .inputItems(CustomTags.DOUGHS, 2)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BUN)
                 .outputItems(GTMFOItems.BUN_UNBAKED, 3)
                 .EUt(20).duration(100).save(provider);
 
-        VanillaRecipeHelper.addShapedRecipe(provider, id("bread_dough_by_hand"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("bread_dough_by_hand"),
                 GTMFOItems.BREAD_UNBAKED.asStack(),
-                "D D",
-                " M ",
-                'D', CustomTags.DOUGHS,
-                'M', GTMFOItems.WOODEN_FORM_BREAD.asStack());
+                GTMFOItems.WOODEN_FORM_BREAD.asStack(),CustomTags.DOUGHS,CustomTags.DOUGHS);
+//        VanillaRecipeHelper.addShapedRecipe(provider, id("bread_dough_by_hand"),
+//                GTMFOItems.BREAD_UNBAKED.asStack(),
+//                "D D",
+//                " M ",
+//                'D', CustomTags.DOUGHS,
+//                'M', GTMFOItems.WOODEN_FORM_BREAD.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("bread_dough"))
                 .inputItems(CustomTags.DOUGHS, 3)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BREAD)
                 .outputItems(GTMFOItems.BREAD_UNBAKED, 3)
                 .EUt(20).duration(100).save(provider);
 
-        VanillaRecipeHelper.addShapedRecipe(provider, id("baguette_dough_by_hand"),
+        VanillaRecipeHelper.addShapelessRecipe(provider, id("baguette_dough_by_hand"),
                 GTMFOItems.BAGUETTE_UNBAKED.asStack(),
-                "DDD",
-                " M ",
-                'D', CustomTags.DOUGHS,
-                'M', GTMFOItems.WOODEN_FORM_BAGUETTE.asStack());
+                GTMFOItems.WOODEN_FORM_BAGUETTE.asStack(),CustomTags.DOUGHS,CustomTags.DOUGHS,CustomTags.DOUGHS);
+//        VanillaRecipeHelper.addShapedRecipe(provider, id("baguette_dough_by_hand"),
+//                GTMFOItems.BAGUETTE_UNBAKED.asStack(),
+//                "DDD",
+//                " M ",
+//                'D', CustomTags.DOUGHS,
+//                'M', GTMFOItems.WOODEN_FORM_BAGUETTE.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("baguette_dough"))
                 .inputItems(CustomTags.DOUGHS, 2)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BAGUETTE)
@@ -112,7 +121,7 @@ public class BreadRecipes {
         // slice
         VanillaRecipeHelper.addShapedRecipe(provider, id("bun_sliced_by_hand"),
                 GTMFOItems.BUN_SLICED.asStack(),
-                "Bk", 'B', GTMFOItems.BUN.asStack());
+                "kB", 'B', GTMFOItems.BUN.asStack());
         GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("bun_sliced"))
                 .inputItems(GTMFOItems.BUN)
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
@@ -122,7 +131,7 @@ public class BreadRecipes {
 
         VanillaRecipeHelper.addShapedRecipe(provider, id("bread_sliced_by_hand"),
                 GTMFOItems.BREAD_SLICED.asStack(),
-                "Bk", 'B', Items.BREAD.getDefaultInstance());
+                "kB", 'B', Items.BREAD.getDefaultInstance());
         GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("bread_sliced"))
                 .inputItems(Items.BREAD)
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)
@@ -132,7 +141,7 @@ public class BreadRecipes {
 
         VanillaRecipeHelper.addShapedRecipe(provider, id("baguette_sliced_by_hand"),
                 GTMFOItems.BAGUETTE_SLICED.asStack(),
-                "Bk", 'B', GTMFOItems.BAGUETTE.asStack());
+                "kB", 'B', GTMFOItems.BAGUETTE.asStack());
         GTMFORecipeTypes.SLICER_RECIPES.recipeBuilder(id("baguette_sliced"))
                 .inputItems(GTMFOItems.BAGUETTE)
                 .notConsumable(GTMFOItems.SLICER_BLADE_FLAT)

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#bush"
+        },
+        "east": {
+          "cullface": "east",
+          "texture": "#bush"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#bush"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#bush"
+        },
+        "up": {
+          "cullface": "up",
+          "texture": "#bush"
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#bush"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ]
+}

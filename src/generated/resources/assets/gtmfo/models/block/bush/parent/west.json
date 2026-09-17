@@ -1,0 +1,129 @@
+{
+  "children": {
+    "body": {
+      "elements": [
+        {
+          "faces": {
+            "down": {
+              "texture": "#bush",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "east": {
+              "texture": "#bush"
+            },
+            "north": {
+              "texture": "#bush",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "south": {
+              "texture": "#bush",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "up": {
+              "texture": "#bush",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "west": {
+              "texture": "#bush"
+            }
+          },
+          "from": [
+            0,
+            2,
+            2
+          ],
+          "to": [
+            4,
+            14,
+            14
+          ]
+        }
+      ]
+    },
+    "overlay": {
+      "elements": [
+        {
+          "faces": {
+            "down": {
+              "texture": "#overlay",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "east": {
+              "texture": "#overlay"
+            },
+            "north": {
+              "texture": "#overlay",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "south": {
+              "texture": "#overlay",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "up": {
+              "texture": "#overlay",
+              "uv": [
+                6.0,
+                2.0,
+                10.0,
+                14.0
+              ]
+            },
+            "west": {
+              "texture": "#overlay"
+            }
+          },
+          "from": [
+            0,
+            2,
+            2
+          ],
+          "to": [
+            4,
+            14,
+            14
+          ]
+        }
+      ]
+    }
+  },
+  "item_render_order": [
+    "body",
+    "overlay"
+  ],
+  "loader": "forge:composite"
+}
