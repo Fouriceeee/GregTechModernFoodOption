@@ -634,25 +634,35 @@ public class GTMFOItems {
             .en("Vinegar Chips").cn("醋味薯片").register();
 
     // sandwich
-    public static final ItemEntry<ExComponentItem> SANDWICH_BACON = ex("sandwich_bacon").texture("sandwich/bacon").attach(Foods.SANDWICH_BACON)
+    public static final ItemEntry<ExComponentItem> SANDWICH_BACON = ex("sandwich_bacon").texture("sandwich/bacon")
+            .attach(Foods.SANDWICH_BACON)
             .en("Bacon Sandwich").cn("培根三明治").register();
     public static final ItemEntry<ExComponentItem> SANDWICH_BACON_LARGE = ex("sandwich_bacon_large")
-            .texture("sandwich/bacon_large").attach(Foods.SANDWICH_BACON_LARGE).en("Large Bacon Sandwich").cn("大号培根三明治").register();
-    public static final ItemEntry<ExComponentItem> SANDWICH_CHEESE = ex("sandwich_cheese").texture("sandwich/cheese").attach(Foods.SANDWICH_CHEESE)
+            .texture("sandwich/bacon_large").attach(Foods.SANDWICH_BACON_LARGE).en("Large Bacon Sandwich").cn("大号培根三明治")
+            .register();
+    public static final ItemEntry<ExComponentItem> SANDWICH_CHEESE = ex("sandwich_cheese").texture("sandwich/cheese")
+            .attach(Foods.SANDWICH_CHEESE)
             .en("Cheese Sandwich").cn("芝士三明治").register();
     public static final ItemEntry<ExComponentItem> SANDWICH_CHEESE_LARGE = ex("sandwich_cheese_large")
-            .texture("sandwich/cheese_large").attach(Foods.SANDWICH_CHEESE_LARGE).en("Large Cheese Sandwich").cn("大号芝士三明治").register();
-    public static final ItemEntry<ExComponentItem> SANDWICH_MEAT = ex("sandwich_meat").texture("sandwich/meat").attach(Foods.SANDWICH_MEAT)
+            .texture("sandwich/cheese_large").attach(Foods.SANDWICH_CHEESE_LARGE).en("Large Cheese Sandwich")
+            .cn("大号芝士三明治").register();
+    public static final ItemEntry<ExComponentItem> SANDWICH_MEAT = ex("sandwich_meat").texture("sandwich/meat")
+            .attach(Foods.SANDWICH_MEAT)
             .en("Meat Sandwich").cn("肉馅三明治").register();
     public static final ItemEntry<ExComponentItem> SANDWICH_MEAT_LARGE = ex("sandwich_meat_large")
-            .texture("sandwich/meat_large").attach(Foods.SANDWICH_MEAT_LARGE).en("Large Meat Sandwich").cn("大号肉馅三明治").register();
-    public static final ItemEntry<ExComponentItem> SANDWICH_VEGGIE = ex("sandwich_veggie").texture("sandwich/veggie").attach(Foods.SANDWICH_VEGGIE)
+            .texture("sandwich/meat_large").attach(Foods.SANDWICH_MEAT_LARGE).en("Large Meat Sandwich").cn("大号肉馅三明治")
+            .register();
+    public static final ItemEntry<ExComponentItem> SANDWICH_VEGGIE = ex("sandwich_veggie").texture("sandwich/veggie")
+            .attach(Foods.SANDWICH_VEGGIE)
             .en("Veggie Sandwich").cn("蔬菜三明治").register();
     public static final ItemEntry<ExComponentItem> SANDWICH_VEGGIE_LARGE = ex("sandwich_veggie_large")
-            .texture("sandwich/veggie_large").attach(Foods.SANDWICH_VEGGIE_LARGE).en("Large Veggie Sandwich").cn("大号蔬菜三明治").register();
-    public static final ItemEntry<ExComponentItem> SANDWICH_TOAST = ex("sandwich_toast").texture("sandwich/toast").attach(Foods.SANDWICH_TOAST)
+            .texture("sandwich/veggie_large").attach(Foods.SANDWICH_VEGGIE_LARGE).en("Large Veggie Sandwich")
+            .cn("大号蔬菜三明治").register();
+    public static final ItemEntry<ExComponentItem> SANDWICH_TOAST = ex("sandwich_toast").texture("sandwich/toast")
+            .attach(Foods.SANDWICH_TOAST)
             .en("Toast Sandwich").cn("吐司三明治").register();
-    public static final ItemEntry<ExComponentItem> SANDWICH_VIBRANT = ex("sandwich_vibrant").texture("sandwich/vibrant").attach(Foods.SANDWICH_VIBRANT)
+    public static final ItemEntry<ExComponentItem> SANDWICH_VIBRANT = ex("sandwich_vibrant").texture("sandwich/vibrant")
+            .attach(Foods.SANDWICH_VIBRANT)
             .en("Vibrant Sandwich").cn("Vibrant Sandwich").register();
 
     // seed
@@ -845,9 +855,10 @@ public class GTMFOItems {
     public static final ItemEntry<Item> MARSHMALLOW_STICK_ROASTED = item("marshmallow_stick_roasted")
             .en("Roasted Marshmallow").cn("烤棉花软糖").register();
     public static final ItemEntry<Item> TOUGH_MEAT = item("tough_meat").en("Tough Meat").cn("增韧肉").register();
-//    public static final ItemEntry<Item> MINCE_MEAT = item("mince_meat").en("Mince Meat").cn("肉末").register();
-//    public static final ItemEntry<Item> MINCE_MEAT_COOKED = item("mince_meat_cooked").en("Cooked Mince Meat").cn("熟肉末")
-//            .register();
+    // public static final ItemEntry<Item> MINCE_MEAT = item("mince_meat").en("Mince Meat").cn("肉末").register();
+    // public static final ItemEntry<Item> MINCE_MEAT_COOKED = item("mince_meat_cooked").en("Cooked Mince
+    // Meat").cn("熟肉末")
+    // .register();
     public static final ItemEntry<Item> MEAT_INGOT = item("meat_ingot").en("Meat Ingot").cn("肉锭").register();
     public static final ItemEntry<Item> MEAT_INGOT_COOKED = item("meat_ingot_cooked").en("Cooked Meat Ingot").cn("熟肉锭")
             .register();

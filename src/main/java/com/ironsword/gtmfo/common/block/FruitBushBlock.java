@@ -1,7 +1,5 @@
 package com.ironsword.gtmfo.common.block;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -40,6 +38,9 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IPlantable;
+
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -51,12 +52,11 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
             Direction.DOWN, Shapes.block(),
-            Direction.UP, Block.box(2.0,0.0,2.0,14.0, 4.0, 14.0),
-            Direction.NORTH,Block.box(2.0,2.0,0.0,14.0, 14.0, 4.0),
-            Direction.SOUTH,Block.box(2.0,2.0,12.0,14.0, 14.0, 16.0),
-            Direction.EAST,Block.box(12.0,2.0,2.0,16.0,14.0,14.0),
-            Direction.WEST,Block.box(0.0,2.0,2.0,4.0,14.0,14.0)
-    ));
+            Direction.UP, Block.box(2.0, 0.0, 2.0, 14.0, 4.0, 14.0),
+            Direction.NORTH, Block.box(2.0, 2.0, 0.0, 14.0, 14.0, 4.0),
+            Direction.SOUTH, Block.box(2.0, 2.0, 12.0, 14.0, 14.0, 16.0),
+            Direction.EAST, Block.box(12.0, 2.0, 2.0, 16.0, 14.0, 14.0),
+            Direction.WEST, Block.box(0.0, 2.0, 2.0, 4.0, 14.0, 14.0)));
 
     private final Supplier<Item> fruitItem;
     private final int flowerColor;
@@ -84,7 +84,7 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(AGE,FACING);
+        builder.add(AGE, FACING);
     }
 
     @Override
@@ -93,8 +93,10 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level,
+                                  BlockPos pos, BlockPos neighborPos) {
+        return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() :
+                super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     @Override
@@ -103,15 +105,16 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
         Level level = pContext.getLevel();
         BlockPos blockPos = pContext.getClickedPos();
 
-        for (Direction direction:pContext.getNearestLookingDirections()){
+        for (Direction direction : pContext.getNearestLookingDirections()) {
             if (direction.getAxis().isHorizontal()) {
-                blockState = blockState.setValue(FACING,direction);
-                if (blockState.canSurvive(level,blockPos)){
+                blockState = blockState.setValue(FACING, direction);
+                if (blockState.canSurvive(level, blockPos)) {
                     return blockState;
                 }
-            }else if (direction == Direction.DOWN) {
-                blockState = canAttachOn(level.getBlockState(blockPos.below())) ? blockState.setValue(FACING,Direction.UP) : blockState;
-                if (blockState.canSurvive(level,blockPos)){
+            } else if (direction == Direction.DOWN) {
+                blockState = canAttachOn(level.getBlockState(blockPos.below())) ?
+                        blockState.setValue(FACING, Direction.UP) : blockState;
+                if (blockState.canSurvive(level, blockPos)) {
                     return blockState;
                 }
             }
@@ -127,11 +130,11 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
             if (direction.getAxis().isHorizontal()) {
                 BlockState blockState = pLevel.getBlockState(pPos.relative(direction));
                 return canAttachOn(blockState);
-            }else{
+            } else {
                 BlockState blockState1 = pLevel.getBlockState(pPos.below());
                 if (direction == Direction.DOWN) {
                     return canPlaceOn(blockState1);
-                }else if (direction == Direction.UP) {
+                } else if (direction == Direction.UP) {
                     return canAttachOn(blockState1);
                 }
             }
@@ -143,7 +146,7 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
         return state.is(BlockTags.DIRT) || state.is(Blocks.FARMLAND);
     }
 
-    protected boolean canAttachOn(BlockState state){
+    protected boolean canAttachOn(BlockState state) {
         return state.getBlock() == this && state.getValue(FACING) == Direction.DOWN;
     }
 
@@ -155,7 +158,8 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         int i = pState.getValue(AGE);
-        if (i < MAX_AGE && pLevel.getRawBrightness(pPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
+        if (i < MAX_AGE && pLevel.getRawBrightness(pPos.above(), 0) >= 9 &&
+                ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
             BlockState blockstate = pState.setValue(AGE, i + 1);
             pLevel.setBlock(pPos, blockstate, 2);
             pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(blockstate));
@@ -165,13 +169,15 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (state.getValue(FACING) == Direction.DOWN && entity instanceof LivingEntity && entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE) {
+        if (state.getValue(FACING) == Direction.DOWN && entity instanceof LivingEntity &&
+                entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE) {
             entity.makeStuckInBlock(state, new Vec3(0.8F, 0.75F, 0.8F));
         }
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
+                                 BlockHitResult hit) {
         int i = state.getValue(AGE);
         boolean flag = i == MAX_AGE;
         if (!flag && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
@@ -179,7 +185,8 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
             popResource(level, pos, new ItemStack(fruitItem.get(), j + (flag ? 1 : 0)));
-            level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+            level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F,
+                    0.8F + level.random.nextFloat() * 0.4F);
             BlockState blockstate = state.setValue(AGE, 0);
             level.setBlock(pos, blockstate, 2);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockstate));
@@ -188,8 +195,6 @@ public class FruitBushBlock extends DirectionalBlock implements BonemealableBloc
             return super.use(state, level, pos, player, hand, hit);
         }
     }
-
-
 
     @Override
     public boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {

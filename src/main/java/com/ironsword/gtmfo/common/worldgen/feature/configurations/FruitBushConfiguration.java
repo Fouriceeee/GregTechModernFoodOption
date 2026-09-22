@@ -12,7 +12,9 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import java.util.function.Function;
 
-public record FruitBushConfiguration(Holder<Block> bush, int maxAmount, double commonality, double optimalTemp, double optimalRain, double range) implements FeatureConfiguration {
+public record FruitBushConfiguration(Holder<Block> bush, int maxAmount, double commonality, double optimalTemp,
+                                     double optimalRain, double range)
+        implements FeatureConfiguration {
 
     public static final Codec<FruitBushConfiguration> CODEC = RecordCodecBuilder
             .<FruitBushConfiguration>create(instance -> instance.group(

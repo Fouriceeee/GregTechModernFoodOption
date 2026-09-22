@@ -30,6 +30,5 @@ public class GTMFOConfigHolder {
         @Configurable.Comment({ "Whether fruit bushes generate naturally in the world.",
                 "Default: true" })
         public boolean enableFruitBushes = true;
-
     }
 }

@@ -1,7 +1,5 @@
 package com.ironsword.gtmfo.common.data;
 
-import com.ironsword.gtmfo.GregTechModernFoodOption;
-
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -14,6 +12,8 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.ironsword.gtmfo.GregTechModernFoodOption;
 
 public class GTMFOBiomeModifiers {
 

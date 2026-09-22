@@ -44,7 +44,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("removal")
-//@Mod.EventBusSubscriber(modid = GregTechModernFoodOption.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+// @Mod.EventBusSubscriber(modid = GregTechModernFoodOption.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CommonProxy {
 
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -56,7 +56,6 @@ public class CommonProxy {
     }
 
     public static void init() {
-
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         GTMFOProviderTypes.init();

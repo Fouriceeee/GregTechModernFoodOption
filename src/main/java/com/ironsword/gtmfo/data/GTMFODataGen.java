@@ -1,7 +1,7 @@
 package com.ironsword.gtmfo.data;
 
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
-import com.ironsword.gtmfo.common.data.GTMFOBlockStateProperties;
+
 import com.ironsword.gtmfo.common.data.GTMFOEffects;
 import com.ironsword.gtmfo.common.data.GTMFOTags;
 import com.ironsword.gtmfo.common.data.machine.GTMFOMachines;
@@ -12,7 +12,8 @@ import com.tterrag.registrate.providers.ProviderType;
 public class GTMFODataGen {
 
     public static void initPre() {
-        GTMFORegistries.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, p->GTMFOBlockStateHandler.init((GTBlockstateProvider) p));
+        GTMFORegistries.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE,
+                p -> GTMFOBlockStateHandler.init((GTBlockstateProvider) p));
     }
 
     public static void init() {

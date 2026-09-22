@@ -1,10 +1,5 @@
 package com.ironsword.gtmfo.common.data;
 
-import com.ironsword.gtmfo.GregTechModernFoodOption;
-import com.ironsword.gtmfo.common.block.FruitBushBlock;
-import com.ironsword.gtmfo.common.worldgen.feature.configurations.FruitBushConfiguration;
-import com.tterrag.registrate.util.entry.BlockEntry;
-
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -13,6 +8,11 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+
+import com.ironsword.gtmfo.GregTechModernFoodOption;
+import com.ironsword.gtmfo.common.block.FruitBushBlock;
+import com.ironsword.gtmfo.common.worldgen.feature.configurations.FruitBushConfiguration;
+import com.tterrag.registrate.util.entry.BlockEntry;
 
 public class GTMFOConfiguredFeatures {
 

@@ -35,7 +35,8 @@ public class FruitBushFeature extends Feature<FruitBushConfiguration> {
 
     private static final double PERLIN_SCALE = 0.04;
 
-    private static final List<Direction> ATTACH_FACES = List.of(Direction.UP, Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST);
+    private static final List<Direction> ATTACH_FACES = List.of(Direction.UP, Direction.NORTH, Direction.SOUTH,
+            Direction.EAST, Direction.WEST);
 
     private static final Map<Long, SimplexNoise> NOISE_CACHE = new ConcurrentHashMap<>();
 

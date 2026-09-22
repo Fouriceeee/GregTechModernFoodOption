@@ -1,13 +1,13 @@
 package com.ironsword.gtmfo.common.data;
 
-import com.ironsword.gtmfo.GregTechModernFoodOption;
-import com.ironsword.gtmfo.common.worldgen.feature.FruitBushFeature;
-
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+
+import com.ironsword.gtmfo.GregTechModernFoodOption;
+import com.ironsword.gtmfo.common.worldgen.feature.FruitBushFeature;
 
 public class GTMFOFeatures {
 

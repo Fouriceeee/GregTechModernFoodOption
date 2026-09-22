@@ -1,7 +1,5 @@
 package com.ironsword.gtmfo.common.data;
 
-import com.ironsword.gtmfo.GregTechModernFoodOption;
-
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -11,6 +9,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+
+import com.ironsword.gtmfo.GregTechModernFoodOption;
 
 public class GTMFOPlacedFeatures {
 

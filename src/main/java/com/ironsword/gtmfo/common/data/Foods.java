@@ -124,7 +124,8 @@ public class Foods {
     public static final GTMFOFoodStats SANDWICH_BACON_LARGE = food(10, 0.7f, 60);
     public static final GTMFOFoodStats SANDWICH_MEAT_LARGE = food(13, 0.7f, 60);
     public static final GTMFOFoodStats SANDWICH_TOAST = food(6, 0.5f, 32);
-    public static final GTMFOFoodStats SANDWICH_VIBRANT = builder(7,0.8f).eatDuration(40).effect(MobEffects.POISON, 1200, 2, 1f).build();
+    public static final GTMFOFoodStats SANDWICH_VIBRANT = builder(7, 0.8f).eatDuration(40)
+            .effect(MobEffects.POISON, 1200, 2, 1f).build();
 
     public static final GTMFOFoodStats PORCHETTA = food(7, 0.7f, 50);
 
@@ -145,7 +146,6 @@ public class Foods {
     // public static final GTMFOFoodStats PIZZA_VEGGIE = builder(10, 0.7f).eatDuration(50).build();
     public static final GTMFOFoodStats PIZZA_MEAT = builder(11, 0.8f).eatDuration(50)
             .effect(MobEffects.DAMAGE_BOOST, 2000, 2, 1f).build();
-
 
     public static final GTMFOFoodStats ROTTEN_MEAT = builder(1, 0).alwaysEat().eatDuration(100)
             .effect(MobEffects.POISON, 500, 1, 1f).build();

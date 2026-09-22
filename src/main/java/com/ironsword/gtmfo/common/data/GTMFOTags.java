@@ -2,12 +2,12 @@ package com.ironsword.gtmfo.common.data;
 
 import com.gregtechceu.gtceu.api.data.tag.TagUtil;
 
-import com.tterrag.registrate.providers.RegistrateTagsProvider;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.tterrag.registrate.providers.RegistrateTagsProvider;
 
 public class GTMFOTags {
 
@@ -24,7 +24,7 @@ public class GTMFOTags {
     public static final TagKey<Item> CRAFTING_ROLLING_PINS = TagUtil.createItemTag("tools/crafting_rolling_pins");
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public static void initItemTags(RegistrateTagsProvider<Item> provider){
+    public static void initItemTags(RegistrateTagsProvider<Item> provider) {
         provider.addTag(MEAT)
                 .add(
                         ForgeRegistries.ITEMS.getResourceKey(Items.BEEF).get(),
@@ -35,7 +35,6 @@ public class GTMFOTags {
                         ForgeRegistries.ITEMS.getResourceKey(Items.COD).get(),
                         ForgeRegistries.ITEMS.getResourceKey(Items.SALMON).get(),
                         ForgeRegistries.ITEMS.getResourceKey(Items.PUFFERFISH).get(),
-                        ForgeRegistries.ITEMS.getResourceKey(Items.TROPICAL_FISH).get()
-                );
+                        ForgeRegistries.ITEMS.getResourceKey(Items.TROPICAL_FISH).get());
     }
 }

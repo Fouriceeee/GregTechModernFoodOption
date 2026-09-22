@@ -3,7 +3,6 @@ package com.ironsword.gtmfo;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import com.ironsword.gtmfo.client.ClientProxy;
 import com.ironsword.gtmfo.common.CommonProxy;

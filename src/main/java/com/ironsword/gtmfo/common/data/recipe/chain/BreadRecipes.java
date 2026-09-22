@@ -61,13 +61,13 @@ public class BreadRecipes {
         // unbaked
         VanillaRecipeHelper.addShapelessRecipe(provider, id("bun_dough_by_hand"),
                 GTMFOItems.BUN_UNBAKED.asStack(),
-                GTMFOItems.WOODEN_FORM_BUN.asStack(),CustomTags.DOUGHS);
-//        VanillaRecipeHelper.addShapedRecipe(provider, id("bun_dough_by_hand"),
-//                GTMFOItems.BUN_UNBAKED.asStack(),
-//                " D ",
-//                " M ",
-//                'D', CustomTags.DOUGHS,
-//                'M', GTMFOItems.WOODEN_FORM_BUN.asStack());
+                GTMFOItems.WOODEN_FORM_BUN.asStack(), CustomTags.DOUGHS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, id("bun_dough_by_hand"),
+        // GTMFOItems.BUN_UNBAKED.asStack(),
+        // " D ",
+        // " M ",
+        // 'D', CustomTags.DOUGHS,
+        // 'M', GTMFOItems.WOODEN_FORM_BUN.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("bun_dough"))
                 .inputItems(CustomTags.DOUGHS, 2)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BUN)
@@ -76,13 +76,13 @@ public class BreadRecipes {
 
         VanillaRecipeHelper.addShapelessRecipe(provider, id("bread_dough_by_hand"),
                 GTMFOItems.BREAD_UNBAKED.asStack(),
-                GTMFOItems.WOODEN_FORM_BREAD.asStack(),CustomTags.DOUGHS,CustomTags.DOUGHS);
-//        VanillaRecipeHelper.addShapedRecipe(provider, id("bread_dough_by_hand"),
-//                GTMFOItems.BREAD_UNBAKED.asStack(),
-//                "D D",
-//                " M ",
-//                'D', CustomTags.DOUGHS,
-//                'M', GTMFOItems.WOODEN_FORM_BREAD.asStack());
+                GTMFOItems.WOODEN_FORM_BREAD.asStack(), CustomTags.DOUGHS, CustomTags.DOUGHS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, id("bread_dough_by_hand"),
+        // GTMFOItems.BREAD_UNBAKED.asStack(),
+        // "D D",
+        // " M ",
+        // 'D', CustomTags.DOUGHS,
+        // 'M', GTMFOItems.WOODEN_FORM_BREAD.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("bread_dough"))
                 .inputItems(CustomTags.DOUGHS, 3)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BREAD)
@@ -91,13 +91,13 @@ public class BreadRecipes {
 
         VanillaRecipeHelper.addShapelessRecipe(provider, id("baguette_dough_by_hand"),
                 GTMFOItems.BAGUETTE_UNBAKED.asStack(),
-                GTMFOItems.WOODEN_FORM_BAGUETTE.asStack(),CustomTags.DOUGHS,CustomTags.DOUGHS,CustomTags.DOUGHS);
-//        VanillaRecipeHelper.addShapedRecipe(provider, id("baguette_dough_by_hand"),
-//                GTMFOItems.BAGUETTE_UNBAKED.asStack(),
-//                "DDD",
-//                " M ",
-//                'D', CustomTags.DOUGHS,
-//                'M', GTMFOItems.WOODEN_FORM_BAGUETTE.asStack());
+                GTMFOItems.WOODEN_FORM_BAGUETTE.asStack(), CustomTags.DOUGHS, CustomTags.DOUGHS, CustomTags.DOUGHS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, id("baguette_dough_by_hand"),
+        // GTMFOItems.BAGUETTE_UNBAKED.asStack(),
+        // "DDD",
+        // " M ",
+        // 'D', CustomTags.DOUGHS,
+        // 'M', GTMFOItems.WOODEN_FORM_BAGUETTE.asStack());
         GTRecipeTypes.FORMING_PRESS_RECIPES.recipeBuilder(id("baguette_dough"))
                 .inputItems(CustomTags.DOUGHS, 2)
                 .notConsumable(GTMFOItems.WOODEN_FORM_BAGUETTE)
@@ -247,7 +247,7 @@ public class BreadRecipes {
 
         VanillaRecipeHelper.addShapelessRecipe(provider, id("burger_bacon_by_hand"), GTMFOItems.BURGER_BACON.asStack(),
                 GTMFOItems.BUN_SLICED.asStack(),
-                GTMFOItems.LETTUCE_LEAF.asStack(),GTMFOItems.LETTUCE_LEAF.asStack(),
+                GTMFOItems.LETTUCE_LEAF.asStack(), GTMFOItems.LETTUCE_LEAF.asStack(),
                 GTMFOItems.BACON.asStack(), GTMFOItems.BACON.asStack());
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("burger_bacon"))
                 .inputItems(GTMFOItems.BUN_SLICED)
@@ -256,11 +256,9 @@ public class BreadRecipes {
                 .outputItems(GTMFOItems.BURGER_BACON)
                 .EUt(24).duration(50).save(provider);
 
-
-
         VanillaRecipeHelper.addShapelessRecipe(provider, id("burger_meat_by_hand"), GTMFOItems.BURGER_MEAT.asStack(),
                 GTMFOItems.BUN_SLICED.asStack(),
-                GTMFOItems.LETTUCE_LEAF.asStack(),GTMFOItems.LETTUCE_LEAF.asStack(),
+                GTMFOItems.LETTUCE_LEAF.asStack(), GTMFOItems.LETTUCE_LEAF.asStack(),
                 GTMFOItems.MEAT_INGOT_COOKED.asStack(), GTMFOItems.MEAT_INGOT_COOKED.asStack());
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("burger_meat"))
                 .inputItems(GTMFOItems.BUN_SLICED)
@@ -321,7 +319,7 @@ public class BreadRecipes {
         VanillaRecipeHelper.addShapelessRecipe(provider, id("sandwich_meat_by_hand"),
                 GTMFOItems.SANDWICH_MEAT.asStack(),
                 GTMFOItems.BREAD_SLICED.asStack(),
-                GTMFOItems.MEAT_INGOT_COOKED.asStack(),GTMFOItems.MEAT_INGOT_COOKED.asStack(),
+                GTMFOItems.MEAT_INGOT_COOKED.asStack(), GTMFOItems.MEAT_INGOT_COOKED.asStack(),
                 GTMFOItems.CHEDDAR_SLICE.asStack(), GTMFOItems.CHEDDAR_SLICE.asStack());
         GTMFORecipeTypes.CUISINE_ASSEMBLER_RECIPES.recipeBuilder(id("sandwich_meat"))
                 .inputItems(GTMFOItems.BREAD_SLICED)

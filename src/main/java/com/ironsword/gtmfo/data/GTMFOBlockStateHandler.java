@@ -1,6 +1,7 @@
 package com.ironsword.gtmfo.data;
 
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
+
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
@@ -22,7 +23,8 @@ public class GTMFOBlockStateHandler {
         models.getBuilder("block/parent/fruit_bush/down").parent(BLOCK)
                 .element().cube("#bush").end()
                 .element().allFaces((dir, face) -> face.texture("#overlay")
-                        .tintindex(0).cullface(dir)).end()
+                        .tintindex(0).cullface(dir))
+                .end()
                 .renderType(CUTOUT);
 
         // up
