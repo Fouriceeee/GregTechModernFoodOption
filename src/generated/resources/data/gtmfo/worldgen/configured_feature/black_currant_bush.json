@@ -1,0 +1,11 @@
+{
+  "type": "gtmfo:fruit_bush",
+  "config": {
+    "bush": "gtmfo:black_currant_bush",
+    "commonality": 0.9,
+    "max_amount": 3,
+    "optimal_rain": 0.75,
+    "optimal_temp": 0.3,
+    "range": 0.5
+  }
+}

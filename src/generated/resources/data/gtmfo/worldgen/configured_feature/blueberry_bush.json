@@ -1,0 +1,11 @@
+{
+  "type": "gtmfo:fruit_bush",
+  "config": {
+    "bush": "gtmfo:blueberry_bush",
+    "commonality": 1.2,
+    "max_amount": 3,
+    "optimal_rain": 0.5,
+    "optimal_temp": 0.7,
+    "range": 0.5
+  }
+}

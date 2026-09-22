@@ -1,0 +1,11 @@
+{
+  "type": "gtmfo:fruit_bush",
+  "config": {
+    "bush": "gtmfo:cranberry_bush",
+    "commonality": 1.2,
+    "max_amount": 3,
+    "optimal_rain": 0.4,
+    "optimal_temp": 0.2,
+    "range": 0.6
+  }
+}

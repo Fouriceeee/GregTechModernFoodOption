@@ -6,12 +6,19 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
@@ -33,6 +40,8 @@ import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("removal")
 //@Mod.EventBusSubscriber(modid = GregTechModernFoodOption.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -68,6 +77,7 @@ public class CommonProxy {
 
         GTMFOEffects.init(bus);
         GTMFORecipeSerializers.init(bus);
+        GTMFOFeatures.init(bus);
     }
 
     public static void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
@@ -95,6 +105,25 @@ public class CommonProxy {
     @SubscribeEvent
     public void commonSetup(FMLCommonSetupEvent event) {
         // event.enqueueWork(()->craftingReusable(GTItems.SHAPE_MOLD_CYLINDER.getId()));
+    }
+
+    @SubscribeEvent
+    public void gatherData(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        ExistingFileHelper helper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> registries = event.getLookupProvider();
+
+        if (event.includeServer()) {
+            generator.addProvider(true, new DatapackBuiltinEntriesProvider(
+                    packOutput,
+                    registries,
+                    new RegistrySetBuilder()
+                            .add(Registries.CONFIGURED_FEATURE, GTMFOConfiguredFeatures::bootstrap)
+                            .add(Registries.PLACED_FEATURE, GTMFOPlacedFeatures::bootstrap)
+                            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, GTMFOBiomeModifiers::bootstrap),
+                    Set.of(GregTechModernFoodOption.MODID)));
+        }
     }
 
     private static void craftingReusable(ResourceLocation rl) {

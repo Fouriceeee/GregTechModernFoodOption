@@ -36,7 +36,6 @@ public class GTMFOBlocks {
     private static final ResourceLocation BUSH_BERRY_OVERLAY = GregTechModernFoodOption.id("block/fruit_bush/berry");
     private static final ResourceLocation BUSH_CURRANT_OVERLAY = GregTechModernFoodOption.id("block/fruit_bush/currant");
 
-
     public static final BlockEntry<FruitBushBlock> BLACKBERRY_BUSH = fruitBush("blackberry_bush", "Blackberry Bush", "黑莓灌木",
             GTMFOItems.BLACKBERRY::asItem, BUSH_BERRY_OVERLAY, 0xFFF0F5, 0x55406B);
 

@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "gtmfo:blueberry_bush",
+    "gtmfo:blackberry_bush",
+    "gtmfo:raspberry_bush",
+    "gtmfo:strawberry_bush",
+    "gtmfo:red_currant_bush",
+    "gtmfo:black_currant_bush",
+    "gtmfo:white_currant_bush",
+    "gtmfo:lingonberry_bush",
+    "gtmfo:elderberry_bush",
+    "gtmfo:cranberry_bush"
+  ],
+  "step": "vegetal_decoration"
+}

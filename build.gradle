@@ -126,14 +126,32 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:${jei_version}")
 
-    runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
-
     implementation fg.deobf("curse.maven:jade-324717:5640610")
 
     implementation fg.deobf("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
     implementation fg.deobf("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gregtech_version}:slim") { transitive = false }
     implementation fg.deobf("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+
+
+    // not enough recipe book 0.4.1
+    // -octolib 0.5.0.1
+    // -architectury
+    runtimeOnly fg.deobf("curse.maven:notenoughrecipebook-738663:5760231")
+    runtimeOnly fg.deobf("curse.maven:shatterbyte-lib-916747:6274623")
+    runtimeOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
+
+    // configured 2.2.3
+    runtimeOnly fg.deobf("curse.maven:configured-457570:5180900")
+
+    // better mod list 20.1.1
+    runtimeOnly fg.deobf("curse.maven:better-modlist-neoforge-1089803:8605741")
+
+    // apple skin 2.5.1
+    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
+
+    // mouse tweaks 2.25.1
+    //runtimeOnly fg.deobf("curse.maven:mouse-tweaks-60089:5338457")
 
 //    implementation fg.deobf("dev.latvian.mods:kubejs-forge:${kubejs_version}")
 //    implementation fg.deobf("dev.latvian.mods:rhino-forge:${rhino_version}")
