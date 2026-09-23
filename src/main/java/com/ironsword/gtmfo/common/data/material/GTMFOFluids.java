@@ -19,10 +19,18 @@ public class GTMFOFluids {
     public static final Material ChorusExtract = fluid("chorus_extract", 0xa670e0, "Chorus Extract", "紫颂果汁");
     public static final Material ChorusExtractFermented = fluid("chorus_extract_fermented", 0xb5e8e6,
             "Fermented Chorus Extract", "发酵紫颂果汁");
+    public static final Material EnderPearlSolution = fluid("ender_pearl_solution", 0x8cf4e2, "Ender Pearl Solution",
+            "末影珍珠溶液");
+    public static final Material EnderSugarSolution = fluid("ender_sugar_solution", 0x7fe58f, "Ender Sugar Solution",
+            "末影糖溶液");
+    public static final Material LacticAcidBacteria = fluid("lactic_acid_bacteria", 0x371040, "Lactic Acid Bacteria",
+            "乳酸菌");
+    public static final Material Antaf = fluid("antaf", 0xd4b5e8, "Antaf", "Antaf");
+    public static final Material VibrantExtract = fluid("vibrant_extract", 0x3dfff7, "Vibrant Extract", "末影活性物质");
 
-    public static final Material CaneSyrup = fluid("cane_syrup", 0xf2f1dc, "Cane Syrup", "甘蔗糖浆");
-    public static final Material CaneSyrupUnheated = fluid("cane_syrup_unheated", 0xf0efe4, "Unheated Cane Syrup",
-            "未加热甘蔗糖浆");
+    public static final Material CaneSyrupHot = fluid("cane_syrup_hot", 0xf2f1dc, "Hot Cane Syrup", "热甘蔗糖浆");
+    public static final Material CaneSyrup = fluid("cane_syrup", 0xf0efe4, "Cane Syrup",
+            "甘蔗糖浆");
 
     // public static final Material ISOPROPYL_CHLORIDE = builder("isopropyl_chloride","Isopropyl Chloride","异丙基氯")
     // .components(Carbon,3, Hydrogen,7, Chlorine,1)

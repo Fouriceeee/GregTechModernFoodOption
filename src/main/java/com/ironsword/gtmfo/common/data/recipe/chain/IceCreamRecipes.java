@@ -1,6 +1,7 @@
 package com.ironsword.gtmfo.common.data.recipe.chain;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
@@ -80,8 +81,8 @@ public class IceCreamRecipes {
         // basic sorbet
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("sorbet_plain"))
                 .circuitMeta(1)
-                .inputItems(MaterialHelper.dust(GTMaterials.Ice, 4))
-                .inputItems(MaterialHelper.dustTiny(GTMaterials.Sugar))
+                .inputItems(TagPrefix.dust,GTMaterials.Ice,4)
+                .inputItems(TagPrefix.dustTiny, GTMaterials.Sugar)
                 .outputItems(GTMFOItems.SORBET, 4)
                 .EUt(30).duration(200).save(provider);
 
@@ -94,7 +95,7 @@ public class IceCreamRecipes {
         // TODO: chorus chain
         sorbet(provider, "sorbet_chorus", GTMFOItems.SORBET_CHORUS, GTMFOFluids.ChorusExtract.getFluid(40),
                 GTMFOFluids.LemonExtract.getFluid(10));
-        // sorbet(provider,"sorbet_vibrant",GTMFOItems.SORBET_VIBRANT,GTMFOFluids..getFluid(40),GTMFOFluids.LemonExtract.getFluid(10));
+        sorbet(provider,"sorbet_vibrant",GTMFOItems.SORBET_VIBRANT,GTMFOFluids.VibrantExtract.getFluid(40),GTMFOFluids.LemonExtract.getFluid(10));
     }
 
     private static void flavor(Consumer<FinishedRecipe> provider, String id, ItemStack inputItem,
@@ -127,8 +128,8 @@ public class IceCreamRecipes {
     private static void sorbet(Consumer<FinishedRecipe> provider, String id, ItemLike outputItem,
                                FluidStack... fluids) {
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id(id))
-                .inputItems(MaterialHelper.dust(GTMaterials.Ice, 4))
-                .inputItems(MaterialHelper.dustTiny(GTMaterials.Sugar))
+                .inputItems(TagPrefix.dust,GTMaterials.Ice,4)
+                .inputItems(TagPrefix.dustTiny, GTMaterials.Sugar)
                 .inputFluids(fluids)
                 .outputItems(outputItem, 4)
                 .EUt(30).duration(200).save(provider);

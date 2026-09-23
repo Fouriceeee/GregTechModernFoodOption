@@ -349,7 +349,7 @@ public class GTMFOItems {
 
     // drink
     public static final ItemEntry<ExComponentItem> ANTAF = ex("antaf").texture("drink/antaf").en("Antaf™").cn("Antaf™")
-            .attach(Foods.EMPTY).register();
+            .attach(Foods.ANTAF).register();
     public static final ItemEntry<ExComponentItem> BEER = ex("beer").texture("drink/beer").en("Beer").cn("啤酒")
             .attach(Foods.EMPTY).register();
     public static final ItemEntry<ExComponentItem> COAC = ex("coac").texture("drink/coac").en("Coac").cn("乐可")
@@ -460,30 +460,46 @@ public class GTMFOItems {
             .en("White Grapes").cn("白葡萄").register();
 
     // ice_cream
-    public static final ItemEntry<Item> ICE_CREAM = item("ice_cream").texture("ice_cream/plain").en("Plain Ice Cream")
-            .cn("原味冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_BACON = item("ice_cream_bacon").texture("ice_cream/bacon")
-            .en("Bacon Ice Cream").cn("培根冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_BANANA = item("ice_cream_banana").texture("ice_cream/banana")
-            .en("Banana Ice Cream").cn("香蕉冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_BEAR = item("ice_cream_bear").texture("ice_cream/bear")
-            .en("Bear Ice Cream").cn("熊先生冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_CHIP = item("ice_cream_chip").texture("ice_cream/chip")
-            .en("Potato Chip Ice Cream").cn("薯片冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_CHOCOLATE = item("ice_cream_chocolate").texture("ice_cream/chocolate")
-            .en("Chocolate Ice Cream").cn("巧克力冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_CHORUS = item("ice_cream_chorus").texture("ice_cream/chorus")
-            .en("Chorus Ice Cream").cn("紫颂果冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_CHUM = item("ice_cream_chum").texture("ice_cream/chum")
-            .en("Chum Ice Cream").cn("海霸冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_LEMON = item("ice_cream_lemon").texture("ice_cream/lemon")
-            .en("Lemon Ice Cream").cn("柠檬冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_MELON = item("ice_cream_melon").texture("ice_cream/melon")
-            .en("Melon Ice Cream").cn("西瓜冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_RAINBOW = item("ice_cream_rainbow").texture("ice_cream/rainbow")
-            .en("Rainbow Ice Cream").cn("彩虹冰淇淋").register();
-    public static final ItemEntry<Item> ICE_CREAM_VANILLA = item("ice_cream_vanilla").texture("ice_cream/vanilla")
-            .en("Vanilla Ice Cream").cn("香草冰淇淋").register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM = ex("ice_cream").texture("ice_cream/plain").en("Plain Ice Cream")
+            .cn("原味冰淇淋").attach(Foods.ICE_CREAM_PLAIN).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_BACON = ex("ice_cream_bacon").texture("ice_cream/bacon")
+            .en("Bacon Ice Cream").cn("培根冰淇淋").attach(Foods.ICE_CREAM_BACON).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_BANANA = ex("ice_cream_banana").texture("ice_cream/banana")
+            .en("Banana Ice Cream").cn("香蕉冰淇淋").attach(Foods.ICE_CREAM_BANANA).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_BEAR = ex("ice_cream_bear").texture("ice_cream/bear")
+            .en("Bear Ice Cream").cn("熊先生冰淇淋").attach(Foods.ICE_CREAM_BEAR).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_CHIP = ex("ice_cream_chip").texture("ice_cream/chip")
+            .en("Potato Chip Ice Cream").cn("薯片冰淇淋").attach(Foods.ICE_CREAM_CHIP).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_CHOCOLATE = ex("ice_cream_chocolate").texture("ice_cream/chocolate")
+            .en("Chocolate Ice Cream").cn("巧克力冰淇淋").attach(Foods.ICE_CREAM_CHOCOLATE).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_CHORUS = ex("ice_cream_chorus").texture("ice_cream/chorus")
+            .en("Chorus Ice Cream").cn("紫颂果冰淇淋").attach(Foods.EMPTY).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_CHUM = ex("ice_cream_chum").texture("ice_cream/chum")
+            .en("Chum Ice Cream").cn("海霸冰淇淋").attach(Foods.ICE_CREAM_CHUM).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_LEMON = ex("ice_cream_lemon").texture("ice_cream/lemon")
+            .en("Lemon Ice Cream").cn("柠檬冰淇淋").attach(Foods.ICE_CREAM_LEMON).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_MELON = ex("ice_cream_melon").texture("ice_cream/melon")
+            .en("Melon Ice Cream").cn("西瓜冰淇淋").attach(Foods.ICE_CREAM_MELON).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_RAINBOW = ex("ice_cream_rainbow").texture("ice_cream/rainbow")
+            .en("Rainbow Ice Cream").cn("彩虹冰淇淋").attach(Foods.ICE_CREAM_RAINBOW).register();
+    public static final ItemEntry<ExComponentItem> ICE_CREAM_VANILLA = ex("ice_cream_vanilla").texture("ice_cream/vanilla")
+            .en("Vanilla Ice Cream").cn("香草冰淇淋").attach(Foods.ICE_CREAM_VANILLA).register();
+
+    // sorbet
+    public static final ItemEntry<ExComponentItem> SORBET = ex("sorbet").texture("sorbet/plain").en("Plain Sorbet")
+            .cn("原味雪葩").attach(Foods.SORBET_PLAIN).register();
+    public static final ItemEntry<ExComponentItem> SORBET_APPLE = ex("sorbet_apple").texture("sorbet/apple")
+            .en("Apple Sorbet").cn("苹果雪葩").attach(Foods.SORBET_FLAVOR).register();
+    public static final ItemEntry<ExComponentItem> SORBET_APRICOT = ex("sorbet_apricot").texture("sorbet/apricot")
+            .en("Apricot Sorbet").cn("杏子雪葩").attach(Foods.SORBET_FLAVOR).register();
+    public static final ItemEntry<ExComponentItem> SORBET_CHORUS = ex("sorbet_chorus").texture("sorbet/chorus")
+            .en("Chorus Sorbet").cn("紫颂果雪葩").attach(Foods.SORBET_CHORUS).register();
+    public static final ItemEntry<ExComponentItem> SORBET_GRAPE = ex("sorbet_grape").texture("sorbet/grape")
+            .en("Grape Sorbet").cn("葡萄雪葩").attach(Foods.SORBET_FLAVOR).register();
+    public static final ItemEntry<ExComponentItem> SORBET_LIME = ex("sorbet_lime").texture("sorbet/lime")
+            .en("Lime Sorbet").cn("酸柠雪葩").attach(Foods.SORBET_FLAVOR).register();
+    public static final ItemEntry<ExComponentItem> SORBET_VIBRANT = ex("sorbet_vibrant").texture("sorbet/vibrant")
+            .en("Vibrant Sorbet").cn("Vibrant Sorbet").attach(Foods.SORBET_VIBRANT).register();
 
     // kebab
     public static final ItemEntry<Item> KEBAB_BARG = item("kebab_barg").texture("kebab/barg").en("Barg Kebab")
@@ -772,21 +788,7 @@ public class GTMFOItems {
     public static final ItemEntry<Item> GRAHAM_CRACKER_DOUGH_CHUNK_HOT = item("graham_cracker_dough_chunk_hot")
             .texture("smore/graham_cracker/dough_chunk_hot").en("Hot Graham Cracker Dough Chunk").cn("热全麦饼干坯")
             .register();
-    // sorbet
-    public static final ItemEntry<ExComponentItem> SORBET = ex("sorbet").texture("sorbet/plain").en("Plain Sorbet")
-            .cn("原味雪葩").attach(Foods.SORBET_PLAIN).register();
-    public static final ItemEntry<ExComponentItem> SORBET_APPLE = ex("sorbet_apple").texture("sorbet/apple")
-            .en("Apple Sorbet").cn("苹果雪葩").attach(Foods.SORBET_FRUIT).register();
-    public static final ItemEntry<ExComponentItem> SORBET_APRICOT = ex("sorbet_apricot").texture("sorbet/apricot")
-            .en("Apricot Sorbet").cn("杏子雪葩").attach(Foods.SORBET_FRUIT).register();
-    public static final ItemEntry<ExComponentItem> SORBET_CHORUS = ex("sorbet_chorus").texture("sorbet/chorus")
-            .en("Chorus Sorbet").cn("紫颂果雪葩").attach(Foods.EMPTY).register();
-    public static final ItemEntry<ExComponentItem> SORBET_GRAPE = ex("sorbet_grape").texture("sorbet/grape")
-            .en("Grape Sorbet").cn("葡萄雪葩").attach(Foods.SORBET_FRUIT).register();
-    public static final ItemEntry<ExComponentItem> SORBET_LIME = ex("sorbet_lime").texture("sorbet/lime")
-            .en("Lime Sorbet").cn("酸柠雪葩").attach(Foods.SORBET_FRUIT).register();
-    public static final ItemEntry<ExComponentItem> SORBET_VIBRANT = ex("sorbet_vibrant").texture("sorbet/vibrant")
-            .en("Vibrant Sorbet").cn("Vibrant Sorbet").attach(Foods.EMPTY).register();
+
 
     // structural_mesh
     public static final ItemEntry<Item> APPLE_STRUCTURAL_MESH = item("apple_structural_mesh")
@@ -830,10 +832,10 @@ public class GTMFOItems {
     public static final ItemEntry<Item> COFFEE_FILTER = item("coffee_filter").en("Coffee Filter").cn("咖啡滤纸").register();
     public static final ItemEntry<Item> EMERGENCY_RATIONS = item("emergency_rations").en("Emergency Rations").cn("应急配给")
             .register();
-    public static final ItemEntry<Item> FERMENTED_CHORUS = item("fermented_chorus").en("Fermented Chorus").cn("发酵紫颂果")
-            .register();
-    public static final ItemEntry<Item> FERMENTED_CHORUS_PIE = item("fermented_chorus_pie").en("Fermented Chorus Pie")
-            .cn("发酵紫颂果派").register();
+    public static final ItemEntry<ExComponentItem> FERMENTED_CHORUS = ex("fermented_chorus").en("Fermented Chorus").cn("发酵紫颂果")
+            .attach(Foods.FERMENTED_CHORUS).register();
+    public static final ItemEntry<ExComponentItem> FERMENTED_CHORUS_PIE = ex("fermented_chorus_pie").en("Fermented Chorus Pie")
+            .cn("发酵紫颂果派").attach(Foods.FERMENTED_CHORUS_PIE).register();
     public static final ItemEntry<Item> FISH_AND_CHIPS = item("fish_and_chips").en("Fish'n'Chips").cn("炸鱼薯条")
             .register();
     public static final ItemEntry<Item> FRIED_FISH = item("fried_fish").en("Fried Fish").cn("炸鱼").register();

@@ -20,12 +20,4 @@ public class MaterialHelper {
     public static ItemStack dust(Material material, int count) {
         return ChemicalHelper.get(TagPrefix.dust, material, count);
     }
-
-    public static ItemStack dustTiny(Material material) {
-        return ChemicalHelper.get(TagPrefix.dustTiny, material);
-    }
-
-    public static ItemStack dustTiny(Material material, int count) {
-        return ChemicalHelper.get(TagPrefix.dustTiny, material, count);
-    }
 }

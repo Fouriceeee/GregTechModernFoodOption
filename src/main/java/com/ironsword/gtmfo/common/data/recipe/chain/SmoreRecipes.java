@@ -131,7 +131,7 @@ public class SmoreRecipes {
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder("sweetened_diluted_cane_syrup_mixture")
                 .inputItems(Items.SUGAR.getDefaultInstance())
                 .inputFluids(GTMaterials.Water.getFluid(5000))
-                .inputFluids(GTMFOFluids.CaneSyrup.getFluid(5000))
+                .inputFluids(GTMFOFluids.CaneSyrupHot.getFluid(5000))
                 .circuitMeta(1)
                 .outputFluids(GTMFOFluids.SweetenedDilutedCaneSyrupMixture.getFluid(10000))
                 .EUt(120).duration(260).save(provider);

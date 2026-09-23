@@ -43,7 +43,7 @@ public class AppleRecipes {
         GTRecipeTypes.MIXER_RECIPES.recipeBuilder(id("apple_candy_syrup"))
                 .inputFluids(
                         GTMFOFluids.AppleExtract.getFluid(1000),
-                        GTMFOFluids.CaneSyrup.getFluid(1000))
+                        GTMFOFluids.CaneSyrupHot.getFluid(1000))
                 .inputItems(Tags.Items.DYES_LIME, 5)
                 .outputFluids(GTMFOFluids.AppleCandySyrup.getFluid(2000))
                 .EUt(120).duration(60).save(provider);

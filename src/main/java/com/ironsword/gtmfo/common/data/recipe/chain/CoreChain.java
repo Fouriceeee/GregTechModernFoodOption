@@ -81,19 +81,19 @@ public class CoreChain {
     }
 
     public static void caneSyrupChain(Consumer<FinishedRecipe> provider) {
-        GTRecipeTypes.MIXER_RECIPES.recipeBuilder("cane_syrup_unheated")
+        GTRecipeTypes.MIXER_RECIPES.recipeBuilder("cane_syrup")
                 .inputItems(Items.SUGAR, 24)
                 .inputFluids(GTMaterials.Water.getFluid(2000))
                 .circuitMeta(2)
-                .outputFluids(GTMFOFluids.CaneSyrupUnheated.getFluid(2000))
+                .outputFluids(GTMFOFluids.CaneSyrup.getFluid(2000))
                 .EUt(80)
                 .duration(260)
                 .save(provider);
 
-        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("cane_syrup")
-                .inputFluids(GTMFOFluids.CaneSyrupUnheated.getFluid(1000))
+        GTRecipeTypes.FLUID_HEATER_RECIPES.recipeBuilder("cane_syrup_hot")
+                .inputFluids(GTMFOFluids.CaneSyrup.getFluid(1000))
                 .circuitMeta(2)
-                .outputFluids(GTMFOFluids.CaneSyrup.getFluid(1000))
+                .outputFluids(GTMFOFluids.CaneSyrupHot.getFluid(1000))
                 .EUt(120)
                 .duration(80)
                 .save(provider);

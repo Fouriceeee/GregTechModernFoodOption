@@ -73,6 +73,10 @@ public class Foods {
     public static final GTMFOFoodStats MOZZARELLA_BALL = food(3, 0.6f, 32);
     public static final GTMFOFoodStats GORGONZOLA_TRIANGULAR = food(3, 0.5f, 32);
 
+    // chorus
+    public static final GTMFOFoodStats FERMENTED_CHORUS = builder(2,0.5f).eatDuration(60).alwaysEat().build();
+    public static final GTMFOFoodStats FERMENTED_CHORUS_PIE = builder(6,1f).alwaysEat().build();
+
     // coffee
     public static final GTMFOFoodStats COFFEE = builder(8, 0.4f).effect(MobEffects.REGENERATION, 60, 1, 1f)
             .effect(MobEffects.MOVEMENT_SPEED, 1800, 2, 1f).item(GTMFOItems.CUP_EMPTY::asStack).build();
@@ -96,6 +100,30 @@ public class Foods {
     public static final GTMFOFoodStats ONION_SLICE = food(1, 0, 32);
     public static final GTMFOFoodStats TOMATO = food(3, 0.5f, 72);
     public static final GTMFOFoodStats TOMATO_SLICE = food(1, 0, 32);
+
+    // drink
+    public static final GTMFOFoodStats ANTAF = builder(5, 0.5f).drink().alwaysEat()
+            .item(GTMFOItems.CAN::asStack).build();
+
+    // ice-cream
+    public static final GTMFOFoodStats ICE_CREAM_PLAIN = builder(4, 0.25f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_CHUM = builder(5, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_BANANA = builder(6, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_BACON = builder(6, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_VANILLA = builder(9, 0.25f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_BEAR = builder(7, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_MELON = builder(5, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_CHOCOLATE = builder(9, 0.25f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_LEMON = builder(6, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_CHIP = builder(8, 0.33f).alwaysEat().build();
+    public static final GTMFOFoodStats ICE_CREAM_RAINBOW = builder(6, 0.33f).alwaysEat()
+            .effect(MobEffects.NIGHT_VISION, 2000, 0, 0.5f).build();
+    // sorbet
+    public static final GTMFOFoodStats SORBET_PLAIN = builder(0,0).alwaysEat().eatDuration(12).build();
+    public static final GTMFOFoodStats SORBET_FLAVOR = builder(4,0.5f).alwaysEat().eatDuration(12).build();
+    public static final GTMFOFoodStats SORBET_CHORUS = builder(4, 0.5f).alwaysEat().eatDuration(12).build();
+    public static final GTMFOFoodStats SORBET_VIBRANT = builder(0,0).alwaysEat().eatDuration(12).effect(MobEffects.POISON,1200,2,1f).effect(MobEffects.CONFUSION,1200,1,0.4f).build();
+
 
     // potato
     public static final GTMFOFoodStats CHIPS_SYALS = builder(1, 0.25f).effect(MobEffects.LEVITATION, 300, 1, 1f)
@@ -195,18 +223,7 @@ public class Foods {
 
     public static final GTMFOFoodStats JUICE = builder(3, 0.2f).alwaysEat().drink()
             .effect(MobEffects.MOVEMENT_SPEED, 500, 1, 0.45f).item(Items.GLASS_BOTTLE::getDefaultInstance).build();
-    public static final GTMFOFoodStats ICE_CREAM_PLAIN = builder(4, 0.25f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_CHUM = builder(5, 0.33f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_BANANA = builder(6, 0.33f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_BACON = builder(6, 0.33f).alwaysEat().build();
-    // public static final GTMFOFoodStats ICE_CREAM_VANILLA = builder(9, 0.25f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_BEAR = builder(7, 0.33f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_MELON = builder(5, 0.33f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_CHOCOLATE = builder(9, 0.25f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_LEMON = builder(6, 0.33f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_CHIP = builder(8, 0.33f).alwaysEat().build();
-    public static final GTMFOFoodStats ICE_CREAM_RAINBOW = builder(6, 0.33f).alwaysEat()
-            .effect(MobEffects.NIGHT_VISION, 2000, 0, 0.5f).build();
+
     public static final GTMFOFoodStats MILK_CHOCOLATE = food(4, 1.25f, 32);
     public static final GTMFOFoodStats GRAHAM_CRACKER = food(1, 1f, 32);
     public static final GTMFOFoodStats SMORE_1 = food(8, 1.5f, 32);
@@ -292,14 +309,7 @@ public class Foods {
             .item(GTMFOItems.CAN::asStack).build();
     public static final GTMFOFoodStats PELMENI = food(5, 0.5f, 32);
     public static final GTMFOFoodStats PELMENI_SEASONED = food(7, 1f, 24);
-    public static final GTMFOFoodStats ANTAF = builder(5, 0.5f).drink().alwaysEat()
-            .item(GTMFOItems.PLASTIC_BOTTLE::asStack).build();
-    public static final GTMFOFoodStats SORBET_PLAIN = builder(0, 0).alwaysEat().eatDuration(12).build();
-    public static final GTMFOFoodStats SORBET_FRUIT = builder(4, 0.5f).alwaysEat().eatDuration(12).build();
-    // public static final GTMFOFoodStats SORBET_CHORUS = builder(4, 0.5f).alwaysEat().eatDuration(12).build();
-    // public static final GTMFOFoodStats SORBET_VIBRANT = food(0, 0, 12);
-    // public static final GTMFOFoodStats FERMENTED_CHORUS = food(2, 0.5f, 60);
-    // public static final GTMFOFoodStats FERMENTED_CHORUS_PIE = food(6, 1f, 32);
+
 
     // public static final GTMFOFoodStats SANDWICH_VIBRANT = food(7, 0.8f, 40);
 

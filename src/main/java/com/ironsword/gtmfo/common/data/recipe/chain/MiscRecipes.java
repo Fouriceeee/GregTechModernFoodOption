@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
+import com.ironsword.gtmfo.common.data.material.GTMFOFluids;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import com.ironsword.gtmfo.common.data.GTMFOItems;
@@ -23,7 +24,16 @@ import static com.ironsword.gtmfo.GregTechModernFoodOption.id;
 public class MiscRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
+        bacteria(provider);
         meat(provider);
+    }
+
+    private static void bacteria(Consumer<FinishedRecipe> provider){
+        GTRecipeTypes.CENTRIFUGE_RECIPES.recipeBuilder(id("lactic_acid_bacteria"))
+                .circuitMeta(2)
+                .inputFluids(GTMaterials.Milk.getFluid(8000))
+                .outputFluids(GTMFOFluids.LacticAcidBacteria.getFluid(2))
+                .EUt(16).duration(400).save(provider);
     }
 
     private static void meat(Consumer<FinishedRecipe> provider) {
