@@ -31,6 +31,8 @@ public class GTMFOMaterials {
     public static Material Poppy = dust("poppy", "Poppy", "虞美人").color(0x940801).buildAndRegister();
     public static Material Codeine = dust("codeine", "Codeine", "可待因").color(0xfadef2).formula("C18H21NO3")
             .buildAndRegister();
+    public static Material Vanillin = dust("vanillin", "Vanillin", "香草醛").color(0xfbfbfb)
+            .iconSet(MaterialIconSet.SHINY).formula("C8H8O3").buildAndRegister();
 
     private static TagPrefix[] without(TagPrefix tagPrefix) {
         return TagPrefix.values().stream().filter(prefix -> !prefix.equals(tagPrefix)).toArray(TagPrefix[]::new);

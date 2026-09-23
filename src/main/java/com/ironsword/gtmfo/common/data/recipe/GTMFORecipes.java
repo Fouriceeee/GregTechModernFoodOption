@@ -37,6 +37,7 @@ public class GTMFORecipes {
         KebabRecipes.init(provider);
         ItalianRecipes.init(provider);
         SmoreRecipes.init(provider);
+        IceCreamRecipes.init(provider);
 
         cheeseRecipes(provider);
         rollingPinRecipes(provider);

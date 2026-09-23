@@ -166,35 +166,6 @@ public class CoreChain {
         // .outputFluids(GTMFOFluids.OLIVE_OIL.getFluid(100))
         // .EUt(27).duration(60).save(provider);
         //
-        // GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("melon_extract")
-        // .inputItems(Items.MELON_SLICE.getDefaultInstance())
-        // .outputFluids(GTMFOFluids.MELON_EXTRACT.getFluid(100))
-        // .EUt(2).duration(10).save(provider);
-        //
-        // GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("cranberry_extract")
-        // .inputItems(GTMFOItems.CRANBERRY.asStack())
-        // .outputFluids(GTMFOFluids.CRANBERRY_EXTRACT.getFluid(25))
-        // .circuitMeta(1)
-        // .EUt(2).duration(10).save(provider);
-        //
-        // GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("grape_extract")
-        // .inputItems(GTMFOItems.GRAPES.asStack())
-        // .outputFluids(GTMFOFluids.GRAPE_EXTRACT.getFluid(25))
-        // .circuitMeta(1)
-        // .EUt(2).duration(10).save(provider);
-        //
-        // GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("grape_extract_2")
-        // .inputItems(GTMFOItems.WHITE_GRAPES.asStack())
-        // .outputFluids(GTMFOFluids.GRAPE_EXTRACT.getFluid(25))
-        // .circuitMeta(1)
-        // .EUt(2).duration(10).save(provider);
-        //
-        // GTRecipeTypes.EXTRACTOR_RECIPES.recipeBuilder("apricot_extract")
-        // .inputItems(GTMFOItems.APRICOT.asStack())
-        // .outputFluids(GTMFOFluids.APRICOT_EXTRACT.getFluid(100))
-        // .circuitMeta(1)
-        // .EUt(8).duration(40).save(provider);
-        //
 
         //
         // GTRecipeTypes.CANNER_RECIPES.recipeBuilder("orange_extract")

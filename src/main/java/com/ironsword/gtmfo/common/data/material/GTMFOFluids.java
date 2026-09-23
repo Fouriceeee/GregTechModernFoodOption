@@ -11,15 +11,15 @@ public class GTMFOFluids {
     public static final Material LimeExtract = fluid("lime_extract", 0x85f218, "Lime Extract", "酸橙汁");
     public static final Material OrangeExtract = fluid("orange_extract", 0xff6100, "Orange Juice", "橙汁");
     public static final Material AppleExtract = fluid("apple_extract", 0xe9ba58, "Apple Juice", "苹果汁");
-    public static final Material MELON_EXTRACT = fluid("melon_extract", 0xfc7996, "Melon Extract", "西瓜汁");
-    public static final Material GRAPE_EXTRACT = fluid("grape_extract", 0xa83351, "Grape Extract", "葡萄汁");
+    public static final Material MelonExtract = fluid("melon_extract", 0xfc7996, "Melon Extract", "西瓜汁");
+    public static final Material GrapeExtract = fluid("grape_extract", 0xa83351, "Grape Extract", "葡萄汁");
     public static final Material CranberryExtract = fluid("cranberry_extract", 0x8C0D22, "Cranberry Extract", "蔓越莓汁");
-    //
-    // public static final Material APRICOT_EXTRACT = fluid("apricot_extract",0xe3de9d,"Apricot Extract","杏子提取液");
-    //
-    // public static final Material CRANBERRY_EXTRACT = fluid("cranberry_extract" ,0x8C0D22,"Cranberry
-    // Extract","蔓越莓提取液");
-    //
+    public static final Material ApricotExtract = fluid("apricot_extract", 0xe3de9d, "Apricot Extract", "杏子汁");
+
+    public static final Material ChorusExtract = fluid("chorus_extract", 0xa670e0, "Chorus Extract", "紫颂果汁");
+    public static final Material ChorusExtractFermented = fluid("chorus_extract_fermented", 0xb5e8e6,
+            "Fermented Chorus Extract", "发酵紫颂果汁");
+
     public static final Material CaneSyrup = fluid("cane_syrup", 0xf2f1dc, "Cane Syrup", "甘蔗糖浆");
     public static final Material CaneSyrupUnheated = fluid("cane_syrup_unheated", 0xf0efe4, "Unheated Cane Syrup",
             "未加热甘蔗糖浆");
@@ -87,6 +87,18 @@ public class GTMFOFluids {
     public static final Material CarbonatedWater = fluid("carbonated_water", 0xf5ffff, "Carbonated Water", "碳酸水");
 
     public static final Material GelatinSolution = fluid("gelatin_solution", 0xD3D3D3, "Gelatin Solution", "明胶溶液");
+
+    // ice cream
+    public static final Material Cream = fluid("cream", 0xced2d9, "Cream", "奶油");
+    public static final Material SkimmedMilk = fluid("skimmed_milk", 0xf7ffe3, "Skimmed Milk", "脱脂牛奶");
+    public static final Material SoyLecithin = fluid("soy_lecithin", 0xa6963a, "Soy Lecithin", "大豆卵磷脂");
+    public static final Material PasteurizedMilk = fluid("pasteurized_milk", 0xfefdf3, "Pasteurized Milk", "巴氏灭菌牛奶");
+    public static final Material MilkColloid = fluid("milk_colloid", 0xe0d7bf, "Milk Colloid", "凝胶化牛奶");
+    public static final Material IceCreamMixture = fluid("ice_cream_mixture", 0xdebd80, "Ice Cream Mixture",
+            "冰淇淋混合物");
+    public static final Material MoltenMilkChocolate = fluid("molten_milk_chocolate", 0x84563c, "Molten Milk Chocolate",
+            "熔融牛奶巧克力");
+    public static final Material RainbowSap = fluid("rainbow_sap", 0xffffff, "Rainbow Sap", "彩虹树液");
 
     private static Material fluid(String id, int color, String enLang, String cnLang) {
         GTMFOMaterials.addLang(id, enLang, cnLang);
